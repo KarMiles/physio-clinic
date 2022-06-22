@@ -4,6 +4,15 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Live"))
 
+class Priority(models.Model):
+    class Level(models.IntegerChoices):
+        TOP = 1
+        HIGH = 2
+        NORMAL = 3
+        LOW = 4
+        BOTTOM = 5
+
+
 # Models
 
 class Post(models.Model):
@@ -13,6 +22,7 @@ class Post(models.Model):
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
+    priority = models.IntegerField(choices=Level.choices)
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
