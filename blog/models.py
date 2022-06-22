@@ -12,6 +12,7 @@ class Priority(models.Model):
         LOW = 4
         BOTTOM = 5
 
+    level = models.IntegerField(choices=Level.choices, default=3)
 
 # Models
 
@@ -22,7 +23,7 @@ class Post(models.Model):
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
-    priority = models.IntegerField(choices=Level.choices)
+    priority = Priority.level
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
