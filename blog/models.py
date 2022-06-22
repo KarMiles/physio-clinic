@@ -5,6 +5,7 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Live"))
 
 class Priority(models.Model):
+
     class Level(models.IntegerChoices):
         TOP = 1
         HIGH = 2
@@ -27,5 +28,15 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+    likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
+    
+    class Meta:
+        ordering = ['priority']
+    
+    def __str__(self):
+        return self.title
+    
+    def number_of_likes(self):
+        return self.likes.count()
     
 
