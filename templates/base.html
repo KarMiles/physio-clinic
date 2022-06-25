@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,5 +15,10 @@
 </head>
 <body>
     Body of the base.html
+
+    {% block content %}
+        <!-- Content Goes here -->
+    {% endblock content %}
+    
 </body>
 </html>
