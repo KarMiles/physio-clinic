@@ -11,7 +11,7 @@ class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("priority")
     template_name = "index.html"
-    paginate_by = 3
+    paginate_by = 12
 
 
 class PostDetail(View):
