@@ -1,8 +1,21 @@
 /* Google Fonts used: Raleway */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;800&display=swap');
 
+
+/* Common */
+
 body {
     font-family: Raleway, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navigation */
+
+.navbar {
+    background-color: #f8f9fa;
 }
 
 .logo {
@@ -12,4 +25,51 @@ body {
 
 .logo-accent {
     color: rgb(235, 117, 117);
+}
+
+
+/* Footer */
+
+footer {
+    width: 100vh;
+    text-align: center;
+    background-color: #f8f9fa;
+    padding-top: 1%;
+    margin-top: 2%;
+    height: 60px;
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+footer ul {
+    color: darkgray;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer li {
+    display: inline;
+    margin: 0 3%;
+}
+
+footer i {
+    color: grey;
+    font-size: large;
+}
+
+footer a :hover {
+    color: black;
+}
+
+.footer-description {
+    font-size: small;
+    color: #0000008C;
+}
+
+.footer-description p {
+    margin: 0;
+    padding: 0 3px 5px;
+    text-align: center;
 }
