@@ -1,6 +1,15 @@
 /* Google Fonts used: Raleway */
-@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;800&display=swap');
 
 body {
     font-family: Raleway, sans-serif;
+}
+
+.logo {
+    font-weight: 800;
+    color: rgb(26, 189, 244);
+}
+
+.logo-accent {
+    color: rgb(235, 117, 117);
 }
