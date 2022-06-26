@@ -12,6 +12,14 @@ PRIORITY_CHOICES = [
     ("Bottom", 5),
 ]
 
+# PRIORITY_CHOICES = [
+#     (1, "Top"),
+#     (2, "High"),
+#     (3, "Normal"),
+#     (4, "Low"),
+#     (5, "Bottom"),
+# ]
+
 
 # Models
 
@@ -51,3 +59,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment by {self.author}: {self.body}"
+

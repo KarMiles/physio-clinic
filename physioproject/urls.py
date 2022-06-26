@@ -22,6 +22,7 @@ urlpatterns = [
     path("", include("blog.urls"), name="blog-urls"),
     path('summernote/', include('django_summernote.urls')),
     # path('accounts/', include('allauth.urls')),
+    # path(r'^booking/', include('booking.urls')),
 ]
 
 # for signup add to address: /accounts/signup
