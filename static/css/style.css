@@ -16,11 +16,19 @@ a {
     text-decoration: none;
 }
 
-button {
+.btn {
     background-color: #408cdd;
     color: aliceblue;
     border: none;
     border-radius: 3px;
+}
+
+.icon,
+.icon:before,
+.icon:active {
+    background-color: white;
+    color: grey;
+    border: none;
 }
 
 
