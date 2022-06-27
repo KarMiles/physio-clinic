@@ -23,9 +23,7 @@ a {
     border-radius: 3px;
 }
 
-.icon,
-.icon:before,
-.icon:active {
+.icon {
     background-color: white;
     color: grey;
     border: none;
@@ -37,7 +35,7 @@ a {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
+    height: 40vh;
     width: 100%;
 }
 
@@ -51,7 +49,6 @@ a {
 }
 
 .details-image:after {
-    content: "";
     position: absolute;
     top: 0;
     right: 90%;

@@ -20,6 +20,7 @@
     
     <!-- Oryginal style -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/x-icon" href="{{ MEDIA_URL }}favicon.ico">
 
 </head>
 <body  class="d-flex flex-column h-100 main-bg">
@@ -103,6 +104,16 @@
             <p>Educational project.  Author: Karol Mileszko. 2022.</p>
         </div>
     </footer>
+
+    
+    <!-- Message timeout -->
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 5000);
+    </script>
 
 </body>
 </html>
