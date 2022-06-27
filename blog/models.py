@@ -5,11 +5,11 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Live"))
 
 PRIORITY_CHOICES = [
-    ("1 - Top", 1),
-    ("2 - High", 2),
-    ("3 - Normal", 3),
-    ("4 - Low", 4),
-    ("5 - Bottom", 5),
+    ("1 - Top", "Top"),
+    ("2 - High", "High"),
+    ("3 - Normal", "Normal"),
+    ("4 - Low", "Low"),
+    ("5 - Bottom", "Bottom"),
 ]
 
 
