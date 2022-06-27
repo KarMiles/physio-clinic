@@ -12,25 +12,23 @@ PRIORITY_CHOICES = [
     ("5 - Bottom", 5),
 ]
 
-# PRIORITY_CHOICES = [
-#     (1, "Top"),
-#     (2, "High"),
-#     (3, "Normal"),
-#     (4, "Low"),
-#     (5, "Bottom"),
-# ]
-
 
 # Models
 
 class Post(models.Model):
     title = models.CharField(max_length=150, unique=True)
     slug = models.SlugField(max_length=150, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="blog_posts")
+    author = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="blog_posts")
     content = models.TextField()
     featured_image = CloudinaryField('image', default='placeholder')
     excerpt = models.TextField(blank=True)
-    priority = models.CharField(max_length=10, choices=PRIORITY_CHOICES, default="Normal",)
+    priority = models.CharField(
+        max_length=10,
+        choices=PRIORITY_CHOICES,
+        default="Normal",)
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
