@@ -12,6 +12,12 @@ a {
     text-decoration: none;
 }
 
+button {
+    background-color: #408cdd;
+    color: aliceblue;
+    border: none;
+    border-radius: 3px;
+}
 
 /* Navigation */
 
