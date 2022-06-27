@@ -8,6 +8,10 @@ body {
     font-family: Raleway, sans-serif;
 }
 
+h1 {
+    color: #408cdd;
+}
+
 a {
     text-decoration: none;
 }
@@ -17,6 +21,35 @@ button {
     color: aliceblue;
     border: none;
     border-radius: 3px;
+}
+
+
+.details {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
+}
+
+.details-text {
+    position: relative;
+}
+
+.details-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.details-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 90%;
+    height: 100%;
+    width: 100%;
+    z-index: 100;
 }
 
 /* Navigation */

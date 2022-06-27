@@ -1,6 +1,26 @@
 {% extends 'base.html' %} {% block content %}
-<!-- {% load crispy_forms_tags %} -->
+{% load crispy_forms_tags %}
 
-    This is post_detail.html
+<!-- Post -->
+<div class="details">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 details-text">
+                <!-- Post title goes in these h1 tags -->
+                <h1 class="post-title">{{ post.title }}</h1>
+                <!-- Post author goes before the | the post's created date goes after -->
+                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+            </div>
+            <div class="d-none d-md-block col-md-6 details-image">
+                <!-- The featured image URL goes in the src attribute -->
+                {% if "placeholder" in post.featured_image.url %}
+                <img src="{{ MEDIA_URL }}placeholder.jpg" width="100%">
+                {% else %}
+                <img src=" {{ post.featured_image.url }}" width="100%">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock content %}
