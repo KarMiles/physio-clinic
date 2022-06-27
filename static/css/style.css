@@ -12,6 +12,7 @@ a {
     text-decoration: none;
 }
 
+
 /* Navigation */
 
 .navbar {
@@ -20,11 +21,11 @@ a {
 
 .logo {
     font-weight: 800;
-    color: rgb(26, 189, 244);
+    color: #408cdd;
 }
 
 .logo-accent {
-    color: rgb(235, 117, 117);
+    color: #eb7575;
 }
 
 
@@ -73,3 +74,16 @@ footer a :hover {
     padding: 0 3px 5px;
     text-align: center;
 }
+
+
+/* Main page */
+
+.post-link {
+    color: #408cdd;
+}
+
+.post-link:hover,
+.page-link {
+    color: #eb7575;
+}
+

@@ -2,8 +2,9 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 
+from django.contrib import messages
 from .models import Post
-
+from .forms import CommentForm
 
 # Views
 
@@ -11,7 +12,7 @@ class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("priority")
     template_name = "index.html"
-    paginate_by = 12
+    paginate_by = 6
 
 
 class PostDetail(View):
@@ -64,7 +65,8 @@ class PostDetail(View):
                 "comments": comments,
                 "commented": True,
                 "comment_form": comment_form,
-                "liked": liked
+                "liked": liked,
+                "success": 'Comment sent for approval'
             },
         )
 
