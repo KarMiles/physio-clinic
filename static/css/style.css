@@ -29,7 +29,6 @@ a {
     border: none;
 }
 
-
 .details {
     margin-top: 10px;
     overflow: hidden;
@@ -50,9 +49,6 @@ a {
 
 .details-image:after {
     position: absolute;
-    top: 0;
-    right: 90%;
-    height: 100%;
     width: 100%;
     z-index: 100;
 }
