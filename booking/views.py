@@ -1,7 +1,8 @@
 from django.shortcuts import render
+from django.views import generic, View
 
 from .models import Booking
-from .forms import CommentForm
+# from .forms import CommentForm
 
 # Views
 

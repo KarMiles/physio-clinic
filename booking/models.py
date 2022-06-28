@@ -17,5 +17,8 @@ class Booking(models.Model):
     time = models.DateTimeField(blank=True)
     message = models.TextField()
 
+    class Meta:
+        ordering = ['-updated_on']
+
     def __str__(self):
         return f"Booking request for {self.treatment} by {self.user}: {self.message}"

@@ -1,3 +1,13 @@
 from django.contrib import admin
+from .models import Booking
 
-# Register your models here.
+# Models
+
+@admin.register(Booking)
+class BookingAdmin(admin.ModelAdmin):
+
+    list_display = ('updated_on', 'user', 'treatment', 'time', 'message')
+    # ordering("updated_on",)
+    search_fields = ['user', 'treatment', 'message']
+    list_filter = ('treatment', 'updated_on')
+    list_display_links = ('message',)
