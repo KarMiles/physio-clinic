@@ -53,6 +53,14 @@ a {
     z-index: 100;
 }
 
+input {
+    float: right;
+    border-color: lightgray;
+    border-style: solid;
+    border-radius: 3px;
+    background-color: #E8F0FE;
+}
+
 /* Navigation */
 
 .navbar {
