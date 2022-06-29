@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from blog.models import Post
 
+STATUS = ((0, "Pending"), (1, "Closed"))
+
 # Models
 
 class Booking(models.Model):
@@ -25,6 +27,7 @@ class Booking(models.Model):
         on_delete=models.CASCADE,
         related_name='booking_email')
     # email = models.EmailField(blank=True)
+    status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
         ordering = ['-updated_on']

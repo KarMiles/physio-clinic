@@ -4,16 +4,41 @@
 
 This will be content of booking.html
 
-    {% if user.is_authenticated %}
+{% if user.is_authenticated %}
 
-    <h3>Message us to book an appointment:</h3>
-    <p>Posting as: {{ user.username }}</p>
-    <form method="post" style="margin-top: 1.5em;">
-        {{ comment_form | crispy }}
-        {% csrf_token %}
-        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-    </form>
+<h3>Message us to book an appointment:</h3>
 
-    {% endif %}
+
+    <!-- Bookings -->
+    <div class="row">
+        <div class="col-md-8 card mb-4  mt-3 ">
+
+            <h3>Your current bookings:</h3>
+            <div class="card-body">
+                <!-- Displaying current bookings -->
+                {% for booking in bookings %}
+                <div>
+                    <p class="font-weight-bold">
+                        {{ booking.treatment }}
+                        <span class=" text-muted font-weight-normal">
+                            {{ booking.updated_on }}
+                        </span> wrote:
+                    </p>
+                    {{ booking.message | linebreaks }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="col-md-4 card mb-4  mt-3 ">
+            <div class="card-body">
+
+                
+            </div>
+        </div>
+    </div>
+
+
+
+{% endif %}
 
 {% endblock %}
