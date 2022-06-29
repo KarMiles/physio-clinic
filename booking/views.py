@@ -10,4 +10,3 @@ class BookingList(generic.ListView):
     model = Booking
     queryset = Booking.objects.order_by("updated_on")
     template_name = "booking.html"
-
