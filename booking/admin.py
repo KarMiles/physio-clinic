@@ -6,7 +6,7 @@ from .models import Booking
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
 
-    list_display = ('updated_on', 'user', 'treatment', 'time', 'message')
+    list_display = ('updated_on', 'user', 'treatment', 'time', 'message', 'email')
     search_fields = ['user', 'treatment', 'message']
     list_filter = ('treatment', 'updated_on')
     list_display_links = ('message',)

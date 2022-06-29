@@ -28,7 +28,7 @@ class Post(models.Model):
     priority = models.CharField(
         max_length=10,
         choices=PRIORITY_CHOICES,
-        default="Normal",)
+        default="3 - Normal",)
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -45,7 +45,10 @@ class Post(models.Model):
     
 
 class Comment(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(
+        Post,
+        on_delete=models.CASCADE,
+        related_name='comments')
     author = models.CharField(max_length=50)
     email = models.EmailField(blank=True)
     body = models.TextField()

@@ -4,4 +4,16 @@
 
 This will be content of booking.html
 
+    {% if user.is_authenticated %}
+
+    <h3>Message us to book an appointment:</h3>
+    <p>Posting as: {{ user.username }}</p>
+    <form method="post" style="margin-top: 1.5em;">
+        {{ comment_form | crispy }}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+    </form>
+
+    {% endif %}
+
 {% endblock %}
