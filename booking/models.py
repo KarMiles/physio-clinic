@@ -4,12 +4,12 @@ from blog.models import Post
 
 STATUS = ((0, "Pending"), (1, "Closed"))
 
+
 # Models
 
 class Booking(models.Model):
 
-    created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
+    booking_id = models.IntegerField(primary_key=True)
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -28,10 +28,12 @@ class Booking(models.Model):
         related_name='booking_email')
     # email = models.EmailField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ['-updated_on']
-        # email = models.EmailField(email)
 
     def __str__(self):
-        return f"Booking request for {self.treatment} by {self.user}: {self.message}."
+        # return f"Booking request for {self.treatment} by {self.user}: {self.message}."
+        return self.message
