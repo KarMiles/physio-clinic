@@ -16,16 +16,15 @@ class BookingList(generic.ListView):
 
 class BookingDetail(View):
 
-    def get(self, request, *args, **kwargs):
+    def get(self, request, booking_id, *args, **kwargs):
         queryset = Booking.objects.filter(status=0)
-        booking = get_object_or_404(queryset)
-        booking_id = booking.id
+        bookings = get_object_or_404(queryset, pk=booking_id)
         
         return render(
             request,
             "booking.html",
             {
-                "booking": booking,
+                "bookings": bookings,
                 "booking_form": BookingForm()
             },
         )
@@ -33,7 +32,7 @@ class BookingDetail(View):
     def post(self, request, booking_id, *args, **kwargs):
 
         queryset = Booking.objects.filter(status=0)
-        post = get_object_or_404(queryset, booking_id=booking_id)
+        booking = get_object_or_404(queryset, pk=booking_id)
 
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
@@ -41,7 +40,7 @@ class BookingDetail(View):
             booking_form.instance.name = request.user.username
             booking = booking_form.save(commit=False)
             booking.booking = booking
-            comment.save()
+            booking.save()
         else:
             booking_form = BookingForm()
         
@@ -49,7 +48,7 @@ class BookingDetail(View):
             request,
             "booking.html",
             {
-                "booking": booking,
+                "bookings": bookings,
                 "booking_form": BookingForm()
             }
         )
