@@ -18,7 +18,8 @@ class BookingDetail(View):
 
     def get(self, request, *args, **kwargs):
         queryset = Booking.objects.filter(status=0)
-        booking = get_object_or_404(queryset, booking_id=booking_id)
+        booking = get_object_or_404(queryset)
+        booking_id = booking.id
         
         return render(
             request,

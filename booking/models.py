@@ -9,8 +9,6 @@ STATUS = ((0, "Pending"), (1, "Closed"))
 
 class Booking(models.Model):
 
-    booking_id = models.BigAutoField(primary_key=True)
-    # slug = models.SlugField(max_length=250, unique=True)
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
