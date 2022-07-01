@@ -7,6 +7,7 @@ from .forms import BookingForm
 
 # Views
 
+
 class BookingList(generic.ListView):
     model = Booking
     queryset = Booking.objects.filter(status=0).order_by("updated_on")

@@ -22,9 +22,14 @@ This will be content of booking.html
                         {{ booking.treatment }}
                         <span class=" text-muted font-weight-normal">
                             {{ booking.updated_on }}
-                        </span> wrote:
+                        </span>
                     </p>
-                    {{ booking.message | linebreaks }}
+                    <p>
+                        {{ booking.user }} wrote:
+                    </p>
+                    <p>
+                        {{ booking.message | linebreaks }}
+                    </p>
                 </div>
                 {% endfor %}
             </div>

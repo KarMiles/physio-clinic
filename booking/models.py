@@ -9,7 +9,8 @@ STATUS = ((0, "Pending"), (1, "Closed"))
 
 class Booking(models.Model):
 
-    booking_id = models.IntegerField(primary_key=True)
+    booking_id = models.BigAutoField(primary_key=True)
+    # slug = models.SlugField(max_length=250, unique=True)
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -35,5 +36,4 @@ class Booking(models.Model):
         ordering = ['-updated_on']
 
     def __str__(self):
-        # return f"Booking request for {self.treatment} by {self.user}: {self.message}."
         return self.message
