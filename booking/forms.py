@@ -11,5 +11,4 @@ class BookingForm(forms.ModelForm):
             'treatment',
             'time',
             'email',
-            'message',
             )

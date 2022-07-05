@@ -7,7 +7,6 @@ from .forms import BookingForm
 
 # Views
 
-
 class BookingList(generic.ListView):
     model = Booking
     queryset = Booking.objects.filter(status=0).order_by("updated_on")
@@ -19,7 +18,7 @@ class BookingDetail(View):
     def get(self, request, booking_id, *args, **kwargs):
         queryset = Booking.objects.filter(status=0)
         bookings = get_object_or_404(queryset, pk=booking_id)
-        
+
         return render(
             request,
             "booking.html",
@@ -32,7 +31,7 @@ class BookingDetail(View):
     def post(self, request, booking_id, *args, **kwargs):
 
         queryset = Booking.objects.filter(status=0)
-        booking = get_object_or_404(queryset, pk=booking_id)
+        booking = get_object_or_404(queryset, pk=Booking.user)
 
         booking_form = BookingForm(data=request.POST)
         if booking_form.is_valid():
