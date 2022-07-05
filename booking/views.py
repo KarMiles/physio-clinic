@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Booking
 from .forms import BookingForm
@@ -7,10 +8,14 @@ from .forms import BookingForm
 
 # Views
 
-class BookingList(generic.ListView):
+class BookingList(LoginRequiredMixin, generic.ListView):
     model = Booking
-    queryset = Booking.objects.filter(status=0).order_by("updated_on")
+    # queryset = Booking.objects.filter(status=0).order_by("updated_on")
     template_name = "booking.html"
+    context_object_name = 'bookings'
+
+    def get_queryset(self):
+        return Booking.objects.filter(status=0, user=self.request.user).order_by("updated_on")
 
 
 class BookingDetail(View):
