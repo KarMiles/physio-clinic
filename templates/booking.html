@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 
@@ -8,13 +9,13 @@
 <h3>Message us to book an appointment:</h3>
 
 
-    <!-- Current bookings -->
+    <!-- Bookings -->
     <div class="row">
         <div class="col-md-4 card mb-4  mt-3 ">
 
+            <!-- Displaying current bookings -->
             <h5>Your current requests:</h5>
             <div class="card-body">
-                <!-- Displaying current bookings -->
                 {% for booking in bookings %}
                 <div>
                     <h4 class="font-weight-bold">
@@ -25,7 +26,6 @@
                             Request sent: {{ booking.updated_on }}
                         </span>
                     </p>
-                    
                     <p>
                         {{ booking.user }} wrote:
                     </p>
@@ -35,14 +35,23 @@
                 </div>
                 {% endfor %}
             </div>
+
         </div>
 
+        <!-- New booking request form -->
         <div class="col-md-8 card mb-4  mt-3 ">
             <div class="card-body">
-                <!-- New booking request form -->
-                Place for request form.
+                <p>Request by: {{ user.username }}</p>
+                    <form method="post">
+                        {{ booking_form | crispy }}
+                        <!-- {% crispy booking_form %} -->
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    </form>
+
             </div>
         </div>
+
     </div>
 
 

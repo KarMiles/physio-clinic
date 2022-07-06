@@ -19,12 +19,12 @@ class Booking(models.Model):
         related_name='booking_treatment')
     time = models.DateTimeField(blank=True)
     message = models.TextField()
-    email = models.ForeignKey(
-        User,
-        blank=True,
-        null=True,
-        on_delete=models.CASCADE,
-        related_name='booking_email')
+    # email = models.ForeignKey(
+    #     User,
+    #     blank=True,
+    #     null=True,
+    #     on_delete=models.CASCADE,
+    #     related_name='booking_email')
     # email = models.EmailField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
