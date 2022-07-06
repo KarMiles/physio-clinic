@@ -2,28 +2,30 @@
 
 {% block content %}
 
-This will be content of booking.html
 
 {% if user.is_authenticated %}
 
 <h3>Message us to book an appointment:</h3>
 
 
-    <!-- Bookings -->
+    <!-- Current bookings -->
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
+        <div class="col-md-4 card mb-4  mt-3 ">
 
-            <h3>Your current bookings:</h3>
+            <h5>Your current requests:</h5>
             <div class="card-body">
                 <!-- Displaying current bookings -->
                 {% for booking in bookings %}
                 <div>
-                    <p class="font-weight-bold">
+                    <h4 class="font-weight-bold">
                         {{ booking.treatment }}
+                    </h4>
+                    <p>
                         <span class=" text-muted font-weight-normal">
-                            {{ booking.updated_on }}
+                            Request sent: {{ booking.updated_on }}
                         </span>
                     </p>
+                    
                     <p>
                         {{ booking.user }} wrote:
                     </p>
@@ -34,10 +36,11 @@ This will be content of booking.html
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-4 card mb-4  mt-3 ">
-            <div class="card-body">
 
-                
+        <div class="col-md-8 card mb-4  mt-3 ">
+            <div class="card-body">
+                <!-- New booking request form -->
+                Place for request form.
             </div>
         </div>
     </div>
