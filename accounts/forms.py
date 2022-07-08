@@ -9,8 +9,8 @@ from allauth.account.utils import setup_user_email
 # Forms
 
 class NewUserForm(SignupForm):
-	first_name = forms.CharField(label='First name', required=False, max_length=150, widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'First name'}))
-	last_name = forms.CharField(required=False, max_length=150, widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'Last name'}))
+	first_name = forms.CharField(label='First name (optional)', required=False, max_length=150, widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'First name'}))
+	last_name = forms.CharField(label='First name (optional)', required=False, max_length=150, widget=forms.TextInput(attrs={'type': 'text', 'placeholder': 'Last name'}))
 
 	# class Meta:
 	# 	model = User
