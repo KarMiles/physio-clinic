@@ -24,8 +24,8 @@ urlpatterns = [
     path("", include("blog.urls"), name="blog-urls"),
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
-    # path(r'^booking/', include('booking.urls')),
     path('booking/', include('booking.urls')),
+    path('register/', include('accounts.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # for signup add to address: /accounts/signup
