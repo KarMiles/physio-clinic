@@ -1,12 +1,28 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
+from django.urls import reverse_lazy
+from django.utils.text import slugify
 
-# from django.contrib import messages
 from .models import Post
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 # Views
+# TODO add mixin demanding logging in (to post.author)
+
+class CreatePost(generic.CreateView):
+    template_name = "create_post.html"
+    form_class = PostForm
+    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        post = form.instance
+        post.author = self.request.user
+        post.slug = slugify(post.title)
+        # post.save()
+        # super() relates to CreateView - higher class:
+        return super().form_valid(form)
+
 
 class PostList(generic.ListView):
     model = Post

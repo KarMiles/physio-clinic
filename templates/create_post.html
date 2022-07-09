@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    {% if user.is_authenticated %}
+
+        <h3 class="mt-3">Message us to book an appointment:</h3>
+
+            <!-- New booking request form -->
+            <div class="col-md-8 card mb-4 mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Request by: {{ user.username }}</h5>
+                    <form method="post">
+                        {{ form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+
+                    </form>
+                </div>
+            </div>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+{% endblock %}

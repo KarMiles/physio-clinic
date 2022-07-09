@@ -8,5 +8,5 @@ class BookingAdmin(admin.ModelAdmin):
 
     list_display = ('updated_on', 'user', 'treatment', 'time', 'message')
     search_fields = ['user', 'treatment', 'message']
-    list_filter = ('treatment', 'updated_on')
+    list_filter = ('status', 'treatment', 'updated_on')
     list_display_links = ('message',)
