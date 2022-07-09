@@ -24,6 +24,24 @@ class CreatePost(generic.CreateView):
         return super().form_valid(form)
 
 
+class EditPost(generic.UpdateView):
+    template_name = "create_post.html"
+    form_class = PostForm
+    # success_url = reverse_lazy('home')
+    queryset = Post.objects.all()
+
+    def form_valid(self, form):
+        post = form.instance
+        post.author = self.request.user
+        post.slug = slugify(post.title)
+        # post.save()
+        # super() relates to CreateView - higher class:
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse('post_detail', args=[self.kwargs['slug']])
+
+
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("priority")

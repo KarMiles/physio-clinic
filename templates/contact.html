@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    {% if user.is_authenticated %}
+        <div class="col-md-8 card mb-4 mt-3">
+            <div class="card-body">
+                <h5 class="card-title">Hello, {{ user.username }}!</h5>
+            </div>
+        </div>
+    {% endif %}
+
+        <h3 class="mt-3">How to contact us:</h3>
+
+            <!-- Contact us information -->
+            This will be contact-us information.
+
+        </div>
+
+        
+
+    </div>
+
+{% endblock %}
