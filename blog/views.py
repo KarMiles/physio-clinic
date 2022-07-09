@@ -7,7 +7,9 @@ from django.utils.text import slugify
 from .models import Post
 from .forms import CommentForm, PostForm
 
+
 # Views
+
 # TODO add mixin demanding logging in (to post.author)
 
 class CreatePost(generic.CreateView):
