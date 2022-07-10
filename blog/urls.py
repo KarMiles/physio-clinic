@@ -2,6 +2,8 @@ from django.urls import path
 from . import views
 
 
+# URL patterns for the app blog
+
 urlpatterns = [
     path("", views.PostList.as_view(), name="home"),
     path("post", views.CreatePost.as_view(), name="post_create"),

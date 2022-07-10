@@ -10,19 +10,21 @@
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
                 <p class="card-text col-md-9 text-secondary">{{ post.excerpt }}</p>
             </div>
-            <div class="d-none d-md-block col-md-6 details-image">
+            <div class="d-none d-sm-block col-md-6 details-image">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="{{ MEDIA_URL }}placeholder.jpg" width="100%">
+                <img src="{{ MEDIA_URL }}placeholder.jpg">
                 {% else %}
-                <img src=" {{ post.featured_image.url }}" width="100%">
+                <img src=" {{ post.featured_image.url }}">
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
 
-<!-- Likes -->
+<!-- Social -->
 <div class="container">
+
+    <!-- Likes -->
     <div class="row">
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
@@ -36,31 +38,25 @@
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                                 {% csrf_token %}
                                 {% if liked %}
-
                                     <button type="submit" name="blockpost_id" value="{{post.slug}}" class="icon">
                                         <i class="fas fa-heart"></i>
                                     </button>
-
                                 {% else %}
-
                                     <button type="submit" name="blockpost_id" value="{{post.slug}}" class="icon">
                                         <i class="far fa-heart"></i>
                                     </button>
-
                                 {% endif %}
-                                
                             </form>
                             {% else %}
-
                             <span class="text-secondary"><i class="far fa-heart"></i></span>
                             {% endif %}
 
-                            <!-- The number of likes goes before the closing strong tag -->
+                            <!-- Likes count -->
                             <span class="text-secondary"> {{ post.number_of_likes }} </span>
                         </strong>
-                        
                     </div>
 
+                    <!-- Comment count -->
                     <div class="col-1">
                         {% with comments.count as total_comments %}
                             <strong class="text-secondary"><i class="far fa-comments"></i>
@@ -68,24 +64,32 @@
                             </strong>
                         {% endwith %}
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Link for editing post -->
+    {% if user.is_authenticated and user.is_staff %}
+        <a href="{% url 'post_edit' post.slug %}" class="btn btn-primary btn-lg">Edit post</a>
+
+    {% endif %}
+
+    <!-- Horisontal ruler -->
     <div class="row">
         <div class="col">
             <hr>
         </div>
     </div>
 
-
     <!-- Comments -->
     <div class="row">
-        <div class="col-md-8 card mb-4  mt-3 ">
-
+        
+        <!-- Displaying comments -->  
+        <div class="col-md-8 card mb-4  mt-3 "> 
             <h3>Comments:</h3>
             <div class="card-body">
-                <!-- Displaying comments -->
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
@@ -99,18 +103,16 @@
                 {% endfor %}
             </div>
         </div>
+
+        <!-- Inserting comments -->
         <div class="col-md-4 card mb-4  mt-3 ">
             <div class="card-body">
-
-                <!-- Inserting comments -->
                 {% if commented %}
                     <div class="alert alert-primary" role="alert">
                         Your comment is awaiting approval
                     </div>
-
                 {% else %}
                     {% if user.is_authenticated %}
-
                     <h3>Leave a comment:</h3>
                     <p>Posting as: {{ user.username }}</p>
                     <form method="post" style="margin-top: 1.5em;">
@@ -118,13 +120,11 @@
                         {% csrf_token %}
                         <button type="submit" class="btn btn-signup btn-lg">Submit</button>
                     </form>
-
                     {% endif %}
                 {% endif %}
             </div>
         </div>
     </div>
 </div>
-
 
 {% endblock content %}

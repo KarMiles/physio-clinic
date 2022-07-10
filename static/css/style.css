@@ -42,9 +42,18 @@ a {
     position: relative;
 }
 
+.image-container {
+    position: relative;
+}
+
 .details-image {
     position: relative;
-    overflow: hidden;
+}
+
+.details-image img {
+    object-fit: cover;
+    width: 100%;
+    min-height: 100%;
 }
 
 .details-image:after {

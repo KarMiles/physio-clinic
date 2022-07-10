@@ -21,10 +21,13 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 
 
+# URL patterns for the project physioproject
+
 urlpatterns = [
     path('admin', admin.site.urls),
     path("", include("blog.urls"), name="blog-urls"),
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
     path('booking/', include('booking.urls')),
+    path('edit/', include('blog.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

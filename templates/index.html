@@ -41,6 +41,11 @@
         </div>
     </div>
 
+    <!-- Link for adding new post -->
+    {% if user.is_authenticated and user.is_staff %}
+        <a href="{% url 'post_create' %}" class="btn btn-primary btn-lg">New post</a>
+    {% endif %}
+
     <!-- Navigation for paginated view -->
     {% if is_paginated %}
         <nav aria-label="Page navigation">
