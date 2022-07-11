@@ -15,7 +15,7 @@ from .forms import CommentForm, PostForm
 class CreatePost(generic.CreateView):
     template_name = "create_post.html"
     form_class = PostForm
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('blog_home')
 
     def form_valid(self, form):
         post = form.instance

@@ -70,6 +70,17 @@ input {
     background-color: #E8F0FE;
 }
 
+.alert-align {
+    position: relative;
+}
+
+.alert-align button {
+    position: absolute;
+    display: inline;
+    right: 12px;
+}
+
+
 /* Navigation */
 
 .navbar {
