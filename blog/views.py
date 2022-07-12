@@ -1,15 +1,25 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.utils.text import slugify
-from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin, AccessMixin
+# from django.contrib import messages
 
 from .models import Post
 from .forms import CommentForm, PostForm
 
 
 # Views
+
+class StaffRequiredMixin(AccessMixin):
+    """Verify that the current user is authenticated."""
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_staff:
+            return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)
+
+
 
 # TODO add mixin demanding logging in (to post.author)?
 
@@ -19,13 +29,16 @@ class CreatePost(generic.CreateView):
     success_url = reverse_lazy('blog_home')
 
     def form_valid(self, form):
-        post = form.instance
-        post.author = self.request.user
-        post.slug = slugify(post.title)
+        self.object = form.instance
+        self.object.author = self.request.user
+        self.object.slug = slugify(self.object.title)
         return super().form_valid(form)
 
+    def get_success_url(self):
+        return reverse('post_detail', args=[self.object.slug])
 
-class EditPost(generic.UpdateView):
+
+class EditPost(LoginRequiredMixin, StaffRequiredMixin, generic.UpdateView):
     template_name = "create_post.html"
     form_class = PostForm
     # success_url = reverse_lazy('home')
@@ -43,16 +56,31 @@ class EditPost(generic.UpdateView):
         return reverse('post_detail', args=[self.kwargs['slug']])
 
 
-class DeletePost(generic.DeleteView):
+class DeletePost(LoginRequiredMixin, StaffRequiredMixin, generic.DeleteView):
     
-    def get(self, request, slug, *args, **kwargs):
+    success_url = reverse_lazy('blog_home')
+    queryset = Post.objects.all()
+    template_name = 'post_confirm_delete.html'
 
-        queryset = Post.objects.all()
-        post = get_object_or_404(queryset, slug=slug)
-        return super().post
 
-    def get_success_url(self):
-        return HttpResponseRedirect('blog_home')
+
+    # def get(self, request, slug, *args, **kwargs):
+
+    #     queryset = Post.objects.all()
+    #     post = get_object_or_404(queryset, slug=slug)
+    #     # return super().post
+    #     return redirect(reverse('post_delete', args=[self.kwargs['slug']]))
+
+    # def post(self, request, slug, *args, **kwargs):
+    #     queryset = Post.objects.all()
+    #     post = get_object_or_404(queryset, slug=slug)
+    #     # post.delete()
+    #     return post.super()
+
+
+
+    # def get_success_url(self):
+    #     return HttpResponseRedirect('blog_delete')
 
 
 class PostList(generic.ListView):

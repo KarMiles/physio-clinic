@@ -24,6 +24,14 @@ a {
     margin: 10px 3px;
 }
 
+.btn-attn {
+    background-color: #eb7575;
+    color: aliceblue;
+    border: none;
+    border-radius: 3px;
+    margin: 10px 3px;
+}
+
 .icon {
     background-color: white;
     color: grey;

@@ -76,6 +76,12 @@
 
     {% endif %}
 
+        <!-- Link for deleting post -->
+        {% if user.is_authenticated and user.is_staff %}
+        <a href="{% url 'post_delete' post.slug %}" class="btn btn-danger btn-attn btn-lg">Delete post</a>
+
+    {% endif %}
+
     <!-- Horisontal ruler -->
     <div class="row">
         <div class="col">
