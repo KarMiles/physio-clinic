@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
 from django.utils.text import slugify
+from django.contrib import messages
 
 from .models import Post
 from .forms import CommentForm, PostForm
@@ -21,8 +22,6 @@ class CreatePost(generic.CreateView):
         post = form.instance
         post.author = self.request.user
         post.slug = slugify(post.title)
-        # post.save()
-        # super() relates to CreateView - higher class:
         return super().form_valid(form)
 
 
@@ -42,6 +41,18 @@ class EditPost(generic.UpdateView):
 
     def get_success_url(self):
         return reverse('post_detail', args=[self.kwargs['slug']])
+
+
+class DeletePost(generic.DeleteView):
+    
+    def get(self, request, slug, *args, **kwargs):
+
+        queryset = Post.objects.all()
+        post = get_object_or_404(queryset, slug=slug)
+        return super().post
+
+    def get_success_url(self):
+        return HttpResponseRedirect('blog_home')
 
 
 class PostList(generic.ListView):
