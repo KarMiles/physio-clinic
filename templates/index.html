@@ -48,7 +48,7 @@
                                 </div>
 
                                 <!-- Show post Live/Draft status -->
-                                {% if user.is_authenticated and user.is_staff %}
+                                {% if user.is_staff %}
                                     <div class="row card-text text-muted ms-1">
                                         Status: {{ post.get_status_display }}
                                     </div>

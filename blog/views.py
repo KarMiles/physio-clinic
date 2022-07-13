@@ -51,6 +51,10 @@ class EditPost(LoginRequiredMixin, StaffRequiredMixin, generic.UpdateView):
         post = form.instance
         post.author = self.request.user
         post.slug = slugify(post.title)
+        messages.add_message(
+            self.request,
+            messages.INFO,
+            'Post submitted successfully!')
         # post.save()
         # super() relates to CreateView - higher class:
         return super().form_valid(form)
