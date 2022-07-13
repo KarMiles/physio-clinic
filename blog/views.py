@@ -13,15 +13,13 @@ from .forms import CommentForm, PostForm
 # Views
 
 class StaffRequiredMixin(AccessMixin):
-    """Verify that the current user is authenticated."""
+    """Verify that the current user
+    is authenticated as member of staff."""
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_staff:
             return self.handle_no_permission()
         return super().dispatch(request, *args, **kwargs)
 
-
-
-# TODO add mixin demanding logging in (to post.author)?
 
 class CreatePost(generic.CreateView):
     template_name = "create_post.html"
@@ -33,7 +31,10 @@ class CreatePost(generic.CreateView):
         self.object.author = self.request.user
         self.object.slug = slugify(self.object.title)
         response = super().form_valid(form)
-        messages.add_message(self.request, messages.INFO, 'Hello world.')
+        messages.add_message(
+            self.request,
+            messages.INFO,
+            'Post created successfully!')
         return response
 
     def get_success_url(self):
@@ -65,26 +66,6 @@ class DeletePost(LoginRequiredMixin, StaffRequiredMixin, generic.DeleteView):
     template_name = 'post_confirm_delete.html'
 
 
-
-    # def get(self, request, slug, *args, **kwargs):
-
-    #     queryset = Post.objects.all()
-    #     post = get_object_or_404(queryset, slug=slug)
-    #     # return super().post
-    #     return redirect(reverse('post_delete', args=[self.kwargs['slug']]))
-
-    # def post(self, request, slug, *args, **kwargs):
-    #     queryset = Post.objects.all()
-    #     post = get_object_or_404(queryset, slug=slug)
-    #     # post.delete()
-    #     return post.super()
-
-
-
-    # def get_success_url(self):
-    #     return HttpResponseRedirect('blog_delete')
-
-
 class PostList(generic.ListView):
     model = Post
     # queryset = Post.objects.filter(status=1).order_by("priority")
@@ -96,8 +77,6 @@ class PostList(generic.ListView):
             return Post.objects.order_by("priority")
         else:
             return Post.objects.filter(status=1).order_by("priority")
-
-        
 
 
 class PostDetail(View):

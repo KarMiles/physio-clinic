@@ -26,9 +26,34 @@
                                     <h2 class="card-title">{{ post.title }}</h2>
                                     <p class="card-text">{{ post.excerpt }}</p>
                                 </a>
-                                <hr />
-                                <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                    {{ post.number_of_likes }}</p>
+                                <hr/>
+
+                                
+                                <div class="row ms-1 card-text text-muted h6">
+
+                                    <!-- Likes count -->
+                                    <div class="col-2">
+                                        <i class="far fa-heart"></i>
+                                        {{ post.number_of_likes }}
+                                    </div>    
+
+                                    <!-- Comment count -->
+                                    <div class="col-2">
+                                        {% with comments.count as total_comments %}
+                                        <i class="far fa-comments"></i>
+                                        {{ total_comments }}
+                                        {% endwith %}
+                                    </div>
+                                    
+                                </div>
+
+                                <!-- Show post Live/Draft status -->
+                                {% if user.is_authenticated and user.is_staff %}
+                                    <div class="row card-text text-muted ms-1">
+                                        Status: {{ post.get_status_display }}
+                                    </div>
+                                {% endif %}
+                                
                             </div>
                         </div>
                     </div>
