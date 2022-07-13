@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'booking',
     'accounts',
     'contact',
+    'django_contact_form',
 ]
 
 SITE_ID = 1

@@ -52,10 +52,9 @@
                                     {% if post.status %}
                                         <div class="row card-text text-muted ms-1">
                                     {% else %}
+                                        <!-- Format red if status is Draft -->
                                         <div class="row card-text ms-1 text-danger">
                                     {% endif %}
-
-                                    
                                         Status: {{ post.get_status_display }}
                                     </div>
                                 {% endif %}
@@ -82,10 +81,10 @@
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
                 {% if page_obj.has_previous %}
-                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> PREVIOUS </a></li>
+                    <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link"> <<< </a></li>
                 {% endif %}
                 {% if page_obj.has_next %}
-                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT </a></li>
+                    <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> >>> </a></li>
                 {% endif %}
             </ul>
         </nav>
