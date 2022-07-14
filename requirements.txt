@@ -8,6 +8,7 @@ django-booking==0.7.2
 django-bootstrap-datepicker-plus==4.0.0
 django-bootstrap4==22.1
 django-cloudinary-storage==0.3.0
+django-contact-form==2.0.1
 django-countries==7.3.2
 django-crispy-forms==1.14.0
 django-hvad==1.8.0

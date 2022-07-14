@@ -41,10 +41,24 @@ Due to ever-enhancing skills of the Clinic's staff, new staff members joining th
 Client users of this service can read descriptions and express their attitudes about specific treatments through likes and comments. They may also book treatments and contact the Clinic for general queries.
 
 # 1. User Experience (UX) <a name="ux"></a> 
-### **Project goals:**
+### **Project goals**
 The main goal of the project is to provide a platform for engaging prospective and current clients interested in using PhysioClinic's offering for enhancing the state of their health. This should be achieved through several sub-goals:
 - To enable staff users to post, edit, read and delete content related to company's offering.
 - To enable registered users to comment and like specific treatments and read other users' input.
 - To enable all users to read about company's offering and see other users' reviews, comments and likes.
 - To enable registered users contact the company to book specific treatments.
 - To enable all users to contact the company for any reason.
+
+### **Site onwer goals**
+- To ensure the company's up-to-date offering is broadcast in a timely and efficient manner.
+- To increase prospective and current users' interest in the offering and to promote sales through encouraging engagement within the community.
+- To maximise customers' retainment.
+- To promote knowledge on benefits of treatments on offer.
+- To receive requests for booking.
+- To enable custommer - company correspondence.
+- To build customer database.
+- To differenciate between different kinds of users in terms of access and ability to edit and delete information.
+- To supply access to the service on different kinds of devices.
+
+### **User goals**
+

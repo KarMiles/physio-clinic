@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 
 from django_contact_form.views import ContactFormView
 
-from .forms import ContactForm
+from .forms import ModelContactForm
 
 
 # URL patterns for the app contact
@@ -16,9 +16,9 @@ urlpatterns = [
     path(
         'contact',
         ContactFormView.as_view(
-            form_class=ContactForm
+            form_class=ModelContactForm
         ),
-        name='django_contact_form'),
+        name='contact'),
     path(
         'contact/sent/',
         TemplateView.as_view(
