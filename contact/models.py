@@ -1,8 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Models
 
+# Models
 
 STATUS = ((0, "Pending"), (1, "Closed"))
 

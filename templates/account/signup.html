@@ -9,14 +9,14 @@
 <div class="container">
   
   <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div class="col-md-6 mt-3 offset-md-3">
       <h1>{% trans "Sign Up" %}</h1>
       <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-md-8 mt-3 offset-md-2">
+    <div class="col-md-6 mt-3 offset-md-3">
       <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
         {% csrf_token %}
         {{ form.as_p }}

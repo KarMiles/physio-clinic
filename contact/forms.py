@@ -4,16 +4,8 @@ from django_contact_form.forms import ContactForm
 
 from .models import Contact
 
-# Forms
 
-# class ContactForm(forms.ModelForm):
-#     class Meta:
-#         model = Contact
-#         fields = (
-#             'name',
-#             'from_email',
-#             'body',
-#         )
+# Forms
 
 class ModelContactForm(ContactForm):
 
@@ -25,7 +17,7 @@ class ModelContactForm(ContactForm):
             subject=data['subject'],
             body=data['message'])
         # Uncomment when email functionality operational:
-        super().save(fail_silently=True)
+        super().save(fail_silently=False)
 
 
 # name = models.ForeignKey(
