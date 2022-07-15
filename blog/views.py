@@ -48,9 +48,12 @@ class EditPost(LoginRequiredMixin, StaffRequiredMixin, generic.UpdateView):
     queryset = Post.objects.all()
 
     def form_valid(self, form):
-        post = form.instance
-        post.author = self.request.user
-        post.slug = slugify(post.title)
+        self.object = form.instance
+        self.object.author = self.request.user
+        self.object.slug = slugify(self.object.title)
+        # post = form.instance
+        # post.author = self.request.user
+        # post.slug = slugify(post.title)
         messages.add_message(
             self.request,
             messages.INFO,
@@ -59,8 +62,11 @@ class EditPost(LoginRequiredMixin, StaffRequiredMixin, generic.UpdateView):
         # super() relates to CreateView - higher class:
         return super().form_valid(form)
 
+    # def get_success_url(self):
+    #     return reverse('post_detail', args=[self.kwargs['slug']])
+
     def get_success_url(self):
-        return reverse('post_detail', args=[self.kwargs['slug']])
+        return reverse('post_detail', args=[self.object.slug])
 
 
 class DeletePost(LoginRequiredMixin, StaffRequiredMixin, generic.DeleteView):

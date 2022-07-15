@@ -9,7 +9,7 @@ STATUS = ((0, "Pending"), (1, "Closed"))
 class Contact(models.Model):
 
     name = models.CharField(max_length=150)
-    from_email = models.EmailField(max_length=320)
+    email = models.EmailField(max_length=320)
     subject = models.CharField(max_length=255)
     body = models.TextField(max_length=3000)
     created_on = models.DateTimeField(auto_now_add=True)

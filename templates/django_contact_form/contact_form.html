@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% load i18n %}
 
@@ -18,12 +19,16 @@
     <div class="col-md-6 mt-3 offset-md-3">
       <form class="signup" id="contact_form" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        {{ form | crispy }}
         <button class="btn" type="submit">{% trans "Send" %}</button>
       </form>
     </div>
   </div>
 
 </div>
+
+
+<!-- <iframe height="800" src="https://my.forms.app/form/62d145d1971e3e097d3ee76e"" title="contact_form_zappier"></iframe> -->
+
 
 {% endblock %}
