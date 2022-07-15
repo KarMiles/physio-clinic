@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views import generic, View
+from django.shortcuts import render, redirect
+from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.contrib import messages
@@ -16,7 +16,10 @@ class BookingList(LoginRequiredMixin, generic.ListView):
     context_object_name = 'bookings'
 
     def get_queryset(self):
-        return Booking.objects.filter(status=0, user=self.request.user).order_by("updated_on")
+        return Booking.objects.filter(
+            status=0,
+            user=self.request.user
+            ).order_by("updated_on")
 
     def get(self, *args, **kwargs):
 
@@ -34,11 +37,12 @@ class BookingList(LoginRequiredMixin, generic.ListView):
         booking_form = BookingForm(data=self.request.POST)
         if booking_form.is_valid():
             booking_form.instance.user = self.request.user
-            booking = booking_form.save()
+            # booking = booking_form.save()
+            booking_form.save()
             messages.add_message(
                 self.request,
                 messages.INFO,
-                'Booking request submitted! We will respond shortly.')
+                'Booking request submitted!  We will respond shortly.')
             return redirect(reverse('booking'))
 
         else:
