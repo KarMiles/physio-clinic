@@ -15,7 +15,6 @@ class ModelContactForm(ContactForm):
                 'email': request.user.email,
                 'name': request.user.get_full_name() or request.user.username
             }
-        
         super().__init__(data, files, request, recipient_list, *args, **kwargs)
 
     def save(self, fail_silently=False):
@@ -28,26 +27,3 @@ class ModelContactForm(ContactForm):
             body=data['message'])
         # Uncomment when email functionality operational:
         super().save(fail_silently=False)
-
-
-# name = models.ForeignKey(
-#         User,
-#         on_delete=models.CASCADE,
-#         related_name="blog_posts")
-
-# widget=forms.TextInput(attrs={
-# 			'type': 'text',
-# 			'placeholder': name
-# 			})
-
-
-# SIMPLE VERSION
-
-# class ContactForm(forms.ModelForm):
-#     class Meta:
-#         model = Contact
-#         fields = (
-#             'name',
-#             'email',
-#             'body',
-#         )
