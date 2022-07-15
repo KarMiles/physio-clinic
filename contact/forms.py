@@ -9,7 +9,15 @@ from .models import Contact
 
 class ModelContactForm(ContactForm):
 
-    def __init__(self, data=None, files=None, request=None, recipient_list=None, *args, **kwargs):
+    def __init__(
+        self,
+        data=None,
+        files=None,
+        request=None,
+        recipient_list=None,
+        *args,
+        **kwargs):
+        
         if request is not None and request.method == 'GET' and request.user.is_authenticated:
             kwargs['initial'] = {
                 'email': request.user.email,

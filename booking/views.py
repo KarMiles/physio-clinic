@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
+from django.contrib import messages
 
 from .models import Booking
 from .forms import BookingForm
@@ -34,6 +35,10 @@ class BookingList(LoginRequiredMixin, generic.ListView):
         if booking_form.is_valid():
             booking_form.instance.user = self.request.user
             booking = booking_form.save()
+            messages.add_message(
+                self.request,
+                messages.INFO,
+                'Booking request submitted! We will respond shortly.')
             return redirect(reverse('booking'))
 
         else:
