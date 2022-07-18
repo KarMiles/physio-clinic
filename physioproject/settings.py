@@ -14,9 +14,14 @@ from pathlib import Path
 import os
 import dj_database_url
 from django.contrib.messages import constants as messages
+from django.conf.locale.en import formats as en_formats
 
 if os.path.isfile("env.py"):
     import env
+
+
+# Time format
+en_formats.DATETIME_FORMAT = "d/m/y H:i"
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
