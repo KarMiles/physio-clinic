@@ -30,5 +30,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('booking/', include('booking.urls')),
     path('contact/', include('contact.urls')),
-    # path('contact/', include('django_contact_form.urls')),
+    path('poll/', include('poll.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
