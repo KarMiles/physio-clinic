@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
 from .forms import CreatePollForm
 
 # Poll views
@@ -10,6 +11,9 @@ def poll_home(request):
 def poll_create(request):
     if request.method == 'POST':
         form = CreatePollForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('poll_home')
     else:
         form = CreatePollForm()
     context = {'form': form}
