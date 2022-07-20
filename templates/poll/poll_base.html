@@ -3,26 +3,13 @@
 
 {% block content %}
 
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Poll Application</a>
-            </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Create</a></li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+                <li class="nav-item" aria-current="Polls"><a href="{% url 'poll_home' %}">Polls</a></li>
+                <li class="nav-item"><a href="{% url 'poll_create' %}">Create</a></li>
+            </ul>
         </div>
     </nav>
 
