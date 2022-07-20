@@ -32,13 +32,13 @@
                                 <div class="row ms-1 card-text text-muted h6">
 
                                     <!-- Likes count -->
-                                    <div class="col-2">
+                                    <div class="col-2 col-md-3">
                                         <i class="far fa-heart"></i>
                                         {{ post.number_of_likes }}
                                     </div>    
 
                                     <!-- Comment count -->
-                                    <div class="col-2">
+                                    <div class="col-2 col-md-3">
                                         {% with post.comments.count as total_comments %}
                                         <i class="far fa-comments"></i>
                                         {{ total_comments }}

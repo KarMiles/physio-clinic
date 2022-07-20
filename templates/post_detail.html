@@ -32,7 +32,7 @@
                 </p>
                 <!-- Likes -->
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-2">
                         <strong>
                             {% if user.is_authenticated %}
                             <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
@@ -57,7 +57,7 @@
                     </div>
 
                     <!-- Comment count -->
-                    <div class="col-1">
+                    <div class="col-2">
                         {% with comments.count as total_comments %}
                             <strong class="text-secondary"><i class="far fa-comments"></i>
                                 {{ total_comments }}
