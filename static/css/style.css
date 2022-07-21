@@ -175,7 +175,6 @@ footer a :hover {
     border-radius: 0;
 }
 .navbar-default {
-    /* background-color: rgb(232, 241, 249); */
     border-color: aliceblue;
     box-shadow: 0px 3px 3px 0px #ddd;
 }
@@ -188,13 +187,13 @@ footer a :hover {
 .panel-default > .panel-heading {
     color: #333;
     background-color: aliceblue;
-    border-color: aliceblue;
+    border-color: rgb(220, 236, 250);
     border-top-left-radius: 0;
     border-top-right-radius: 0; 
 }
 .panel-footer {
-    background-color: rgba(245, 245, 220, .5);
-    border-color: rgba(245, 245, 220, .4);
+    background-color: #dcf1f580;
+    border-color: #c5eef680;
 }
 .panel {
     box-shadow: 0px 3px 3px 0px #ddd;

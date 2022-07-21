@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'contact',
     'django_contact_form',
     'poll',
+    'widget_tweaks',
 ]
 
 SITE_ID = 1

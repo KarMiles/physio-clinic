@@ -22,7 +22,10 @@ def poll_create(request):
             return redirect('poll_home')
     else:
         form = CreatePollForm()
-    context = {'form': form}
+    context = {
+        'form': form,
+        'create_poll_form': CreatePollForm()
+        }
     return render(request, 'poll/poll_create.html', context)
 
 
