@@ -13,6 +13,7 @@ def poll_home(request):
     }
     return render(request, 'poll/poll_home.html', context)
 
+
 def poll_create(request):
     if request.method == 'POST':
         form = CreatePollForm(request.POST)
@@ -24,9 +25,6 @@ def poll_create(request):
     context = {'form': form}
     return render(request, 'poll/poll_create.html', context)
 
-def poll_results(request, poll_id):
-    context = {}
-    return render(request, 'poll/poll_results.html', context)
 
 def poll_vote(request, poll_id):
     poll = Poll.objects.get(pk=poll_id)
@@ -51,3 +49,12 @@ def poll_vote(request, poll_id):
         'poll': poll
     }
     return render(request, 'poll/poll_vote.html', context)
+
+
+def poll_results(request, poll_id):
+    poll = Poll.objects.get(pk=poll_id)
+
+    context = {
+        'poll': poll
+    }
+    return render(request, 'poll/poll_results.html', context)
