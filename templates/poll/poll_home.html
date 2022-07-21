@@ -11,20 +11,15 @@
             </div>
 
             <ul class="list-group">
+                {% for poll in polls %}
                 <li class="list-group-item">
-                    <strong>Which language is easier to learn?</strong>
+                    <strong>{{ poll.question }}</strong>
                     <span class="pull-right">
-                        <a href="#" class="btn btn-info btn-xs">Vote</a> &nbsp;
-                        <a href="#" class="btn btn-default btn-xs">View Results</a> &nbsp;
+                        <a href="{% url 'poll_vote' poll.id %}" class="btn btn-info btn-xs">Vote</a> &nbsp;
+                        <a href="{% url 'poll_results' poll.id %}" class="btn btn-default btn-xs">View Results</a> &nbsp;
                     </span>
                 </li>
-                <li class="list-group-item">
-                    <strong>Which operating system do you use?</strong>
-                    <span class="pull-right">
-                        <a href="#" class="btn btn-info btn-xs">Vote</a> &nbsp;
-                        <a href="#" class="btn btn-default btn-xs">View Results</a> &nbsp;
-                    </span>
-                </li>
+                {% endfor %}
             </ul>
 
         </div>
