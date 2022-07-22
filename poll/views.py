@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 
 from .forms import CreatePollForm
 from .models import Poll
+from django.contrib import messages
 
 
 # Poll views
@@ -19,11 +20,14 @@ def poll_create(request):
         form = CreatePollForm(request.POST)
         if form.is_valid():
             form.save()
+            messages.add_message(
+                request,
+                messages.INFO,
+                'Poll created successfully!')
             return redirect('poll_home')
     else:
         form = CreatePollForm()
     context = {
-        'form': form,
         'create_poll_form': CreatePollForm()
         }
     return render(request, 'poll/poll_create.html', context)
@@ -46,11 +50,17 @@ def poll_vote(request, poll_id):
 
         poll.save()
 
+        messages.add_message(
+                request,
+                messages.INFO,
+                'Thank you for your vote!')
+        
         return redirect('poll_results', poll.id)
 
     context = {
         'poll': poll
     }
+
     return render(request, 'poll/poll_vote.html', context)
 
 

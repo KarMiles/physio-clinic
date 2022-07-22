@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
@@ -10,7 +10,7 @@ from .models import Post
 from .forms import CommentForm, PostForm
 
 
-# Views
+# Views for blog app
 
 class StaffRequiredMixin(AccessMixin):
     """Verify that the current user
