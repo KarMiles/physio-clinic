@@ -175,7 +175,7 @@ footer a :hover {
 
 /* Poll */
 
-.navbar-default, .btn, .form-control, .panel {
+/* .navbar-default, .btn, .form-control, .panel {
     border-radius: 0;
 }
 .navbar-default {
@@ -188,13 +188,7 @@ footer a :hover {
     background-color: rgb(244, 244, 244);
     border-bottom: 4px solid #ddd;
 }
-.panel-default > .panel-heading {
-    color: #333;
-    background-color: aliceblue;
-    border-color: rgb(220, 236, 250);
-    border-top-left-radius: 0;
-    border-top-right-radius: 0; 
-}
+
 .panel-footer {
     background-color: #dcf1f580;
     border-color: #c5eef680;
@@ -202,6 +196,7 @@ footer a :hover {
 .panel {
     box-shadow: 0px 3px 3px 0px #ddd;
 }
-a.navbar-brand, .panel-title {
-    font-weight: bolder;
-}
+
+.borderless {
+    border: none!important;
+} */

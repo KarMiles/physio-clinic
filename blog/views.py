@@ -44,26 +44,17 @@ class CreatePost(generic.CreateView):
 class EditPost(LoginRequiredMixin, StaffRequiredMixin, generic.UpdateView):
     template_name = "create_post.html"
     form_class = PostForm
-    # success_url = reverse_lazy('home')
     queryset = Post.objects.all()
 
     def form_valid(self, form):
         self.object = form.instance
         self.object.author = self.request.user
         self.object.slug = slugify(self.object.title)
-        # post = form.instance
-        # post.author = self.request.user
-        # post.slug = slugify(post.title)
         messages.add_message(
             self.request,
             messages.INFO,
             'Post submitted successfully!')
-        # post.save()
-        # super() relates to CreateView - higher class:
         return super().form_valid(form)
-
-    # def get_success_url(self):
-    #     return reverse('post_detail', args=[self.kwargs['slug']])
 
     def get_success_url(self):
         return reverse('post_detail', args=[self.object.slug])
@@ -78,7 +69,6 @@ class DeletePost(LoginRequiredMixin, StaffRequiredMixin, generic.DeleteView):
 
 class PostList(generic.ListView):
     model = Post
-    # queryset = Post.objects.filter(status=1).order_by("priority")
     template_name = "index.html"
     paginate_by = 3
     
@@ -115,7 +105,6 @@ class PostDetail(View):
     def post(self, request, slug, *args, **kwargs):
 
         queryset = self.get_queryset()
-        # queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
         liked = False
