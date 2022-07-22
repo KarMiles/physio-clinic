@@ -1,21 +1,13 @@
 {% extends "base.html" %}
-{% load crispy_forms_tags %}
-{% load widget_tweaks %}
 
 {% block content %}
 
-
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
-                <li class="nav-item" aria-current="Polls"><a href="{% url 'poll_home' %}">Polls</a></li>
-                <li class="nav-item"><a href="{% url 'poll_create' %}">Create</a></li>
-            </ul>
+<div class="middle">
+    <div class="row mx-auto">
+        <div class="col-10 offset-1 mt-1">
+            {% block main %}{% endblock %}
         </div>
-    </nav>
-
-    <div class="container">
-        {% block main %}{% endblock %}
     </div>
-
+</div>
+    
 {% endblock %}

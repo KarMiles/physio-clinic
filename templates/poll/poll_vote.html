@@ -23,6 +23,7 @@
                         <hr />
 
                         <form method="POST">
+                            {{ form | crispy }}
                             {% csrf_token %}
                             <div class="form-group">
                                 <div class="radio">

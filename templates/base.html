@@ -47,9 +47,27 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="Home" href="{% url 'blog_home' %}">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="Poll" href="{% url 'poll_home' %}">Poll</a>
-                    </li>
+                    
+                    {% if user.is_staff %}
+                        <!-- Poll nav item for staff -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Poll
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item nav-link" href="{% url 'poll_home' %}">Our polls</a></li>
+                                <li><a class="dropdown-item nav-link" href="{% url 'poll_create' %}">Create a poll</a></li>
+                                <!-- <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Take part in our poll!</a></li> -->
+                            </ul>
+                        </li>
+                    {% else %}
+                        <!-- Poll item for non-staff guests -->
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="Poll" href="{% url 'poll_home' %}">Poll</a>
+                        </li>
+                    {% endif %}
+
                     <li class="nav-item">
                         <a class="nav-link" aria-current="Booking" href="{% url 'booking' %}">Book</a>
                     </li>

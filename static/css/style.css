@@ -93,6 +93,10 @@ input {
     right: 12px;
 }
 
+.middle {
+    display: block;
+    width: 80hv;
+}
 
 /* Navigation */
 
