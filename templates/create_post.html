@@ -5,15 +5,15 @@
 
 <div class="container-fluid">
 
-    {% if user.is_authenticated and user.is_staff %}
+    {% if user.is_staff %}
 
         <h3 class="mt-3">Your post here:</h3>
 
-            <!-- New booking request form -->
+            <!-- Post form for entering a new or editing existing posts -->
             <div class="col-md-8 card mb-4 mt-3">
                 <div class="card-body">
                     <h5 class="card-title">Author: {{ user.username }}</h5>
-                    <form method="post">
+                    <form enctype='multipart/form-data' method="POST">
                         {{ form | crispy }}
                         {% csrf_token %}
                         <button type="submit" class="btn btn-lg">Submit</button>
