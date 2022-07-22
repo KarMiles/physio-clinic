@@ -7,9 +7,9 @@
 <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
         <div class="panel panel-default">
-            <div class="panel-heading">
+            <!-- <div class="panel-heading">
                 <h3 class="panel-title">Cast Your Vote</h3>
-            </div>
+            </div> -->
 
             <div class="panel-body">
                 
@@ -27,7 +27,7 @@
                             {{ poll_form | crispy }}
                             {% csrf_token %}
                             <div class="form-group">
-                                <div class="radio">
+                                <div class="radio poll px-3">
                                     <label>
                                         <input type="radio" name="poll" value="option1">
                                         {{ poll.option_one }}

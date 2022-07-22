@@ -61,7 +61,7 @@ class EditPost(LoginRequiredMixin, StaffRequiredMixin, generic.UpdateView):
 
 
 class DeletePost(LoginRequiredMixin, StaffRequiredMixin, generic.DeleteView):
-    
+
     success_url = reverse_lazy('blog_home')
     queryset = Post.objects.all()
     template_name = 'post_confirm_delete.html'
