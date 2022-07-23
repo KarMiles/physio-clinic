@@ -58,7 +58,18 @@ The main goal of the project is to provide a platform for engaging prospective a
 - To enable custommer - company correspondence.
 - To build customer database.
 - To differenciate between different kinds of users in terms of access and ability to edit and delete information.
-- To supply access to the service on different kinds of devices.
+- To assure access to the service on different kinds of devices.
 
 ### **User goals**
+- To be able to use service intuitively and with ease.
+- To be able to read content withouth sharing any details.
+- To find details on what kinds of treatments are offered and about their benefits.
+- To be able to contact the company to book a specific treatment or about other related topics.
+- To open and then access account for easier communication.
+- To log in and log out as needed.
+- To log in with a chosen user name to maintain privacy.
+- To have an esthetically pleasing and functionally easy experience while using the webpage.
+- To be able give feedback on treatments already received.
+- To be able to upload, update and delete information on treatments contained in the posts (for staff users only).
+
 
