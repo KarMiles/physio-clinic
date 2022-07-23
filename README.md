@@ -72,4 +72,8 @@ The main goal of the project is to provide a platform for engaging prospective a
 - To be able give feedback on treatments already received.
 - To be able to upload, update and delete information on treatments contained in the posts (for staff users only).
 
+## i. Strategy <a name='strategy'></a>
 
+## User stories
+
+### *1. 

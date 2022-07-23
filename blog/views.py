@@ -115,6 +115,8 @@ class PostDetail(View):
         if comment_form.is_valid():
             comment_form.instance.email = request.user.email
             comment_form.instance.name = request.user.username
+            comment_form.instance.author = request.user.username
+            author = comment_form.instance.name
             comment = comment_form.save(commit=False)
             comment.post = post
             comment.save()
@@ -130,6 +132,7 @@ class PostDetail(View):
                 "commented": True,
                 "comment_form": comment_form,
                 "liked": liked,
+                "author": author,
                 "success": 'Comment sent for approval'
             },
         )

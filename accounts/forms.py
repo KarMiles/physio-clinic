@@ -17,7 +17,7 @@ class NewUserForm(SignupForm):
 			'placeholder': 'First name'
 			}))
 	last_name = forms.CharField(
-		label='First name (optional)',
+		label='Last name (optional)',
 		required=False,
 		max_length=150,
 		widget=forms.TextInput(attrs={
