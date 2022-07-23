@@ -49,7 +49,7 @@ The main goal of the project is to provide a platform for engaging prospective a
 - To enable registered users contact the company to book specific treatments.
 - To enable all users to contact the company for any reason.
 
-### **Site onwer goals**
+### **Site owner goals**
 - To ensure the company's up-to-date offering is broadcast in a timely and efficient manner.
 - To increase prospective and current users' interest in the offering and to promote sales through encouraging engagement within the community.
 - To maximise customers' retainment.

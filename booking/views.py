@@ -6,6 +6,7 @@ from django.contrib import messages
 
 from .models import Booking
 from .forms import BookingForm
+from .models import Post
 
 
 # Views
@@ -34,10 +35,10 @@ class BookingList(LoginRequiredMixin, generic.ListView):
 
     def post(self, *args, **kwargs):
 
+        # live_post = Post.objects.filter(status=1)
         booking_form = BookingForm(data=self.request.POST)
         if booking_form.is_valid():
             booking_form.instance.user = self.request.user
-            # booking = booking_form.save()
             booking_form.save()
             messages.add_message(
                 self.request,
