@@ -76,4 +76,31 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 ## User stories
 
-### *1. 
+### **1. Epic: Account management**
+
+1.1 As a **site user** I can **access site without logging in** so that I can **read information about available treatments**.
+
+1.2 As a **site user** I can **register** so that **I have access to personalized service**.
+
+1.3 As a **site user** I can **log in using my username and password** so that I can **access site's enhanced functionality**.
+
+1.4 As a **site user** I can **log out of my account** so that I know **my information stays confidential**.
+
+1.5 As a **site user** I can **see at all times my current login status** so that **I know I'm in control of access to my enhanced service on currently used device**.
+
+1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
+
+1.7 As a **staff site user** I can **access enhanced functionality** so that I can **add, edit and delete content on webpage**.
+
+### **2. Epic: Navigation**
+
+2.1 As a **site user** I can **navigate the service intuitively** so that I can **utilize all of its content**.
+
+2.2 As a **site user** I can easily **browse through available treatments** so I can **decide which ones are most appropriate to me**. 
+
+2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
+
+2.4 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
+
+### **3. Epic: Engagement**
+

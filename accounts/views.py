@@ -17,7 +17,7 @@ def register_request(request):
             request,
             "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
-    # return render(request=request, template_name="templates/register.html", context={"register_form": form})
+    
     return render(
         request=request,
         template_name="account/signup.html",
