@@ -5,7 +5,7 @@
 View the live site [here](https://physio-clinic-heroku.herokuapp.com/)
 
 
-# Table of Contents
+# Table of Contents <a name='home'></a>
 
 1. [User Experience (UX)](#ux)<br>
     i.  [Strategy](#strategy)<br>
@@ -40,7 +40,7 @@ On this webpage the Owners share information about various kinds of treatments o
 Due to ever-enhancing skills of the Clinic's staff, new staff members joining the Clinic and changing trends among Clients, Staff members have the ability to add, edit and delete cards containing descriptions of treatments. 
 Client users of this service can read descriptions and express their attitudes about specific treatments through likes and comments. They may also book treatments and contact the Clinic for general queries.
 
-# 1. User Experience (UX) <a name="ux"></a> 
+# 1. User Experience (UX) <a name='ux'></a> 
 ### **Project goals**
 The main goal of the project is to provide a platform for engaging prospective and current clients interested in using PhysioClinic's offering for enhancing the state of their health. This should be achieved through several sub-goals:
 - To enable staff users to post, edit, read and delete content related to company's offering.
@@ -140,3 +140,22 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 5.4 As a **site admin** I can **read, update and delete booking requests** so that **booking requests are dealt with**. 
 
+[Table of Contents](#home)
+
+## ii. Scope <a name='scope'></a>
+
+## Strategy trade-offs
+
+Features were evaluated on a scale from 1 to 5 in terms of importance (how important a feature is for the project in current release) and viability (how feasible the implementation of the feature is in current release).
+
+TODO: Add strategy trade-offs scr
+<details>
+<summary>Click here for strategy trade-offs</summery>
+![screenshot of strategy trade-offs](readme/docs/images/strategy-trade-offs.jpg)
+</details>
+
+## iii. Structure <a name='structure'></a>
+
+## Website templates
+
+Templates are structured into the files listed below. Base template is used for the entire site for consistency and ease in user experience.
