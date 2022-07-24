@@ -13,6 +13,7 @@ class BookingForm(forms.ModelForm):
             'treatment',
             'time',
             )
+        format = "%d/%m/%Y %H:%M"
         widgets = {
-            'time': DateTimePickerInput()
+            'time': DateTimePickerInput("", format, "")
         }

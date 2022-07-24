@@ -130,7 +130,7 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 4.7 As a **site owner** I can **prioritize which treatments are showing first on the site** so that I can **influence demand on offering of my choice**. 
 
-### **5. Epic: Admin site**
+### **5. Epic: Site admin**
 
 5.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to site services**. 
 

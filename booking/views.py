@@ -6,7 +6,7 @@ from django.contrib import messages
 
 from .models import Booking
 from .forms import BookingForm
-from .models import Post
+# from .models import Post
 
 
 # Views

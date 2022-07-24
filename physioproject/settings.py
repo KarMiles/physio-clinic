@@ -21,7 +21,8 @@ if os.path.isfile("env.py"):
 
 
 # Time format
-en_formats.DATETIME_FORMAT = "d/m/y H:i"
+# en_formats.DATETIME_FORMAT = "d/m/y H:i"
+en_formats.DATETIME_FORMAT = "%d/%m/%Y %H:%M"
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
