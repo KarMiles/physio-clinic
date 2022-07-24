@@ -100,7 +100,30 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
 
-2.4 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
+### **3. Epic: Customer engagement**
 
-### **3. Epic: Engagement**
+3.1 As a **site user** I can **read and respond to available content** so **my experience on the site feels engaging and interactive**. 
 
+3.2 As a **site user** I can **engage in activities that other users can also participate in** so I can **feel part of a wider community**.
+
+3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
+
+3.4 As a **site owner** I can **control content showing on the website** so that **the whole website content is in line with company values and supports its mission**.
+
+### **4. Epic: Treatments**
+
+4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
+
+4.2 As a **site user** I can **read thoroughly about chosen treatments** so that I can **read content most appropriate to my needs**.
+
+4.3 As a **site user** I can **respond to content via likes and comments** for **increased sense of community** (registered users only).
+
+4.4 As a **site user** I can **take part in polls and see poll results** so I can **feel more engaged with the company and the health-oriented community**.
+
+4.5 As a **site owner** I can **engage current and prospective clients in polls** so I can **easily gather ad-hoc information on current topics related to company's clients, their views and preferences**. 
+
+4.6 As a **site owner** I can **easily activate and deactivate content is visible to the public**.
+
+4.7 As a **site owner** I can **prioritize which treatments are showing first on the site** so that I can **influence demand on offering of my choice**. 
+
+### **5. Epic: Admin site**
