@@ -108,9 +108,13 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
 
-3.4 As a **site owner** I can **control content showing on the website** so that **the whole website content is in line with company values and supports its mission**.
+3.4 As a **site user** I can **use the website for communication with the company** so that I can **send general queries or request booking for a specific treatment**.
 
-### **4. Epic: Treatments**
+3.5 As a **registered site user** I can **use website for communication without having to reenter my details** so that **sending my message requires minimum efford from my side**.
+
+3.6 As a **site owner** I can **control content showing on the website** so that **the whole website content is in line with company values and supports its mission**.
+
+### **4. Epic: Company offer**
 
 4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
 
@@ -120,10 +124,19 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 4.4 As a **site user** I can **take part in polls and see poll results** so I can **feel more engaged with the company and the health-oriented community**.
 
-4.5 As a **site owner** I can **engage current and prospective clients in polls** so I can **easily gather ad-hoc information on current topics related to company's clients, their views and preferences**. 
+4.5 As a **staff site user** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
 
 4.6 As a **site owner** I can **easily activate and deactivate content is visible to the public**.
 
 4.7 As a **site owner** I can **prioritize which treatments are showing first on the site** so that I can **influence demand on offering of my choice**. 
 
 ### **5. Epic: Admin site**
+
+5.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to site services**. 
+
+5.2 As a **site admin** I can **create, update and delete posts and comments in admin page** so I can assure that **only content in line with company's ethos and goals is made available**.
+
+5.3 As a **site admin** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
+
+5.4 As a **site admin** I can **read, update and delete booking requests** so that **booking requests are dealt with**. 
+
