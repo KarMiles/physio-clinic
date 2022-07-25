@@ -7,23 +7,53 @@
 
 {% block content %}
 
-<div class="container">
-
+<div class="container-fluid mt-3">
   <div class="row">
-    <div class="col-md-6 mt-3 offset-md-3">
-      <h1>{% trans "Drop us a letter!" %}</h1>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-6 mt-3 offset-md-3">
-      <form class="signup" id="contact_form" method="post">
-        {% csrf_token %}
-        {{ form | crispy }}
-        <button class="btn" type="submit">{% trans "Send" %}</button>
-      </form>
+    <!-- Column with contact form -->
+    <div class="col-md-8">
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="image-container">
+            <h1>{% trans "Drop us a letter!" %}</h1>
+            <hr/>
+          </div>
+          <div>
+            <form class="signup" id="contact_form" method="post">
+              {% csrf_token %}
+              {{ form | crispy }}
+              <button class="btn" type="submit">{% trans "Send" %}</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <!-- Column with contact details -->
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="image-container">
+            <h2>
+              Where to find us
+            </h2>
+            <hr/>
+          </div>
+          <div>
+            <p>
+              Adress details
+            </p>
+
+            <p>
+              Telephone
+            </p>
+            <p>
+              e-mail
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
 </div>
 

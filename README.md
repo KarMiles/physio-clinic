@@ -72,6 +72,8 @@ The main goal of the project is to provide a platform for engaging prospective a
 - To be able give feedback on treatments already received.
 - To be able to upload, update and delete information on treatments contained in the posts (for staff users only).
 
+---
+
 ## i. Strategy <a name='strategy'></a>
 
 ## User stories
@@ -142,20 +144,40 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 [Table of Contents](#home)
 
+---
+
 ## ii. Scope <a name='scope'></a>
 
 ## Strategy trade-offs
 
 Features were evaluated on a scale from 1 to 5 in terms of importance (how important a feature is for the project in current release) and viability (how feasible the implementation of the feature is in current release).
 
-TODO: Add strategy trade-offs scr
+TODO Add strategy trade-offs scr
 <details>
 <summary>Click here for strategy trade-offs</summery>
 ![screenshot of strategy trade-offs](readme/docs/images/strategy-trade-offs.jpg)
 </details>
+
+---
 
 ## iii. Structure <a name='structure'></a>
 
 ## Website templates
 
 Templates are structured into the files listed below. Base template is used for the entire site for consistency and ease in user experience.
+
+TODO Add table with templates.
+
+---
+
+## Code structure
+
+Code is built with utilization of Django framework into apps, folders and files listed below.
+
+### Physioproject - main project:
+- settings.py - settings.
+- urls.py - top level website urls.
+### Accounts app - functionality for managing users accounts
+- admin.py - for displaying, creating, modifying and deleting information structured in models with the utilization of native Django admin panel.
+- apps.py - includes application configuration for the accounts app.
+- forms.py - for preparing and restructuring data, creating forms for the data and receiving and processing submitted forms and data from the user.
