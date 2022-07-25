@@ -172,12 +172,23 @@ TODO Add table with templates.
 
 ## Code structure
 
-Code is built with utilization of Django framework into apps, folders and files listed below.
+Code is built with utilization of Django framework into apps, files and folders listed below.
 
-### Physioproject - main project:
-- settings.py - settings.
-- urls.py - top level website urls.
-### Accounts app - functionality for managing users accounts
+### Apps
+- accounts - functionality for managing users accounts.
+- blog - functionality designed for managing blogs, in this project used to manage posts on treatments being on offer. This includes posts, comments and likes.
+- booking - functionality for registered users for receiving requests for treatments on a date and time of user's choice.
+- contact - functionality for managing general queries from users.
+- poll - functionality for simple polls aiming at gathering ad hoc information on current topics from users and enhancing user engagement.
+
+### Files
 - admin.py - for displaying, creating, modifying and deleting information structured in models with the utilization of native Django admin panel.
 - apps.py - includes application configuration for the accounts app.
 - forms.py - for preparing and restructuring data, creating forms for the data and receiving and processing submitted forms and data from the user.
+- models.py - contain details on every model and attributes.
+- settings.py - settings.
+- urls.py - top level website urls.
+- views.py - files holding website's logic, Python functions and classes receiving requests and returning web responses.
+
+### Folders
+- physioproject - main project for the website.
