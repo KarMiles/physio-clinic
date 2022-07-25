@@ -6,62 +6,69 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container-fluid mt-3">
+    <div class="row">
 
     {% if user.is_authenticated %}
 
-        <h1 class="mt-3">Message us to book an appointment:</h1>
+        <h1>Message us to book an appointment:</h1>
 
-        <!-- Bookings -->
-        <div class="row mx-n2">
-            <div class="col-md-4 card mb-4 mt-3 mx-2">
-
-                <!-- Displaying current bookings -->
-                
+        <!-- New booking request form -->
+        <div class="col-md-8">
+            <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">Your current requests:</h5>
-                    {% for booking in bookings %}
-                    <div>
-                        <h4 class="font-weight-bold mt-3">
-                            {{ booking.treatment }}
-                        </h4>
-                        <p>
-                            <span class=" text-muted font-weight-normal">
-                                Request sent: {{ booking.updated_on }}
-                            </span>
-                        </p>
-                        <p>
-                            {{ booking.user }} wrote:
-                        </p>
-                        <p>
-                            {{ booking.message | linebreaks }}
-                        </p>
-                        <p>
-                            Prefered time: {{ booking.time }}
-                        </p>
-                    </div>
-                    <hr class="border-1">
-                    {% endfor %}
-                </div>
 
-            </div>
+                        <h2 class="card-title">Request by: {{ user.username }}</h2>
+                        <form method="post">
+                            {{ booking_form | crispy }}
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                        </form>
 
-            <!-- New booking request form -->
-            <div class="col-md-7 card mb-4 mt-3 mx-2 align-self-end">
-                <div class="card-body">
-                    <h5 class="card-title">Request by: {{ user.username }}</h5>
-                    <form method="post">
-                        {{ booking_form | crispy }}
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                    </form>
                 </div>
             </div>
-
         </div>
 
-        {% endif %}
+
+        <!-- Current bookings -->
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+
+                        <div class="card-body">
+                            <h2 class="card-title">Your current requests:</h2>
+                            {% for booking in bookings %}
+                            <hr class="border-1">
+                            <div>
+                                <h4 class="font-weight-bold mt-3">
+                                    {{ booking.treatment }}
+                                </h4>
+                                <p>
+                                    <span class=" text-muted font-weight-normal">
+                                        Request sent: {{ booking.updated_on }}
+                                    </span>
+                                </p>
+                                <p>
+                                    {{ booking.user }} wrote:
+                                </p>
+                                <p>
+                                    {{ booking.message | linebreaks }}
+                                </p>
+                                <p>
+                                    Prefered time: {{ booking.time }}
+                                </p>
+                            </div>
+                        
+                            {% endfor %}
+                        </div>
+                </div>
+            </div>
+        </div>
+
+    {% endif %}
 
     </div>
+
+</div>div>
 
 {% endblock %}
