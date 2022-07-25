@@ -57,8 +57,6 @@
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item nav-link" href="{% url 'poll_home' %}">Our polls</a></li>
                                 <li><a class="dropdown-item nav-link" href="{% url 'poll_create' %}">Create a poll</a></li>
-                                <!-- <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="#">Take part in our poll!</a></li> -->
                             </ul>
                         </li>
                     {% else %}
@@ -67,25 +65,39 @@
                             <a class="nav-link" aria-current="Poll" href="{% url 'poll_home' %}">Poll</a>
                         </li>
                     {% endif %}
-
+                    <!-- {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" aria-current="Booking" href="{% url 'booking' %}">Book</a>
                     </li>
+                    {% endif %} -->
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" aria-current="Logout" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                     {% else %}
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="Register" href="{% url 'account_signup' %}">Register</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" aria-current="Login" href="{% url 'account_login' %}">Login</a>
                         </li>
                     {% endif %}
-                    <li class="nav-item d-flex align-items-center">
-                        <a class="nav-link" aria-current="Contact Us" href="{% url 'contact' %}">Contact Us</a>`
-                    </li>
+                    
+                    {% if user.is_authenticated %}
+                        <!-- Contact Us / Booking for logged in users -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Contact Us
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="nav-link" aria-current="Contact Us" href="{% url 'contact' %}">Drop us a message</a></li>
+                                <li><a class="nav-link" aria-current="Booking" href="{% url 'booking' %}">Request appointment</a></li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <!-- Contact Us for non-logged in users -->
+                        <li class="nav-item d-flex align-items-center">
+                            <a class="nav-link" aria-current="Contact Us" href="{% url 'contact' %}">Contact Us</a>`
+                        </li>
+                    {% endif %}
+
                 </ul>
                 <span class="navbar-text text-body">
                     <div class="d-flex align-items-center"></div>

@@ -17,7 +17,7 @@ class Booking(models.Model):
         Post,
         on_delete=models.CASCADE,
         related_name='booking_treatment')
-    time = models.DateTimeField(blank=True)
+    time = models.DateTimeField()
     message = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
