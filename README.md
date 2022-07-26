@@ -182,13 +182,28 @@ Code is built with utilization of Django framework into apps, files and folders 
 - poll - functionality for simple polls aiming at gathering ad hoc information on current topics from users and enhancing user engagement.
 
 ### Files
+Files for running specific apps:
 - admin.py - for displaying, creating, modifying and deleting information structured in models with the utilization of native Django admin panel.
 - apps.py - includes application configuration for the accounts app.
 - forms.py - for preparing and restructuring data, creating forms for the data and receiving and processing submitted forms and data from the user.
 - models.py - contain details on every model and attributes.
-- settings.py - settings.
 - urls.py - top level website urls.
 - views.py - files holding website's logic, Python functions and classes receiving requests and returning web responses.
+- test_forms.py - automated testing for forms. TODO
+- test_models.py - automated testing for models. TODO
+
+Common files:
+- manage.py - is a command-line utility for executing Django-specific tasks, e.g. starting a new app within the project or running the development server.
+- Procfile - used to declare application's process types and entry points, required by Heroku.
+- requirements.txt - lists Python libraries installed for the project to work.
+- settings.py - settings.
+- db.sqlite3 - database used in development.
+- README.md - project's documentation.
+- TESTING.md - testing documentation. TODO
 
 ### Folders
 - physioproject - main project for the website.
+- app folders: accounts, blog, booking, contact, poll.
+- readme - contains files necessary for Readme document to show all of its intended content.
+- static - contains all static files, e.g. style.css, in one place for easy access and management.
+- templates folder contains html files both supplied with apps and custom-made.
