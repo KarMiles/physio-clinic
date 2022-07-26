@@ -13,9 +13,13 @@ PRIORITY_CHOICES = [
 ]
 
 
-# Models
+# Models for blog app
 
 class Post(models.Model):
+    """
+    Class for the Post model
+    representing a description of a treatment
+    """
     title = models.CharField(
         max_length=150,
         unique=True)

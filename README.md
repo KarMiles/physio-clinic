@@ -215,3 +215,42 @@ Common files:
 Note:
 - User - Post.likes is many-to-many relationship.
 - Post.featured_image is a CloudinaryField.
+
+---
+
+## Models
+The following models represent the database structure for the website.
+
+### User 
+- This model represents a user and is based on Django allauth library.
+- It has one-to-many relationship with Contact model (one User can be related to many contact-us messages).
+- It has one-to-many relationship with Post model (one user can be related to many posts and many likes).
+- It has one-to-many relationship with Booking model (one user can be related to many bookings).
+- This model contains the following fields: username, first_name, last_name, email, password, tel, is_staff, is_active, is_superuser.
+
+### Post
+- This model represents a treatment offered by the company.
+- It has one-to-many relationship with User model.
+- It has one-to-many relationship with Booking model (a Post can be related to many Bookings).
+- It has one-to-many relationship with Comment model (a Post can be related to many Comments).
+
+Fields and attributes for the Post model
+
+<details>
+<summary>Click here to view Post model - part 1</summary>
+
+![screenshot of Post model part 1](readme/docs/images/database/post_model_1.jpg)
+</details>
+
+<details>
+<summary>Click here to view Post model - part 2</summary>
+
+![screenshot of Post model part 2](readme/docs/images/database/post_model_2.jpg)
+</details>
+
+<details>
+<summary>Click here to view Post model - part 3</summary>
+
+![screenshot of Post model part 3](readme/docs/images/database/post_model_3.jpg)
+</details>
+
