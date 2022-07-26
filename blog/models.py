@@ -50,7 +50,7 @@ class Comment(models.Model):
         on_delete=models.CASCADE,
         related_name='comments')
     author = models.CharField(max_length=50)
-    email = models.EmailField(blank=True)
+    # email = models.EmailField(blank=True)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
