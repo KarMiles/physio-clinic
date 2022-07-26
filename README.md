@@ -207,3 +207,11 @@ Common files:
 - readme - contains files necessary for Readme document to show all of its intended content.
 - static - contains all static files, e.g. style.css, in one place for easy access and management.
 - templates folder contains html files both supplied with apps and custom-made.
+
+## Data schema
+
+![screenshot of data schema](readme/docs/images/data-schema.jpg)
+
+Note:
+- User - Post.likes is many-to-many relationship.
+- Post.featured_image is a CloudinaryField.

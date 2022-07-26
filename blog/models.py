@@ -16,23 +16,34 @@ PRIORITY_CHOICES = [
 # Models
 
 class Post(models.Model):
-    title = models.CharField(max_length=150, unique=True)
-    slug = models.SlugField(max_length=150, unique=True)
+    title = models.CharField(
+        max_length=150,
+        unique=True)
+    slug = models.SlugField(
+        max_length=150,
+        unique=True)
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         related_name="blog_posts")
     content = models.TextField()
-    featured_image = CloudinaryField('image', default='placeholder')
+    featured_image = CloudinaryField(
+        'image',
+        default='placeholder')
     excerpt = models.TextField(blank=True)
     priority = models.CharField(
         max_length=10,
         choices=PRIORITY_CHOICES,
         default="3 - Normal",)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(
+        choices=STATUS,
+        default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-    likes = models.ManyToManyField(User, related_name='blog_likes', blank=True)
+    likes = models.ManyToManyField(
+        User,
+        related_name='blog_likes',
+        blank=True)
 
     class Meta:
         ordering = ['priority']
