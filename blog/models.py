@@ -60,12 +60,14 @@ class Post(models.Model):
     
 
 class Comment(models.Model):
+    """Class for the Comment model
+    representing comments on posts
+    """
     post = models.ForeignKey(
         Post,
         on_delete=models.CASCADE,
         related_name='comments')
     author = models.CharField(max_length=50)
-    # email = models.EmailField(blank=True)
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
@@ -75,4 +77,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment by {self.author}: {self.body}"
-

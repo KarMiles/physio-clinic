@@ -4,31 +4,24 @@
 {% block title %}Create Poll{% endblock %}
 
 {% block main %}
-<div class="row">
-    <div class="col-lg-8 col-lg-offset-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Create A New Poll</h3>
-            </div>
+<div class="container-lg mt-3">
 
-            <form method="POST">
-            {% csrf_token %}
-                <div class="panel-body">
+    <h1>Create A New Poll</h1>
 
-                    <div>
-                        {{ create_poll_form | crispy }}
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <button type="submit" class="btn btn-info">Submit</button>
-                        </div>
-                    </div>
+    <form method="POST">
+    {% csrf_token %}
 
-                </div>
-            </form>
-
+        <div>
+            {{ create_poll_form | crispy }}
         </div>
-    </div>
+        
+        <div class="row">
+            <div class="col-lg-4">
+                <button type="submit" class="btn btn-info">Submit</button>
+            </div>
+        </div>
+
+    </form>
+            
 </div>
 {% endblock %}

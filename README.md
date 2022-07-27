@@ -221,15 +221,20 @@ Note:
 ## Models
 The following models represent the database structure for the website.
 
-### User 
+### Model User 
 - This model represents a user and is based on Django allauth library.
+- This model contains the following fields: username, first_name, last_name, email, password, tel, is_staff, is_active, is_superuser.
+
+Relationships
 - It has one-to-many relationship with Contact model (one User can be related to many contact-us messages).
 - It has one-to-many relationship with Post model (one user can be related to many posts and many likes).
 - It has one-to-many relationship with Booking model (one user can be related to many bookings).
-- This model contains the following fields: username, first_name, last_name, email, password, tel, is_staff, is_active, is_superuser.
 
-### Post
-- This model represents a treatment offered by the company.
+
+### Model Post
+- This model represents treatments offered by the company.
+
+Relationships
 - It has one-to-many relationship with User model.
 - It has one-to-many relationship with Booking model (a Post can be related to many Bookings).
 - It has one-to-many relationship with Comment model (a Post can be related to many Comments).
@@ -253,4 +258,19 @@ Fields and attributes for the Post model
 
 ![screenshot of Post model part 3](readme/docs/images/database/post_model_3.jpg)
 </details>
+<br>
+
+### Model Comment
+
+- This model represents comments registered users can write on treatments.
+
+Relationships
+- Comment model has one-to-many relationship with Post model (a post can have many comments)
+
+<details>
+<summary>Click here to view Comment model</summary>
+
+![screenshot of Comment model](readme/docs/images/database/comment_model.jpg)
+</details>
+<br>
 
