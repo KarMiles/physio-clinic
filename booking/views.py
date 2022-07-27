@@ -35,7 +35,6 @@ class BookingList(LoginRequiredMixin, generic.ListView):
 
     def post(self, *args, **kwargs):
 
-        # live_post = Post.objects.filter(status=1)
         booking_form = BookingForm(data=self.request.POST)
 
         # Allow treatment and time fields to be empty:

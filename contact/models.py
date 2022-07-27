@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-# Models
+# Models for contact app
 
 STATUS = ((0, "Pending"), (1, "Closed"))
 

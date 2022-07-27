@@ -2,10 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 from blog.models import Post
 
+# Models for Booking app
+
+
 STATUS = ((0, "Pending"), (1, "Closed"))
-
-
-# Models
 
 class Booking(models.Model):
 
@@ -19,9 +19,10 @@ class Booking(models.Model):
         related_name='booking_treatment')
     time = models.DateTimeField()
     message = models.TextField()
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(
+        choices=STATUS,
+        default=0)
     created_on = models.DateTimeField(auto_now_add=True)
-    # updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ['-created_on']

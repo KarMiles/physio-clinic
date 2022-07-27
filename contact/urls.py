@@ -1,16 +1,14 @@
-from django.urls import include, path
+# Imports
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from django.urls import path
 from django.views.generic import TemplateView
-
 from django_contact_form.views import ContactFormView
 
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .forms import ModelContactForm
 
-
-# URL patterns for the app contact
-
-# urlpatterns = [
-#     path('', TemplateView.as_view(template_name='contact.html'), name='contact'),
-# ]
 
 urlpatterns = [
     path(

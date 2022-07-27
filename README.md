@@ -279,9 +279,23 @@ Relationships
 ### Model Booking 
 
 - Part of booking app.
-- Represents requests for bookings user can place via the webpage.
-- Bookings are ordered by time of update in descending order.
+- Represents requests for appointments for specific treatments registered users can place via the webpage.
+- Bookings are ordered by time of creation in descending order.
 
 Relationships
-- Booking model has one-to-many relationship with User model (a user can place many booking requests)
-- Booking model has one-to-many relationship with Post model (a post/treatment can have many booking requests)
+- Booking model has one-to-many relationship with User model (a user can place many booking requests).
+- Booking model has one-to-many relationship with Post model (a post/treatment can have many booking requests).
+
+<details>
+<summary>Click here to view Booking model</summary>
+
+![screenshot of Booking model](readme/docs/images/database/booking_model.jpg)
+</details>
+
+### Model Contact
+
+- Part of contact app.
+- Represents messages all users can send via webpage in Contact Us section.
+
+Relationships
+- No relationships set in the Contact model. In ModelContactForm information is pulled about registered user, if available. This offers benefits of one-to-many relationship with User model combined with also serving unregistered users.
