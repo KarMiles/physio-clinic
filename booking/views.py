@@ -20,7 +20,7 @@ class BookingList(LoginRequiredMixin, generic.ListView):
         return Booking.objects.filter(
             status=0,
             user=self.request.user
-            ).order_by("updated_on")
+            ).order_by("created_on")
 
     def get(self, *args, **kwargs):
 

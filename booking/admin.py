@@ -7,7 +7,7 @@ from .models import Booking
 class BookingAdmin(admin.ModelAdmin):
 
     list_display = (
-        'updated_on',
+        'created_on',
         'user',
         'treatment',
         'time',
@@ -18,7 +18,7 @@ class BookingAdmin(admin.ModelAdmin):
     list_filter = (
         'status',
         'treatment',
-        'updated_on',)
+        'created_on',)
     list_display_links = ('message',)
     actions = ['booking_close']
 

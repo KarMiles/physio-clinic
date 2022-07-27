@@ -232,6 +232,7 @@ Relationships
 
 
 ### Model Post
+- Part of blog app.
 - This model represents treatments offered by the company.
 
 Relationships
@@ -262,6 +263,7 @@ Fields and attributes for the Post model
 
 ### Model Comment
 
+- Part of blog app.
 - This model represents comments registered users can write on treatments.
 
 Relationships
@@ -274,3 +276,12 @@ Relationships
 </details>
 <br>
 
+### Model Booking 
+
+- Part of booking app.
+- Represents requests for bookings user can place via the webpage.
+- Bookings are ordered by time of update in descending order.
+
+Relationships
+- Booking model has one-to-many relationship with User model (a user can place many booking requests)
+- Booking model has one-to-many relationship with Post model (a post/treatment can have many booking requests)

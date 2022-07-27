@@ -21,10 +21,10 @@ class Booking(models.Model):
     message = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
-    updated_on = models.DateTimeField(auto_now=True)
+    # updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ['-updated_on']
+        ordering = ['-created_on']
 
     def __str__(self):
         return self.message
