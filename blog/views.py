@@ -1,3 +1,7 @@
+
+# Imports
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render, get_object_or_404
 from django.views import generic, View
 from django.http import HttpResponseRedirect
@@ -6,6 +10,8 @@ from django.utils.text import slugify
 from django.contrib.auth.mixins import LoginRequiredMixin, AccessMixin
 from django.contrib import messages
 
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .models import Post
 from .forms import CommentForm, PostForm
 
@@ -13,8 +19,10 @@ from .forms import CommentForm, PostForm
 # Views for blog app
 
 class StaffRequiredMixin(AccessMixin):
-    """Verify that the current user
-    is authenticated as member of staff."""
+    """
+    Verify that the current user
+    is authenticated as member of staff.
+    """
     def dispatch(self, request, *args, **kwargs):
         if not request.user.is_staff:
             return self.handle_no_permission()
@@ -22,11 +30,28 @@ class StaffRequiredMixin(AccessMixin):
 
 
 class CreatePost(generic.CreateView):
+    """
+    A view to create a post
+    Args:
+        CreateView: class based view
+    Returns:
+        Render of post form with success message and context
+    """
     template_name = "create_post.html"
     form_class = PostForm
     success_url = reverse_lazy('blog_home')
 
     def form_valid(self, form):
+        """
+        Set post author and slug to self instances
+        Send confirmation message
+        Returns form
+        Args:
+            self (object): self.
+            form (object): form.
+        Returns:
+            The form
+        """
         self.object = form.instance
         self.object.author = self.request.user
         self.object.slug = slugify(self.object.title)
@@ -41,12 +66,30 @@ class CreatePost(generic.CreateView):
         return reverse('post_detail', args=[self.object.slug])
 
 
-class EditPost(LoginRequiredMixin, StaffRequiredMixin, generic.UpdateView):
+class EditPost(StaffRequiredMixin, generic.UpdateView):
+    """
+    A view to edit a post
+    Args:
+        StaffRequiredMixin
+        UpdateView: class based view
+    Returns:
+        Render of updated post with success message
+    """
     template_name = "create_post.html"
     form_class = PostForm
     queryset = Post.objects.all()
 
     def form_valid(self, form):
+        """
+        Set post author and slug to self instances
+        Send confirmation message
+        Returns form
+        Args:
+            self (object): self.
+            form (object): form.
+        Returns:
+            The form
+        """
         self.object = form.instance
         self.object.author = self.request.user
         self.object.slug = slugify(self.object.title)
@@ -60,14 +103,41 @@ class EditPost(LoginRequiredMixin, StaffRequiredMixin, generic.UpdateView):
         return reverse('post_detail', args=[self.object.slug])
 
 
-class DeletePost(LoginRequiredMixin, StaffRequiredMixin, generic.DeleteView):
-
+class DeletePost(StaffRequiredMixin, generic.DeleteView):
+    """
+    A view to delete a post
+    Args:
+        StaffRequiredMixin
+        UpdateView: class based view
+    Returns:
+        Request confirmation of post deletion
+        Redirect home after delete
+    """
     success_url = reverse_lazy('blog_home')
     queryset = Post.objects.all()
     template_name = 'post_confirm_delete.html'
 
+    # TODO Add confirmation message after delete
+    # request = success_url
+    # messages.info(request, 'Post has been deleted successfully!')
+    # messages.add_message(
+    #         self.request,
+    #         messages.INFO,
+    #         'Post submitted successfully!')
+    # success_message = "Post deleted"
+
 
 class PostList(generic.ListView):
+    """
+    A view to show posts
+    Args:
+        UpdateView: class based view
+    Returns:
+        Render main page with paginated list of posts
+        Posts ordered by priority
+        Non-staff users see live posts only
+        Staff users see live and draft posts
+    """
     model = Post
     template_name = "index.html"
     paginate_by = 3
@@ -80,7 +150,13 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
-
+    """
+    A view to show posts
+    Args:
+        View: class based view
+    Returns:
+        Render post details
+    """
     def get(self, request, slug, *args, **kwargs):
 
         queryset = self.get_queryset()
@@ -144,6 +220,13 @@ class PostDetail(View):
 
 
 class PostLike(View):
+    """
+    A view to show likes on posts
+    Args:
+        View: class based view
+    Returns:
+        Flips between adding and removing likes
+    """
 
     def post(self, request, slug):
         post = get_object_or_404(Post, slug=slug)

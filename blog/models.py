@@ -1,7 +1,12 @@
+# Imports
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+
+# Field choices for Post class
 STATUS = ((0, "Draft"), (1, "Live"))
 
 PRIORITY_CHOICES = [
