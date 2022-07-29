@@ -1,11 +1,20 @@
+# Imports
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.contrib import admin
+
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .models import Booking
 
-# Models
+
+# Models for booking app in admin page
 
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
-
+    """
+    Admin class for the booking model
+    """
     list_display = (
         'created_on',
         'user',
