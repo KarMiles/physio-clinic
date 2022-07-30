@@ -1,29 +1,56 @@
+# Imports
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render, redirect
 from django.views import generic
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.contrib import messages
 
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .models import Booking
 from .forms import BookingForm
-# from .models import Post
 
 
-# Views
+# Views for booking app
 
 class BookingList(LoginRequiredMixin, generic.ListView):
+    """
+    A view to show booking messages
+    Args:
+        LoginRequiredMixin (show only to authorized users)
+        ListView: class based view
+    Returns:
+        Render of booking messages
+    """
     model = Booking
     template_name = "booking.html"
     context_object_name = 'bookings'
 
     def get_queryset(self):
+        """
+        Filters bookings by the query
+        Args:
+            self (object): Self object
+        Returns:
+            bookings with status 0 (pending)
+            ordered by creation time
+        """
         return Booking.objects.filter(
             status=0,
             user=self.request.user
             ).order_by("created_on")
 
     def get(self, *args, **kwargs):
-
+        """
+        Renders page with bookings list
+        Args:
+            self (object): Self object
+            **kwargs: **kwargs
+        Returns:
+            Render booking page
+        """
         return render(
             self.request,
             "booking.html",
@@ -34,13 +61,18 @@ class BookingList(LoginRequiredMixin, generic.ListView):
         )
 
     def post(self, *args, **kwargs):
-
+        """
+        A view to save data gathered in booking form
+        and show confirmation message.
+        Args:
+            self (object): Self object
+            *args
+            **kwargs
+        Returns:
+            Save data, show confirmation message,
+            redirect to booking page after booking submit.
+        """
         booking_form = BookingForm(data=self.request.POST)
-
-        # Allow treatment and time fields to be empty:
-        # def get_form(self, request, obj=None, **kwargs):
-        #     booking_form = super().get_form(request, obj, **kwargs)
-        #     booking_form.base_fields["treatment"].required = False
 
         if booking_form.is_valid():
             booking_form.instance.user = self.request.user
