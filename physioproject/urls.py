@@ -38,5 +38,5 @@ urlpatterns = [
     path('poll/', include('poll.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-handler404 = 'blog.views.error_404_view'
-handler500 = 'blog.views.error_500_view'
+handler404 = 'blog.helpers.error_404_view'
+handler500 = 'blog.helpers.error_500_view'
