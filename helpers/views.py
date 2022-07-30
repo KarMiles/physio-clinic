@@ -1,12 +1,13 @@
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from django.shortcuts import render
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-# Views for helpers
+# Views for error pages
 
 def error_404_view(request, exception):
     """
@@ -18,6 +19,7 @@ def error_404_view(request, exception):
         Render 404 error page
     """
     return render(request, '404.html', status=404)
+
 
 def error_500_view(request):
     """
