@@ -10,7 +10,7 @@
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
                 <p class="card-text col-md-9 text-secondary">{{ post.excerpt }}</p>
             </div>
-            <div class="d-none d-sm-block col-md-6 details-image">
+            <div class="d-sm-block col-md-6 details-image">
                 {% if "placeholder" in post.featured_image.url %}
                 <img src="{{ MEDIA_URL }}placeholder.jpg">
                 {% else %}
@@ -23,9 +23,8 @@
 
 <!-- Social -->
 <div class="container">
-
     <div class="row">
-        <div class="col card mb-4  mt-3 left  top">
+        <div class="col card mb-4 mt-3 mx-2 left top">
             <div class="card-body">
                 <p class="card-text bg-primary">
                     {{ post.content | safe }}
@@ -82,38 +81,46 @@
         <a href="{% url 'post_delete' post.slug %}" class="btn btn-danger btn-attn btn-lg">Delete post</a>
 
     {% endif %}
+</div>
 
-    <!-- Horisontal ruler -->
+<!-- Horisontal ruler -->
+<div class="container">
     <div class="row">
         <div class="col">
             <hr>
         </div>
     </div>
+</div>
 
-    <!-- Comments -->
-    <div class="row">
+<!-- Comments -->
+<div class="container px-4">
+
+    <div class="row gx-4">
         
         <!-- Displaying comments -->  
-        <div class="col-md-8 card mb-4  mt-3 "> 
-            <div class="card-body">
+        <div class="col-md-8 card mb-4  mt-3 xm-2  border-0"> 
+            <div class="card-body p-2">
                 <h3>Comments:</h3>
                 {% for comment in comments %}
-                <div class="comments" style="padding: 10px;">
+                <div class="comments">
+                    <hr class="text-muted">
                     <p class="font-weight-bold">
                         <span class=" text-muted font-weight-normal">
                             {{ comment.created_on }}
                         </span>
                         {{ comment.author }} wrote:
                     </p>
+                    <p class="lead">
                     {{ comment.body | linebreaks }}
+                    </p>
                 </div>
                 {% endfor %}
             </div>
         </div>
-
+    
         <!-- Inserting comments -->
-        <div class="col-md-4 card mb-4  mt-3 ">
-            <div class="card-body">
+        <div class="col-md-4 card mb-4  mt-3 xm-2  border-0">
+            <div class="card-body p-2">
                 {% if commented %}
                     <div class="alert alert-primary" role="alert">
                         Your comment is awaiting approval
@@ -122,7 +129,7 @@
                     {% if user.is_authenticated %}
                     <h3>Leave a comment:</h3>
                     <p>Posting as: {{ user.username }}</p>
-                    <form method="post" style="margin-top: 1.5em;">
+                    <form method="post">
                         {{ comment_form | crispy }}
                         {% csrf_token %}
                         <button type="submit" class="btn btn-signup btn-lg">Submit</button>
