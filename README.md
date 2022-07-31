@@ -221,7 +221,7 @@ Note:
 ## Models
 The following models represent the database structure for the website.
 
-### Model User 
+### Model: User 
 - This model represents a user and is based on Django allauth library.
 - This model contains the following fields: username, first_name, last_name, email, password, tel, is_staff, is_active, is_superuser.
 
@@ -231,7 +231,7 @@ Relationships
 - It has one-to-many relationship with Booking model (one user can be related to many bookings).
 
 
-### Model Post
+### Model: Post
 - Part of blog app.
 - This model represents treatments offered by the company.
 
@@ -261,7 +261,7 @@ Fields and attributes for the Post model
 </details>
 <br>
 
-### Model Comment
+### Model: Comment
 
 - Part of blog app.
 - This model represents comments registered users can write on treatments.
@@ -276,7 +276,7 @@ Relationships
 </details>
 <br>
 
-### Model Booking 
+### Model: Booking 
 
 - Part of booking app.
 - Represents requests for appointments for specific treatments registered users can place via the webpage.
@@ -291,11 +291,27 @@ Relationships
 
 ![screenshot of Booking model](readme/docs/images/database/booking_model.jpg)
 </details>
+<br>
 
-### Model Contact
+### Model: Contact
 
 - Part of contact app.
 - Represents messages all users can send via webpage in Contact Us section.
 
 Relationships
 - No relationships set in the Contact model. In ModelContactForm information is pulled about registered user, if available. This offers benefits of one-to-many relationship with User model combined with also serving unregistered users.
+
+<details>
+<summary>Click here to view Contact model</summary>
+
+![screenshot of Contact model](readme/docs/images/database/contact_model.jpg)
+</details>
+<br>
+
+### Definitions
+
+- ManyToManyField - class used for many-to-many relationships, when a model needs to reference multiple instances of a different model. In an example of blog app, in Post model, a post can be liked by many users and a user can like many posts.
+- ForeignKey - class used for one-to-many relationships. ForeignKey is a Django ORM (Object-Relational Mapper) field-to-column mapping for creating and working with relationships between tables in relational databases. In an example of booking app, a post (treatment) can have many bookings but a booking relates only to one post.
+- cascade used on on_delete - means that rows in the child table will be deleted when rows in the parent table are deleted.
+- CharField - class used for small- to large-sized strings, can have max_length (maximum length) specified. 
+- SlugField - class used for creating a slug, which is a short label for something, containing only letters, numbers, underscores or hyphens, generally used in URLs. SlugField can also have Max_length specified.

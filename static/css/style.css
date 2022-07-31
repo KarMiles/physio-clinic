@@ -178,29 +178,3 @@ footer a :hover {
 .poll label {
     display: block;
 }
-
-/* .navbar-default, .btn, .form-control, .panel {
-    border-radius: 0;
-}
-.navbar-default {
-    border-color: aliceblue;
-    box-shadow: 0px 3px 3px 0px #ddd;
-}
-.navbar-default .navbar-nav>.active>a, 
-.navbar-default .navbar-nav>.active>a:focus, 
-.navbar-default .navbar-nav>.active>a:hover {
-    background-color: rgb(244, 244, 244);
-    border-bottom: 4px solid #ddd;
-}
-
-.panel-footer {
-    background-color: #dcf1f580;
-    border-color: #c5eef680;
-}
-.panel {
-    box-shadow: 0px 3px 3px 0px #ddd;
-}
-
-.borderless {
-    border: none!important;
-} */
