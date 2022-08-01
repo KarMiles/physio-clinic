@@ -178,3 +178,35 @@ footer a :hover {
 .poll label {
     display: block;
 }
+
+
+/* Hero image and cover text */
+
+#hero-image {
+    height: 95vh;
+    background: url('/media/placeholder.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    object-fit: fill;
+    margin-bottom: 5vh;
+    opacity: 0.9;
+}
+
+#cover-text, #cover-text h2 {
+    color: white;
+}
+
+#cover-text {
+    font-size: 150%;
+    width: 400px;
+    height: 250px;
+    
+    padding-top: 80px;
+
+    background-color: rgba(91, 172, 253, 0.654);
+
+    text-align: center;
+
+    margin: auto;
+}
