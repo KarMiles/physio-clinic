@@ -74,7 +74,7 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 ---
 
-## i. Strategy <a name='strategy'></a>
+## 1.i. Strategy <a name='strategy'></a>
 
 ## User stories
 
@@ -146,7 +146,7 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 ---
 
-## ii. Scope <a name='scope'></a>
+## 1.ii. Scope <a name='scope'></a>
 
 ## Strategy trade-offs
 
@@ -160,7 +160,7 @@ TODO Add strategy trade-offs scr
 
 ---
 
-## iii. Structure <a name='structure'></a>
+## 1.iii. Structure <a name='structure'></a>
 
 ## Website templates
 
@@ -324,3 +324,21 @@ Relationships
 - verbose_name - allows to alter label accompanying a form field.
 - `__str__(self)` -  allows to return an object converted into a string which can be used for the admin page and other purposes. 
 - reverse_lazy - is an implementation of the reverse URL resolver, unlike the traditional reverse function, reverse_lazy won't execute until the value is needed. It is useful because it prevents 'Reverse Not Found' exceptions when working with URLs that may not be immediately known, which - in this project - is the case in CreatePost class.
+
+___
+## 1.iv. Skeleton <a name='skeleton'></a>
+
+Layout of the interface, navigation and information design for different screen sizes were planned with utilization of wireframes created in Balsamiq. 
+
+TODO Wireframes from Balsamiq.
+
+___
+## Business logic
+
+TODO Describe business logic if needed.
+
+## 1.v. Surface <a name='surface'></a>
+The values behind building the webpage for physical therapy clinic are clean simplicity, impecable higiene and friendly, sublte environment. This is reflected in the webpage surface.
+
+### **Colour Palette**
+Colour palette reflects the clinic's dedication to hygiene and simplicity. For this purpose 
