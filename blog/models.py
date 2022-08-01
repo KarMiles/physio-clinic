@@ -73,7 +73,7 @@ class Comment(models.Model):
         on_delete=models.CASCADE,
         related_name='comments')
     author = models.CharField(max_length=50)
-    body = models.TextField()
+    body = models.TextField( verbose_name=("Your comment:"),)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 

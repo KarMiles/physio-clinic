@@ -315,3 +315,12 @@ Relationships
 - cascade used on on_delete - means that rows in the child table will be deleted when rows in the parent table are deleted.
 - CharField - class used for small- to large-sized strings, can have max_length (maximum length) specified. 
 - SlugField - class used for creating a slug, which is a short label for something, containing only letters, numbers, underscores or hyphens, generally used in URLs. SlugField can also have Max_length specified.
+- unique - when equal True it sets requirement that given key has unique value. In case of slug this is to prevent repeated values hindering post addressing. 
+- related_name - is used when one record of a model is related to exactly one record of another model. E.g. author field in the Post model is the same as the ForeignKey it's been given (User model).
+- blank - when True this allows field to be left blank, when False field is required to be filled.
+- auto_now_add - when True allows to automatically fill the DateTimeField with current date and time.
+- BooleanField - allows for true / false statements.
+- Meta - class allowing for changing behaviour of the model fields, e.g. setting order in which data is presented.
+- verbose_name - allows to alter label accompanying a form field.
+- `__str__(self)` -  allows to return an object converted into a string which can be used for the admin page and other purposes. 
+- reverse_lazy - is an implementation of the reverse URL resolver, unlike the traditional reverse function, reverse_lazy won't execute until the value is needed. It is useful because it prevents 'Reverse Not Found' exceptions when working with URLs that may not be immediately known, which - in this project - is the case in CreatePost class.
