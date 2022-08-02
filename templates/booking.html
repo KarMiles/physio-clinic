@@ -18,12 +18,16 @@
             <div class="card mb-4">
                 <div class="card-body">
 
-                        <h2 class="card-title">Request by: {{ user.username }}</h2>
-                        <form method="post">
-                            {{ booking_form | crispy }}
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-signup btn-lg">Submit</button>
-                        </form>
+                    <div class="image-container">
+                        <img class="card-img-top illustration" src="{{ MEDIA_URL }}sincerely.jpg">
+                    </div>
+
+                    <h2 class="card-title">Request by: {{ user.username }}</h2>
+                    <form method="post">
+                        {{ booking_form | crispy }}
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-signup btn-lg">Submit</button>
+                    </form>
 
                 </div>
             </div>
@@ -68,6 +72,6 @@
 
     </div>
 
-</div>div>
+</div>
 
 {% endblock %}

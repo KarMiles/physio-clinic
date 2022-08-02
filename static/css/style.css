@@ -4,13 +4,9 @@
 
 /* Common */
 
-#content-top {
-    position: absolute;
-    top: 600px;
-}
-
 body {
     font-family: Raleway, sans-serif;
+    background-color: rgb(248, 249, 250, 0.3);
 }
 
 h1 {
@@ -19,6 +15,20 @@ h1 {
 
 a {
     text-decoration: none;
+}
+
+#content-top {
+    position: absolute;
+    top: 600px;
+}
+
+.card {
+    background-color: white;
+    border-color:rgba(91, 172, 253, 0.3);
+}
+
+.illustration {
+    margin-bottom: 1rem;
 }
 
 .btn {
@@ -229,7 +239,7 @@ footer a :hover {
 }
 
 #hovertext:hover {
-    color: black;
+    color: #408cdd;
 }
     
 #hovertext:before {
@@ -246,8 +256,9 @@ transition: opacity 1s ease-in-out;
 
 position: absolute;
 z-index: 1;
-left: 132px;
-top: 110%;
+left: 130px;
+/* top: 90%; */
+bottom: -30px;
 }
 
 #hovertext:hover:before {
