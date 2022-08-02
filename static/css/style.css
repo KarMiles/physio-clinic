@@ -278,7 +278,12 @@ visibility: visible;
     top: 115px;
     z-index: 10;
     opacity: 0.9;
+    font-size: x-large;
     }
+
+#prev a, #next a {
+border-radius: 2px;
+}
 
 #prev {
     left: 20px;
