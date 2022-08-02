@@ -14,93 +14,125 @@
 
 <div id="content-top"></div>
 <div class="container-fluid">
-    <div class="row">
+    <div id="nav-container">
 
-        <!-- Treatments Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for post in post_list %}
-                    <div class="col-md-4">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <div class="image-container">
-                                    {% if "placeholder" in post.featured_image.url %}
-                                        <img class="card-img-top" src="{{ MEDIA_URL }}placeholder.jpg">
-                                    {% else %}
-                                        <img class="card-img-top" src="{{ post.featured_image.url }}">
+        <!-- Navigation for paginated view - top of screen position -->
+        {% if is_paginated %}
+        <div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center infoi">
+                    {% if page_obj.has_previous %}
+                    <div id="prev">
+                        <li><a href="?page={{ page_obj.previous_page_number }}#content-top" class="page-link"> &#9664; </a></li>
+                    </div>
+                        
+                    {% endif %}
+                    {% if page_obj.has_next %}
+                    <div id="next">
+                        <li><a href="?page={{ page_obj.next_page_number }}#content-top" class="page-link"> &#9654; </a></li>
+                    </div>
+                        
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+        {% endif %}
+
+        <div class="row">
+
+            <!-- Treatments Column -->
+            <div class="col-12 mt-3 left">
+                <div class="row">
+                    {% for post in post_list %}
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div class="image-container">
+                                        {% if "placeholder" in post.featured_image.url %}
+                                            <img class="card-img-top" src="{{ MEDIA_URL }}placeholder.jpg">
+                                        {% else %}
+                                            <img class="card-img-top" src="{{ post.featured_image.url }}">
+                                        {% endif %}
+                                        <div class="image-flash">
+                                            <p class="author">Author: {{ post.author }}</p>
+                                        </div>
+                                    </div>
+                                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                                        <h2 class="card-title">{{ post.title }}</h2>
+                                        <p class="card-text">{{ post.excerpt }}</p>
+                                    </a>
+                                    <hr/>
+
+                                    
+                                    <div class="row ms-1 card-text text-muted h6">
+
+                                        <!-- Likes count -->
+                                        <div class="col-2 col-md-3">
+                                            <i class="far fa-heart"></i>
+                                            {{ post.number_of_likes }}
+                                        </div>    
+
+                                        <!-- Comment count -->
+                                        <div class="col-2 col-md-3">
+                                            {% with post.comments.count as total_comments %}
+                                            <i class="far fa-comments"></i>
+                                            {{ total_comments }}
+                                            {% endwith %}
+                                        </div>
+                                        
+                                    </div>
+
+                                    <!-- Show post Live/Draft status -->
+                                    {% if user.is_staff %}
+                                        {% if post.status %}
+                                            <div class="row card-text text-muted ms-1">
+                                        {% else %}
+                                            <!-- Format red if status is Draft -->
+                                            <div class="row card-text ms-1 text-danger">
+                                        {% endif %}
+                                            Status: {{ post.get_status_display }}
+                                        </div>
                                     {% endif %}
-                                    <div class="image-flash">
-                                        <p class="author">Author: {{ post.author }}</p>
-                                    </div>
-                                </div>
-                                <a href="{% url 'post_detail' post.slug %}" class="post-link">
-                                    <h2 class="card-title">{{ post.title }}</h2>
-                                    <p class="card-text">{{ post.excerpt }}</p>
-                                </a>
-                                <hr/>
-
-                                
-                                <div class="row ms-1 card-text text-muted h6">
-
-                                    <!-- Likes count -->
-                                    <div class="col-2 col-md-3">
-                                        <i class="far fa-heart"></i>
-                                        {{ post.number_of_likes }}
-                                    </div>    
-
-                                    <!-- Comment count -->
-                                    <div class="col-2 col-md-3">
-                                        {% with post.comments.count as total_comments %}
-                                        <i class="far fa-comments"></i>
-                                        {{ total_comments }}
-                                        {% endwith %}
-                                    </div>
                                     
                                 </div>
-
-                                <!-- Show post Live/Draft status -->
-                                {% if user.is_staff %}
-                                    {% if post.status %}
-                                        <div class="row card-text text-muted ms-1">
-                                    {% else %}
-                                        <!-- Format red if status is Draft -->
-                                        <div class="row card-text ms-1 text-danger">
-                                    {% endif %}
-                                        Status: {{ post.get_status_display }}
-                                    </div>
-                                {% endif %}
-                                
                             </div>
                         </div>
-                    </div>
-                    {% if forloop.counter|divisibleby:3 %}
-                        </div>
-                        <div class="row">
-                    {% endif %}
-                {% endfor %}
+                        {% if forloop.counter|divisibleby:3 %}
+                            </div>
+                            <div class="row">
+                        {% endif %}
+                    {% endfor %}
+                </div>
             </div>
         </div>
+
+        <!-- Link for adding new post -->
+        {% if user.is_authenticated and user.is_staff %}
+            <a href="{% url 'post_create' %}" class="btn btn-primary btn-lg">New post</a>
+        {% endif %}
+
+        <!-- Navigation for paginated view - bottom of page -->
+        {% if is_paginated %}
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    {% if page_obj.has_previous %}
+                        <li><a href="?page={{ page_obj.previous_page_number }}#content-top" class="page-link"> &#9664; </a></li>
+                    {% endif %}
+                    {% if page_obj.has_next %}
+                        <!-- <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> >>> </a></li> -->
+                        <li><a href="?page={{ page_obj.next_page_number }}#content-top" class="page-link"> &#9654; </a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% endif %}
     </div>
 
-    <!-- Link for adding new post -->
-    {% if user.is_authenticated and user.is_staff %}
-        <a href="{% url 'post_create' %}" class="btn btn-primary btn-lg">New post</a>
-    {% endif %}
-
-    <!-- Navigation for paginated view -->
-    {% if is_paginated %}
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                {% if page_obj.has_previous %}
-                    <li><a href="?page={{ page_obj.previous_page_number }}#content-top" class="page-link"> <<< </a></li>
-                {% endif %}
-                {% if page_obj.has_next %}
-                    <!-- <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> >>> </a></li> -->
-                    <li><a href="?page={{ page_obj.next_page_number }}#content-top" class="page-link"> >>> </a></li>
-                {% endif %}
-            </ul>
-        </nav>
-    {% endif %}
+    <!-- <div id="nav-container">
+        <div id="navi">a</div>
+        <div id="infoi">
+            <img src="https://appharbor.com/assets/images/stackoverflow-logo.png" height="20" width="32" />b
+        </div>
+        </div> -->
     
 </div>
 

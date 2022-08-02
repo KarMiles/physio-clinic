@@ -258,10 +258,32 @@ position: absolute;
 z-index: 1;
 left: 130px;
 /* top: 90%; */
-bottom: -30px;
+bottom: -25px;
 }
 
 #hovertext:hover:before {
 opacity: 1;
 visibility: visible;
 }
+
+
+/* On-top navigation buttons */
+
+#nav-container {
+    position: relative;
+    }
+
+#prev, #next {
+    position: absolute;
+    top: 115px;
+    z-index: 10;
+    opacity: 0.9;
+    }
+
+#prev {
+    left: 20px;
+}
+
+#next {
+    right: 20px;
+    }
