@@ -18,9 +18,9 @@
 
         <!-- Navigation for paginated view - top of screen position -->
         {% if is_paginated %}
-        <div>
+        <div id="sidenav">
             <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center infoi">
+                <ul class="pagination justify-content-center">
                     {% if page_obj.has_previous %}
                     <div id="prev">
                         <li><a href="?page={{ page_obj.previous_page_number }}#content-top" class="page-link"> &#9664; </a></li>

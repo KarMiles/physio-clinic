@@ -6,7 +6,7 @@
 
 body {
     font-family: Raleway, sans-serif;
-    background-color: rgb(248, 249, 250, 0.3);
+    background-color: #e7edf24d;
 }
 
 h1 {
@@ -267,7 +267,7 @@ visibility: visible;
 }
 
 
-/* On-top navigation buttons */
+/* On-top previous/next navigation buttons */
 
 #nav-container {
     position: relative;
@@ -292,3 +292,17 @@ border-radius: 2px;
 #next {
     right: 20px;
     }
+
+
+/* For small screen sizes 770px wide and down */
+
+@media screen and (max-width: 770px) {
+    .card-img-top {
+        max-height: 200px;
+        object-fit: cover;
+    }
+
+    #sidenav {
+        visibility: hidden;
+    }
+}
