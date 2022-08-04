@@ -341,4 +341,11 @@ TODO Describe business logic if needed.
 The values behind building the webpage for physical therapy clinic are clean simplicity, impecable higiene and friendly, sublte environment. This is reflected in the webpage surface.
 
 ### **Colour Palette**
-Colour palette reflects the clinic's dedication to hygiene and simplicity. For this purpose 
+Colour palette reflects the clinic's dedication to hygiene and simplicity. For this purpose pastel colours are used, mainly blue and red with light shades of beige. Blue brings cleanliness and lightness to mind and red is commonly associated with health care. 
+
+Screenshot of colour palette:
+
+![screenshot of colour palette](readme/docs/images/coolors_palette.jpg)
+
+### **Typography**
+

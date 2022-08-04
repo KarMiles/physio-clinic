@@ -1,11 +1,12 @@
 /* Google Fonts used: Raleway */
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700;800&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700;800&display=swap'); */
 
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Raleway:wght@100;400;700;800&display=swap');
 
 /* Common */
 
 body {
-    font-family: Raleway, sans-serif;
+    font-family: Raleway, Lato, Tahoma, sans-serif;
     background-color: #e7edf24d;
 }
 
@@ -211,8 +212,8 @@ footer a :hover {
     background-position: center;
     object-fit: fill;
 
-    height: 85vh;
-    margin-bottom: 5vh;
+    height: 86vh;
+    margin-bottom: 1vh;
     opacity: 0.9;
 }
 
