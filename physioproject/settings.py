@@ -73,6 +73,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
 ]
 
+# WHITENOISE_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'root')
+
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
@@ -185,8 +187,10 @@ STATIC_URL = '/static/'
 
 # Code to tell Django to use Cloudinary to store media and static files
 # STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+# STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 
 # Version of above from Heroku Devcenter
 # not working on Github:
