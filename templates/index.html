@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 <div id="hero-image" class="d-flex align-items-center">
@@ -49,7 +49,7 @@
                                 <div class="card-body">
                                     <div class="image-container">
                                         {% if "placeholder" in post.featured_image.url %}
-                                            <img class="card-img-top" src="{{ MEDIA_URL }}placeholder.jpg">
+                                            <img class="card-img-top" src="{% static 'placeholder.jpg' %}">
                                         {% else %}
                                             <img class="card-img-top" src="{{ post.featured_image.url }}">
                                         {% endif %}
