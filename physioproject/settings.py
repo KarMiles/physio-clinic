@@ -48,6 +48,9 @@ ALLOWED_HOSTS = ["physio-clinic-heroku.herokuapp.com", "localhost"]
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
+    'django.contrib.staticfiles',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -58,7 +61,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'cloudinary_storage',
-    'django.contrib.staticfiles',
+    
     'cloudinary',
     'django_summernote',
     'crispy_forms',
@@ -198,8 +201,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 #     os.path.join(BASE_DIR, 'static'),
 # )
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_ROOT = 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = 'staticfiles'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
