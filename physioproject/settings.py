@@ -184,7 +184,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Code to tell Django to use Cloudinary to store media and static files
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+# STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # Version of above from Heroku Devcenter
