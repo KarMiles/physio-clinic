@@ -17,12 +17,7 @@ from django.contrib.messages import constants as messages
 from django.conf.locale.en import formats as en_formats
 
 if os.path.isfile("env.py"):
-    import env
-
-
-# Time format
-# en_formats.DATETIME_FORMAT = "d/m/y H:i"
-en_formats.DATETIME_FORMAT = "%d/%m/%Y %H:%M"
+    import env # noqa
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,9 +35,6 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
-
 DEBUG = os.environ.get('DEBUG', '1') == '1'
 
 ALLOWED_HOSTS = ["physio-clinic-heroku.herokuapp.com", "localhost"]
@@ -52,7 +44,6 @@ ALLOWED_HOSTS = ["physio-clinic-heroku.herokuapp.com", "localhost"]
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -63,7 +54,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'cloudinary_storage',
-    
     'cloudinary',
     'django_summernote',
     'crispy_forms',
@@ -84,12 +74,6 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-
-# Booking app authentication
-# AUTHENTICATION_BACKENDS = (
-#     # your usual auth backends
-#     'booking.auth_backends.BookingIDBackend',
-# )
 
 
 MESSAGE_TAGS = {
@@ -183,6 +167,9 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Time format
+en_formats.DATETIME_FORMAT = "%d/%m/%Y %H:%M"
 
 
 # Static files (CSS, JavaScript, Images)

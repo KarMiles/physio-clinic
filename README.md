@@ -406,7 +406,7 @@ Navigation bar is responsive to screen size, all buttons are visible on large sc
 
 **Responsive design**
 
-Example of menu minimized to hamburger button on small screens:
+Navigation menu is minimized to hamburger button on small screens:
 <details>
 <summary>Click here to view image </summary>
 
@@ -420,6 +420,15 @@ Navigation menu pulled down from the hamburger menu:
 <summary>Click here to view image </summary>
 
 ![screenshot of navbar](readme/docs/images/testing/features/navbar_small_pulled.jpg)
+</details>
+<br>
+
+Navigation menu stretched on a larger screen:
+<br>
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of navbar](readme/docs/images/testing/features/navbar_large.jpg)
 </details>
 <br>
 
