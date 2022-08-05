@@ -12,7 +12,7 @@
             </div>
             <div class="d-sm-block col-md-6 details-image">
                 {% if "placeholder" in post.featured_image.url %}
-                <img src="{{ MEDIA_URL }}placeholder.jpg">
+                <img src="{% static 'placeholder.jpg' %}">
                 {% else %}
                 <img src=" {{ post.featured_image.url }}">
                 {% endif %}
