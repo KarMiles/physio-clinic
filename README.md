@@ -360,7 +360,7 @@ Graphics for the site were chosen with the intention of maintaining the theme of
 <details>
 <summary>Click here to view image 1</summary>
 
-Image 1 serverves as hero image and a placeholder.
+Image 1 serves as hero image and a placeholder.
 ![image 1](readme/docs/images/surface/graphics/placeholder.jpg)
 </details>
 

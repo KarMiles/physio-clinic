@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 {% block extrahead %}
     {{ booking_form.media }}
@@ -19,7 +20,7 @@
                 <div class="card-body">
 
                     <div class="image-container">
-                        <img class="card-img-top illustration" src="{{ MEDIA_URL }}sincerely.jpg">
+                        <img class="card-img-top illustration" src="{% static 'sincerely.jpg' %}">
                     </div>
 
                     <h2 class="card-title">Request by: {{ user.username }}</h2>

@@ -21,7 +21,6 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from django.views.static import serve
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -37,13 +36,11 @@ urlpatterns = [
     path('booking/', include('booking.urls')),
     path('contact/', include('contact.urls')),
     path('poll/', include('poll.urls')),
-] 
-# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-
-# urlpatterns += [url(r'^media/(?P<path>.*)', serve, {'document_root': settings.MEDIA_ROOT})]
 
 HANDLER404 = 'helpers.views.error_404_view'
 HANDLER500 = 'helpers.views.error_500_view'

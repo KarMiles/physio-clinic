@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% load i18n %}
@@ -16,7 +17,7 @@
       <div class="card mb-4">
         <div class="card-body">
           <div class="image-container">
-            <img class="card-img-top illustration" src="{{ MEDIA_URL }}letter.jpg">
+            <img class="card-img-top illustration" src="{% static 'letter.jpg' %}">
             <h2>{% trans "Your message:" %}</h2>
           </div>
           <div>
