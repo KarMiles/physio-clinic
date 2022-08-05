@@ -16,7 +16,7 @@ View the live site [here](https://physio-clinic-heroku.herokuapp.com/)
       
 2. [Features](#features)<br>
     i. [Current Features](#features-existing)<br>
-    ii. [Features to implement](#features-toimplement)<br>
+    ii. [Features to implement](#features-next)<br>
 
 3. [Testing](#testing)<br>
 
@@ -391,3 +391,66 @@ Image 1 serverves as hero image and a placeholder.
 
 ![image 5](readme/docs/images/surface/graphics/vote.jpg)
 </details>
+
+---
+
+# 2. Features <a name='features'></a>
+
+## 2.i. Current features <a name='features-current'></a>
+
+### **Feature 1: Navigation bar**
+
+Navigation bar is present on top of the screen on all pages of the site. Aim of this feature is that the user always have access to easy navigation across the site without the need to use browser navigation features, e.g. 'back' button.
+
+Navigation bar is responsive to screen size, all buttons are visible on large screens, while on small screens navigation menu is available from the hamburger button. Logo, also serving as a 'home' button is always visible. 
+
+**Responsive design**
+
+Example of menu minimized to hamburger button on small screens:
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of navbar](readme/docs/images/testing/features/navbar_small.jpg)
+</details>
+<br>
+
+Navigation menu pulled down from the hamburger menu:
+<br>
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of navbar](readme/docs/images/testing/features/navbar_small_pulled.jpg)
+</details>
+<br>
+
+**Authorization - dependent navigation**
+
+Navigation menu is dependent on current user profile. Users without login are presented with the simplest menu due to limited authorization. This is visible in Contact Us option. Registered clients have added options of requesting specific treatments "Request appointment":
+
+Navigation bar - unregistered user:
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of navbar](readme/docs/images/testing/features/navbar_basic.jpg)
+</details>
+<br>
+
+Contact Us - registered user:
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of navbar](readme/docs/images/testing/features/navbar_contact.jpg)
+</details>
+<br>
+
+Users registered as members of staff have additional features available. In menu Poll an additional option 'Create a poll' is available:
+<details>
+<summary>Click here to view image </summary>
+
+![screenshot of navbar](readme/docs/images/testing/features/navbar_poll.jpg)
+</details>
+<br>
+
+
+
+## 2.ii. Features to implement <a name='features-next'></a>
