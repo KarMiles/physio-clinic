@@ -210,7 +210,7 @@ Common files:
 
 ## Data schema
 
-![screenshot of data schema](readme/docs/images/data-schema.jpg)
+![screenshot of data schema](readme/docs/images/database/data_schema.jpg)
 
 Note:
 - User - Post.likes is many-to-many relationship.
@@ -341,11 +341,53 @@ TODO Describe business logic if needed.
 The values behind building the webpage for physical therapy clinic are clean simplicity, impecable higiene and friendly, sublte environment. This is reflected in the webpage surface.
 
 ### **Colour Palette**
-Colour palette reflects the clinic's dedication to hygiene and simplicity. For this purpose pastel colours are used, mainly blue and red with light shades of beige. Blue brings cleanliness and lightness to mind and red is commonly associated with health care. 
+Colour palette reflects the clinic's dedication to hygiene and simplicity. For this purpose pastel colours are used, mainly blue and red with light shades of beige. Blue brings cleanliness and lightness to mind and red is commonly associated with health care while light beige binds them together in a subtle, friendly environment.
 
 Screenshot of colour palette:
 
-![screenshot of colour palette](readme/docs/images/coolors_palette.jpg)
+![screenshot of colour palette](readme/docs/images/surface/coolors_palette.jpg)
 
 ### **Typography**
 
+A font chosen for the site had to be light, simple and easy to read to be coherent with the rest of the graphic design. For this purpose I chose font Raleway with fallback font Lato. Both are available from Google Fonts service.
+
+![screenshot of google fonts](readme/docs/images/surface/font_raleway.jpg)
+
+### **Imagery**
+Graphics for the site were chosen with the intention of maintaining the theme of a friendly and quiet environment of a physiotherapy practice. 
+
+<br>
+<details>
+<summary>Click here to view image 1</summary>
+
+Image 1 serverves as hero image and a placeholder.
+![image 1](readme/docs/images/surface/graphics/placeholder.jpg)
+</details>
+
+<br>
+<details>
+<summary>Click here to view image 2</summary>
+
+![image 2](readme/docs/images/surface/graphics/hello.jpg)
+</details>
+
+<br>
+<details>
+<summary>Click here to view image 3</summary>
+
+![image 3](readme/docs/images/surface/graphics/letter.jpg)
+</details>
+
+<br>
+<details>
+<summary>Click here to view image 4</summary>
+
+![image 4](readme/docs/images/surface/graphics/sincerely.jpg)
+</details>
+
+<br>
+<details>
+<summary>Click here to view image 5</summary>
+
+![image 5](readme/docs/images/surface/graphics/vote.jpg)
+</details>
