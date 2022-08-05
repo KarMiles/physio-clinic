@@ -204,7 +204,7 @@ footer a :hover {
 /* Hero image and cover text */
 
 #hero-image {
-    background: url('/media/placeholder.jpg');
+    background: url('/static/placeholder.jpg');
 
     background-repeat: no-repeat;
     background-attachment: fixed;
