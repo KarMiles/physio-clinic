@@ -116,13 +116,26 @@ class DeletePost(StaffRequiredMixin, generic.DeleteView):
     queryset = Post.objects.all()
     template_name = 'post_confirm_delete.html'
 
+    def delete(self, request, *args, **kwargs):
+        """
+        Call the delete() method on the fetched object and then redirect to the
+        success URL.
+        """
+        self.object = self.get_object()
+        success_url = self.get_success_url()
+        self.object.delete()
+        
+        messages.add_message(
+            self.request,
+            messages.INFO,
+            'Post deleted successfully!')
+
+        return HttpResponseRedirect(success_url)
+
     # TODO Add confirmation message after delete
     # request = success_url
     # messages.info(request, 'Post has been deleted successfully!')
-    # messages.add_message(
-    #         self.request,
-    #         messages.INFO,
-    #         'Post submitted successfully!')
+    
     # success_message = "Post deleted"
 
 
