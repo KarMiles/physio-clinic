@@ -15,6 +15,9 @@ class BookingForm(forms.ModelForm):
     A class for the booking form
     """
     class Meta:
+        """
+        Set fields for the form
+        """
         model = Booking
         fields = (
             'message',
@@ -28,10 +31,9 @@ class BookingForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        In form show only posts with status 'live'
+        In booking form show only posts with status 'live'
         and order available treatments (posts) by title.
         """
         super().__init__(*args, **kwargs)
-        # self.fields['treatment'].queryset = Post.objects.all()
         self.fields['treatment'].queryset = Post.objects.filter(
             status=STATUS_LIVE).order_by('title')
