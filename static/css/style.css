@@ -294,9 +294,9 @@ border-radius: 2px;
     }
 
 
-/* For small screen sizes 770px wide and down */
+/* For small screen sizes 768px wide and down */
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 768px) {
     .card-img-top {
         max-height: 200px;
         object-fit: cover;

@@ -468,6 +468,18 @@ Access to navbar features:
 | 2   | Request appointment | no            | yes              | yes   | yes   |
 | 3   | Create poll         | no            | no               | yes   | yes   |
 
+<br>
 
+**Data creation, edition and deletion**
+
+Access to features depends on user authorization. User who is not logged in has access to viewing public information. While other activities in CRUD model are dependant on user login. Buttons available on pages correspond with the level of authorization.
+
+| No. | Feature                                 | Not logged in | Logged in client | Staff | Admin |
+| --- | --------------------------------------- | ------------- | ---------------- | ----- | ----- |
+| 1   | Reading public information              | yes           | yes              | yes   | yes   |
+| 2   | Sending messages to company via webpage | yes           | yes              | yes   | yes   |
+| 3   | Requesting specific treatments          | no            | yes              | yes   | yes   |
+| 4   | Making comments and likes               | no            | yes              | yes   | yes   |
+| 5   | Creating and editing posts and polls    | no            | no               | yes   | yes   |
 
 ## 2.ii. Features to implement <a name='features-next'></a>
