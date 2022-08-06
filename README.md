@@ -460,6 +460,14 @@ Users registered as members of staff have additional features available. In menu
 </details>
 <br>
 
+Access to navbar features:
+
+| No. | Feature             | Not logged in | Logged in client | Staff | Admin |
+| --- | ------------------- | ------------- | ---------------- | ----- | ----- |
+| 1   | Navigation bar      | yes           | yes              | yes   | yes   |
+| 2   | Request appointment | no            | yes              | yes   | yes   |
+| 3   | Create poll         | no            | no               | yes   | yes   |
+
 
 
 ## 2.ii. Features to implement <a name='features-next'></a>
