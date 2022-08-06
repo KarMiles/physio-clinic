@@ -7,7 +7,9 @@ from cloudinary.models import CloudinaryField
 
 
 # Field choices for Post class
-STATUS = ((0, "Draft"), (1, "Live"))
+STATUS_LIVE = 1
+STATUS_DRAFT = 0
+STATUS = ((STATUS_DRAFT, "Draft"), (STATUS_LIVE, "Live"))
 
 PRIORITY_CHOICES = [
     ("1 - Top", "Top"),

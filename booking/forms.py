@@ -7,7 +7,7 @@ from bootstrap_datepicker_plus.widgets import DateTimePickerInput
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .models import Booking
-
+from blog.models import STATUS_LIVE, Post
 
 class BookingForm(forms.ModelForm):
     """
@@ -24,3 +24,8 @@ class BookingForm(forms.ModelForm):
         widgets = {
             'time': DateTimePickerInput("", format, "")
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # self.fields['treatment'].queryset = Post.objects.all()
+        self.fields['treatment'].queryset = Post.objects.filter(status=STATUS_LIVE).order_by('title')
