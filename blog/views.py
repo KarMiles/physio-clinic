@@ -118,25 +118,19 @@ class DeletePost(StaffRequiredMixin, generic.DeleteView):
 
     def delete(self, request, *args, **kwargs):
         """
-        Call the delete() method on the fetched object and then redirect to the
-        success URL.
+        Call the delete() method on the fetched object,
+        then redirect to the success URL
+        and show confirmation message.
         """
         self.object = self.get_object()
         success_url = self.get_success_url()
         self.object.delete()
-        
         messages.add_message(
             self.request,
             messages.INFO,
             'Post deleted successfully!')
 
         return HttpResponseRedirect(success_url)
-
-    # TODO Add confirmation message after delete
-    # request = success_url
-    # messages.info(request, 'Post has been deleted successfully!')
-    
-    # success_message = "Post deleted"
 
 
 class PostList(generic.ListView):
