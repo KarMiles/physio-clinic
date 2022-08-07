@@ -558,3 +558,7 @@ Click to view image:
 
 #### **User Stories related to feature 4**
 
+3.1 As a **site user** I can **read and respond to available content** so **my experience on the site feels engaging and interactive**. 
+
+4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
+
