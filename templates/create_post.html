@@ -4,27 +4,27 @@
 {% block content %}
 
 <div class="container-fluid">
+    <div class="row g-0">
+        {% if user.is_staff %}
 
-    {% if user.is_staff %}
+            <h3 class="mt-3">Your post here:</h3>
 
-        <h3 class="mt-3">Your post here:</h3>
-
-            <!-- Post form for entering a new or editing existing posts -->
-            <div class="col-md-8 card mb-4 mt-3">
-                <div class="card-body">
-                    <h5 class="card-title">Author: {{ user.username }}</h5>
-                    <form enctype='multipart/form-data' method="POST">
-                        {{ form | crispy }}
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-lg">Submit</button>
-                    </form>
+                <!-- Post form for entering a new or editing existing posts -->
+                <div class="col-md-8 card mb-4 mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Author: {{ user.username }}</h5>
+                        <form enctype='multipart/form-data' method="POST">
+                            {{ form | crispy }}
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-lg">Submit</button>
+                        </form>
+                    </div>
                 </div>
+
             </div>
 
-        </div>
-
-    {% endif %}
-
+        {% endif %}
+    </div>
 </div>
 
 {% endblock %}

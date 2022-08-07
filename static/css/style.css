@@ -75,19 +75,21 @@ a {
 }
 
 .details-image {
+    min-height: 200px;
     position: relative;
+    margin-top: 0.5rem;
 }
 
 .details-image img {
+    position: absolute;
     object-fit: cover;
     width: 100%;
-    min-height: 100%;
 }
 
 .details-image:after {
     position: absolute;
     width: 100%;
-    z-index: 100;
+    z-index: 10;
 }
 
 input {
@@ -298,8 +300,13 @@ border-radius: 2px;
 
 @media screen and (max-width: 768px) {
     .card-img-top {
-        max-height: 200px;
+        max-height: 250px;
         object-fit: cover;
+    }
+
+    .details-image img {
+        min-height: 150px;
+        max-height: 250px;
     }
 
     #sidenav {

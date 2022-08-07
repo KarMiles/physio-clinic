@@ -88,7 +88,7 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 1.4 As a **site user** I can **log out of my account** so that I know **my information stays confidential**.
 
-1.5 As a **site user** I can **see at all times my current login status** so that **I know I'm in control of access to my enhanced service on currently used device**.
+1.5 As a **site user** I can **easily see my current login status** so that **I know I'm in control of access to my enhanced service on currently used device**.
 
 1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
 
@@ -391,8 +391,7 @@ Image 1 serves as hero image and a placeholder.
 
 ![image 5](readme/docs/images/surface/graphics/vote.jpg)
 </details>
-
----
+<br>
 
 # 2. Features <a name='features'></a>
 
@@ -470,9 +469,41 @@ Access to navbar features:
 
 <br>
 
+#### **User Stories related to feature 1**
+
+1.5 As a **site user** I can **easily see my current login status** so that **I know I'm in control of access to my enhanced service on currently used device**.
+
+2.1 As a **site user** I can **navigate the service intuitively** so that I can **utilize all of its content**.
+
+2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
+<br>
+
+## **Feature 2: Footer**
+The footer is displayed below all other content. Short information about the project and links to company's social media are placed there. Links are available to all users, open in a different tab for easy navigation and contain: 
+- Facebook, 
+- Instagram,
+- Twitter,
+- YouTube.
+
+<br>
+Click to view image:
+<details>
+<summary>Footer </summary>
+
+![screenshot of image](readme/docs/images/testing/features/footer.jpg)
+</details>
+<br>
+
+#### **User Stories related to feature 2**
+
+3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
+<br>
+
+### **Feature 3: On-site navigation**
+
 **Data creation, edition and deletion**
 
-Access to features depends on user authorization. User who is not logged in has access to viewing public information. While other activities in CRUD model are dependant on user login. Buttons available on pages correspond with the level of authorization.
+Access to features and corresponding navigation buttons depends on user authorization. User who is not logged in has access to viewing public information, while other activities in CRUD model are dependant on user profile.
 
 | No. | Feature                                 | Not logged in | Logged in client | Staff | Admin |
 | --- | --------------------------------------- | ------------- | ---------------- | ----- | ----- |
@@ -482,4 +513,48 @@ Access to features depends on user authorization. User who is not logged in has 
 | 4   | Making comments and likes               | no            | yes              | yes   | yes   |
 | 5   | Creating and editing posts and polls    | no            | no               | yes   | yes   |
 
-## 2.ii. Features to implement <a name='features-next'></a>
+#### **User Stories related to feature 3**
+
+2.1 As a **site user** I can **navigate the service intuitively** so that I can **utilize all of its content**.
+
+2.2 As a **site user** I can easily **browse through available treatments** so I can **decide which ones are most appropriate to me**. 
+
+2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
+
+
+### **Feature 4: Home page**
+
+On home page user is welcome with a hero picture whose goal is to draw attention and set a scene and mood of the site. In the middle of the hero page is a semi-transparent section with company name and slogan together with a small symbol indicating that more content is available below. To continue on to the content user can click the symbol or scroll down. 
+
+Below the hero image descriptions of available treatments are presented. Each description consists of following components:
+- title,
+- excerpt,
+- main content,
+- photo,
+- number of likes and comments,
+- status (visible only to staff users).
+Presentation follows responsive design.
+
+<br>
+Click to view image:
+<details>
+<summary>Home screen with hero image </summary>
+
+![screenshot of image](readme/docs/images/testing/features/home_hero.jpg)
+</details>
+
+<details>
+<summary>Home screen on large screen </summary>
+
+![screenshot of image](readme/docs/images/testing/features/home_large_scr.jpg)
+</details>
+
+<details>
+<summary>Home screen on small screen </summary>
+
+![screenshot of image](readme/docs/images/testing/features/home_small_scr.jpg)
+</details>
+<br>
+
+#### **User Stories related to feature 4**
+
