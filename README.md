@@ -562,3 +562,62 @@ Click to view image:
 
 4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
 
+---
+### **Fature 5 Account management**
+This functionality allows user to register an account, login an logout of the account and change password. 
+
+Click to view image:
+<details>
+<summary>Sign in </summary>
+
+![screenshot of image](readme/docs/images/testing/features/acc_mgt_login.jpg)
+</details>
+<br>
+
+Users without account may open account online:
+<details>
+<summary>Sign up </summary>
+
+![screenshot of image](readme/docs/images/testing/features/acc_mgt_signup.jpg)
+</details>
+<br>
+
+In case of a failed login attempt an information about incorrect login credentials is shown on page and user can try to login again.
+<details>
+<summary>Failed login </summary>
+
+![screenshot of image](readme/docs/images/testing/features/acc_mgt_login_fail.jpg)
+</details>
+<br>
+
+User can reset password online:
+<details>
+<summary>Password reset </summary>
+
+![screenshot of image](readme/docs/images/testing/features/acc_mgt_reset.jpg)
+</details>
+<br>
+
+On successful login user is redirected to the main page and shown a temporary confirmation message:
+<details>
+<summary>Successful login </summary>
+
+![screenshot of image](readme/docs/images/testing/features/acc_mgt_login_success.jpg)
+</details>
+<br>
+
+Logged in user can sign out. After signout user is redirected to the main page and temporary confirmation message is shown:
+<details>
+<summary>Sign out question </summary>
+
+![screenshot of image](readme/docs/images/testing/features/acc_mgt_signout_q.jpg)
+</details>
+
+<details>
+<summary>Sign out confirmation </summary>
+
+![screenshot of image](readme/docs/images/testing/features/acc_mgt_signout_success.jpg)
+</details>
+<br>
+
+
