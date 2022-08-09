@@ -606,6 +606,20 @@ On successful login user is redirected to the main page and shown a temporary co
 </details>
 <br>
 
+When logged in user has easy access to information about their login status:
+<details>
+<summary>Login status on large screen </summary>
+
+![screenshot of image](readme/docs/images/testing/features/acc_mgt_username_large.jpg)
+</details>
+
+<details>
+<summary>Login status on small screen </summary>
+
+![screenshot of image](readme/docs/images/testing/features/acc_mgt_username_small.jpg)
+</details>
+<br>
+
 Logged in user can sign out. After signout user is redirected to the main page and temporary confirmation message is shown:
 <details>
 <summary>Sign out question </summary>
@@ -620,4 +634,28 @@ Logged in user can sign out. After signout user is redirected to the main page a
 </details>
 <br>
 
+#### **User Stories related to feature 5**
+
+1.1 As a **site user** I can **access site without logging in** so that I can **read information about available treatments**.
+
+1.2 As a **site user** I can **register** so that **I have access to personalized service**.
+
+1.3 As a **site user** I can **log in using my username and password** so that I can **access site's enhanced functionality**.
+
+1.4 As a **site user** I can **log out of my account** so that I know **my information stays confidential**.
+
+1.5 As a **site user** I can **easily see my current login status** so that **I know I'm in control of access to my enhanced service on currently used device**.
+
+1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
+
+1.7 As a **staff site user** I can **access enhanced functionality** so that I can **add, edit and delete content on webpage**.
+
+### Access to account management features
+| No. | Feature                 | Not logged in | Logged in client | Staff | Admin |
+| --- | ----------------------- | ------------- | ---------------- | ----- | ----- |
+| 2   | Sign in                 | yes           | no               | yes   | yes   |
+| 3   | Sign out                | no            | yes              | yes   | yes   |
+| 4   | Sign up                 | yes           | no               | yes   | no    |
+| 6   | Reset password          | yes           | no               | yes   | no    |
+| 1   | User account management | no            | no               | no    | yes   |
 

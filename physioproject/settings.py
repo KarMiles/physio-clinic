@@ -156,25 +156,34 @@ AUTH_PASSWORD_VALIDATORS = [
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-# WP email account
-# EMAIL_USE_SSL = True
-# EMAIL_HOST = 'smtp.wp.pl'
-# EMAIL_PORT = 465
-# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+    # WP email account
+    # EMAIL_USE_SSL = True
+    # EMAIL_HOST = 'smtp.wp.pl'
+    # EMAIL_PORT = 465
+    # EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
-# Onet email account
-EMAIL_USE_SSL = True
-EMAIL_HOST = 'smtp.poczta.onet.pl'
-EMAIL_PORT = 465
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+    # Onet email account
+    # EMAIL_USE_SSL = True
+    # EMAIL_HOST = 'smtp.poczta.onet.pl'
+    # EMAIL_PORT = 465
+    # EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-ADMINS = [('Karol', 'kar.miles@wp.pl')]
+    # Google email account
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+
+    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+    # ADMINS = [('Karol', 'karmiles.dev@gmail.com')]
 
 
 # Internationalization
