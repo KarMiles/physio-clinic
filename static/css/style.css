@@ -112,13 +112,6 @@ input {
 
 /* Navigation */
 
-
-#spacer {
-    top: 30px;
-    height: 1px;
-    float: none;
-}
-
 #content-top {
     position: absolute;
     top: 700px;
