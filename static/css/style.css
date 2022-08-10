@@ -114,7 +114,7 @@ input {
 
 #content-top {
     position: absolute;
-    top: 700px;
+    top: 90vh;
 }
 
 .navbar {
@@ -211,7 +211,6 @@ footer a :hover {
     height: 95vh;
     margin-bottom: 1vh;
     opacity: 0.9;
-    width: 100%;
 }
 
 #cover-text, #cover-text h2, #cover-text p {
