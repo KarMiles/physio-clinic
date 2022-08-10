@@ -17,11 +17,6 @@ a {
     text-decoration: none;
 }
 
-#content-top {
-    position: absolute;
-    top: 600px;
-}
-
 .card {
     background-color: white;
     border-color:rgba(91, 172, 253, 0.3);
@@ -119,8 +114,14 @@ input {
 
 
 #spacer {
-    height: 50px;
+    top: 30px;
+    height: 1px;
     float: none;
+}
+
+#content-top {
+    position: absolute;
+    top: 700px;
 }
 
 .navbar {
@@ -211,11 +212,13 @@ footer a :hover {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
     object-fit: fill;
 
-    height: 86vh;
+    height: 95vh;
     margin-bottom: 1vh;
     opacity: 0.9;
+    width: 100%;
 }
 
 #cover-text, #cover-text h2, #cover-text p {
