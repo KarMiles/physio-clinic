@@ -10,12 +10,18 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+# Imports
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from pathlib import Path
 import os
 import dj_database_url
 from django.contrib.messages import constants as messages
 from django.conf.locale.en import formats as en_formats
+from distutils.util import strtobool
 
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if os.path.isfile("env.py"):
     import env # noqa
 
@@ -157,14 +163,13 @@ AUTH_PASSWORD_VALIDATORS = [
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 if DEBUG:
-#     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-    # Mail box settings
-    EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL')
+    EMAIL_USE_SSL = strtobool(os.getenv("EMAIL_USE_SSL", "false"))
     EMAIL_HOST = os.environ.get('EMAIL_HOST')
-    EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+    EMAIL_USE_TLS = strtobool(os.getenv("EMAIL_USE_TLS", "false"))
     EMAIL_PORT = os.environ.get('EMAIL_PORT')
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
