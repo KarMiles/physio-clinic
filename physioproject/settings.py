@@ -163,6 +163,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ACCOUNT_EMAIL_REQUIRED = True
 
 # ACCOUNT_EMAIL_VERIFICATION = 'none'
+# ACCOUNT_EMAIL_VERIFICATION = 'optional'
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 if DEBUG:
@@ -174,7 +175,7 @@ else:
     EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+    # DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 
     # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
