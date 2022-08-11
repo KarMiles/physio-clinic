@@ -20,6 +20,7 @@ class PostForm(forms.ModelForm):
             'title',
             'content',
             'excerpt',
+            'price',
             'featured_image',
             'priority',
             'status',)

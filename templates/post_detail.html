@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 details-text">
-                <h1 class="post-title">{{ post.title }}</h1>
+                <h1>{{ post.title }}</h1>
                 <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
                 <p class="card-text col-md-9 text-secondary">{{ post.excerpt }}</p>
             </div>
@@ -33,8 +33,9 @@
                 <p class="card-text bg-primary">
                     {{ post.content | safe }}
                 </p>
-                <!-- Likes -->
+                <!-- Small bar info -->
                 <div class="row">
+                    <!-- Likes -->
                     <div class="col-2">
                         <strong>
                             {% if user.is_authenticated %}
@@ -67,6 +68,18 @@
                             </strong>
                         {% endwith %}
                     </div>
+
+                    <!-- Price -->
+                    <div class="col-8 text-end">
+                        <strong class="light"><i class="fas fa-tag"></i></strong>
+                        {{ post.price }}
+                    </div>
+
+                    <!-- {% if post.price == "" %}
+                        {{ post.price.default }}
+                    {% else %}
+                        {{ post.price }}
+                    {% endif %} -->
 
                 </div>
             </div>

@@ -110,6 +110,10 @@ input {
     width: 80hv;
 }
 
+.light {
+    color: lightgrey;
+}
+
 /* Navigation */
 
 #content-top {
@@ -119,6 +123,10 @@ input {
 
 .navbar {
     background-color: #f8f9fa;
+}
+
+#navspacer {
+    height: 45px;
 }
 
 .logo {
@@ -194,10 +202,6 @@ footer hr {
     color: #eb7575;
 }
 
-/* Post detail page */
-.post-title {
-    margin-top: 40px;
-}
 
 /* Poll */
 
@@ -217,7 +221,7 @@ footer hr {
     background-size: cover;
     object-fit: fill;
 
-    height: 95vh;
+    height: 90vh;
     margin-bottom: 1vh;
     opacity: 0.9;
 }

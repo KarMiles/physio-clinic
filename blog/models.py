@@ -42,6 +42,10 @@ class Post(models.Model):
         'image',
         default='placeholder')
     excerpt = models.TextField(blank=True)
+    price = models.CharField(
+        max_length=150,
+        blank=True,
+        default='Please enquire at reception')
     priority = models.CharField(
         max_length=10,
         choices=PRIORITY_CHOICES,
