@@ -45,6 +45,7 @@ class Post(models.Model):
     price = models.CharField(
         max_length=150,
         blank=True,
+        null=True,
         default='Please enquire at reception')
     priority = models.CharField(
         max_length=10,

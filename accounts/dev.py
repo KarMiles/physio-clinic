@@ -293,7 +293,7 @@ class BaseSignupForm(_base_signup_form_class()):
         username_field.validators.append(
             validators.MaxLengthValidator(username_field.max_length)
         )
-        username_field.widget.attrs["maxlength"] = str(username_field.max_length)
+        username_field.widget.attrs["max_length"] = str(username_field.max_length)
 
         default_field_order = [
             "email",

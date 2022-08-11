@@ -80,7 +80,19 @@
                                             {{ total_comments }}
                                             {% endwith %}
                                         </div>
-                                        
+
+                                        <!-- Price -->
+                                        <div class="col-5 text-end">
+                                            <strong class="light"><i class="fas fa-tag"></i></strong>
+
+                                    {% if post.price is not None and post.price != "" %}
+                                            {{ post.price }}
+                                        {% else %}
+                                            Please enquire
+                                        {% endif %}
+
+                                        </div>
+
                                     </div>
 
                                     <!-- Show post Live/Draft status -->
