@@ -177,6 +177,11 @@ footer a :hover {
     text-align: center;
 }
 
+footer hr {
+    margin: 0.5rem;
+    color: grey;
+}
+
 
 /* Main page */
 
@@ -276,7 +281,7 @@ visibility: visible;
 
 #prev, #next {
     position: absolute;
-    top: 115px;
+    top: 130px;
     z-index: 10;
     opacity: 0.9;
     font-size: x-large;
