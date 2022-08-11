@@ -679,6 +679,8 @@ All users can view a list of posts with "live status"
 ![screenshot of image](readme/docs/images/testing/features/posts_guest_small.jpg)
 </details>
 
+<br>
+Staff users can see both "live" and "draft" posts and add new posts. 
 <details>
 <summary>Posts - staff</summary>
 
@@ -696,7 +698,23 @@ All users can view a list of posts with "live status"
 
 Users can click on a treatment title or excerpt to see treatment details, number of likes and comments and comments content.
 
-Non-logged in users can view information while logged-in users can also engage by liking the treatments and adding comments. Staff users can also edit and delete the treatments.
+Each post consists of:
+- title
+- author and date of creation
+- excerpt
+- graphic illustration
+- main description of treatment
+- number of likes (with possibility to add a like for logged in users)
+- number of comments
+- price
+- comments
+- add comment form (logged in users)
+
+
+Functionality available on details page depends on user status: 
+- Non-logged in users can view information related to live posts, 
+- logged-in users / clients can also engage by liking the treatments and adding comments. 
+- Staff users can also edit and delete the treatments, with both live and draft status.
 
 <details>
 <summary>Post details</summary>

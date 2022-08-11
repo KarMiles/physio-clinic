@@ -65,11 +65,6 @@
                             <a class="nav-link" aria-current="Poll" href="{% url 'poll_home' %}">Poll</a>
                         </li>
                     {% endif %}
-                    <!-- {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="Booking" href="{% url 'booking' %}">Book</a>
-                    </li>
-                    {% endif %} -->
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" aria-current="Logout" href="{% url 'account_logout' %}">Logout</a>
@@ -117,11 +112,11 @@
     </nav>
 
     <!-- Show feedback message -->
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 offset-md-2 alert-align">
+            <div class="col alert-align">
                 {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissable fade show" id="msg" role="alert">
+                    <div class="alert {{ message.tags }} alert-dismissable fade show text-center center-block" id="msg" role="alert">
                         {{ message | safe }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
@@ -130,7 +125,7 @@
         </div>
     </div>
 
-    <div id="navspacer"></div>
+    <div class="navspacer"></div>
 
     <!-- Main content -->
     {% block content %}

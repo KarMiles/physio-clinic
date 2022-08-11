@@ -95,14 +95,26 @@ input {
     background-color: #E8F0FE;
 }
 
+.alert {
+    z-index: 10;
+    top: 60px;
+
+    left: 0;
+    margin: auto; 
+    position: absolute; 
+    right: 0;
+    text-align: center; 
+    width: 80%;
+}
+
 .alert-align {
-    position: relative;
+    position: absolute;
 }
 
 .alert-align button {
     position: absolute;
     display: inline;
-    right: 12px;
+        right: 12px;
 }
 
 .hmiddle {
@@ -125,7 +137,7 @@ input {
     background-color: #f8f9fa;
 }
 
-#navspacer {
+.navspacer {
     height: 45px;
 }
 
