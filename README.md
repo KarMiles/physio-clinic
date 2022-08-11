@@ -659,3 +659,67 @@ Logged in user can sign out. After signout user is redirected to the main page a
 | 6   | Reset password          | yes           | no               | yes   | no    |
 | 1   | User account management | no            | no               | no    | yes   |
 
+---
+### **Feature 6 Posts**
+
+In the blog app standard mechanisms of a blog are employed. Each post represents a treatment offered by the company. Posts can be created, edited and deleted by users with staff status. This can be done on the webpage after chosing appropriate button under a post (only visible to staff users) or on admin page by the administrator of the webpage. Users who are not logged in or are logged in as non-staff can see posts with status "live". Staff users can see both "live" and "draft" posts.
+
+**Post list**
+
+All users can view a list of posts with "live status"
+<details>
+<summary>Posts - guest </summary>
+
+![screenshot of image](readme/docs/images/testing/features/posts_guest.jpg)
+</details>
+
+<details>
+<summary>Posts - guest, small screen</summary>
+
+![screenshot of image](readme/docs/images/testing/features/posts_guest_small.jpg)
+</details>
+
+<details>
+<summary>Posts - staff</summary>
+
+![screenshot of image](readme/docs/images/testing/features/posts_staff.jpg)
+</details>
+
+<details>
+<summary>Posts - staff, small screen</summary>
+
+![screenshot of image](readme/docs/images/testing/features/posts_staff_small.jpg)
+</details>
+<br>
+
+**Post details**
+
+Users can click on a treatment title or excerpt to see treatment details, number of likes and comments and comments content.
+
+Non-logged in users can view information while logged-in users can also engage by liking the treatments and adding comments. Staff users can also edit and delete the treatments.
+
+<details>
+<summary>Post details</summary>
+
+![screenshot of image](readme/docs/images/testing/features/post_details.jpg)
+</details>
+
+<details>
+<summary>Post details, small screen</summary>
+
+![screenshot of image](readme/docs/images/testing/features/post_details_small.jpg)
+</details>
+
+<details>
+<summary>Post details, staff</summary>
+
+![screenshot of image](readme/docs/images/testing/features/post_details_staff.jpg)
+</details>
+
+<details>
+<summary>Post details, staff, small screen</summary>
+
+![screenshot of image](readme/docs/images/testing/features/post_details_staff_small.jpg)
+</details>
+
+<br>
