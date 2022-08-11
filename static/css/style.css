@@ -189,6 +189,10 @@ footer a :hover {
     color: #eb7575;
 }
 
+/* Post detail page */
+.post-title {
+    margin-top: 40px;
+}
 
 /* Poll */
 

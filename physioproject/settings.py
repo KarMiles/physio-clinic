@@ -18,7 +18,6 @@ import os
 import dj_database_url
 from django.contrib.messages import constants as messages
 from django.conf.locale.en import formats as en_formats
-from distutils.util import strtobool
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
