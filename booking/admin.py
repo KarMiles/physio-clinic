@@ -23,11 +23,13 @@ class BookingAdmin(admin.ModelAdmin):
         'message',
         'status',)
     search_fields = [
+        'user',
         'message']
     list_filter = (
         'status',
-        'treatment',
-        'created_on',)
+        'created_on',
+        'user',
+        'treatment',)
     list_display_links = ('message',)
     actions = ['booking_close']
 

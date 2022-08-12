@@ -397,7 +397,7 @@ Image 1 serves as hero image and a placeholder.
 
 ## 2.i. Current features <a name='features-current'></a>
 
-### **Feature 1: Navigation bar**
+### **Feature 1. Navigation bar**
 
 Navigation bar is present on top of the screen on all pages of the site. Aim of this feature is that the user always have access to easy navigation across the site without the need to use browser navigation features, e.g. 'back' button.
 
@@ -499,7 +499,7 @@ Click to view image:
 3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
 <br>
 
-### **Feature 3: On-site navigation**
+### **Feature 3. On-site navigation**
 
 **Data creation, edition and deletion**
 
@@ -522,7 +522,7 @@ Access to features and corresponding navigation buttons depends on user authoriz
 2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
 
 
-### **Feature 4: Home page**
+### **Feature 4. Home page**
 
 On home page user is welcome with a hero picture whose goal is to draw attention and set a scene and mood of the site. In the middle of the hero page is a semi-transparent section with company name and slogan together with a small symbol indicating that more content is available below. To continue on to the content user can click the symbol or scroll down. 
 
@@ -563,7 +563,7 @@ Click to view image:
 4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
 
 ---
-### **Fature 5 Account management**
+### **Feature 5. Account management**
 This functionality allows user to register an account, login an logout of the account and change password. 
 
 Click to view image:
@@ -660,7 +660,7 @@ Logged in user can sign out. After signout user is redirected to the main page a
 1.7 As a **staff site user** I can **access enhanced functionality** so that I can **add, edit and delete content on webpage**.
 
 ---
-### **Feature 6 Posts**
+### **Feature 6. Posts**
 
 In the blog app standard mechanisms of a blog are employed. Each post represents a treatment offered by the company. Posts can be created, edited and deleted by users with staff status. This can be done on the webpage after chosing appropriate button under a post (only visible to staff users) or on admin page by the administrator of the webpage. Users who are not logged in or are logged in as non-staff can see posts with status "live". Staff users can see both "live" and "draft" posts.
 
@@ -777,7 +777,7 @@ Functionality available on details page depends on user status:
 
 ---
 
-### **Feature 7 Poll**
+### **Feature 7. Poll**
 
 Poll on this website is created with an intent to provide an easy and convenient way for company management to engage with actual and prospective clients and collect information on their views in current matters related to company's business. That information may then be utilized in the decision-making process in the areas like strategy or marketing. 
 
@@ -837,4 +837,45 @@ Staff has additional option enabling poll creation.
 
 5.3 As a **site admin** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
 
+---
+### **Feature 8. Direct communication**
+
+#### **Contact us**
+
+Contact Us section consists of two parts:
+- General information about the company.
+- Contact form users can use to contact the company directly.
+
+This feature is available to all users. When a logged in user wishes to contact the company, fields with name and email address are pre-filled, if this information is available. Otherwise those fields are empty for user to fill. 
+
+<details>
+<summary>Contact Us</summary>
+
+![screenshot of image](readme/docs/images/testing/features/contact.jpg)
+</details>
+
+#### **Booking**
+
+The purpose of the Booking section is to give logged in clients an opportunity to request specific treatments. The form for this mode of communication offers a list of available treatments to choose from and date/time-picker to indicate prefered time of treatment. The fact that no user information is necessary to be filled by the user in this form adds to convenience. 
+
+<details>
+<summary>Booking an appointment</summary>
+
+![screenshot of image](readme/docs/images/testing/features/booking.jpg)
+</details>
+
+
+
+### Access to direct communication features
+
+| No. | Feature    | Not logged in | Logged in client | Staff | Admin |
+| --- | ---------- | ------------- | ---------------- | ----- | ----- |
+| 1   | Contact Us | yes           | yes              | yes   | yes   |
+| 2   | Booking    | no            | yes              | yes   | yes   |
+
+#### **User Stories related to feature 8**
+
+3.4 As a **site user** I can **use the website for communication with the company** so that I can **send general queries or request booking for a specific treatment**.
+
+3.5 As a **registered site user** I can **use website for communication without having to reenter my details** so that **sending my message requires minimum efford from my side**.
 
