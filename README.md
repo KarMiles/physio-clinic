@@ -120,7 +120,7 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
 
-4.2 As a **site user** I can **read thoroughly about chosen treatments** so that I can **read content most appropriate to my needs**.
+4.2 As a **site user** I can **read thoroughly about chosen treatments** so that I can **acquire content most appropriate to my requirements**.
 
 4.3 As a **site user** I can **respond to content via likes and comments** for **increased sense of community** (registered users only).
 
@@ -634,6 +634,15 @@ Logged in user can sign out. After signout user is redirected to the main page a
 </details>
 <br>
 
+### Access to account management features
+| No. | Feature                 | Not logged in | Logged in client | Staff | Admin |
+| --- | ----------------------- | ------------- | ---------------- | ----- | ----- |
+| 2   | Sign in                 | yes           | no               | yes   | yes   |
+| 3   | Sign out                | no            | yes              | yes   | yes   |
+| 4   | Sign up                 | yes           | no               | yes   | no    |
+| 6   | Reset password          | yes           | no               | yes   | no    |
+| 1   | User account management | no            | no               | no    | yes   |
+
 #### **User Stories related to feature 5**
 
 1.1 As a **site user** I can **access site without logging in** so that I can **read information about available treatments**.
@@ -649,15 +658,6 @@ Logged in user can sign out. After signout user is redirected to the main page a
 1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
 
 1.7 As a **staff site user** I can **access enhanced functionality** so that I can **add, edit and delete content on webpage**.
-
-### Access to account management features
-| No. | Feature                 | Not logged in | Logged in client | Staff | Admin |
-| --- | ----------------------- | ------------- | ---------------- | ----- | ----- |
-| 2   | Sign in                 | yes           | no               | yes   | yes   |
-| 3   | Sign out                | no            | yes              | yes   | yes   |
-| 4   | Sign up                 | yes           | no               | yes   | no    |
-| 6   | Reset password          | yes           | no               | yes   | no    |
-| 1   | User account management | no            | no               | no    | yes   |
 
 ---
 ### **Feature 6 Posts**
@@ -709,6 +709,7 @@ Each post consists of:
 - price
 - comments
 - add comment form (logged in users)
+- edit and delete buttons (staff users)
 
 
 Functionality available on details page depends on user status: 
@@ -741,3 +742,99 @@ Functionality available on details page depends on user status:
 </details>
 
 <br>
+
+### Access to post features
+
+| No. | Feature        | Not logged in | Logged in client | Staff | Admin |
+| --- | -------------- | ------------- | ---------------- | ----- | ----- |
+| 1   | Create post    | no            | no               | yes   | yes   |
+| 2   | Edit post      | no            | no               | yes   | yes   |
+| 3   | Delete post    | no            | no               | yes   | yes   |
+| 4   | Read post      | yes           | yes              | yes   | yes   |
+| 5   | Create comment | no            | yes              | yes   | yes   |
+| 6   | Edit comment   | no            | no               | no    | yes   |
+| 7   | Delete comment | no            | no               | no    | yes   |
+| 8   | Read comment   | yes           | yes              | yes   | yes   |
+| 9   | Like a post    | no            | yes              | yes   | yes   |
+
+
+#### **User Stories related to feature 6**
+4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
+
+4.2 As a **site user** I can **read thoroughly about chosen treatments** so that I can **acquire content most appropriate to my requirements**.
+
+4.3 As a **site user** I can **respond to content via likes and comments** for **increased sense of community** (registered users only).
+
+4.4 As a **site user** I can **take part in polls and see poll results** so I can **feel more engaged with the company and the health-oriented community**.
+
+4.5 As a **staff site user** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
+
+4.6 As a **site owner** I can **easily activate and deactivate content is visible to the public**.
+
+4.7 As a **site owner** I can **prioritize which treatments are showing first on the site** so that I can **influence demand on offering of my choice**. 
+
+<br>
+
+---
+
+### **Feature 7 Poll**
+
+Poll on this website is created with an intent to provide an easy and convenient way for company management to engage with actual and prospective clients and collect information on their views in current matters related to company's business. That information may then be utilized in the decision-making process in the areas like strategy or marketing. 
+
+<details>
+<summary>Poll, guest view</summary>
+
+![screenshot of image](readme/docs/images/testing/features/poll_guest.jpg)
+</details>
+
+<details>
+<summary>Poll, staff view</summary>
+Staff has additional option enabling poll creation.
+
+![screenshot of image](readme/docs/images/testing/features/poll_staff.jpg)
+</details>
+
+<details>
+<summary>Submit vote</summary>
+
+![screenshot of image](readme/docs/images/testing/features/poll_submit.jpg)
+</details>
+
+<details>
+<summary>Poll results</summary>
+
+![screenshot of image](readme/docs/images/testing/features/poll_result.jpg)
+</details>
+
+<details>
+<summary>Poll creation</summary>
+
+![screenshot of image](readme/docs/images/testing/features/poll_create.jpg)
+</details>
+
+### Access to poll features
+
+| No. | Feature      | Not logged in | Logged in client | Staff | Admin |
+| --- | ------------ | ------------- | ---------------- | ----- | ----- |
+| 1   | View polls   | yes           | yes              | yes   | yes   |
+| 2   | Cast vote    | yes           | yes              | yes   | yes   |
+| 3   | View results | yes           | yes              | yes   | yes   |
+| 4   | Create poll  | no            | no               | yes   | yes   |
+| 5   | Edit poll    | no            | no               | no    | yes   |
+| 6   | Delete poll  | no            | no               | no    | yes   |
+
+<br>
+
+#### **User Stories related to feature 7**
+
+3.1 As a **site user** I can **read and respond to available content** so **my experience on the site feels engaging and interactive**. 
+
+3.2 As a **site user** I can **engage in activities that other users can also participate in** so I can **feel part of a wider community**.
+
+4.4 As a **site user** I can **take part in polls and see poll results** so I can **feel more engaged with the company and the health-oriented community**.
+
+4.5 As a **staff site user** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
+
+5.3 As a **site admin** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
+
+
