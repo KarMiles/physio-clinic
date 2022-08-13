@@ -919,7 +919,10 @@ TODO tests
 ## 3.iv. Validation testing:<a name="validation-testing"></a>
 [Click here for Validation testing](readme/validation_testing.md)
 
-## 3.v. Unfixed Bugs <a name="unfixed-bugs"></a> 
+## v. Javascript testing:<a name="js-testing"></a>
+[Click for Javascript testing](readme/javascript_testing.md)
+
+## 3.vi. Unfixed Bugs <a name="unfixed-bugs"></a> 
 No unfixed bugs.
 ___
 # 4. Deployment <a name="deployment"></a> 
@@ -929,5 +932,52 @@ TODO deployment
 ___
 # 5. Technologies used <a name="technology-used"></a>
 
-## 5.1. Languages and frameworks
+## 5.i. Languages libraries and frameworks
 
+**Languages**
+- HTML (https://www.w3schools.com/html/)
+    - The main laguage this webpage's front-end is running on is HTML (HyperText Markup Language).
+- CSS (https://www.w3.org/Style/CSS/)
+    - For custom-made styling CSS (Cascading Style Sheets) language was used. 
+- JavaScript (https://www.javascript.com/)
+    - A limited use of custom-made JavaScript has been employed to enhance functionality of the website.
+- Python - within the Django framework Python 3 is the main language used to run its back-end logic. 
+
+**Frameworks, modules and libraries**
+
+- Django (https://www.djangoproject.com/)
+    - This project was built with Django framework.
+    - For testing Django unit test was utilized.
+- Python modules
+
+    The following modules are used for the project. All modules can be found in requirements.txt file.
+    - asgiref==3.5.2
+    - cloudinary==1.29.0
+    - dj-database-url==0.5.0
+    - dj3-cloudinary-storage==0.0.6
+    - Django==3.2.13
+    - django-allauth==0.51.0
+    - django-booking==0.7.2
+    - django-bootstrap-datepicker-plus==4.0.0
+    - django-bootstrap4==22.1
+    - django-cloudinary-storage==0.3.0
+    - django-contact-form==2.0.1
+    - django-countries==7.3.2
+    - django-crispy-forms==1.14.0
+    - django-hvad==1.8.0
+    - django-libs==2.0.3
+    - django-summernote==0.8.20.0
+    - django-widget-tweaks==1.4.12
+    - gunicorn==20.1.0
+    - oauthlib==3.2.0
+    - psycopg2==2.9.3
+    - PyJWT==2.4.0
+    - python3-openid==3.2.0
+    - pytz==2022.1
+    - requests-oauthlib==1.3.1
+    - sqlparse==0.4.2
+    - whitenoise==6.2.0
+- Bootstrap (https://getbootstrap.com/) - used for consistent layout and responsiveness across all the website.
+- GitPod (https://gitpod.io/) - used as IDE and the tool for version control in the project.
+- GitHub (https://github.com/) - - used to maintain repository of the project.
+ - Heroku 
