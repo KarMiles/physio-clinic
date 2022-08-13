@@ -943,8 +943,9 @@ ___
     - A limited use of custom-made JavaScript has been employed to enhance functionality of the website.
 - Python - within the Django framework Python 3 is the main language used to run its back-end logic. 
 
-**Frameworks, modules and libraries**
+**Frameworks, modules and libraries and other tools**
 
+Frameworks and modules
 - Django (https://www.djangoproject.com/)
     - This project was built with Django framework.
     - For testing Django unit test was utilized.
@@ -978,6 +979,32 @@ ___
     - sqlparse==0.4.2
     - whitenoise==6.2.0
 - Bootstrap (https://getbootstrap.com/) - used for consistent layout and responsiveness across all the website.
+
+Version management and deployment
 - GitPod (https://gitpod.io/) - used as IDE and the tool for version control in the project.
-- GitHub (https://github.com/) - - used to maintain repository of the project.
- - Heroku 
+- GitHub (https://github.com/) - used to maintain repository of the project.
+- Heroku (https://www.heroku.com) - used for deployment of the application.
+
+Data storage
+- Cloudinary (https://cloudinary.com) - service used for storing and access to dynamic images.
+- Postgres (https://www.postgresql.org/) - the deployed project on Heroku uses the Postgres database.
+- SQLite (https://www.sqlite.org/) - used as local database.
+
+Validation
+- HTML Markup Validation Service (https://validator.w3.org/) - for validating HTML code.
+- CSS Validation Service (https://jigsaw.w3.org/css-validator/) - for validating CSS code.
+- JSHint (https://jshint.com/) - for validating JavaScript code.
+- PEP8 Online Validation Service: (http://pep8online.com) - for validating Python code.
+- Unittest (https://docs.djangoproject.com/en/3.2/topics/testing/overview/) - for Python unit testing
+- Google Chrome Developer Tools - built-in developer tools used to inspect page elements and help debug issues with the website functionality and layout.
+
+Design stages
+- Lucidchart (www.lucidchart.com/) - used to create flowcharts.
+- Balsamiq Wireframes(https://balsamiq.com/) - used to create wireframes in the UX design stage.
+- SQL DRAW (https://drawsql.app/) – used to create database diagrams.
+- Am I Responsive (http://ami.responsivedesign.is/) - Mockup Generator was used to create the Mock up image for this README document.
+
+- Google Fonts (https://fonts.google.com/) - for selecting fonts and using them in the project.
+- Font Awesome (https://fontawesome.com/) - all the icons throughout the website are derived from this service.
+- Coolors.co (https://coolors.co/) - for generating colour pallette for the website.
+
