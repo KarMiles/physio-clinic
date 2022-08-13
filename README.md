@@ -16,7 +16,7 @@ View the live site [here](https://physio-clinic-heroku.herokuapp.com/)
       
 2. [Features](#features)<br>
     i. [Current Features](#features-existing)<br>
-    ii. [Features to implement](#features-next)<br>
+    ii. [Potential features](#features-next)<br>
 
 3. [Testing](#testing)<br>
 
@@ -354,7 +354,7 @@ A font chosen for the site had to be light, simple and easy to read to be cohere
 ![screenshot of google fonts](readme/docs/images/surface/font_raleway.jpg)
 
 ### **Imagery**
-Graphics for the site were chosen with the intention of maintaining the theme of a friendly and quiet environment of a physiotherapy practice. 
+Graphics for the site were chosen with the intention of maintaining the theme of a friendly and quiet environment of a physiotherapy practice. Pastelle hues of blue and beige / brown dominate the photos with the exception of the black-and-white hero image aiming to be a welcome accord for the guest. Contrast on the hero photo is slightly lowered to harmonize it with the rest of the site. 
 
 <br>
 <details>
@@ -854,6 +854,8 @@ This feature is available to all users. When a logged in user wishes to contact 
 ![screenshot of image](readme/docs/images/testing/features/contact.jpg)
 </details>
 
+<br>
+
 #### **Booking**
 
 The purpose of the Booking section is to give logged in clients an opportunity to request specific treatments. The form for this mode of communication offers a list of available treatments to choose from and date/time-picker to indicate prefered time of treatment. The fact that no user information is necessary to be filled by the user in this form adds to convenience. 
@@ -864,7 +866,7 @@ The purpose of the Booking section is to give logged in clients an opportunity t
 ![screenshot of image](readme/docs/images/testing/features/booking.jpg)
 </details>
 
-
+<br>
 
 ### Access to direct communication features
 
@@ -879,3 +881,9 @@ The purpose of the Booking section is to give logged in clients an opportunity t
 
 3.5 As a **registered site user** I can **use website for communication without having to reenter my details** so that **sending my message requires minimum efford from my side**.
 
+## 2.ii. Potential features <a name='features-next'></a>
+Features 
+ - Wider array of ways to signup and login, e.g. via social media, Google,
+ - Schedule system for employees,
+ - Automated booking process,
+ - Graphic representation of poll results.
