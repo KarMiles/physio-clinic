@@ -20,7 +20,7 @@ View the live site [here](https://physio-clinic-heroku.herokuapp.com/)
 
 3. [Testing](#testing)<br>
 
-    i. [User Stories/feature testing](#user-stories-testing)<br>
+    i. [User Story / feature testing](#user-story-testing)<br>
     ii.  [Automated testing](#automated-testing)<br>
     iii.  [Known issues during development and testing](#known-issues)<br>
     iv. [Validation testing  ](#validation-testing)<br>
@@ -895,4 +895,39 @@ Features
 ___
 
  # 3. Testing <a name="testing"></a> 
+
+## 3.i. User story testing  <a name="user-story-testing"></a>
+
+User stories were tested with current features and passed the tests.
+
+[Click here for User story testing](readme/user_story_testing.md)
+
+TODO perform manual tests and fill user_story_testing.md
+
+## 3.ii. Automated testing
+
+[Click here for automated testing](readme/automated_testing.md)
+
+TODO tests
+
+## 3.iii. Known issues during development and testing <a name="known-issues"></a>
+
+[Click here for Known issues during development and testing](readme/known_issues.md)
+
+TODO tests
+
+## 3.iv. Validation testing:<a name="validation-testing"></a>
+[Click here for Validation testing](readme/validation_testing.md)
+
+## 3.v. Unfixed Bugs <a name="unfixed-bugs"></a> 
+No unfixed bugs.
+___
+# 4. Deployment <a name="deployment"></a> 
+[Click here for Deployment file](readme/deployment.md)
+
+TODO deployment
+___
+# 5. Technologies used <a name="technology-used"></a>
+
+## 5.1. Languages and frameworks
 
