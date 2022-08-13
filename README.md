@@ -1,6 +1,6 @@
 # PhysioClinic
 
-![screenshot of Responsive Image](readme/docs/images/responsive_image.png)
+![screenshot of Responsive Image](readme/docs/images/responsive_image.jpg)
 
 View the live site [here](https://physio-clinic-heroku.herokuapp.com/)
 
@@ -39,6 +39,8 @@ PhysioClinic is the webpage for a fictional Physiotherapy Clinic.
 On this webpage the Owners share information about various kinds of treatments on offer. 
 Due to ever-enhancing skills of the Clinic's staff, new staff members joining the Clinic and changing trends among Clients, Staff members have the ability to add, edit and delete cards containing descriptions of treatments. 
 Client users of this service can read descriptions and express their attitudes about specific treatments through likes and comments. They may also book treatments and contact the Clinic for general queries.
+
+___
 
 # 1. User Experience (UX) <a name='ux'></a> 
 ### **Project goals**
@@ -392,6 +394,8 @@ Image 1 serves as hero image and a placeholder.
 ![image 5](readme/docs/images/surface/graphics/vote.jpg)
 </details>
 <br>
+
+___
 
 # 2. Features <a name='features'></a>
 
@@ -887,3 +891,8 @@ Features
  - Schedule system for employees,
  - Automated booking process,
  - Graphic representation of poll results.
+
+___
+
+ # 3. Testing <a name="testing"></a> 
+
