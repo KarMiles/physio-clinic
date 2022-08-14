@@ -1008,3 +1008,22 @@ Design stages
 - Font Awesome (https://fontawesome.com/) - all the icons throughout the website are derived from this service.
 - Coolors.co (https://coolors.co/) - for generating colour pallette for the website.
 
+Python libraries
+Third-party libraries were used for this project:
+- request
+    - request and response objects are used in Django to pass state through the system.
+    - When a page is requested, Django creates an HttpRequest object that contains metadata about the request. Then Django loads the appropriate view, passing the HttpRequest as the first argument to the view function. Each view is responsible for returning an HttpResponse object.
+- django
+    - from django.apps import AppConfig - AppConfig represents an app for a Django project, including metadata such as name, label and path.
+    - from django.contrib import admin - for managing functionality of the admin page.
+    - from django import forms - used for Django forms
+    - from django.contrib import messages - used for temporary on-screen messages.
+    - from django.contrib.auth.tokens import PasswordResetTokenGenerator - used for secure communication.
+    - from django.contrib.auth.models import User - for utilizing Django built-in User model functionality.
+    - from django.contrib.auth.mixins import LoginRequiredMixin - for limiting access to website's functionality based on login status.
+    - from django.db import models - for utilizing model structure.
+    - from django.shortcuts import render - for rendering a page as a result of running a function.
+    - from django.shortcuts import redirect - for redirecting to a page in the process of running a function.
+    - from django.shortcuts import get_object_or_404 - calls get() on a given model manager, but it raises Http404 instead of the model’s DoesNotExist exception
+    - from django.views import generic - 
+
