@@ -42,7 +42,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = os.environ.get('DEBUG', '1') == '1'
 
-ALLOWED_HOSTS = ["physio-clinic-heroku.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["physio-clinic-heroku.herokuapp.com", "localhost", "127.0.0.1"]
 
 # Application definition
 
