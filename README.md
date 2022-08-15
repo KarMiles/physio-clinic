@@ -1020,10 +1020,15 @@ Third-party libraries were used for this project:
     - from django.contrib import messages - used for temporary on-screen messages.
     - from django.contrib.auth.tokens import PasswordResetTokenGenerator - used for secure communication.
     - from django.contrib.auth.models import User - for utilizing Django built-in User model functionality.
-    - from django.contrib.auth.mixins import LoginRequiredMixin - for limiting access to website's functionality based on login status.
+    - from django.contrib.auth.mixins import LoginRequiredMixin and AccessMixin - for granting access to website's functionality based on user's login status.
     - from django.db import models - for utilizing model structure.
     - from django.shortcuts import render - for rendering a page as a result of running a function.
-    - from django.shortcuts import redirect - for redirecting to a page in the process of running a function.
-    - from django.shortcuts import get_object_or_404 - calls get() on a given model manager, but it raises Http404 instead of the model’s DoesNotExist exception
-    - from django.views import generic - 
+     - from django.http import HttpResponseRedirect - for redirecting to a page in the process of running a function or a class.
+    - from django.shortcuts import redirect - while in case of HttpResponseRedirect the first argument can only be a url, redirect can accept a model, view, or url as it's "to" argument. redirect will ultimately return a HttpResponseRedirect.
+    - from django.shortcuts import get_object_or_404 - calls get() on a given model manager, but it raises Http404 instead of the model’s DoesNotExist exception.
+    - from django.views import generic, View - generic class-based views designed to display data, in this project posts representing treatments.
+    - from django.urls import path - returns an element for inclusion in urlpatterns.
+    - from django.urls import reverse_lazy, reverse - the reverse function allows to retrieve url details from urls.py files through the name provided in the path. reverse_lazy is useful for when there is a need to use a URL reversal before your project’s URLConf is loaded (success_url is then used).
+    - from django.utils.text import slugify - used for utilizing slug functionality, slug is a short label for something, containing only letters, numbers, underscores or hyphens. They're generally used in URLs, as in this project. 
+    - from django.views.generic import TemplateView - 
 
