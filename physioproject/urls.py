@@ -21,8 +21,6 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-# import socket
-# from socket import *
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,10 +38,6 @@ urlpatterns = [
     path('poll/', include('poll.urls')),
 ]
 
-# myip = gethostbyname(gethostname())
-# if myip in ('127.0.0.1', 'localhost'):
-#     print('myip is:')
-#     print(myip)
 
 # Serving static content in slow mode
 if settings.DEBUG:
