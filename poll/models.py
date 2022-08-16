@@ -2,17 +2,18 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.db import models
-
-# Internal:
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.contrib.auth.models import User
+
 
 # Models for poll app
 
 class Poll(models.Model):
+    """
+    Class for the poll model
+    """
     author = models.ForeignKey(
         User,
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         related_name='poll_user',
         blank=True,
         null=True)
