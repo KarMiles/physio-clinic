@@ -10,13 +10,12 @@ from django.contrib.auth.models import User
 # Models for poll app
 
 class Poll(models.Model):
-    # author = models.ForeignKey(
-    #     User,
-    #     on_delete=models.PROTECT,
-    #     related_name='poll_user',
-    #     blank=True,
-    #     null=True,
-    #     default='')
+    author = models.ForeignKey(
+        User,
+        on_delete=models.PROTECT,
+        related_name='poll_user',
+        blank=True,
+        null=True)
     question = models.TextField()
     option_one = models.CharField(max_length=50)
     option_two = models.CharField(max_length=50)
