@@ -1,8 +1,19 @@
+# Imports
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.db import models
+
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from django.contrib.auth.models import User
 
 # Models for poll app
 
 class Poll(models.Model):
+    author = models.ForeignKey(
+        User,
+        on_delete=models.PROTECT,
+        related_name='poll_user')
     question = models.TextField()
     option_one = models.CharField(max_length=50)
     option_two = models.CharField(max_length=50)

@@ -1034,6 +1034,12 @@ Third-party libraries were used for this project:
     - from django.utils.text import slugify - used for utilizing slug functionality, slug is a short label for something, containing only letters, numbers, underscores or hyphens. They're generally used in URLs, as in this project. 
     - from django.views.generic import TemplateView - for rendering a given template, with the context containing parameters captured in the URL.
     - from django.conf.locale.en import formats as en_formats - for setting date and time formats where local format is not set.
-    - from django_contact_form.views import ContactFormView - 
+    - from django_contact_form.views import ContactFormView - when utilizing a custom form class, used to manually set up URLs to tell django-contact-form about the form class.
 
-
+Class-based views provide a way to implement views as Python objects rather than functions.
+Class based views were used in this project for the following reasons:
+- Code reusability - a view class can be inherited by another view class and modified for a different use case.
+- DRY -  help to reduce code duplication
+- Code extendability - CBV can be extended to include more functionalities using Mixins
+- Code structuring - In CBVs A class based view helps you respond to different http request with different class instance methods instead of conditional branching statements inside a single function based view.
+- Built-in generic class-based views
