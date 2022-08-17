@@ -4,6 +4,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
+from blog.views import StaffRequiredMixin
+from django.views import generic, View
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -79,18 +83,37 @@ def poll_results(request, poll_id):
     return render(request, 'poll/poll_results.html', context)
 
 
-def poll_delete(request, poll_id):
-    poll = Poll.objects.get(pk=poll_id)
+# def poll_delete(request, poll_id):
+#     poll = Poll.objects.get(pk=poll_id)
 
-    poll.delete()
+#     poll.delete()
 
-    messages.add_message(
-            request,
-            messages.INFO,
-            'Poll deleted successfully!')
+#     messages.add_message(
+#             request,
+#             messages.INFO,
+#             'Poll deleted successfully!')
 
-    context = {
-        'poll': poll
-    }
-    
-    return render(request, 'poll/poll_home.html', context)
+#     context = {
+#         'poll': poll
+#     }
+
+#     return render(request, 'poll/poll_home.html', context)
+
+class DeletePoll(StaffRequiredMixin, generic.DeleteView):
+
+    success_url = reverse_lazy('poll_home')
+    queryset = Poll.objects.all()
+    template_name = 'poll_confirm_delete.html'
+
+    def poll_delete(self):
+        self.object = self.get_object()
+        success_url = self.get_success_url()
+
+        self.object.delete()
+
+        messages.add_message(
+                self.request,
+                messages.INFO,
+                'Poll deleted successfully!')
+        
+        return HttpResponseRedirect(success_url)
