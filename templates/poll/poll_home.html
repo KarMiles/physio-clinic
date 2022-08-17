@@ -14,13 +14,20 @@
     <ul class="list-group poll">
         {% for poll in polls %}
         <li class="list-group-item">
-            <span class="align-middle">
+            <div class="align-middle">
                 {{ poll.question }} 
-            </span>
+            </div>
             <div class="float-end">
-                    <div class="form-group">
+                <div class="form-group">
                 <a href="{% url 'poll_vote' poll.id %}" class="btn btn-info btn-xs">Vote</a> &nbsp;
-                <a href="{% url 'poll_results' poll.id %}" class="btn btn-default btn-xs">View Results</a> &nbsp;
+                <a href="{% url 'poll_results' poll.id %}" class="btn btn-info btn-xs">View Results</a> &nbsp;
+                <!-- Link for deleting poll -->
+                
+                {% if user.is_staff %}
+                <a href="{% url 'poll_delete' poll.id %}" class="btn btn-danger btn-attn btn-xs">Delete post</a>
+                {% endif %}
+
+            </div>
             </div>
         </li>
         {% endfor %}
