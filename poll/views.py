@@ -18,6 +18,13 @@ from .models import Poll
 # Poll views
 
 def poll_home(request):
+    """
+    A view to show page with a list of polls
+    Args:
+        request (object): HTTP request object
+    Returns:
+        Render page with list of polls and context
+    """
     polls = Poll.objects.all()
     context = {
         'polls': polls
@@ -26,6 +33,14 @@ def poll_home(request):
 
 
 def poll_create(request):
+    """
+    A view to show form to create a new poll
+    Args:
+        request (object): HTTP request object
+    Returns:
+        Render page with form to create a new poll
+        with success message and context
+    """
     if request.method == 'POST':
         form = CreatePollForm(request.POST)
         if form.is_valid():
@@ -45,6 +60,15 @@ def poll_create(request):
 
 
 def poll_vote(request, poll_id):
+    """
+    A view to show form with the poll
+    Args:
+        request (object): HTTP request object
+        poll_id: poll_id
+    Returns:
+        Render page with form to create a new poll
+        with success message and context
+    """
     poll = Poll.objects.get(pk=poll_id)
     
     if request.method == 'POST':

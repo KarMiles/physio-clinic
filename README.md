@@ -302,12 +302,27 @@ Relationships
 - Represents messages all users can send via webpage in Contact Us section.
 
 Relationships
-- No relationships set in the Contact model. In ModelContactForm information is pulled about registered user, if available. This offers benefits of one-to-many relationship with User model combined with also serving unregistered users.
+- No relationships set in the Contact model. In ModelContactForm information is pulled about registered user, if available. This offers some benefits of one-to-many relationship with User model combined with flexibility of also serving unregistered users.
 
 <details>
 <summary>Click here to view Contact model</summary>
 
 ![screenshot of Contact model](readme/docs/images/database/contact_model.jpg)
+</details>
+<br>
+
+### Model: Poll
+
+- Part of poll app.
+- Represents questions with options for polls presented to custommers.
+
+Relationships
+- Poll model has one-to-many relationship with User model: a user (who must be part of staff) can create many polls.
+
+<details>
+<summary>Click here to view Poll model</summary>
+
+![screenshot of Poll model](readme/docs/images/database/poll_model.jpg)
 </details>
 <br>
 
