@@ -107,7 +107,7 @@ class DeletePost(StaffRequiredMixin, generic.DeleteView):
     A view to delete a post
     Args:
         StaffRequiredMixin
-        UpdateView: class based view
+        DeleteView: generic class based view
     Returns:
         Request confirmation of post deletion
         Redirect home after delete
@@ -125,7 +125,7 @@ class DeletePost(StaffRequiredMixin, generic.DeleteView):
         self.object = self.get_object()
         success_url = self.get_success_url()
         self.object.delete()
-        
+
         messages.add_message(
             self.request,
             messages.INFO,

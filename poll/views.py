@@ -100,20 +100,33 @@ def poll_results(request, poll_id):
 #     return render(request, 'poll/poll_home.html', context)
 
 class DeletePoll(StaffRequiredMixin, generic.DeleteView):
-
+    """
+    A view to delete a post
+    Args:
+        StaffRequiredMixin
+        DeleteView: generic class based view
+    Returns:
+        Request confirmation of poll deletion
+        Redirect to poll list after delete
+    """
     success_url = reverse_lazy('poll_home')
     queryset = Poll.objects.all()
     template_name = 'poll/poll_confirm_delete.html'
     pk_url_kwarg = 'poll_id'
 
-    def poll_delete(self, request, *args, **kwargs):
+    def poll_delete(self):
+        """
+        Call the delete() method on the fetched object,
+        then redirect to the success URL
+        and show confirmation message.
+        """
         self.object = self.get_object()
         success_url = self.get_success_url()
         self.object.delete()
 
         messages.add_message(
-                self.request,
-                messages.INFO,
-                'Poll deleted successfully!')
+            self.request,
+            messages.INFO,
+            'Poll deleted successfully!')
         
         return HttpResponseRedirect(success_url)
