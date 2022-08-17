@@ -103,12 +103,12 @@ class DeletePoll(StaffRequiredMixin, generic.DeleteView):
 
     success_url = reverse_lazy('poll_home')
     queryset = Poll.objects.all()
-    template_name = 'poll_confirm_delete.html'
+    template_name = 'poll/poll_confirm_delete.html'
+    pk_url_kwarg = 'poll_id'
 
-    def poll_delete(self):
+    def poll_delete(self, request, *args, **kwargs):
         self.object = self.get_object()
         success_url = self.get_success_url()
-
         self.object.delete()
 
         messages.add_message(

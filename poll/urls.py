@@ -16,5 +16,6 @@ urlpatterns = [
     path('vote/<poll_id>/', poll_views.poll_vote, name='poll_vote'),
     path('results/<poll_id>/', poll_views.poll_results, name='poll_results'),
     # path('delete/<poll_id>/', poll_views.poll_delete, name='poll_delete'),
+    # path('<poll_id>/delete', views.DeletePoll.as_view(), name='poll_delete'),
     path('delete/<poll_id>/', views.DeletePoll.as_view(), name='poll_delete'),
 ]

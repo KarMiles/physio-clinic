@@ -1,1 +1,27 @@
-This is poll_confirm_delete.html
+{% extends 'base.html' %} {% block content %}
+{% load crispy_forms_tags %}
+
+
+<div class="row">
+    <div class="col-sm-8 mt-3 offset-sm-2">
+        <form method="post">{% csrf_token %}
+            <h1>
+                Delete?
+            </h1>
+            <p>
+                Are you sure you want to delete the post "{{ object.question }}" ?
+            </p>
+            {{ form }}
+            <input type="submit" value="Confirm" class="btn btn-danger btn-attn btn-lg float-start">
+        </form>
+
+        <!-- Cancel and return to poll list -->
+        <ul class="pagination justify-content-center">
+            <a href="{% url 'poll_home' %}" class="btn btn-primary btn-lg"> Cancel </a>
+        </ul>
+
+    </div>
+</div>
+
+
+{% endblock content %}
