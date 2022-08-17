@@ -1,7 +1,12 @@
+# Imports
+# 3rd party:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.http import HttpResponse
 
+# Internal:
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .forms import CreatePollForm
 from .models import Poll
 
@@ -20,6 +25,7 @@ def poll_create(request):
     if request.method == 'POST':
         form = CreatePollForm(request.POST)
         if form.is_valid():
+            form.instance.author = request.user
             form.save()
             messages.add_message(
                 request,

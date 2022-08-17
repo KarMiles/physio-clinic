@@ -76,7 +76,6 @@ class BookingList(LoginRequiredMixin, generic.ListView):
 
         if booking_form.is_valid():
             booking_form.instance.user = self.request.user
-            # booking_form["treatment"].required = False
             booking_form.save()
             messages.add_message(
                 self.request,

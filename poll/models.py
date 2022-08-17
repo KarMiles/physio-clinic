@@ -14,9 +14,7 @@ class Poll(models.Model):
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name='poll_user',
-        blank=True,
-        null=True)
+        related_name='poll_user')
     question = models.TextField()
     option_one = models.CharField(max_length=50)
     option_two = models.CharField(max_length=50)
