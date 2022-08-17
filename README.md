@@ -948,9 +948,8 @@ TODO deployment
 ___
 # 5. Technologies used <a name="technology-used"></a>
 
-## 5.i. Languages libraries and frameworks
+## 5.i. Languages
 
-**Languages**
 - HTML (https://www.w3schools.com/html/)
     - The main laguage this webpage's front-end is running on is HTML (HyperText Markup Language).
 - CSS (https://www.w3.org/Style/CSS/)
@@ -959,15 +958,16 @@ ___
     - A limited use of custom-made JavaScript has been employed to enhance functionality of the website.
 - Python - within the Django framework Python 3 is the main language used to run its back-end logic. 
 
-**Frameworks, modules and libraries and other tools**
+## 5.ii Frameworks and libraries 
 
 Frameworks and modules
 - Django (https://www.djangoproject.com/)
     - This project was built with Django framework.
     - For testing Django unit test was utilized.
-- Python modules
 
-    The following modules are used for the project. All modules can be found in requirements.txt file.
+- Python packages
+
+    The following packages are used for the project. All modules can be found in requirements.txt file.
     - asgiref==3.5.2
     - cloudinary==1.29.0
     - dj-database-url==0.5.0
@@ -1051,10 +1051,15 @@ Third-party libraries were used for this project:
     - from django.conf.locale.en import formats as en_formats - for setting date and time formats where local format is not set.
     - from django_contact_form.views import ContactFormView - when utilizing a custom form class, used to manually set up URLs to tell django-contact-form about the form class.
 
-Class-based views provide a way to implement views as Python objects rather than functions.
-Class based views were used in this project for the following reasons:
-- Code reusability - a view class can be inherited by another view class and modified for a different use case.
-- DRY -  help to reduce code duplication
+Class-based views (CBV) provide a way to implement views as Python objects rather than functions.
+Class based views are predominantly used in this project for the following reasons:
+- Code reusability - a view class can be inherited by another view class and modified in a different use case.
+- DRY, which stands for 'don't repeat yourself' - CBV helps to reduce code duplication
 - Code extendability - CBV can be extended to include more functionalities using Mixins
-- Code structuring - In CBVs A class based view helps you respond to different http request with different class instance methods instead of conditional branching statements inside a single function based view.
-- Built-in generic class-based views
+- Code structuring - class based view helps to respond to different http request with different class instance methods instead of conditional branching statements inside a single function based view.
+- Usage of built-in generic class-based views.
+
+<br>
+
+___
+# 6. Credits <a name="credits"></a>
