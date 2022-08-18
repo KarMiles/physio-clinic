@@ -37,6 +37,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
+            <!-- Logo link -->
             <a class="navbar-brand" href="{% url 'blog_home' %}"><span class="logo">Physio<span class="logo-accent">Clinic</span></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,17 +45,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+                    <!-- Home link -->
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="Home" href="{% url 'blog_home' %}">Home</a>
+                    <!-- Poll link -->
                     </li>
-                    
-
-                        <!-- Poll link -->
                         <li class="nav-item">
                             <a class="nav-link" aria-current="Poll" href="{% url 'poll_home' %}">Polls</a>
                         </li>
-
-                    {% if user.is_authenticated %}
+                    <!-- Login / logout link -->
+                        {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" aria-current="Logout" href="{% url 'account_logout' %}">Logout</a>
                         </li>
@@ -64,8 +64,8 @@
                         </li>
                     {% endif %}
                     
+                    <!-- Contact Us / Booking for logged in users -->
                     {% if user.is_authenticated %}
-                        <!-- Contact Us / Booking for logged in users -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Contact Us
@@ -81,8 +81,9 @@
                             <a class="nav-link" aria-current="Contact Us" href="{% url 'contact' %}">Contact Us</a>`
                         </li>
                     {% endif %}
-
                 </ul>
+
+                <!-- Login status info / slogan -->
                 <span class="navbar-text text-body">
                     <div class="d-flex align-items-center"></div>
                         {% if user.is_authenticated %}
@@ -96,6 +97,7 @@
                         {% endif %}
                     </div>
                 </span>
+
             </div>
         </div>
     </nav>
@@ -157,7 +159,7 @@
             let messages = document.getElementById('msg');
             let alert = new bootstrap.Alert(messages);
             alert.close();
-        }, 5000);
+        }, 4000);
     </script>
 
 </body>
