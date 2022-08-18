@@ -106,23 +106,6 @@ def poll_results(request, poll_id):
     }
     return render(request, 'poll/poll_results.html', context)
 
-
-# def poll_delete(request, poll_id):
-#     poll = Poll.objects.get(pk=poll_id)
-
-#     poll.delete()
-
-#     messages.add_message(
-#             request,
-#             messages.INFO,
-#             'Poll deleted successfully!')
-
-#     context = {
-#         'poll': poll
-#     }
-
-#     return render(request, 'poll/poll_home.html', context)
-
 class DeletePoll(StaffRequiredMixin, generic.DeleteView):
     """
     A view to delete a post

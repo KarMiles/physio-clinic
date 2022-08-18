@@ -25,7 +25,7 @@ View the live site [here](https://physio-clinic-heroku.herokuapp.com/)
     iii.  [Known issues during development and testing](#known-issues)<br>
     iv. [Validation testing  ](#validation-testing)<br>
     v. [Javascript testing](#js-testing)<br>
-    vi. [Unfixed bugs](#unfixed-bugs)<br>
+    vi. [Bugs](#bugs)<br>
 4. [Deployment](#deployment)<br>
 5. [Technologies Used](#technology-used)<br>
 6. [Credits](#credits)<br>
@@ -160,6 +160,8 @@ TODO Add strategy trade-offs scr
 ![screenshot of strategy trade-offs](readme/docs/images/strategy-trade-offs.jpg)
 </details>
 
+[Table of Contents](#home)
+
 ---
 
 ## 1.iii. Structure <a name='structure'></a>
@@ -169,6 +171,8 @@ TODO Add strategy trade-offs scr
 Templates are structured into the files listed below. Base template is used for the entire site for consistency and ease in user experience.
 
 TODO Add table with templates.
+
+[Table of Contents](#home)
 
 ---
 
@@ -417,6 +421,12 @@ ___
 
 ## 2.i. Current features <a name='features-current'></a>
 
+<br>
+
+[Table of Contents](#home)
+
+---
+
 ### **Feature 1. Navigation bar**
 
 Navigation bar is present on top of the screen on all pages of the site. Aim of this feature is that the user always have access to easy navigation across the site without the need to use browser navigation features, e.g. 'back' button.
@@ -517,7 +527,12 @@ Click to view image:
 #### **User Stories related to feature 2**
 
 3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
+
 <br>
+
+[Table of Contents](#home)
+
+---
 
 ### **Feature 3. On-site navigation**
 
@@ -541,6 +556,11 @@ Access to features and corresponding navigation buttons depends on user authoriz
 
 2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
 
+<br>
+
+[Table of Contents](#home)
+
+---
 
 ### **Feature 4. Home page**
 
@@ -581,6 +601,10 @@ Click to view image:
 3.1 As a **site user** I can **read and respond to available content** so **my experience on the site feels engaging and interactive**. 
 
 4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
+
+<br>
+
+[Table of Contents](#home)
 
 ---
 ### **Feature 5. Account management**
@@ -678,6 +702,10 @@ Logged in user can sign out. After signout user is redirected to the main page a
 1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
 
 1.7 As a **staff site user** I can **access enhanced functionality** so that I can **add, edit and delete content on webpage**.
+
+<br>
+
+[Table of Contents](#home)
 
 ---
 ### **Feature 6. Posts**
@@ -795,6 +823,8 @@ Functionality available on details page depends on user status:
 
 <br>
 
+[Table of Contents](#home)
+
 ---
 
 ### **Feature 7. Poll**
@@ -856,6 +886,10 @@ Staff has additional option enabling poll creation.
 4.5 As a **staff site user** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
 
 5.3 As a **site admin** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
+
+<br>
+
+[Table of Contents](#home)
 
 ---
 ### **Feature 8. Direct communication**
@@ -938,8 +972,16 @@ TODO tests
 ## v. Javascript testing:<a name="js-testing"></a>
 [Click for Javascript testing](readme/javascript_testing.md)
 
-## 3.vi. Unfixed Bugs <a name="unfixed-bugs"></a> 
-No unfixed bugs.
+## 3.vi. Bugs <a name="bugs"></a> 
+
+**Unfixed bugs**
+
+There are no observed unfixed bugs.
+
+**Fixed bugs**
+
+In app blog model Post, price has default value. This value was not showing when no price was given. The reason for this bug is most likely that the price column was added to the model post at later stage of development and the already existing posts didn't have that column. I've delt with this problem with if statement in templates refering to this value. The ulternative would be editing and saving all existing entries again which would add the price column in the database.
+
 ___
 # 4. Deployment <a name="deployment"></a> 
 [Click here for Deployment file](readme/deployment.md)
@@ -1063,3 +1105,26 @@ Class based views are predominantly used in this project for the following reaso
 
 ___
 # 6. Credits <a name="credits"></a>
+
+Coding ideas, examples and tutorials
+- [Stackoverflow](https://stackoverflow.com/questions/13304149/what-the-difference-between-using-django-redirect-and-httpresponseredirect) - redirect, HttpResponseRedirect and as resource for addressing coding challenges during production process.
+- [Fullstackpython](https://www.fullstackpython.com/django-apps-config-appconfig-examples.html) - AppConfig description and other more general Python knowledge.
+- [Djangoproject](https://docs.djangoproject.com/en/4.0/ref/models/fields/#field-types) - choices for priority levels.
+- [Prettyprinted](https://prettyprinted.com/tutorials/creating-a-poll-app-in-django) - poll implementation.
+- [Sebhastian](https://www.freecodecamp.org/news/author/nsebhastian/) - tooltip.
+- [Vegibit](https://vegibit.com/how-to-use-httpresponseredirect-in-django) - HttpResponse description.
+
+Text content
+- [Wikipedia](https://en.wikipedia.org/wiki/Massage) - general information on massage.
+- [Healthline](https://www.healthline.com) - hot stone massage.
+- [Sensemassage](https://www.sensemassage.co.uk/resources/hub/96-indian-head-massage) - Indian head massage.
+- [NHS](https://www.nhs.uk) - general health info and chiropractic knowledge.
+- [Sterling Ridge Orthopaedics](https://srosm.com) - resistance band therapy.
+
+Graphical content
+- [Unsplash](https://unsplash.com) - graphics.
+- [Nicepng](https://www.nicepng.com) - favicon.
+- [Favicon.co](https://favicon.io/favicon-converter) - favicon conversion.
+- [Coolors](https://coolors.co) - colour pallette creation.
+
+
