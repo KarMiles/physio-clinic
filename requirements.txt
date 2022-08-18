@@ -1,7 +1,7 @@
 asgiref==3.5.2
 bleach==5.0.1
 certifi==2022.6.15
-charset-normalizer==2.1.0
+charset-normalizer==2.0.0
 click==8.1.2
 cloudinary==1.29.0
 colorama==0.4.4

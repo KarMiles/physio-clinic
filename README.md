@@ -1122,9 +1122,10 @@ Text content
 - [Sterling Ridge Orthopaedics](https://srosm.com) - resistance band therapy.
 
 Graphical content
-- [Unsplash](https://unsplash.com) - graphics.
+- [Unsplash](https://unsplash.com) - imagery.
 - [Nicepng](https://www.nicepng.com) - favicon.
 - [Favicon.co](https://favicon.io/favicon-converter) - favicon conversion.
 - [Coolors](https://coolors.co) - colour pallette creation.
+- [Font Awesome](https://fontawesome.com/) - sourcing icons.
 
 
