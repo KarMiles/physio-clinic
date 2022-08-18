@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "account/base.html" %}
 
 {% load static %}
 {% load i18n %}
@@ -9,52 +9,52 @@
 {% block content %}
 
 <div class="container-sm">
-  <div class="row">
-      <div class="col-md-6 mt-3 offset-md-3">
+    <div class="row">
+        <div class="col-md-6 mt-3 offset-md-3">
 
 
-  <div class="row">
+    <div class="row">
 
-    <div class="image-container">
-      <img class="card-img-top illustration" src="{% static 'hello.jpg' %}">
+        <div class="image-container">
+        <img class="card-img-top illustration" src="{% static 'hello.jpg' %}">
+        </div>
+
+        <h1>{% trans "Sign In" %}</h1>
+
+        <p>
+        {% blocktrans %}
+            If you have not created an account yet, then please
+            <a href="{{ signup_url }}">sign up</a> first.
+        {% endblocktrans %}
+        </p>
+        
+        <div class="card pt-2 mb-2">
+        <form class="login" method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+            {% endif %}
+            <button class="btn" type="submit">{% trans "Sign In" %}</button>
+        </form>
+        </div>
+
+        <p>
+        {% blocktrans %}
+            Need to reset password? Click
+        {% endblocktrans %}
+        <a href="{% url 'account_reset_password' %}">
+        {% blocktrans %}
+            Here
+        {% endblocktrans %}
+        </a>.
+        
+        </p>
+
     </div>
 
-    <h1>{% trans "Sign In" %}</h1>
-
-    <p>
-      {% blocktrans %}
-        If you have not created an account yet, then please
-        <a href="{{ signup_url }}">sign up</a> first.
-      {% endblocktrans %}
-    </p>
-    
-    <div class="card pt-2 mb-2">
-      <form class="login" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <button class="btn" type="submit">{% trans "Sign In" %}</button>
-      </form>
     </div>
-
-    <p>
-      {% blocktrans %}
-        Need to reset password? Click
-      {% endblocktrans %}
-      <a href="{% url 'account_reset_password' %}">
-      {% blocktrans %}
-        Here
-      {% endblocktrans %}
-      </a>.
-      
-    </p>
-
-  </div>
-
-  </div>
-  </div>
+    </div>
 </div>
 
 {% endblock %}
