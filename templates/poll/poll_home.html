@@ -34,4 +34,10 @@
     </ul>
 
 </div>
+
+<!-- Link for adding new poll -->
+{% if user.is_authenticated and user.is_staff %}
+<a href="{% url 'poll_create' %}" class="btn btn-primary btn-lg">New poll</a>
+{% endif %}
+
 {% endblock %}

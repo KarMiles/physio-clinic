@@ -1,11 +1,7 @@
 asgiref==3.5.2
-astroid==2.9.3
-bandit==1.7.4
-beautifulsoup4==4.11.1
 bleach==5.0.1
-certifi==2021.10.8
-cffi==1.15.1
-charset-normalizer==2.0.12
+certifi==2022.6.15
+charset-normalizer==2.1.0
 click==8.1.2
 cloudinary==1.29.0
 colorama==0.4.4
@@ -60,7 +56,4 @@ toml==0.10.2
 typing_extensions==4.0.1
 urllib3==1.26.9
 webencodings==0.5.1
-Werkzeug==2.1.1
 whitenoise==6.2.0
-wrapt==1.13.3
-zipp==3.8.0
