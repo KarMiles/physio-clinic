@@ -154,11 +154,15 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 Features were evaluated on a scale from 1 to 5 in terms of importance (how important a feature is for the project in current release) and viability (how feasible the implementation of the feature is in current release).
 
-TODO Add strategy trade-offs scr
+Features with high and medium score between 8 and 25 points on scale 1-25 have been included in production. Features with lower score were left outside the scope of this project.
+
 <details>
-<summary>Click here for strategy trade-offs</summery>
-![screenshot of strategy trade-offs](readme/docs/images/strategy-trade-offs.jpg)
+<summary>Click here for strategy trade-offs</summary>
+
+![screenshot of strategy trade-offs](readme/docs/images/strategy_tradeoffs.jpg)
 </details>
+
+<br>
 
 [Table of Contents](#home)
 
@@ -499,7 +503,7 @@ Access to navbar features:
 
 <br>
 
-#### **User Stories related to feature 1**
+#### **Related user stories**
 
 1.5 As a **site user** I can **easily see my current login status** so that **I know I'm in control of access to my enhanced service on currently used device**.
 
@@ -524,7 +528,7 @@ Click to view image:
 </details>
 <br>
 
-#### **User Stories related to feature 2**
+#### **Related user stories**
 
 3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
 
@@ -534,35 +538,7 @@ Click to view image:
 
 ---
 
-### **Feature 3. On-site navigation**
-
-**Data creation, edition and deletion**
-
-Access to features and corresponding navigation buttons depends on user authorization. User who is not logged in has access to viewing public information, while other activities in CRUD model are dependant on user profile.
-
-| No. | Feature                                 | Not logged in | Logged in client | Staff | Admin |
-| --- | --------------------------------------- | ------------- | ---------------- | ----- | ----- |
-| 1   | Reading public information              | yes           | yes              | yes   | yes   |
-| 2   | Sending messages to company via webpage | yes           | yes              | yes   | yes   |
-| 3   | Requesting specific treatments          | no            | yes              | yes   | yes   |
-| 4   | Making comments and likes               | no            | yes              | yes   | yes   |
-| 5   | Creating and editing posts and polls    | no            | no               | yes   | yes   |
-
-#### **User Stories related to feature 3**
-
-2.1 As a **site user** I can **navigate the service intuitively** so that I can **utilize all of its content**.
-
-2.2 As a **site user** I can easily **browse through available treatments** so I can **decide which ones are most appropriate to me**. 
-
-2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
-
-<br>
-
-[Table of Contents](#home)
-
----
-
-### **Feature 4. Home page**
+### **Feature 3. Home page**
 
 On home page user is welcome with a hero picture whose goal is to draw attention and set a scene and mood of the site. In the middle of the hero page is a semi-transparent section with company name and slogan together with a small symbol indicating that more content is available below. To continue on to the content user can click the symbol or scroll down. 
 
@@ -596,7 +572,7 @@ Click to view image:
 </details>
 <br>
 
-#### **User Stories related to feature 4**
+#### **Related user stories**
 
 3.1 As a **site user** I can **read and respond to available content** so **my experience on the site feels engaging and interactive**. 
 
@@ -607,7 +583,7 @@ Click to view image:
 [Table of Contents](#home)
 
 ---
-### **Feature 5. Account management**
+### **Feature 4. Account management**
 This functionality allows user to register an account, login an logout of the account and change password. 
 
 Click to view image:
@@ -687,7 +663,7 @@ Logged in user can sign out. After signout user is redirected to the main page a
 | 6   | Reset password          | yes           | no               | yes   | no    |
 | 1   | User account management | no            | no               | no    | yes   |
 
-#### **User Stories related to feature 5**
+#### **Related user stories**
 
 1.1 As a **site user** I can **access site without logging in** so that I can **read information about available treatments**.
 
@@ -708,7 +684,7 @@ Logged in user can sign out. After signout user is redirected to the main page a
 [Table of Contents](#home)
 
 ---
-### **Feature 6. Posts**
+### **Feature 5. Posts**
 
 In the blog app standard mechanisms of a blog are employed. Each post represents a treatment offered by the company. Posts can be created, edited and deleted by users with staff status. This can be done on the webpage after chosing appropriate button under a post (only visible to staff users) or on admin page by the administrator of the webpage. Users who are not logged in or are logged in as non-staff can see posts with status "live". Staff users can see both "live" and "draft" posts.
 
@@ -806,7 +782,8 @@ Functionality available on details page depends on user status:
 | 9   | Like a post    | no            | yes              | yes   | yes   |
 
 
-#### **User Stories related to feature 6**
+#### **Related user stories**
+
 4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
 
 4.2 As a **site user** I can **read thoroughly about chosen treatments** so that I can **acquire content most appropriate to my requirements**.
@@ -827,7 +804,7 @@ Functionality available on details page depends on user status:
 
 ---
 
-### **Feature 7. Poll**
+### **Feature 6. Polls**
 
 Poll on this website is created with an intent to provide an easy and convenient way for company management to engage with actual and prospective clients and collect information on their views in current matters related to company's business. That information may then be utilized in the decision-making process in the areas like strategy or marketing. 
 
@@ -875,7 +852,7 @@ Staff has additional option enabling poll creation.
 
 <br>
 
-#### **User Stories related to feature 7**
+#### **Related user stories**
 
 3.1 As a **site user** I can **read and respond to available content** so **my experience on the site feels engaging and interactive**. 
 
