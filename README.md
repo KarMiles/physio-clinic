@@ -173,6 +173,7 @@ Features with high and medium score between 8 and 25 points on scale 1-25 have b
 ## Website templates
 
 Templates are structured into the files listed below. Base template is used for the entire site for consistency and ease in user experience.
+Templates are placed in the folder templates and its subfolders.
 
 TODO Add table with templates.
 
