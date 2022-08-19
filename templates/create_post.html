@@ -10,14 +10,19 @@
             <h3 class="mt-3">Your post here:</h3>
 
                 <!-- Post form for entering a new or editing existing posts -->
-                <div class="col-md-8 card mb-4 mt-3">
+                <div class="col-md-10 offset-md-1 card mb-4 mt-3">
                     <div class="card-body">
                         <h5 class="card-title">Author: {{ user.username }}</h5>
                         <form enctype='multipart/form-data' method="POST">
                             {{ form | crispy }}
                             {% csrf_token %}
                             <button type="submit" class="btn btn-lg">Submit</button>
+
+                            <!-- Navigation - Cancel and go to main page -->
+                            <a href="{% url 'blog_home' %}" class="btn btn-lg btn-attn"> Cancel </a>
                         </form>
+
+                        
                     </div>
                 </div>
 

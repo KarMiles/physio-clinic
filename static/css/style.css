@@ -40,10 +40,11 @@ a {
     border: none;
     border-radius: 3px;
     margin: 10px 3px;
+    border-radius: 3px !important;
 }
 
-.btn {
-    border-radius: 3px !important;
+.btn-lg {
+    margin: 15px 3px;
 }
 
 .icon {
