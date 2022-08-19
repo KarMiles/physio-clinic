@@ -36,7 +36,7 @@ class CreatePost(generic.CreateView):
     Returns:
         Render of post form with success message and context
     """
-    template_name = "create_post.html"
+    template_name = "post_create.html"
     form_class = PostForm
     success_url = reverse_lazy('blog_home')
 
@@ -74,7 +74,7 @@ class EditPost(StaffRequiredMixin, generic.UpdateView):
     Returns:
         Render of updated post with success message
     """
-    template_name = "create_post.html"
+    template_name = "post_create.html"
     form_class = PostForm
     queryset = Post.objects.all()
 
