@@ -9,64 +9,64 @@
 {% block content %}
 
 <div class="container-lg mt-3">
-  <div class="row">
-    <h1>{% trans "Drop us a message!" %}</h1>
+    <div class="row">
+        <h1>{% trans "Drop us a message!" %}</h1>
 
-    <!-- Column with contact form -->
-    <div class="col-md-8">
-      <div class="card mb-4">
-        <div class="card-body">
-          <div class="image-container">
-            <img class="card-img-top illustration" src="{% static 'letter.jpg' %}">
-            <h2>{% trans "Your message:" %}</h2>
-          </div>
-          <div>
-            <form class="signup" id="contact_form" method="post">
-              {% csrf_token %}
-              {{ form | crispy }}
-              <button class="btn" type="submit">{% trans "Send" %}</button>
-            </form>
-          </div>
+        <!-- Column with contact form -->
+        <div class="col-md-8">
+        <div class="card mb-4">
+            <div class="card-body">
+            <div class="image-container">
+                <img class="card-img-top illustration" src="{% static 'letter.jpg' %}">
+                <h2>{% trans "Your message:" %}</h2>
+            </div>
+            <div>
+                <form class="signup" id="contact_form" method="post">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <button class="btn" type="submit">{% trans "Send" %}</button>
+                </form>
+            </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <!-- Column with contact details -->
     <div class="col-md-4">
-      <div class="card mb-4">
-        <div class="card-body">
-          <div class="image-container">
-            <h2>
-              Where to find us
-            </h2>
-            <hr/>
-          </div>
-          <div>
-            <h3>
-              About Us
-            </h3>
-            <p>
-              We are a small clinic specializing in physiotherapy treatments. 
-            </p>
-            <p>
-              We pride ourselves in reaching for the best practices from the most modern to the most ancient traditions.
-              The aim is to offer treatments that work!
-            </p>
-            <h3>
-              Contact details
-            </h3>
-            <p>
-              Telephone
-            </p>
-            <p>
-              e-mail
-            </p>
-            <p>
-              Address
-            </p>
-          </div>
+        <div class="card mb-4">
+            <div class="card-body">
+            <div class="image-container">
+                <h2>
+                    Where to find us
+                </h2>
+                <hr/>
+            </div>
+            <div>
+                <h3>
+                About Us
+                </h3>
+                <p>
+                    We are a small clinic specializing in physiotherapy treatments. 
+                </p>
+                <p>
+                    We pride ourselves in reaching for the best practices from the most modern to the most ancient traditions.
+                    The aim is to offer treatments that work!
+                </p>
+                <h3>
+                    Contact details
+                </h3>
+                <p>
+                    Telephone
+                </p>
+                <p>
+                    e-mail
+                </p>
+                <p>
+                    Address
+                </p>
+            </div>
+            </div>
         </div>
-      </div>
     </div>
 
 </div>
