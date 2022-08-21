@@ -377,8 +377,6 @@ ___
 
 Layout of the interface, navigation and information design for different screen sizes were planned with utilization of wireframes created in Balsamiq. 
 
-TODO Wireframes from Balsamiq.
-
 <details>
 <summary>Wireframe: Home page - hero image</summary>
 
@@ -456,7 +454,15 @@ TODO Wireframes from Balsamiq.
 ___
 ## Business logic
 
-TODO Describe business logic if needed.
+Flow of information and decisions the website operates on are represented in the flowchart below.
+
+<details>
+<summary>Click here to view business logic flowchart</summary>
+
+![image](readme/docs/images/physiohealth_flowchart.jpeg)
+</details>
+
+<br>
 
 ## 1.v. Surface <a name='surface'></a>
 The values behind building the webpage for physical therapy clinic are clean simplicity, impecable higiene and friendly, sublte environment. This is reflected in the webpage surface.
