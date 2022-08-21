@@ -2,8 +2,15 @@
 
 ![screenshot of Responsive Image](readme/docs/images/responsive_image.jpg)
 
-View the live site [here](https://physio-clinic-heroku.herokuapp.com/)
+View the live site [here](https://physio-clinic-heroku.herokuapp.com/).
 
+Users for testing:
+| Username     | Password | Status    |
+| ------------ | -------- | --------- |
+| EvaTherapist | 1qaz3edc | staff     |
+| Anna         | 1qaz3edc | customer  |
+
+<br>
 
 # Table of Contents <a name='home'></a>
 
@@ -175,41 +182,17 @@ Features with high and medium score between 8 and 25 points on scale 1-25 have b
 Templates are structured into the files listed below. Base template is used for the entire site for consistency and ease in user experience.
 Templates are placed in the folder templates and its subfolders.
 
-TODO Add table with templates.
+<details>
+<summary>Click here to view table with templates, part 1</summary>
+
+![screenshot of Post model part 2](readme/docs/images/website_templates1.jpg)
+
+</details>
 
 <details>
-<summary>Click here to view table with templates</summary>
+<summary>Click here to view table with templates, part 2</summary>
 
-| Page                    | Content                                                                                                                                                                                                                                                      | HTML                                     |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------- |
-| Base template           | Head<br> - page metadata and scripts<br> - extrahead block<br>Body<br> - navigation bar<br>   - logo<br>   - links (home, polls, login, contact/booking)<br>   - login status/slogan<br> - alert message and timeout script<br> - content block<br> - footer | base.html                                |
-| Blog app                |                                                                                                                                                                                                                                                              |                                          |
-| Home                    | Hero image<br>Overlay with company name and slogan<br>Treatment posts<br> - image<br> - title<br> - treatment short description (excerpt)<br> - number of likes<br> - number of coments<br> - price<br>                                                      | index.html                               |
-| Post details            | Treatment details<br> - image<br> - title<br> - excerpt<br> - full description<br> - number of likes (click to like for logged in users)<br> - number of coments<br> - price<br>Current comments<br>Form to leave a new comment (logged in only)             | post\_detail.html                        |
-| Create post             | Form to create a new post<br> - author (filled based on login)<br> - title<br> - content<br> - excerpt<br> - price<br> - image<br> - priority<br> - status (live/draft)                                                                                      | post\_create.html                        |
-| Confirm post delete     | Request for confirmation with "Confirm" and "Cancel" buttons                                                                                                                                                                                                 | post\_confirm\_delete.html               |
-| Poll app                |                                                                                                                                                                                                                                                              |                                          |
-| Poll base template      | Sets container for the poll pages                                                                                                                                                                                                                            | poll/poll\_base.html                     |
-| Poll home               | Image<br>Page title<br>List of polls wish links:<br> - Vote<br> - View results<br> - Delete poll (staff only)<br>Link to New poll (staff only)                                                                                                               | poll/poll\_home.html                     |
-| Create poll             | Page title<br>Form to create a new poll:<br> - question<br> - option one<br> - option two<br> - option three<br>Submit and Cancel buttons                                                                                                                    | poll/poll\_create.html                   |
-| Poll vote               | Page title<br>Author of the poll<br>Question<br>Poll options<br>Submit button                                                                                                                                                                                | poll/poll\_vote.html                     |
-| Poll results            | Page title<br>Poll question<br>Options with counters<br>Total                                                                                                                                                                                                | poll/poll\_results.html                  |
-| Confirm poll delete     | Request for confirmation with "Confirm" and "Cancel" buttons                                                                                                                                                                                                 | poll/poll\_confirm\_delete.html          |
-| Account management      |                                                                                                                                                                                                                                                              |                                          |
-| Accounts base           | Base for account management subpages, extending the main base.html<br>Formatting for accounts subpages                                                                                                                                                       | account/base.html                        |
-| Login page              | Image<br>Page title<br>Instructions for user<br>Login form<br>Links to sign up and reset password                                                                                                                                                            | account/login.html                       |
-| Sign up                 | Page title<br>Link to login page<br>Signup form                                                                                                                                                                                                              | account/signup.html                      |
-| Password reset          | Page title<br>Instructions for user<br>Password reset form                                                                                                                                                                                                   | account/password\_reset.thml             |
-| Password reset feedback | Page title<br>Confirmation that password reset email has been sent<br>Link to Contact us page                                                                                                                                                                | account/password\_reset\_done.thml       |
-| Confirm email address   | Page title<br>Request user to confirm that they applied for account (from email link)                                                                                                                                                                        | account/email\_confirm.html              |
-| Sign out                | Page title<br>Request for confirmation                                                                                                                                                                                                                       | account/logout.html                      |
-| Direct comunication     |                                                                                                                                                                                                                                                              |                                          |
-| Contact Us              | Page title<br>Contact form section<br> - image<br> - contact form<br>About section<br> - Company profile<br> - Contact details                                                                                                                               | django\_contact\_form/contact\_form.html |
-| Request appointment     | Page title<br>Booking section<br> - image<br> - booking request form:<br>   - message<br>   - treatment<br>   - time<br>List of user's current requests                                                                                                      | booking.html                             |
-| Error pages             |                                                                                                                                                                                                                                                              |                                          |
-| Error 404               | Page title<br>Message about error<br>Link to main page                                                                                                                                                                                                       | 404.html                                 |
-| Error 500               | Page title<br>Message about error<br>Link to main page                                                                                                                                                                                                       | 500.html                                 |
-
+![screenshot of Post model part 2](readme/docs/images/website_templates2.jpg)
 </details>
 
 <br>
@@ -395,6 +378,80 @@ ___
 Layout of the interface, navigation and information design for different screen sizes were planned with utilization of wireframes created in Balsamiq. 
 
 TODO Wireframes from Balsamiq.
+
+<details>
+<summary>Wireframe: Home page - hero image</summary>
+
+![image](readme/docs/images/wireframes/home_hero.png)
+</details>
+
+<details>
+<summary>Wireframe: Home page - content</summary>
+
+![image](readme/docs/images/wireframes/home_content.png)
+</details>
+
+<details>
+<summary>Wireframe: Poll - main</summary>
+
+![image](readme/docs/images/wireframes/poll_main.png)
+</details>
+
+<details>
+<summary>Wireframe: Poll - vote</summary>
+
+![image](readme/docs/images/wireframes/poll_vote.png)
+</details>
+
+<details>
+<summary>Wireframe: Poll - results</summary>
+
+![image](readme/docs/images/wireframes/poll_result.png)
+</details>
+
+<details>
+<summary>Wireframe: Poll - create</summary>
+
+![image](readme/docs/images/wireframes/poll_create.png)
+</details>
+
+<details>
+<summary>Wireframe: Account - login</summary>
+
+![image](readme/docs/images/wireframes/account_login.png)
+</details>
+
+<details>
+<summary>Wireframe: Account - logout</summary>
+
+![image](readme/docs/images/wireframes/account_logout.png)
+</details>
+
+<details>
+<summary>Wireframe: Account - signup</summary>
+
+![image](readme/docs/images/wireframes/account_signup.png)
+</details>
+
+<details>
+<summary>Wireframe: Account - password reset</summary>
+
+![image](readme/docs/images/wireframes/account_pass_reset.png)
+</details>
+
+<details>
+<summary>Wireframe: Direct comunication - contact us</summary>
+
+![image](readme/docs/images/wireframes/contact.png)
+</details>
+
+<details>
+<summary>Wireframe: Direct comunication - booking</summary>
+
+![image](readme/docs/images/wireframes/booking.png)
+</details>
+
+<br>
 
 ___
 ## Business logic
@@ -1080,6 +1137,7 @@ Design stages
 - Google Fonts (https://fonts.google.com/) - for selecting fonts and using them in the project.
 - Font Awesome (https://fontawesome.com/) - all the icons throughout the website are derived from this service.
 - Coolors.co (https://coolors.co/) - for generating colour pallette for the website.
+- SmallPDF (https://smallpdf.com/) - PDF to jpg file conversion.
 
 Python libraries
 Third-party libraries were used for this project:
