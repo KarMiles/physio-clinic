@@ -242,6 +242,16 @@ Common files:
 
 ## Data schema
 
+**Database**
+
+A relational database was used for this project. 
+
+During development process SQLite DB was initially used, then Postgres. For production Postgres was used as the main database for static files, and for deployment the data was migrated to Heroku Postgres.
+
+[Cloudinary](https://cloudinary.com) service was used for storing static and media files. 
+
+**Data schema diagram**
+
 ![screenshot of data schema](readme/docs/images/database/data_schema.jpg)
 
 Note:
