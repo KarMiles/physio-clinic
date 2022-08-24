@@ -158,7 +158,7 @@ class PostList(generic.ListView):
 
 class PostDetail(View):
     """
-    A view to show posts
+    A view to show post details
     Args:
         View: class based view
     Returns:

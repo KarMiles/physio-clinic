@@ -1,12 +1,12 @@
 # Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.http import HttpResponse
 from blog.views import StaffRequiredMixin
 from django.views import generic, View
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 from django.http import HttpResponseRedirect
 
 # Internal:
@@ -97,14 +97,19 @@ def poll_vote(request, poll_id):
 
     return render(request, 'poll/poll_vote.html', context)
 
+class PollResults(View):
 
-def poll_results(request, poll_id):
-    poll = Poll.objects.get(pk=poll_id)
+    def get(self, request, poll_id):
 
-    context = {
-        'poll': poll
-    }
-    return render(request, 'poll/poll_results.html', context)
+        poll = Poll.objects.get(pk=poll_id)
+        context = {
+            'poll': poll
+        }
+        
+        return render(
+            request,
+            'poll/poll_results.html',
+            context)
 
 class DeletePoll(StaffRequiredMixin, generic.DeleteView):
     """
