@@ -35,7 +35,16 @@ This application is deployed from GitHub using Heroku in following steps:
 9. Select the branch for building the app.
 10. Clicking "Enable Automatic Deploys" will keep the app updated with GitHub repository. This feature is not used for this project.
 
-Ad. 5. Config Vars for this project:
+Ad. 5. Config Vars and coresponding keys in project files for this project:
 
-
+| Config Vars in Heroku             | env.py                           | settings.py                                                     |
+| --------------------------------- | -------------------------------- | --------------------------------------------------------------- |
+| CLOUDINARY\_URL =  cloudinary://… | CLOUDINARY\_URL = cloudinary://… | \-                                                              |
+| DATABASE\_URL = postgres://…      | DATABASE\_URL = postgres://…     | \-                                                              |
+| SECRET\_KEY                       | SECRET\_KEY                      | SECRET\_KEY = os.environ.get('SECRET\_KEY')                     |
+| DEBUG = 0                         | DEBUG = 1                        | DEBUG = os.environ.get('DEBUG', '1') == '1'                     |
+| EMAIL\_HOST\_PASSWORD             | EMAIL\_HOST\_PASSWORD            | EMAIL\_HOST\_PASSWORD = os.environ.get('EMAIL\_HOST\_PASSWORD') |
+| EMAIL\_HOST\_USER                 | EMAIL\_HOST\_USER                | EMAIL\_HOST\_USER = os.environ.get('EMAIL\_HOST\_USER')         |
+| DISABLE\_COLLECTSTATIC = 0        | \-                               | \-                                                              |
+| PORT = 8000                       | \-                               | \-                                                              |
  
