@@ -138,7 +138,7 @@ class PostList(generic.ListView):
     """
     A view to show posts
     Args:
-        UpdateView: class based view
+        ListView: class based view
     Returns:
         Render main page with paginated list of posts
         Posts ordered by priority

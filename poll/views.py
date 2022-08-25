@@ -17,19 +17,21 @@ from .models import Poll
 
 # Poll views
 
-def poll_home(request):
+class PollList(generic.ListView):
     """
-    A view to show page with a list of polls
-    Args:
-        request (object): HTTP request object
-    Returns:
-        Render page with list of polls and context
-    """
-    polls = Poll.objects.all()
-    context = {
-        'polls': polls
-    }
-    return render(request, 'poll/poll_home.html', context)
+        A view to show page with a list of polls
+        Args:
+            ListView: class based view
+        Returns:
+            Render page with list of polls and context
+        """
+
+    model = Poll
+    template_name = "poll/poll_home.html"
+
+    def get_queryset(self):
+
+        return Poll.objects.order_by("id")
 
 
 def poll_create(request):
@@ -98,6 +100,13 @@ def poll_vote(request, poll_id):
     return render(request, 'poll/poll_vote.html', context)
 
 class PollResults(View):
+    """
+    A view to show poll results
+    Args:
+        View: class based view
+    Returns:
+        Render page with poll results
+    """
 
     def get(self, request, poll_id):
 
