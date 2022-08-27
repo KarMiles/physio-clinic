@@ -10,10 +10,9 @@ from django.http import HttpResponseRedirect
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from blog.views import StaffRequiredMixin
+from helpers.views import StaffRequiredMixin
 from .forms import CreatePollForm
 from .models import Poll
-
 
 
 # Poll views

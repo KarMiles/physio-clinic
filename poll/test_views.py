@@ -6,7 +6,7 @@ import unittest
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from views import PollList
-from blog.views import StaffRequiredMixin
+# from helpers.views import StaffRequiredMixin
 
 
 class TestPollList(unittest.TestCase):

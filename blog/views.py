@@ -13,19 +13,12 @@ from django.contrib import messages
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .models import Post
 from .forms import CommentForm, PostForm
+from helpers.views import StaffRequiredMixin
 
 
 # Views for blog app
 
-class StaffRequiredMixin(AccessMixin):
-    """
-    Verify that the current user
-    is authenticated as member of staff.
-    """
-    def dispatch(self, request, *args, **kwargs):
-        if not request.user.is_staff:
-            return self.handle_no_permission()
-        return super().dispatch(request, *args, **kwargs)
+
 
 
 class CreatePost(generic.CreateView):
