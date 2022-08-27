@@ -6,7 +6,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from blog.views import StaffRequiredMixin
 from django.views import generic, View
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
 
 # Internal:
@@ -23,42 +23,68 @@ class PollList(generic.ListView):
         Args:
             ListView: class based view
         Returns:
-            Render page with list of polls and context
+            Render page with list of polls
         """
-
     model = Poll
     template_name = "poll/poll_home.html"
 
     def get_queryset(self):
-
         return Poll.objects.order_by("id")
 
 
-def poll_create(request):
+class CreatePoll(generic.CreateView):
     """
     A view to show form to create a new poll
     Args:
-        request (object): HTTP request object
+        CreateView: class based view
     Returns:
         Render page with form to create a new poll
-        with success message and context
+        with success message
     """
-    if request.method == 'POST':
-        form = CreatePollForm(request.POST)
-        if form.is_valid():
-            form.instance.author = request.user
-            form.save()
-            messages.add_message(
-                request,
-                messages.INFO,
-                'Poll created successfully!')
-            return redirect('poll_home')
-    else:
-        form = CreatePollForm()
-    context = {
-        'create_poll_form': CreatePollForm()
-        }
-    return render(request, 'poll/poll_create.html', context)
+    template_name = "poll/poll_create.html"
+    form_class = CreatePollForm
+    success_url: reverse_lazy('poll_home')
+
+    def form_valid(self, form):
+        self.object = form.instance
+        self.object.author = self.request.user
+        response = super().form_valid(form)
+        messages.add_message(
+            self.request,
+            messages.INFO,
+            'Poll created successfully!')
+        return response
+
+    def get_success_url(self):
+        return reverse('poll_vote', args=[self.object.id])
+        
+
+
+# def poll_create(request):
+#     """
+#     A view to show form to create a new poll
+#     Args:
+#         request (object): HTTP request object
+#     Returns:
+#         Render page with form to create a new poll
+#         with success message and context
+#     """
+#     if request.method == 'POST':
+#         form = CreatePollForm(request.POST)
+#         if form.is_valid():
+#             form.instance.author = request.user
+#             form.save()
+#             messages.add_message(
+#                 request,
+#                 messages.INFO,
+#                 'Poll created successfully!')
+#             return redirect('poll_home')
+#     else:
+#         form = CreatePollForm()
+#     context = {
+#         'create_poll_form': CreatePollForm()
+#         }
+#     return render(request, 'poll/poll_create.html', context)
 
 
 def poll_vote(request, poll_id):
