@@ -39,7 +39,7 @@ class CreatePoll(generic.CreateView):
         CreateView: class based view
     Returns:
         Render page with form to create a new poll
-        with success message
+        with success message on completion
     """
     template_name = "poll/poll_create.html"
     form_class = CreatePollForm
@@ -58,72 +58,103 @@ class CreatePoll(generic.CreateView):
     def get_success_url(self):
         return reverse('poll_vote', args=[self.object.id])
         
+class PollVote(View):
+
+    def get(self, request, poll_id):
+
+        queryset = self.get_queryset()
+        poll = get_object_or_404(queryset, pk=poll_id)
+        context = {
+            'poll': poll
+        }
+
+        return render(
+            request,
+            "poll/poll_vote.html",
+            context
+        )
+
+    def post(self, request, poll_id):
+        queryset = self.get_queryset()
+        poll = get_object_or_404(queryset, pk=poll_id)
+
+        if self.request.method == 'POST':
+            selected_option = request.POST['poll']
+            if selected_option == 'option1':
+                poll.option_one_count += 1
+            elif selected_option == 'option2':
+                poll.option_two_count += 1
+            elif selected_option == 'option3':
+                poll.option_three_count += 1
+            else:
+                return HttpResponse(400, 'Invalid form option')
+
+            poll.save()
+
+            messages.add_message(
+                    request,
+                    messages.INFO,
+                    'Thank you for your vote!')
+
+            return redirect('poll_results', poll.id)
+
+        context = {
+            'poll': poll
+        }
+
+        return render(
+            request,
+            'poll/poll_vote.html',
+            context)
+    
+    def get_queryset(self):
+            return Poll.objects.all()
+
+    # def get_queryset(self):
+    #     if self.request.user.is_staff:
+    #         return Poll.objects.all()
+    #     else:
+    #         return Poll.objects.filter(status=1)
 
 
-# def poll_create(request):
+# def poll_vote(request, poll_id):
 #     """
-#     A view to show form to create a new poll
+#     A view to show form with the poll
 #     Args:
 #         request (object): HTTP request object
+#         poll_id: poll_id
 #     Returns:
 #         Render page with form to create a new poll
 #         with success message and context
 #     """
+#     poll = Poll.objects.get(pk=poll_id)
+    
 #     if request.method == 'POST':
-#         form = CreatePollForm(request.POST)
-#         if form.is_valid():
-#             form.instance.author = request.user
-#             form.save()
-#             messages.add_message(
+#         selected_option = request.POST['poll']
+#         if selected_option == 'option1':
+#             poll.option_one_count += 1
+#         elif selected_option == 'option2':
+#             poll.option_two_count += 1
+#         elif selected_option == 'option3':
+#             poll.option_three_count += 1
+#         else:
+#             return HttpResponse(400, 'Invalid form option')
+
+#         poll.save()
+
+#         messages.add_message(
 #                 request,
 #                 messages.INFO,
-#                 'Poll created successfully!')
-#             return redirect('poll_home')
-#     else:
-#         form = CreatePollForm()
+#                 'Thank you for your vote!')
+
+#         return redirect('poll_results', poll.id)
+
 #     context = {
-#         'create_poll_form': CreatePollForm()
-#         }
-#     return render(request, 'poll/poll_create.html', context)
+#         'poll': poll
+#     }
 
+#     return render(request, 'poll/poll_vote.html', context)
 
-def poll_vote(request, poll_id):
-    """
-    A view to show form with the poll
-    Args:
-        request (object): HTTP request object
-        poll_id: poll_id
-    Returns:
-        Render page with form to create a new poll
-        with success message and context
-    """
-    poll = Poll.objects.get(pk=poll_id)
-    
-    if request.method == 'POST':
-        selected_option = request.POST['poll']
-        if selected_option == 'option1':
-            poll.option_one_count += 1
-        elif selected_option == 'option2':
-            poll.option_two_count += 1
-        elif selected_option == 'option3':
-            poll.option_three_count += 1
-        else:
-            return HttpResponse(400, 'Invalid form option')
-
-        poll.save()
-
-        messages.add_message(
-                request,
-                messages.INFO,
-                'Thank you for your vote!')
-
-        return redirect('poll_results', poll.id)
-
-    context = {
-        'poll': poll
-    }
-
-    return render(request, 'poll/poll_vote.html', context)
 
 class PollResults(View):
     """
