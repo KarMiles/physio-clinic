@@ -6,16 +6,20 @@ import unittest
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from views import PollList
-# from helpers.views import StaffRequiredMixin
+# from accounts import *
+# from accounts.views import StaffRequiredMixin
 
 
 class TestPollList(unittest.TestCase):
     '''
-    Should raise a TypeError if...
+    Test description
     '''
-    def class_not_equal_none(self):
-        result = self.assertTrue(PollList)
-        self.assertIsNone(result)
+    def test_polllist_not_equal_none(self):
+        # result = self.assertTrue(PollList)
+        # self.assertIsNotNone(result)
+
+        pass
+
 
 if __name__ == '__main__':
     unittest.main()

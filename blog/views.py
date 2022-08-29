@@ -13,13 +13,10 @@ from django.contrib import messages
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .models import Post
 from .forms import CommentForm, PostForm
-from helpers.views import StaffRequiredMixin
+from accounts.views import StaffRequiredMixin
 
 
 # Views for blog app
-
-
-
 
 class CreatePost(generic.CreateView):
     """

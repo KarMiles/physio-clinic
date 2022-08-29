@@ -8,6 +8,7 @@ from django.contrib import messages
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .forms import NewUserForm
+from django.contrib.auth.mixins import AccessMixin
 
 
 def register_request(request):
@@ -35,3 +36,16 @@ def register_request(request):
         template_name="account/signup.html",
         context={"register_form": form}
         )
+
+
+# Access management
+
+class StaffRequiredMixin(AccessMixin):
+    """
+    Verify that the current user
+    is authenticated as member of staff.
+    """
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_staff:
+            return self.handle_no_permission()
+        return super().dispatch(request, *args, **kwargs)
