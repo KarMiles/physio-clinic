@@ -35,7 +35,7 @@ class Post(models.Model):
         unique=True)
     author = models.ForeignKey(
         User,
-        on_delete=models.CASCADE,
+        on_delete=models.PROTECT,
         related_name="blog_posts")
     content = models.TextField()
     featured_image = CloudinaryField(

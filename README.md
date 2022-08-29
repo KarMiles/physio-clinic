@@ -5,10 +5,11 @@
 View the live site [here](https://physio-clinic-heroku.herokuapp.com/).
 
 Users for testing:
-| Username     | Password | Status    |
-| ------------ | -------- | --------- |
-| EvaTherapist | 1qaz3edc | staff     |
-| Anna         | 1qaz3edc | customer  |
+
+| Username     | Password | Status   |
+| ------------ | -------- | -------- |
+| EvaTherapist | 1qazcde3 | staff    |
+| AnnaCustomer | 1qazcde3 | customer |
 
 <br>
 
@@ -1208,7 +1209,7 @@ Text content
 - [Healthline](https://www.healthline.com) - hot stone massage.
 - [Sensemassage](https://www.sensemassage.co.uk/resources/hub/96-indian-head-massage) - Indian head massage.
 - [NHS](https://www.nhs.uk) - general health info and chiropractic knowledge.
-- [Sterling Ridge Orthopaedics](https://srosm.com) - resistance band therapy.
+- [Sterling Ridge Orthopaedics](https://srosm.com/patient-education/blog/uses-of-resistance-bands-in-physical-therapy/) - resistance band therapy.
 
 Graphical content
 - [Unsplash](https://unsplash.com) - imagery.
