@@ -5,7 +5,7 @@ import unittest
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from views import PollList
+from poll.views import PollList
 # from accounts import *
 # from accounts.views import StaffRequiredMixin
 
