@@ -29,6 +29,7 @@ class TestViews(unittest.TestCase):
                 password='1qazcde3',
                 is_staff='True'
             )
+            print('Test user created.')
         else:
             print('Test user already exists, proceeding with test.')
 
