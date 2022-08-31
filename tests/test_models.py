@@ -19,12 +19,13 @@ class TestPostModel(unittest.TestCase):
         '''
         Create test user and test post
         '''
+        
         self.a = User(
-            username = 'TestUser'
+            username='TestUser'
         )
 
         self.l = User(
-            id = User.objects.filter(username='TestUser')
+            id=User.objects.filter(username='TestUser')
         )
 
         self.p = Post(
