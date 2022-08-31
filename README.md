@@ -1198,6 +1198,7 @@ ___
 
 Coding ideas, examples and tutorials
 - [Stackoverflow](https://stackoverflow.com/questions/13304149/what-the-difference-between-using-django-redirect-and-httpresponseredirect) - redirect, HttpResponseRedirect and as resource for addressing coding challenges during production process.
+- [Stackoverflow](https://stackoverflow.com/questions/71886688/getting-attributeerror-testcase-object-has-no-attribute-asserttemplateused) - assertTemplateUsed for unittest.
 - [Fullstackpython](https://www.fullstackpython.com/django-apps-config-appconfig-examples.html) - AppConfig description and other more general Python knowledge.
 - [Djangoproject](https://docs.djangoproject.com/en/4.0/ref/models/fields/#field-types) - choices for priority levels.
 - [Prettyprinted](https://prettyprinted.com/tutorials/creating-a-poll-app-in-django) - poll implementation.
