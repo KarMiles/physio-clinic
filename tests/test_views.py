@@ -49,6 +49,7 @@ class TestViews(unittest.TestCase):
     '''
 
     # TESTS SETUP
+
     @classmethod
     def setUpClass(cls):
         '''
@@ -57,7 +58,7 @@ class TestViews(unittest.TestCase):
         '''
         print('\nsetUpClass')
         
-        # Create test user
+        # Create test users
         if not User.objects.filter(username=username_customer).exists():
             user_customer=User.objects.create(
                 username=username_customer,
@@ -65,24 +66,20 @@ class TestViews(unittest.TestCase):
                 is_staff='False'
             )
             print(f'Test user "{user_customer.username}" created.')
-        elif not User.objects.filter(username=username_staff).exists():
+        else:
+            print(f'Test user "{user_customer.username}" already exists, \
+                proceeding with test.')
+
+        if not User.objects.filter(username=username_staff).exists():
             user_staff=User.objects.create(
                 username=username_staff,
                 password=password,
                 is_staff='True'
             )
             print(f'Test user "{user_staff.username}" created.')
-
         else:
-            print('Test user already exists, proceeding with test.')
-
-        # logged_in = client.login(
-        #     username=username,
-        #     password=password)
-        # if logged_in:
-        #     print('Test user logged in.')
-        # else:
-        #     print('Test user NOT logged in.')
+            print(f'Test user "{user_staff.username}" already exists, \
+                proceeding with test.')
         
     @classmethod
     def tearDownClass(cls):
@@ -91,10 +88,10 @@ class TestViews(unittest.TestCase):
         for all tests in TestViews class
         '''
         print('\ntearDownClass')
-        # Delete test user
+        # Delete test users
         User.objects.filter(username=username_customer).delete()
         User.objects.filter(username=username_staff).delete()
-        print('Test user deleted.')
+        print('Test users deleted.')
     
     def setUp(self):
         '''
@@ -117,15 +114,31 @@ class TestViews(unittest.TestCase):
         '''
         pass
     
+    # Function to check if indicated template is used
+    def assertTemplateUsed(self, response, template_name):
+        self.assertIn(
+            template_name,
+            [t.name for t in response.templates if t.name is not None]
+        )
+
     # TESTS
 
     def test_user_can_login(self):
+        """
+        Tests that user can login.
+        checks
+        1. that the client session is in allauth registry.
+        """
         login_customer()
         self.assertIn('_auth_user_id', client.session)
         logout()
-    # self.assertEqual(int(self.client.session['_auth_user_id']), user.pk)
 
     def test_polllist_not_equal_none(self):
+        """
+        Tests that Poll page loads list of polls.
+        checks
+        1. that the PollList is not empty.
+        """
         result = PollList.get_queryset(self)
         self.assertIsNotNone(result)
 
@@ -134,35 +147,50 @@ class TestViews(unittest.TestCase):
     #     poll_object = Poll[0]
     #     self.assertIn(poll_object, result)
 
-    def assertTemplateUsed(self, response, template_name):
-            self.assertIn(
-                template_name,
-                [t.name for t in response.templates if t.name is not None]
-            )
 
-    def test_get_page(self):
+
+    # LOADING PAGES
+
+    def test_get_homepage(self):
         '''
-        Test to check that the correct page displays.
+        Test to check that Home page displays.
         Checks:
         1. status code is 200 (success)
-        and template used as expected.
+        and correct template is used.
         '''
-
-        # Home page loads correctly 
         response = client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'base.html')
 
-        # Polls page loads correctly
+    def test_poll_page(self):
+        '''
+        Test to check that Poll page displays.
+        Checks:
+        1. status code is 200 (success)
+        and correct template is used.
+        '''
         response = client.get('/poll/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'poll/poll_home.html')
 
-        # Login page loads correctly
+    def test_login_page(self):
+        '''
+        Test to check that Login page displays.
+        Checks:
+        1. status code is 200 (success)
+        and correct template is used.
+        '''
         response = client.get('/accounts/login/')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'account/login.html')
 
+    def test_contact_page(self):
+        '''
+        Test to check that Contact page displays.
+        Checks:
+        1. status code is 200 (success)
+        and correct template is used.
+        '''
         # Contact page loads correctly
         response = client.get('/contact/contact')
         self.assertEqual(response.status_code, 200)
@@ -170,13 +198,28 @@ class TestViews(unittest.TestCase):
             response,
             'django_contact_form/contact_form.html')
 
-        # Booking page loads correctly
+    def test_booking_page(self):
+        '''
+        Test to check that Booking page displays correctly.
+        Checks:
+        1. status code is 200 (success)
+        and correct template is used.
+        2. status code is not 200 (success)
+        if user is not authorized.
+        '''
+        # Booking page loads for authorized user
         login_customer()
         response = client.get('/booking/booking')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(
             response,
             'booking.html')
+        logout()
+
+        # Booking page does not load for unauthorized user
+        logout()
+        response = client.get('/booking/booking')
+        self.assertNotEqual(response.status_code, 200)
         logout()
 
 if __name__ == '__main__':
