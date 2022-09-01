@@ -13,24 +13,35 @@ from poll.views import PollList
 from poll.models import Poll
 
 
+# USER SETUP
 User = get_user_model()
 client = Client()
 
+username_customer='test_user_customer'
+username_staff='test_user_staff'
+password='1qazcde3'
+
 # Login user
-def login():
+def login_customer():
     client.force_login(
         User.objects.get_or_create(
-            username='user_staff_test',
-            password='1qazcde3'
+            username=username_customer,
+            password=password,
+            is_staff='False'
+            )[0])
+
+def login_staff():
+    client.force_login(
+        User.objects.get_or_create(
+            username=username_staff,
+            password=password,
+            is_staff='True'
             )[0])
         
 # Logout user
 def logout():
     client.logout()
 
-class LoginView(unittest.TestCase):
-    def setUp(self):
-        self.client.force_login(User.objects.get_or_create(username='user_staff_test')[0])
 
 class TestViews(unittest.TestCase):
     '''
@@ -47,22 +58,27 @@ class TestViews(unittest.TestCase):
         print('\nsetUpClass')
         
         # Create test user
-        if not User.objects.filter(username='user_staff_test').exists():
-            # user=User.objects.create(
-            user=User.objects.create(
-                username='user_staff_test',
-                password='1qazcde3',
+        if not User.objects.filter(username=username_customer).exists():
+            user_customer=User.objects.create(
+                username=username_customer,
+                password=password,
+                is_staff='False'
+            )
+            print(f'Test user "{user_customer.username}" created.')
+        elif not User.objects.filter(username=username_staff).exists():
+            user_staff=User.objects.create(
+                username=username_staff,
+                password=password,
                 is_staff='True'
             )
-            # user.set_password('1qazcde3')
-            # user.save()
-            print(f'Test user "{user.username}" created.')
+            print(f'Test user "{user_staff.username}" created.')
+
         else:
             print('Test user already exists, proceeding with test.')
 
         # logged_in = client.login(
-        #     username='user_staff_test',
-        #     password='1qazcde3')
+        #     username=username,
+        #     password=password)
         # if logged_in:
         #     print('Test user logged in.')
         # else:
@@ -76,7 +92,8 @@ class TestViews(unittest.TestCase):
         '''
         print('\ntearDownClass')
         # Delete test user
-        User.objects.filter(username='user_staff_test').delete()
+        User.objects.filter(username=username_customer).delete()
+        User.objects.filter(username=username_staff).delete()
         print('Test user deleted.')
     
     def setUp(self):
@@ -103,7 +120,7 @@ class TestViews(unittest.TestCase):
     # TESTS
 
     def test_user_can_login(self):
-        login()
+        login_customer()
         self.assertIn('_auth_user_id', client.session)
         logout()
     # self.assertEqual(int(self.client.session['_auth_user_id']), user.pk)
@@ -154,7 +171,7 @@ class TestViews(unittest.TestCase):
             'django_contact_form/contact_form.html')
 
         # Booking page loads correctly
-        login()
+        login_customer()
         response = client.get('/booking/booking')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(
