@@ -11,6 +11,7 @@ from django.contrib import auth
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from poll.views import PollList
 from poll.models import Poll
+from blog.models import Post
 
 
 # USER SETUP
@@ -65,10 +66,10 @@ class TestViews(unittest.TestCase):
                 password=password,
                 is_staff='False'
             )
-            print(f'Test user "{user_customer.username}" created.')
-        else:
-            print(f'Test user "{user_customer.username}" already exists, \
-                proceeding with test.')
+        #     print(f'Test user "{user_customer.username}" created.')
+        # else:
+        #     print(f'Test user "{user_customer.username}" already exists, \
+        #         proceeding with test.')
 
         if not User.objects.filter(username=username_staff).exists():
             user_staff=User.objects.create(
@@ -76,10 +77,33 @@ class TestViews(unittest.TestCase):
                 password=password,
                 is_staff='True'
             )
-            print(f'Test user "{user_staff.username}" created.')
-        else:
-            print(f'Test user "{user_staff.username}" already exists, \
-                proceeding with test.')
+        #     print(f'Test user "{user_staff.username}" created.')
+        # else:
+        #     print(f'Test user "{user_staff.username}" already exists, \
+        #         proceeding with test.')
+        
+        # # Create test user
+        # if not User.objects
+        # user = User.objects.create(
+        #     username='TestUser',
+        #     email='test@mail.com',
+        #     password='1qazcde3',
+        #     is_staff='True'
+        # )
+
+        # Create test Post
+        if not Post.objects.filter(title='Ttitle').exists():
+            post = Post.objects.create(
+                title='Ttitle',
+                slug='ttitle',
+                author=user_staff,
+                content='tcontent',
+                excerpt='texcerpt',
+                price='tprice',
+                priority='3 - Normal',
+                status='0',
+                created_on='31/08/2022 10:42'
+                )
         
     @classmethod
     def tearDownClass(cls):
@@ -88,10 +112,11 @@ class TestViews(unittest.TestCase):
         for all tests in TestViews class
         '''
         print('\ntearDownClass')
-        # Delete test users
+        # Delete test data
         User.objects.filter(username=username_customer).delete()
         User.objects.filter(username=username_staff).delete()
-        print('Test users deleted.')
+        Post.objects.filter(slug='ttitle').delete()
+        print('Test data deleted.')
     
     def setUp(self):
         '''
@@ -133,21 +158,10 @@ class TestViews(unittest.TestCase):
         self.assertIn('_auth_user_id', client.session)
         logout()
 
-    def test_polllist_not_equal_none(self):
-        """
-        Tests that Poll page loads list of polls.
-        checks
-        1. that the PollList is not empty.
-        """
-        result = PollList.get_queryset(self)
-        self.assertIsNotNone(result)
-
     # def test_polllist_contains_test_poll(self):
     #     result = PollList.get_queryset(self)
     #     poll_object = Poll[0]
     #     self.assertIn(poll_object, result)
-
-
 
     # LOADING PAGES
 
@@ -162,6 +176,30 @@ class TestViews(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'base.html')
 
+    def test_get_post_detail_page(self):
+        '''
+        Test to check that Post Details page displays.
+        Checks:
+        1. status code is 200 (success)
+        and correct template is used
+        '''
+        # TODO Test post_detail page
+        # response = client.get('/ttitle')
+        # # self.assertEqual(response.status_code, 200)
+        # self.assertTemplateUsed(
+        #     response,
+        #     'post_detail.html')
+        pass
+
+    def test_polllist_not_equal_none(self):
+        """
+        Tests that Poll page loads list of polls.
+        checks
+        1. that the PollList is not empty.
+        """
+        result = PollList.get_queryset(self)
+        self.assertIsNotNone(result)
+
     def test_poll_page(self):
         '''
         Test to check that Poll page displays.
@@ -171,7 +209,18 @@ class TestViews(unittest.TestCase):
         '''
         response = client.get('/poll/')
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'poll/poll_home.html')
+        self.assertTemplateUsed(
+            response,
+            'poll/poll_home.html')
+
+    def test_polllist_not_equal_none(self):
+        """
+        Tests that Poll page loads list of polls.
+        checks
+        1. that the PollList is not empty.
+        """
+        result = PollList.get_queryset(self)
+        self.assertIsNotNone(result)
 
     def test_login_page(self):
         '''
@@ -180,9 +229,12 @@ class TestViews(unittest.TestCase):
         1. status code is 200 (success)
         and correct template is used.
         '''
+        logout()
         response = client.get('/accounts/login/')
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'account/login.html')
+        self.assertTemplateUsed(
+            response,
+            'account/login.html')
 
     def test_contact_page(self):
         '''
@@ -191,7 +243,6 @@ class TestViews(unittest.TestCase):
         1. status code is 200 (success)
         and correct template is used.
         '''
-        # Contact page loads correctly
         response = client.get('/contact/contact')
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(
@@ -203,7 +254,8 @@ class TestViews(unittest.TestCase):
         Test to check that Booking page displays correctly.
         Checks:
         1. status code is 200 (success)
-        and correct template is used.
+        and correct template is used
+        for authorized user.
         2. status code is not 200 (success)
         if user is not authorized.
         '''
