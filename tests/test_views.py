@@ -93,7 +93,7 @@ class TestViews(unittest.TestCase):
 
         # Create test Post
         if not Post.objects.filter(title='Ttitle').exists():
-            post = Post.objects.create(
+            Post.objects.create(
                 title='Ttitle',
                 slug='ttitle',
                 author=user_staff,
@@ -113,9 +113,9 @@ class TestViews(unittest.TestCase):
         '''
         print('\ntearDownClass')
         # Delete test data
-        User.objects.filter(username=username_customer).delete()
-        User.objects.filter(username=username_staff).delete()
-        Post.objects.filter(slug='ttitle').delete()
+        # User.objects.filter(username=username_customer).delete()
+        # User.objects.filter(username=username_staff).delete()
+        # Post.objects.filter(slug='ttitle').delete()
         print('Test data deleted.')
     
     def setUp(self):
@@ -139,7 +139,7 @@ class TestViews(unittest.TestCase):
         '''
         pass
     
-    # Function to check if indicated template is used
+    # Function for checking if indicated template is used
     def assertTemplateUsed(self, response, template_name):
         self.assertIn(
             template_name,
@@ -184,12 +184,11 @@ class TestViews(unittest.TestCase):
         and correct template is used
         '''
         # TODO Test post_detail page
-        # response = client.get('/ttitle')
-        # # self.assertEqual(response.status_code, 200)
-        # self.assertTemplateUsed(
-        #     response,
-        #     'post_detail.html')
-        pass
+        response = client.get('/ttitle')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response,
+            'post_detail.html')
 
     def test_polllist_not_equal_none(self):
         """
