@@ -6,6 +6,7 @@ from django.test import Client
 from django.views import generic
 from django.contrib.auth import get_user_model
 from django.contrib import auth
+from django.urls import reverse
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,9 +19,9 @@ from blog.models import Post
 User = get_user_model()
 client = Client()
 
-username_customer='test_user_customer'
-username_staff='test_user_staff'
-password='1qazcde3'
+username_customer = 'test_user_customer'
+username_staff = 'test_user_staff'
+password = '1qazcde3'
 
 # Login user
 def login_customer():
@@ -59,6 +60,25 @@ class TestViews(unittest.TestCase):
         '''
         print('\nsetUpClass')
         
+        
+        
+    @classmethod
+    def tearDownClass(cls):
+        '''
+        Delete test data used 
+        for all tests in TestViews class
+        '''
+        print('\ntearDownClass')
+        # Delete test data
+        User.objects.filter(username=username_customer).delete()
+        User.objects.filter(username=username_staff).delete()
+        Post.objects.filter(slug='ttitle').delete()
+        print('Test data deleted.')
+    
+    def setUp(self):
+        '''
+        Set up testing data
+        '''
         # Create test users
         if not User.objects.filter(username=username_customer).exists():
             user_customer=User.objects.create(
@@ -101,28 +121,12 @@ class TestViews(unittest.TestCase):
                 excerpt='texcerpt',
                 price='tprice',
                 priority='3 - Normal',
-                status='0',
-                created_on='31/08/2022 10:42'
+                status='1',
                 )
         
-    @classmethod
-    def tearDownClass(cls):
-        '''
-        Delete test data used 
-        for all tests in TestViews class
-        '''
-        print('\ntearDownClass')
-        # Delete test data
-        # User.objects.filter(username=username_customer).delete()
-        # User.objects.filter(username=username_staff).delete()
-        # Post.objects.filter(slug='ttitle').delete()
-        print('Test data deleted.')
-    
-    def setUp(self):
-        '''
-        Set up testing data
-        '''
-        pass
+        # posts = Post.objects.all()
+        # print(posts)
+
         # Create test Poll
         # Poll.objects.create(
         #     poll_id='999',
@@ -184,11 +188,18 @@ class TestViews(unittest.TestCase):
         and correct template is used
         '''
         # TODO Test post_detail page
-        response = client.get('/ttitle')
+        # login_staff()
+        # response = client.get('/ttitle')
+        post_detail_url = reverse('post_detail', args=['ttitle'])
+        response = client.get(post_detail_url)
+
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(
             response,
             'post_detail.html')
+
+        
+        
 
     def test_polllist_not_equal_none(self):
         """
