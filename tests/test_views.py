@@ -3,15 +3,12 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import unittest
 from django.test import Client
-from django.views import generic
 from django.contrib.auth import get_user_model
-from django.contrib import auth
 from django.urls import reverse
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from poll.views import PollList
-from poll.models import Poll
 from blog.models import Post
 
 
@@ -58,27 +55,7 @@ class TestViews(unittest.TestCase):
         Set up test data used 
         for all tests in TestViews class
         '''
-        print('\nsetUpClass')
-        
-        
-        
-    @classmethod
-    def tearDownClass(cls):
-        '''
-        Delete test data used 
-        for all tests in TestViews class
-        '''
-        print('\ntearDownClass')
-        # Delete test data
-        User.objects.filter(username=username_customer).delete()
-        User.objects.filter(username=username_staff).delete()
-        Post.objects.filter(slug='ttitle').delete()
-        print('Test data deleted.')
-    
-    def setUp(self):
-        '''
-        Set up testing data
-        '''
+        print('\nTest_views starting')
         # Create test users
         if not User.objects.filter(username=username_customer).exists():
             user_customer=User.objects.create(
@@ -86,10 +63,8 @@ class TestViews(unittest.TestCase):
                 password=password,
                 is_staff='False'
             )
-        #     print(f'Test user "{user_customer.username}" created.')
-        # else:
-        #     print(f'Test user "{user_customer.username}" already exists, \
-        #         proceeding with test.')
+        else:
+            user_customer=User.objects.filter(username=username_customer)[0]
 
         if not User.objects.filter(username=username_staff).exists():
             user_staff=User.objects.create(
@@ -97,20 +72,9 @@ class TestViews(unittest.TestCase):
                 password=password,
                 is_staff='True'
             )
-        #     print(f'Test user "{user_staff.username}" created.')
-        # else:
-        #     print(f'Test user "{user_staff.username}" already exists, \
-        #         proceeding with test.')
+        else:
+            user_staff=User.objects.filter(username=username_staff)[0]
         
-        # # Create test user
-        # if not User.objects
-        # user = User.objects.create(
-        #     username='TestUser',
-        #     email='test@mail.com',
-        #     password='1qazcde3',
-        #     is_staff='True'
-        # )
-
         # Create test Post
         if not Post.objects.filter(title='Ttitle').exists():
             Post.objects.create(
@@ -123,19 +87,24 @@ class TestViews(unittest.TestCase):
                 priority='3 - Normal',
                 status='1',
                 )
-        
-        # posts = Post.objects.all()
-        # print(posts)
 
-        # Create test Poll
-        # Poll.objects.create(
-        #     poll_id='999',
-        #     author=User.username,
-        #     question='Which option?',
-        #     option_one='option_one',
-        #     option_two='option_two',
-        #     option_three='option_three'
-        #     )
+    @classmethod
+    def tearDownClass(cls):
+        '''
+        Delete test data used 
+        for all tests in TestViews class
+        '''
+        # Delete test data
+        User.objects.filter(username=username_customer).delete()
+        User.objects.filter(username=username_staff).delete()
+        Post.objects.filter(slug='ttitle').delete()
+        print('\nTest_views complete')
+    
+    def setUp(self):
+        '''
+        Set up testing data
+        '''
+        pass
 
     def tearDown(self):
         '''
@@ -162,12 +131,7 @@ class TestViews(unittest.TestCase):
         self.assertIn('_auth_user_id', client.session)
         logout()
 
-    # def test_polllist_contains_test_poll(self):
-    #     result = PollList.get_queryset(self)
-    #     poll_object = Poll[0]
-    #     self.assertIn(poll_object, result)
-
-    # LOADING PAGES
+    # TEST LOADING PAGES
 
     def test_get_homepage(self):
         '''
@@ -187,9 +151,6 @@ class TestViews(unittest.TestCase):
         1. status code is 200 (success)
         and correct template is used
         '''
-        # TODO Test post_detail page
-        # login_staff()
-        # response = client.get('/ttitle')
         post_detail_url = reverse('post_detail', args=['ttitle'])
         response = client.get(post_detail_url)
 
@@ -198,8 +159,38 @@ class TestViews(unittest.TestCase):
             response,
             'post_detail.html')
 
-        
-        
+    def test_get_post_edit_page_staff(self):
+        '''
+        Test to check that Edit Post page displays
+        for authorized user.
+        Checks:
+        1. status code is 200 (success)
+        and correct template is used
+        for authorized user.
+        '''
+        login_staff()
+        post_detail_url = reverse('post_edit', args=['ttitle'])
+        response = client.get(post_detail_url)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(
+            response,
+            'post_create.html')
+
+    def test_get_post_edit_page_customer(self):
+        '''
+        Test to check that Edit Post page displays
+        for authorized user.
+        Checks:
+        1. status code is 200 (success)
+        and correct template is used
+        for authorized user.
+        '''
+        login_customer()
+        post_detail_url = reverse('post_edit', args=['ttitle'])
+        response = client.get(post_detail_url)
+
+        self.assertNotEqual(response.status_code, 200)
 
     def test_polllist_not_equal_none(self):
         """

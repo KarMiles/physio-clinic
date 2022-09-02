@@ -15,6 +15,22 @@ class TestBlogModels(unittest.TestCase):
     '''
     Test Post model
     '''
+    @classmethod
+    def setUpClass(cls):
+        '''
+        Class method used for operations carried
+        before all tests
+        '''
+        print('\nTest_models starting')
+    
+    @classmethod
+    def tearDownClass(cls):
+        '''
+        Class method used for operations carried
+        after all tests
+        '''
+        print('\nTest_models complete')
+    
     def setUp(self):
         '''
         Create test data
@@ -27,18 +43,6 @@ class TestBlogModels(unittest.TestCase):
             is_staff='True'
         )
 
-        # Create test user
-        # if not User.objects.filter(username='user_staff_test').exists():
-        #     User.objects.create(
-        #         username='user_staff_test',
-        #         email='test@mail.com',
-        #         password='1qazcde3',
-        #         is_staff='True'
-        #     )
-        #     print('Test user created.')
-        # else:
-        #     print('Test user already exists, proceeding with test.')
-
         # Create test post
         self.post = Post(
             title='Ttitle',
@@ -48,11 +52,7 @@ class TestBlogModels(unittest.TestCase):
             excerpt='texcerpt',
             price='tprice',
             priority='3 - Normal',
-            status='0',
-            created_on='31/08/2022 10:42',
-            updated_on='31/08/2022 11:42',
-            # TODO Test likes 
-            # likes=User.objects.get(pk=id)
+            status='0'
         )
 
         # Create test comment
@@ -60,7 +60,6 @@ class TestBlogModels(unittest.TestCase):
             post=self.post,
             author='TCommentAuthor',
             body="tbody",
-            created_on='31/08/2022 10:42',
             approved=True
         )
     
