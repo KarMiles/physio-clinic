@@ -101,18 +101,6 @@ class TestViews(unittest.TestCase):
         Post.objects.filter(slug='ttitle').delete()
         print('\nTest_views complete')
     
-    def setUp(self):
-        '''
-        Set up testing data
-        '''
-        pass
-
-    def tearDown(self):
-        '''
-        Delete test data
-        '''
-        pass
-    
     # Function for checking if indicated template is used
     def assertTemplateUsed(self, response, template_name):
         self.assertIn(

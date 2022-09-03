@@ -2,14 +2,10 @@
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 import unittest
-from django.test import TestCase
-from django.test import Client
-from django.contrib.auth import get_user_model
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from blog.forms import PostForm, CommentForm
-from blog.models import Post
+from blog.forms import PostForm
 
 
 class TestPostForm(unittest.TestCase):
@@ -24,7 +20,7 @@ class TestPostForm(unittest.TestCase):
         Set up test data used 
         for all tests in TestViews class
         '''
-        print('\nTest_views starting')
+        print('\nTest_forms starting')
 
     @classmethod
     def tearDownClass(cls):
@@ -32,7 +28,7 @@ class TestPostForm(unittest.TestCase):
         Delete test data used 
         for all tests in TestViews class
         '''
-        print('\nTest_views complete')
+        print('\nTest_forms complete')
     
     # TESTS
 
@@ -106,6 +102,7 @@ class TestPostForm(unittest.TestCase):
         1. Fields listed in Meta class
         """
         form = PostForm()
+        
         self.assertEqual(form.Meta.fields, 
             ('title',
             'content',
