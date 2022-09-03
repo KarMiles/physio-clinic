@@ -15,6 +15,9 @@ class TestBlogModels(unittest.TestCase):
     '''
     Test Post model
     '''
+
+    # TESTS SETUP
+
     @classmethod
     def setUpClass(cls):
         '''
@@ -62,6 +65,8 @@ class TestBlogModels(unittest.TestCase):
             body="tbody",
             approved=True
         )
+
+    # TESTS
     
     def test_create_post(self):
         self.assertIsInstance(self.post, Post)

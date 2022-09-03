@@ -12,37 +12,6 @@ from blog.forms import PostForm, CommentForm
 from blog.models import Post
 
 
-# USER SETUP
-User = get_user_model()
-client = Client()
-
-username_customer = 'test_user_customer'
-username_staff = 'test_user_staff'
-password = '1qazcde3'
-
-# Login user (customer)
-def login_customer():
-    client.force_login(
-        User.objects.get_or_create(
-            username=username_customer,
-            password=password,
-            is_staff='False'
-            )[0])
-
-# Login user (staff)
-def login_staff():
-    client.force_login(
-        User.objects.get_or_create(
-            username=username_staff,
-            password=password,
-            is_staff='True'
-            )[0])
-        
-# Logout user
-def logout():
-    client.logout()
-
-
 class TestPostForm(unittest.TestCase):
     '''
     This class is for testing Post form
@@ -65,31 +34,7 @@ class TestPostForm(unittest.TestCase):
         '''
         print('\nTest_views complete')
     
-    def setUp(self):
-        '''
-        Set up testing data
-        '''
-        pass
-
-    def tearDown(self):
-        '''
-        Delete test data
-        '''
-        pass
-    
     # TESTS
-
-    # def test_user_can_login(self):
-    #     """
-    #     Tests that user can login.
-    #     Checks:
-    #     1. that the client session is in allauth registry.
-    #     """
-    #     login_staff()
-    #     self.assertIn('_auth_user_id', client.session)
-    #     if '_auth_user_id' in client.session:
-    #         print('\nUser can log in')
-    #     logout()
 
     def test_post_title_is_required(self):
         '''
@@ -134,3 +79,38 @@ class TestPostForm(unittest.TestCase):
         })
 
         self.assertTrue(form.is_valid())
+
+    def test_excerpt_is_not_required(self):
+        '''
+        Tests that field 'excerpt' is not required
+        Checks:
+        1. form is valid if 'excerpt' field is left blank
+        '''
+        form = PostForm({
+            'title': 'Ttitle',
+            'slug': 'ttitle',
+            'author': 'tauthor',
+            'content': 'tcontent',
+            'excerpt': '',
+            'price': 'tprice',
+            'priority': '3 - Normal',
+            'status': '1'
+        })
+
+        self.assertTrue(form.is_valid())
+        
+    def test_postform_fields_are_explicit_in_form_metaclass(self):
+        """
+        Tests that only fields in Meta class desplay in form
+        Checks:
+        1. Fields listed in Meta class
+        """
+        form = PostForm()
+        self.assertEqual(form.Meta.fields, 
+            ('title',
+            'content',
+            'excerpt',
+            'price',
+            'featured_image',
+            'priority',
+            'status',))
