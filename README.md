@@ -1053,7 +1053,7 @@ TODO tests
 
 [Click here for Known issues during development and testing](readme/known_issues.md)
 
-TODO tests
+TODO know_issue.md
 
 ## 3.iv. Validation testing:<a name="validation-testing"></a>
 [Click here for Validation testing](readme/validation_testing.md)
@@ -1069,13 +1069,14 @@ There are no observed unfixed bugs.
 
 **Fixed bugs**
 
-In app blog model Post, price has default value. This value was not showing when no price was given. The reason for this bug is most likely that the price column was added to the model post at later stage of development and the already existing posts didn't have that column. I've delt with this problem with if statement in templates refering to this value. The ulternative would be editing and saving all existing entries again which would add the price column in the database.
+In app blog model Post, price has default value. This value was not showing when no price was entered. The reason for this bug was that the price column was added to the model post at later stage of development and the already existing posts didn't have that column. I've delt with this problem with ```if``` statement in templates refering to this value. The ulternative would be editing and saving all existing entries again which would add the price column in the database.
 
 ___
 # 4. Deployment <a name="deployment"></a> 
 [Click here for Deployment file](readme/deployment.md)
 
-TODO deployment
+<br>
+
 ___
 # 5. Technologies used <a name="technology-used"></a>
 

@@ -34,7 +34,7 @@ class TestPostForm(unittest.TestCase):
 
     def test_post_title_is_required(self):
         '''
-        Tests if the field 'title' is required
+        Tests if the field 'title' is required.
         Checks:
         1. form is not valid if title is blank
         2. there is an error message when field is empty
@@ -59,7 +59,7 @@ class TestPostForm(unittest.TestCase):
     def test_post_title_is_required_filled(self):
         '''
         Tests if form with field 'title' containing characters 
-        is valid
+        is valid.
         Checks:
         1. form is valid if title contains characters
         '''
@@ -78,7 +78,7 @@ class TestPostForm(unittest.TestCase):
 
     def test_excerpt_is_not_required(self):
         '''
-        Tests that field 'excerpt' is not required
+        Tests that field 'excerpt' is not required.
         Checks:
         1. form is valid if 'excerpt' field is left blank
         '''
@@ -97,7 +97,7 @@ class TestPostForm(unittest.TestCase):
         
     def test_postform_fields_are_explicit_in_form_metaclass(self):
         """
-        Tests that only fields in Meta class desplay in form
+        Tests that only fields in Meta class desplay in form.
         Checks:
         1. Fields listed in Meta class
         """

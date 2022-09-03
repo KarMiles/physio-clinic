@@ -48,3 +48,4 @@ Ad. 5. Config Vars and coresponding keys in project files for this project:
 | DISABLE\_COLLECTSTATIC = 0        | \-                               | \-                                                              |
 | PORT = 8000                       | \-                               | \-                                                              |
  
+ 

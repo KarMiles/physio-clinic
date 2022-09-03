@@ -217,7 +217,7 @@ class TestViews(unittest.TestCase):
         Test to check that Login page displays.
         Checks:
         1. status code is 200 (success)
-        and correct template is used.
+        2. correct template is used.
         '''
         logout()
         response = client.get('/accounts/login/')
@@ -231,7 +231,7 @@ class TestViews(unittest.TestCase):
         Test to check that Contact page displays.
         Checks:
         1. status code is 200 (success)
-        and correct template is used.
+        2. correct template is used.
         '''
         response = client.get('/contact/contact')
         self.assertEqual(response.status_code, 200)
@@ -243,11 +243,10 @@ class TestViews(unittest.TestCase):
         '''
         Test to check that Booking page displays correctly.
         Checks:
-        1. status code is 200 (success)
-        and correct template is used
+        1. status code is 200 (success) in case of authorized user
+        2. correct template is used
         for authorized user.
-        2. status code is not 200 (success)
-        if user is not authorized.
+        3. status code is not 200 in case of non-authorized user
         '''
         # Booking page loads for authorized user
         login_customer()
@@ -261,7 +260,7 @@ class TestViews(unittest.TestCase):
         # Booking page does not load for unauthorized user
         logout()
         response = client.get('/booking/booking')
-        self.assertNotEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 302)
         logout()
 
 if __name__ == '__main__':
