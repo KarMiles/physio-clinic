@@ -56,7 +56,7 @@ class TestViews(unittest.TestCase):
         for all tests in TestViews class
         '''
         print('\nTest_views starting')
-        # Create test users
+        # Create test user (customer)
         if not User.objects.filter(username=username_customer).exists():
             user_customer=User.objects.create(
                 username=username_customer,
@@ -66,6 +66,7 @@ class TestViews(unittest.TestCase):
         else:
             user_customer=User.objects.filter(username=username_customer)[0]
 
+        # Create test user (staff)
         if not User.objects.filter(username=username_staff).exists():
             user_staff=User.objects.create(
                 username=username_staff,
@@ -124,7 +125,7 @@ class TestViews(unittest.TestCase):
     def test_user_can_login(self):
         """
         Tests that user can login.
-        checks
+        Checks:
         1. that the client session is in allauth registry.
         """
         login_customer()
@@ -195,7 +196,7 @@ class TestViews(unittest.TestCase):
     def test_polllist_not_equal_none(self):
         """
         Tests that Poll page loads list of polls.
-        checks
+        Checks:
         1. that the PollList is not empty.
         """
         result = PollList.get_queryset(self)
@@ -217,7 +218,7 @@ class TestViews(unittest.TestCase):
     def test_polllist_not_equal_none(self):
         """
         Tests that Poll page loads list of polls.
-        checks
+        Checks:
         1. that the PollList is not empty.
         """
         result = PollList.get_queryset(self)
