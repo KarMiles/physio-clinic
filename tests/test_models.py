@@ -100,3 +100,9 @@ class TestBlogModels(unittest.TestCase):
         string representation defined in Comment model
         '''
         self.assertEquals(str(self.comment), 'Comment by TCommentAuthor')
+
+    def test_post_image_defaults_to_placeholder(self):
+        '''
+        Tests that when no image is uploaded image defaults to placeholder
+        '''
+        self.assertEqual(self.post.featured_image, 'placeholder')
