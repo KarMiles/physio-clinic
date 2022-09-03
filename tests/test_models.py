@@ -69,13 +69,34 @@ class TestBlogModels(unittest.TestCase):
     # TESTS
     
     def test_create_post(self):
+        '''
+        Tests that post can be created using Post model
+        Checks:
+        1. test post is an instance of Post model 
+        '''
         self.assertIsInstance(self.post, Post)
 
     def test_create_post_str_representation(self):
+        '''
+        Tests string representation for Post model
+        Checks:
+        1. string representation is equal to post title
+        '''
         self.assertEquals(str(self.post), 'Ttitle')
 
     def test_create_comment(self):
+        '''
+        Tests that comment can be created using Comment model
+        Checks:
+        1. test comment is an instance of Comment model 
+        '''
         self.assertIsInstance(self.comment, Comment)
 
     def test_create_comment_str_representation(self):
+        '''
+        Tests string representation for Comment model
+        Checks:
+        1. test string representation corresponds to 
+        string representation defined in Comment model
+        '''
         self.assertEquals(str(self.comment), 'Comment by TCommentAuthor')
