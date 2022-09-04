@@ -10,25 +10,25 @@ The following validators were used for testing code correctness:
 No errors or warnings were found by [W3C Markup Validator](https://validator.w3.org/)  throughout the site.
 <details>
     <summary>Home</summary>
-    <img src="readme/docs/validation/validation-html-index.jpg">
+    <img src="../readme/docs/images/testing/validation/validation-html-index.jpg">
 </details>
 <details>
-    <summary>Campervans</summary>
-    <img src="readme/docs/validation/validation-html-campervans.jpg">
+    <summary>Polls</summary>
+    <img src="../readme/docs/images/testing/validation/validation-html-polls.jpg">
 </details>
 <details>
-    <summary>Garage</summary>
-    <img src="readme/docs/validation/validation-html-garage.jpg">
+    <summary>Login</summary>
+    <img src="../readme/docs/images/testing/validation/validation-html-login.jpg">
 </details>
 <details>
-    <summary>FAQ</summary>
-    <img src="readme/docs/validation/validation-html-faq.jpg">
+    <summary>Login</summary>
+    <img src="../readme/docs/images/testing/validation/validation-html-faq.jpg">
 </details>
 <details>
     <summary>Contact</summary>
-    <img src="readme/docs/validation/validation-html-contact.jpg">
+    <img src="../readme/docs/images/testing/validation/validation-html-contact.jpg">
 </details>
 <details>
     <summary>404</summary>
-    <img src="readme/docs/validation/validation-html-404.jpg">
+    <img src="../readme/docs/images/testing/validation/validation-html-404.jpg">
 </details>
