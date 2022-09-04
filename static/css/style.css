@@ -1,6 +1,13 @@
 /* Google Fonts used: Raleway */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Raleway:wght@100;400;700;800&display=swap');
 
+:root {
+    /* --logoblue: #408cdd;
+    --logored: #eb7575; */
+    --logoblue: #3186e0;
+    --logored: #eb7575;
+}
+
 
 /* Common */
 
@@ -10,7 +17,7 @@ body {
 }
 
 h1 {
-    color: #408cdd;
+    color: var(--logoblue);
 }
 
 a {
@@ -27,7 +34,7 @@ a {
 }
 
 .btn {
-    background-color: #408cdd;
+    background-color: var(--logoblue);
     color: aliceblue;
     border: none;
     border-radius: 3px;
@@ -35,7 +42,7 @@ a {
 }
 
 .btn-attn {
-    background-color: #eb7575;
+    background-color: var(--logored);
     color: aliceblue;
     border: none;
     border-radius: 3px;
@@ -139,11 +146,11 @@ input {
 
 .logo {
     font-weight: 800;
-    color: #408cdd;
+    color: var(--logoblue);
 }
 
 .logo-accent {
-    color: #eb7575;
+    color: var(--logored);
 }
 
 
@@ -202,12 +209,12 @@ footer hr {
 /* Main page */
 
 .post-link {
-    color: #408cdd;
+    color: var(--logoblue);
 }
 
 .post-link:hover,
 .page-link {
-    color: #eb7575;
+    color: var(--logored);
     margin-left: 5px;
 }
 
@@ -258,7 +265,7 @@ footer hr {
 }
 
 #hovertext:hover {
-    color: #408cdd;
+    color: var(--logoblue);
 }
     
 #hovertext:before {
@@ -266,7 +273,7 @@ footer hr {
     visibility: hidden;
     opacity: 0;
     width: 140px;
-    background-color: #eb7575;
+    background-color: var(--logored);
     color: #fff;
     text-align: center;
     border-radius: 5px;
