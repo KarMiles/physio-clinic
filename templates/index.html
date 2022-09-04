@@ -22,28 +22,25 @@
         <div id="sidenav">
             <nav aria-label="Page navigation">
                 <div class="pagination justify-content-center">
+                    
                     {% if page_obj.has_previous %}
                     <div id="prev">
-                        <li>
-                            <a href="?page={{ page_obj.previous_page_number }}#content-top"
-                            class="page-link">
-                                &#9664;
-                            </a>
-                        </li>
+                        <a href="?page={{ page_obj.previous_page_number }}#content-top"
+                        class="page-link">
+                            &#9664;
+                        </a>
                     </div>
-                        
                     {% endif %}
+
                     {% if page_obj.has_next %}
                     <div id="next">
-                        <li>
-                            <a href="?page={{ page_obj.next_page_number }}#content-top"
-                            class="page-link">
-                                &#9654;
-                            </a>
-                        </li>
+                        <a href="?page={{ page_obj.next_page_number }}#content-top"
+                        class="page-link">
+                            &#9654;
+                        </a>
                     </div>
-                        
                     {% endif %}
+
                 </div>
             </nav>
         </div>
