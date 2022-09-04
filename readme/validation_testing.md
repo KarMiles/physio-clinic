@@ -21,14 +21,10 @@ No errors or warnings were found by [W3C Markup Validator](https://validator.w3.
     <img src="../readme/docs/images/testing/validation/validation-html-login.jpg">
 </details>
 <details>
-    <summary>Login</summary>
-    <img src="../readme/docs/images/testing/validation/validation-html-faq.jpg">
-</details>
-<details>
     <summary>Contact</summary>
     <img src="../readme/docs/images/testing/validation/validation-html-contact.jpg">
 </details>
 <details>
-    <summary>404</summary>
-    <img src="../readme/docs/images/testing/validation/validation-html-404.jpg">
+    <summary>Booking</summary>
+    <img src="../readme/docs/images/testing/validation/validation-html-booking.jpg">
 </details>
