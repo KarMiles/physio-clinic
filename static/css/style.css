@@ -118,11 +118,6 @@ input {
         right: 12px;
 }
 
-.hmiddle {
-    display: block;
-    width: 80hv;
-}
-
 .light {
     color: lightgrey;
 }
@@ -267,27 +262,27 @@ footer hr {
 }
     
 #hovertext:before {
-content: attr(data-hover);
-visibility: hidden;
-opacity: 0;
-width: 140px;
-background-color: #eb7575;
-color: #fff;
-text-align: center;
-border-radius: 5px;
-padding: 5px 10px;
-transition: opacity 1s ease-in-out;
+    content: attr(data-hover);
+    visibility: hidden;
+    opacity: 0;
+    width: 140px;
+    background-color: #eb7575;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px 10px;
+    transition: opacity 1s ease-in-out;
 
-position: absolute;
-z-index: 1;
-left: 130px;
-/* top: 90%; */
-bottom: -25px;
+    position: absolute;
+    z-index: 1;
+    left: 130px;
+    /* top: 90%; */
+    bottom: -25px;
 }
 
 #hovertext:hover:before {
-opacity: 1;
-visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 
