@@ -36,13 +36,13 @@ No errors or warnings were found by [W3C Markup Validator](https://validator.w3.
 No errors were found by [W3C CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator). Reported warnings are related to Bootstrap and Font Owesome solutions.
 <details>
     <summary>CSS Validation</summary>
-    <img src="docs/validation/validation-css.jpg">
+    <img src="../readme/docs/images/testing/validation/validation-css.jpg">
 </details>
 <details>
     <summary>Bootstrap</summary>
-    <img src="docs/validation/validation-css-bootstrap.jpg">
+    <img src="../readme/docs/images/testing/validation/validation-css-bootstrap.jpg">
 </details>
 <details>
     <summary>Font Owesome</summary>
-    <img src="docs/validation/validation-css-fontawesome.jpg">
+    <img src="../readme/docs/images/testing/validation/validation-css-fontawesome.jpg">
 </details>
