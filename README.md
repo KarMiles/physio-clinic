@@ -33,7 +33,6 @@ Users for testing:
     iii.  [Known issues during development and testing](#known-issues)<br>
     iv. [Validation testing  ](#validation-testing)<br>
     v. [Javascript testing](#js-testing)<br>
-    vi. [Bugs](#bugs)<br>
 4. [Deployment](#deployment)<br>
 5. [Technologies Used](#technology-used)<br>
 6. [Credits](#credits)<br>
@@ -221,8 +220,9 @@ Files for running specific apps:
 - models.py - contain details on every model and attributes.
 - urls.py - top level website urls.
 - views.py - files holding website's logic, Python functions and classes receiving requests and returning web responses.
-- test_forms.py - automated testing for forms. TODO
-- test_models.py - automated testing for models. TODO
+- test_models.py - automated testing for models. 
+- test_views.py - automated testing for views.
+- test_forms.py - automated testing for forms.
 
 Common files:
 - manage.py - is a command-line utility for executing Django-specific tasks, e.g. starting a new app within the project or running the development server.
@@ -231,7 +231,6 @@ Common files:
 - settings.py - settings.
 - db.sqlite3 - database used in development.
 - README.md - project's documentation.
-- TESTING.md - testing documentation. TODO
 
 ### Folders
 - physioproject - main project for the website.
@@ -1047,29 +1046,22 @@ TODO perform manual tests and fill user_story_testing.md
 
 [Click here for automated testing](readme/automated_testing.md)
 
-TODO tests
-
 ## 3.iii. Known issues during development and testing <a name="known-issues"></a>
 
-[Click here for Known issues during development and testing](readme/known_issues.md)
+**Unfixed issues**
 
-TODO know_issue.md
+There are no observed unfixed issues and bugs.
+
+**Fixed issues**
+
+In app blog model Post, price has default value. This value was not showing when no price was entered. The reason for this bug was that the price column was added to the model post at later stage of development and the already existing posts didn't have that column. I've delt with this problem with ```if``` statement in templates refering to this value. The ulternative would be editing and saving all existing entries again which would add the price column in the database.
+
+TODO known_issues.md
 
 ## 3.iv. Validation testing:<a name="validation-testing"></a>
 [Click here for Validation testing](readme/validation_testing.md)
 
-## v. Javascript testing:<a name="js-testing"></a>
-[Click for Javascript testing](readme/javascript_testing.md)
-
-## 3.vi. Bugs <a name="bugs"></a> 
-
-**Unfixed bugs**
-
-There are no observed unfixed bugs.
-
-**Fixed bugs**
-
-In app blog model Post, price has default value. This value was not showing when no price was entered. The reason for this bug was that the price column was added to the model post at later stage of development and the already existing posts didn't have that column. I've delt with this problem with ```if``` statement in templates refering to this value. The ulternative would be editing and saving all existing entries again which would add the price column in the database.
+TODO validation
 
 ___
 # 4. Deployment <a name="deployment"></a> 

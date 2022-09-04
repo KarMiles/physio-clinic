@@ -15,9 +15,11 @@
             <div class="d-sm-block col-md-6">
                 <div class="details-image"> 
                     {% if "placeholder" in post.featured_image.url %}
-                        <img src="{% static 'placeholder.jpg' %}">
+                        <img src="{% static 'placeholder.jpg' %}"
+                        alt="black and white picture of a woman on massage table">
                     {% else %}
-                        <img src=" {{ post.featured_image.url }}">
+                        <img src=" {{ post.featured_image.url }}"
+                        alt="featured photo massage and therapy related">
                     {% endif %}
                 </div>
             </div>
