@@ -46,14 +46,12 @@ onload="contrastFunction_maintain()">
             <!-- High contrast switch -->
             <div class="navbar-text text-body">
                 <div class="d-flex align-items-center">
-
-                    <button id="contrast-btn" aria-label="High contrast toggle"
-                    title="High contrast toggle"
-                    type="button" onclick="toggleContrast()"
-                    data-toggle="tooltip" data-placement="bottom" title="Toggle high contrast">
+                    <button id="contrast-btn"
+                    class="hovertext hovertext-contrast" data-hover="Toggle high contrast"
+                    aria-label="Toggle high contrast"
+                    onclick="toggleContrast()">
                         <i class="fas fa-adjust"></i>
                     </button>
-
                 </div>
             </div>
 
@@ -111,7 +109,7 @@ onload="contrastFunction_maintain()">
                                 You are logged in as: {{ user.username }}
                             </div>
                         {% else %}
-                            <div class="text-muted">
+                            <div class="text-body">
                                 Your health in good hands
                             </div>
                         {% endif %}

@@ -1195,7 +1195,7 @@ Coding ideas, examples and tutorials
 - [Fullstackpython](https://www.fullstackpython.com/django-apps-config-appconfig-examples.html) - AppConfig description and other more general Python knowledge.
 - [Djangoproject](https://docs.djangoproject.com/en/4.0/ref/models/fields/#field-types) - choices for priority levels.
 - [Prettyprinted](https://prettyprinted.com/tutorials/creating-a-poll-app-in-django) - poll implementation.
-- [Sebhastian](https://www.freecodecamp.org/news/author/nsebhastian/) - tooltip.
+- [Sebhastian](https://www.freecodecamp.org/news/author/nsebhastian/) - "Click for more" tooltip.
 - [Vegibit](https://vegibit.com/how-to-use-httpresponseredirect-in-django) - HttpResponse description.
 
 Text content

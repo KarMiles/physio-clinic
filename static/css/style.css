@@ -1,11 +1,9 @@
 /* Google Fonts used: Raleway */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Raleway:wght@100;400;700;800&display=swap');
 
-/* Default font colours */
+/* Start font colours */
 :root {
-    /* --logoblue: #3186e0; */
     --logoblue: #2077D5;
-    /* --logored: #eb7575; */
     --logored: #DD2727;
     --mute: #757575;
 }
@@ -271,6 +269,11 @@ footer hr {
 
 /* Show more indicator */
 
+.hovertext:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
+
 .hovertext {
     position: relative;
     margin-top: 1.5rem;
@@ -298,6 +301,11 @@ footer hr {
     bottom: -25px;
 }
 
+.hovertext-contrast:before {
+    bottom: auto;
+    left: 20px;
+    top: 30px;
+}
 
 /* On-top previous/next navigation buttons */
 
