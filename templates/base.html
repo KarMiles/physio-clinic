@@ -36,11 +36,24 @@
     <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
 
 </head>
-<body  class="d-flex flex-column h-100 main-bg">
+<body  class="d-flex flex-column h-100 main-bg"
+onload="contrastFunction_maintain()">
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid">
+
+            <!-- High contrast switch -->
+            <div class="navbar-text text-body">
+                <div class="d-flex align-items-center">
+
+                    <button id="contrast-btn" type="btn" onclick="toggleContrast()">
+                        <i class="fas fa-adjust"></i>
+                    </button>
+
+                </div>
+            </div>
+
             <!-- Logo link -->
             <a class="navbar-brand" href="{% url 'blog_home' %}"><span class="logo">Physio<span class="logo-accent">Clinic</span></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -156,15 +169,17 @@
         </div>
     </footer>
 
-    
     <!-- Message timeout -->
-    <script>
+    <!-- <script>
         setTimeout(function () {
             let messages = document.getElementById('msg');
             let alert = new bootstrap.Alert(messages);
             alert.close();
         }, 4000);
-    </script>
+    </script> -->
+
+    <!-- Custom scripts for this template -->
+    <script src="{% static 'js/script.js' %}"></script>
 
 </body>
 </html>
