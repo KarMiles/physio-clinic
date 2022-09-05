@@ -1,9 +1,11 @@
 /* Google Fonts used: Raleway */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Raleway:wght@100;400;700;800&display=swap');
 
+/* Default font colours */
 :root {
     --logoblue: #3186e0;
     --logored: #eb7575;
+    --mute: grey;
 }
 
 
@@ -126,6 +128,10 @@ input {
 .light {
     color: lightgrey;
 }
+
+.text-muted {
+    color: var(--mute)!important;
+} 
 
 /* Navigation */
 
