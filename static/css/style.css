@@ -269,16 +269,16 @@ footer hr {
 
 /* Show more indicator */
 
-#hovertext {
+.hovertext {
     position: relative;
     margin-top: 1.5rem;
 }
 
-#hovertext:hover {
+.hovertext:hover {
     color: var(--logoblue);
 }
     
-#hovertext:before {
+.hovertext:before {
     content: attr(data-hover);
     visibility: hidden;
     opacity: 0;
@@ -293,13 +293,7 @@ footer hr {
     position: absolute;
     z-index: 1;
     left: 130px;
-    /* top: 90%; */
     bottom: -25px;
-}
-
-#hovertext:hover:before {
-    opacity: 1;
-    visibility: visible;
 }
 
 

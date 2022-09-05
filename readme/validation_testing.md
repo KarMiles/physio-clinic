@@ -58,6 +58,8 @@ No errors were found by [W3C CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 ### Visibility and functionality
 Optimal visibility and functionality on various devices was tested throughout the production process and the finished product was tested using [Responsive Designs](http://ami.responsivedesign.is). Screen from this test is placed in the beginning of this document.
 
+<br>
+
 ### Accessibility
 Testing for accessibility of the site was carried out with the employment of [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/). No errors were found. Alerts were addressed where needed.
 <details>
@@ -89,6 +91,8 @@ Testing for accessibility of the site was carried out with the employment of [WA
     <img src="../readme/docs/images/testing/validation/validation-accessibility-404.jpg">
 </details>
 
+<br>
+
 ### Performance
 Performance testing was done in [Lighthouse](https://developers.google.com/web/tools/lighthouse), part of the Google Chrome Developer Tools.
  All performance tests ended with score between 90-100.
@@ -103,10 +107,6 @@ Performance testing was done in [Lighthouse](https://developers.google.com/web/t
 <details>
     <summary>Login</summary>
     <img src="../readme/docs/images/testing/validation/validation-performance-login.jpg">
-</details>
-<details>
-    <summary>Message</summary>
-    <img src="../readme/docs/images/testing/validation/validation-performance-message.jpg">
 </details>
 <details>
     <summary>Contact</summary>
