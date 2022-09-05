@@ -3,8 +3,10 @@
 
 /* Default font colours */
 :root {
-    --logoblue: #3186e0;
-    --logored: #eb7575;
+    /* --logoblue: #3186e0; */
+    --logoblue: #2077D5;
+    /* --logored: #eb7575; */
+    --logored: #DD2727;
     --mute: grey;
 }
 
