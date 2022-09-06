@@ -61,26 +61,18 @@ Optimal visibility and functionality on various devices was tested throughout th
 <br>
 
 ### Accessibility
-Testing for accessibility of the site was carried out with the employment of [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/). No errors were found. Alerts were addressed where needed.
+Testing for accessibility of the site was carried out with the employment of [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/). Initially contrast errors were found. These errors were addressed by increasing contrast on fonts against background and introducing Contrast toggle button in the top left corner. Switching to increased contrast sets font colours outside original colour scheme but enhances reading comfort for users with such visual needs. This functionality works accross all the website. Alerts were addressed where needed.
 <details>
     <summary>Home</summary>
     <img src="../readme/docs/images/testing/validation/validation-accessibility-index.jpg">
-
-    Web accessibility alerts indicated a repeated links. These are important for optimal user experience in this case.
 </details>
 <details>
-    <summary>Campervans</summary>
-    <img src="../readme/docs/images/testing/validation/validation-accessibility-campervans.jpg">
-
-    Alerts related to Campervans page indicated to repeated alternative texts in carousel. This is due to similar nature of images in the carousel.
+    <summary>Polls</summary>
+    <img src="../readme/docs/images/testing/validation/validation-accessibility-polls.jpg">
 </details>
 <details>
-    <summary>Garage</summary>
-    <img src="../readme/docs/images/testing/validation/validation-accessibility-garage.jpg">
-</details>
-<details>
-    <summary>FAQ</summary>
-    <img src="../readme/docs/images/testing/validation/validation-accessibility-faq.jpg">
+    <summary>Login</summary>
+    <img src="../readme/docs/images/testing/validation/validation-accessibility-login.jpg">
 </details>
 <details>
     <summary>Contact</summary>
