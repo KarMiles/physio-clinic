@@ -1050,8 +1050,6 @@ User stories were tested with current features and passed the tests.
 
 [Click here for User story testing](readme/user_story_testing.md)
 
-TODO perform manual tests and fill user_story_testing.md
-
 ## 3.ii. Automated testing
 
 [Click here for automated testing](readme/automated_testing.md)
@@ -1062,9 +1060,17 @@ TODO perform manual tests and fill user_story_testing.md
 
 There are no observed unfixed issues and bugs.
 
-**Fixed issues**
+**Fixed issues and changes to original design**
+
+*Database table issue*
 
 In app blog model Post, price has default value. This value was not showing when no price was entered. The reason for this bug was that the price column was added to the model post at later stage of development and the already existing posts didn't have that column. I've delt with this problem with ```if``` statement in templates refering to this value. The ulternative would be editing and saving all existing entries again which would add the price column in the database.
+
+*Contrast error on Wave test*
+
+As a result of  [WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) indicating contrast error on accessibility test, two steps have been taken:
+- some of the text colours have been changed from the original design to increase contrast,
+- Contrast toggle button has been added to navigation bar letting user further increase contrast across all the site.
 
 ## 3.iv. Validation testing:<a name="validation-testing"></a>
 [Click here for Validation testing](readme/validation_testing.md)
@@ -1092,7 +1098,7 @@ ___
 
 ## 5.ii Frameworks and libraries 
 
-Frameworks and modules
+### Frameworks and modules
 - Django (https://www.djangoproject.com/)
     - This project was built with Django framework.
     - For testing Django unit test was utilized.
@@ -1128,17 +1134,17 @@ Frameworks and modules
     - whitenoise==6.2.0
 - Bootstrap (https://getbootstrap.com/) - used for consistent layout and responsiveness across all the website.
 
-Version management and deployment
+### Version management and deployment
 - GitPod (https://gitpod.io/) - used as IDE and the tool for version control in the project.
 - GitHub (https://github.com/) - used to maintain repository of the project.
 - Heroku (https://www.heroku.com) - used for deployment of the application.
 
-Data storage
+### Data storage
 - Cloudinary (https://cloudinary.com) - service used for storing and access to dynamic images.
 - Postgres (https://www.postgresql.org/) - the deployed project on Heroku uses the Postgres database.
 - SQLite (https://www.sqlite.org/) - used as local database.
 
-Validation
+### Validation
 - HTML Markup Validation Service (https://validator.w3.org/) - for validating HTML code.
 - CSS Validation Service (https://jigsaw.w3.org/css-validator/) - for validating CSS code.
 - JSHint (https://jshint.com/) - for validating JavaScript code.
@@ -1146,7 +1152,7 @@ Validation
 - Unittest (https://docs.djangoproject.com/en/3.2/topics/testing/overview/) - for Python unit testing
 - Google Chrome Developer Tools - built-in developer tools used to inspect page elements and help debug issues with the website functionality and layout.
 
-Design stages
+### Design stages
 - Lucidchart (www.lucidchart.com/) - used to create flowcharts.
 - Balsamiq Wireframes(https://balsamiq.com/) - used to create wireframes in the UX design stage.
 - SQL DRAW (https://drawsql.app/) – used to create database diagrams.
@@ -1157,7 +1163,7 @@ Design stages
 - Coolors.co (https://coolors.co/) - for generating colour pallette for the website.
 - SmallPDF (https://smallpdf.com/) - PDF to jpg file conversion.
 
-Python libraries
+### Python libraries
 Third-party libraries were used for this project:
 - request
     - request and response objects are used in Django to pass state through the system.
@@ -1185,7 +1191,7 @@ Third-party libraries were used for this project:
     - from django_contact_form.views import ContactFormView - when utilizing a custom form class, used to manually set up URLs to tell django-contact-form about the form class.
 
 Class-based views (CBV) provide a way to implement views as Python objects rather than functions.
-Class based views are predominantly used in this project for the following reasons:
+CBV are predominantly used in this project for the following reasons:
 - Code reusability - a view class can be inherited by another view class and modified in a different use case.
 - DRY, which stands for 'don't repeat yourself' - CBV helps to reduce code duplication
 - Code extendability - CBV can be extended to include more functionalities using Mixins
@@ -1197,7 +1203,7 @@ Class based views are predominantly used in this project for the following reaso
 ___
 # 6. Credits <a name="credits"></a>
 
-Coding ideas, examples and tutorials
+### Coding ideas, examples and tutorials
 - [Stackoverflow](https://stackoverflow.com/questions/13304149/what-the-difference-between-using-django-redirect-and-httpresponseredirect) - redirect, HttpResponseRedirect and as resource for addressing coding challenges during production process.
 - [Stackoverflow](https://stackoverflow.com/questions/71886688/getting-attributeerror-testcase-object-has-no-attribute-asserttemplateused) - assertTemplateUsed for unittest.
 - [Fullstackpython](https://www.fullstackpython.com/django-apps-config-appconfig-examples.html) - AppConfig description and other more general Python knowledge.
@@ -1206,18 +1212,26 @@ Coding ideas, examples and tutorials
 - [Sebhastian](https://www.freecodecamp.org/news/author/nsebhastian/) - "Click for more" tooltip.
 - [Vegibit](https://vegibit.com/how-to-use-httpresponseredirect-in-django) - HttpResponse description.
 
-Text content
+### Text content
 - [Wikipedia](https://en.wikipedia.org/wiki/Massage) - general information on massage.
 - [Healthline](https://www.healthline.com) - hot stone massage.
 - [Sensemassage](https://www.sensemassage.co.uk/resources/hub/96-indian-head-massage) - Indian head massage.
 - [NHS](https://www.nhs.uk) - general health info and chiropractic knowledge.
 - [Sterling Ridge Orthopaedics](https://srosm.com/patient-education/blog/uses-of-resistance-bands-in-physical-therapy/) - resistance band therapy.
 
-Graphical content
+### Graphical content
 - [Unsplash](https://unsplash.com) - imagery.
 - [Nicepng](https://www.nicepng.com) - favicon.
 - [Favicon.co](https://favicon.io/favicon-converter) - favicon conversion.
 - [Coolors](https://coolors.co) - colour pallette creation.
 - [Font Awesome](https://fontawesome.com/) - sourcing icons.
 
+### Other tools
+- [Table to Markdown](https://tabletomarkdown.com/) - table conversion to Markdown.
+- [TableConvert](https://tableconvert.com/excel-to-markdown) - table conversion to Markdown.
 
+## Acknowledgements
+I would like to thank everyone who contributed to development of this project, especially:
+- My mentor Mo Shami for his invaluable guidance and advice.
+- Educational Team at [Code Institute](https://codeinstitute.net/) for all educational materials and Tutor support which made this project possible.
+- All visual artists and coders who make products of their work available to others online.
