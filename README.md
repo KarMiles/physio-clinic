@@ -623,7 +623,7 @@ Access to navbar features:
 2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
 <br>
 
-## **Feature 2: Footer**
+### **Feature 2: Footer**
 The footer is displayed below all other content. Short information about the project and links to company's social media are placed there. Links are available to all users, open in a different tab for easy navigation and contain: 
 - Facebook, 
 - Instagram,
@@ -1026,13 +1026,23 @@ The purpose of the Booking section is to give logged in clients an opportunity t
 ## 2.ii. Potential features <a name='features-next'></a>
 Features 
  - Wider array of ways to signup and login, e.g. via social media, Google,
- - Schedule system for employees,
+ - Scheduling system for employees,
  - Automated booking process,
  - Graphic representation of poll results.
 
 ___
 
  # 3. Testing <a name="testing"></a> 
+
+**Browser compatibility**
+
+The website was tested on browsers:
+- Google Chrome
+- Microsoft Edge
+- Mozilla Firefox
+- Opera
+
+TODO: Test final version
 
 ## 3.i. User story testing  <a name="user-story-testing"></a>
 
@@ -1056,12 +1066,10 @@ There are no observed unfixed issues and bugs.
 
 In app blog model Post, price has default value. This value was not showing when no price was entered. The reason for this bug was that the price column was added to the model post at later stage of development and the already existing posts didn't have that column. I've delt with this problem with ```if``` statement in templates refering to this value. The ulternative would be editing and saving all existing entries again which would add the price column in the database.
 
-TODO known_issues.md
-
 ## 3.iv. Validation testing:<a name="validation-testing"></a>
 [Click here for Validation testing](readme/validation_testing.md)
 
-TODO validation
+<br>
 
 ___
 # 4. Deployment <a name="deployment"></a> 
