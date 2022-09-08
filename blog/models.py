@@ -1,4 +1,4 @@
-# Imports
+"""Imports"""
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.db import models
@@ -62,17 +62,35 @@ class Post(models.Model):
         blank=True)
 
     class Meta:
+        """
+        Order posts by priority
+        """
         ordering = ['priority']
 
     def __str__(self):
-        return self.title
+        """
+        Returns the post title string
+        Args:
+            self (object): self.
+        Returns:
+            The post title string
+        """
+        return format(self.title)
 
     def number_of_likes(self):
+        """
+        Returns number of likes
+        Args:
+            self (object): self.
+        Returns:
+            likes count
+        """
         return self.likes.count()
 
 
 class Comment(models.Model):
-    """Class for the Comment model
+    """
+    Class for the Comment model
     representing comments on posts
     """
     post = models.ForeignKey(
@@ -85,8 +103,17 @@ class Comment(models.Model):
     approved = models.BooleanField(default=False)
 
     class Meta:
+        """
+        Order comments by time of creation
+        """
         ordering = ['created_on']
 
     def __str__(self):
-        # return f"Comment by {self.author}: {self.body}"
+        """
+        Returns a string with 'Comment by author'
+        Args:
+            self (object): self.
+        Returns:
+            String
+        """
         return f"Comment by {self.author}"

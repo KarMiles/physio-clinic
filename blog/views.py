@@ -1,4 +1,4 @@
-# Imports
+"""Imports"""
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render, get_object_or_404
@@ -6,7 +6,6 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
 from django.utils.text import slugify
-from django.contrib.auth.mixins import AccessMixin
 from django.contrib import messages
 
 # Internal:

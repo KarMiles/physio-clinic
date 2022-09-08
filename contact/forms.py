@@ -1,4 +1,4 @@
-# Imports
+"""Imports"""
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django_contact_form.forms import ContactForm

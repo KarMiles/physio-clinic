@@ -1,14 +1,14 @@
-# Imports
+"""Imports"""
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
 from django.contrib import messages
+from django.contrib.auth.mixins import AccessMixin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from .forms import NewUserForm
-from django.contrib.auth.mixins import AccessMixin
 
 
 def register_request(request):
@@ -46,6 +46,9 @@ class StaffRequiredMixin(AccessMixin):
     is authenticated as member of staff.
     """
     def dispatch(self, request, *args, **kwargs):
+        """
+        Grant access only to staff users.
+        """
         if not request.user.is_staff:
             return self.handle_no_permission()
         return super().dispatch(request, *args, **kwargs)

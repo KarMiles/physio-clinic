@@ -1,0 +1,3 @@
+[MASTER]
+ignore=migrations
+disable = no-member, broad-except, invalid-name
