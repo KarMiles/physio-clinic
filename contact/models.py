@@ -10,6 +10,7 @@ from django.db import models
 # Choice options for Contact model
 STATUS = ((0, "Pending"), (1, "Closed"))
 
+
 class Contact(models.Model):
     """
     A class for the contact model

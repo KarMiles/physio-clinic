@@ -57,7 +57,8 @@ class CreatePoll(generic.CreateView):
 
     def get_success_url(self):
         return reverse('poll_vote', args=[self.object.id])
-        
+
+
 class PollVote(View):
     """
     A view to show form with the poll
@@ -115,9 +116,9 @@ class PollVote(View):
             request,
             'poll/poll_vote.html',
             context)
-    
+
     def get_queryset(self):
-            return Poll.objects.all()
+        return Poll.objects.all()
 
     # Possible next step - show inactive polls to staff
     # def get_queryset(self):
@@ -142,11 +143,12 @@ class PollResults(View):
         context = {
             'poll': poll
         }
-        
+
         return render(
             request,
             'poll/poll_results.html',
             context)
+
 
 class DeletePoll(StaffRequiredMixin, generic.DeleteView):
     """
@@ -177,5 +179,5 @@ class DeletePoll(StaffRequiredMixin, generic.DeleteView):
             self.request,
             messages.INFO,
             'Poll deleted successfully!')
-        
+
         return HttpResponseRedirect(success_url)

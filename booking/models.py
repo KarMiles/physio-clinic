@@ -14,6 +14,7 @@ from blog.models import Post
 # Choice options for Booking class
 STATUS = ((0, "Pending"), (1, "Closed"))
 
+
 class Booking(models.Model):
     """
     Class for the booking model

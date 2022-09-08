@@ -26,6 +26,7 @@ class PostAdmin(SummernoteModelAdmin):
 # Decoration replaces class:
 # admin.site.register(Post)
 
+
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     """

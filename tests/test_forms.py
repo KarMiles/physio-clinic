@@ -17,7 +17,7 @@ class TestPostForm(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         '''
-        Set up test data used 
+        Set up test data used
         for all tests in TestViews class
         '''
         print('\nTest_forms starting')
@@ -25,11 +25,11 @@ class TestPostForm(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         '''
-        Delete test data used 
+        Delete test data used
         for all tests in TestViews class
         '''
         print('\nTest_forms complete')
-    
+
     # TESTS
 
     def test_post_title_is_required(self):
@@ -55,10 +55,10 @@ class TestPostForm(unittest.TestCase):
         self.assertFalse(form.is_valid())
         self.assertIn('title', form.errors.keys())
         self.assertEqual(form.errors['title'][0], 'This field is required.')
-        
+
     def test_post_title_is_required_filled(self):
         '''
-        Tests if form with field 'title' containing characters 
+        Tests if form with field 'title' containing characters
         is valid.
         Checks:
         1. form is valid if title contains characters
@@ -94,7 +94,7 @@ class TestPostForm(unittest.TestCase):
         })
 
         self.assertTrue(form.is_valid())
-        
+
     def test_postform_fields_are_explicit_in_form_metaclass(self):
         """
         Tests that only fields in Meta class desplay in form.
@@ -102,9 +102,9 @@ class TestPostForm(unittest.TestCase):
         1. Fields listed in Meta class
         """
         form = PostForm()
-        
-        self.assertEqual(form.Meta.fields, 
-            ('title',
+
+        self.assertEqual(form.Meta.fields, (
+            'title',
             'content',
             'excerpt',
             'price',

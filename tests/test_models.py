@@ -10,6 +10,7 @@ from blog.models import Post, Comment
 
 User = get_user_model()
 
+
 class TestBlogModels(unittest.TestCase):
     '''
     Test Post model
@@ -24,7 +25,7 @@ class TestBlogModels(unittest.TestCase):
         before all tests
         '''
         print('\nTest_models starting')
-    
+
     @classmethod
     def tearDownClass(cls):
         '''
@@ -32,7 +33,7 @@ class TestBlogModels(unittest.TestCase):
         after all tests
         '''
         print('\nTest_models complete')
-    
+
     def setUp(self):
         '''
         Create test data
@@ -66,12 +67,12 @@ class TestBlogModels(unittest.TestCase):
         )
 
     # TESTS
-    
+
     def test_create_post(self):
         '''
         Tests that post can be created using Post model
         Checks:
-        1. test post is an instance of Post model 
+        1. test post is an instance of Post model
         '''
         self.assertIsInstance(self.post, Post)
 
@@ -87,7 +88,7 @@ class TestBlogModels(unittest.TestCase):
         '''
         Tests that comment can be created using Comment model
         Checks:
-        1. test comment is an instance of Comment model 
+        1. test comment is an instance of Comment model
         '''
         self.assertIsInstance(self.comment, Comment)
 
@@ -95,7 +96,7 @@ class TestBlogModels(unittest.TestCase):
         '''
         Tests string representation for Comment model
         Checks:
-        1. test string representation corresponds to 
+        1. test string representation corresponds to
         string representation defined in Comment model
         '''
         self.assertEquals(str(self.comment), 'Comment by TCommentAuthor')

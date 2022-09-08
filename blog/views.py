@@ -138,7 +138,7 @@ class PostList(generic.ListView):
     model = Post
     template_name = "index.html"
     paginate_by = 3
-    
+
     def get_queryset(self):
         if self.request.user.is_staff:
             return Post.objects.order_by("priority")
@@ -193,7 +193,7 @@ class PostDetail(View):
             comment.save()
         else:
             comment_form = CommentForm()
-        
+
         return render(
             request,
             "post_detail.html",

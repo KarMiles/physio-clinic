@@ -10,6 +10,7 @@ from .models import Contact
 
 # Forms for contact app
 
+
 class ModelContactForm(ContactForm):
     """
     Class for Contact form
@@ -24,9 +25,12 @@ class ModelContactForm(ContactForm):
         *args,
         **kwargs):
         """
-        For registered users pull email and full name or username from user
+        For registered users
+        pull email and full name or username from user
         """
-        if request is not None and request.method == 'GET' and request.user.is_authenticated:
+        if request is not None and \
+            request.method == 'GET' and \
+                request.user.is_authenticated:
             kwargs['initial'] = {
                 'email': request.user.email,
                 'name': request.user.get_full_name() or request.user.username

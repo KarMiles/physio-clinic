@@ -66,10 +66,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-    
+
     def number_of_likes(self):
         return self.likes.count()
-    
+
 
 class Comment(models.Model):
     """Class for the Comment model
@@ -80,7 +80,7 @@ class Comment(models.Model):
         on_delete=models.CASCADE,
         related_name='comments')
     author = models.CharField(max_length=50)
-    body = models.TextField( verbose_name=("Your comment:"),)
+    body = models.TextField(verbose_name=("Your comment:"),)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
 

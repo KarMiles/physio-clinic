@@ -20,8 +20,11 @@ username_customer = 'test_user_customer'
 username_staff = 'test_user_staff'
 password = '1qazcde3'
 
-# Login user
+
 def login_customer():
+    '''
+    Login test user (customer)
+    '''
     client.force_login(
         User.objects.get_or_create(
             username=username_customer,
@@ -29,16 +32,23 @@ def login_customer():
             is_staff='False'
             )[0])
 
+
 def login_staff():
+    '''
+    Login test user (staff)
+    '''
     client.force_login(
         User.objects.get_or_create(
             username=username_staff,
             password=password,
             is_staff='True'
             )[0])
-        
-# Logout user
+
+
 def logout():
+    '''
+    Logout test user
+    '''
     client.logout()
 
 
@@ -52,30 +62,30 @@ class TestViews(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         '''
-        Set up test data used 
+        Set up test data used
         for all tests in TestViews class
         '''
         print('\nTest_views starting')
         # Create test user (customer)
         if not User.objects.filter(username=username_customer).exists():
-            user_customer=User.objects.create(
+            user_customer = User.objects.create(
                 username=username_customer,
                 password=password,
                 is_staff='False'
             )
         else:
-            user_customer=User.objects.filter(username=username_customer)[0]
+            user_customer = User.objects.filter(username=username_customer)[0]
 
         # Create test user (staff)
         if not User.objects.filter(username=username_staff).exists():
-            user_staff=User.objects.create(
+            user_staff = User.objects.create(
                 username=username_staff,
                 password=password,
                 is_staff='True'
             )
         else:
-            user_staff=User.objects.filter(username=username_staff)[0]
-        
+            user_staff = User.objects.filter(username=username_staff)[0]
+
         # Create test Post
         if not Post.objects.filter(title='Ttitle').exists():
             Post.objects.create(
@@ -92,7 +102,7 @@ class TestViews(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         '''
-        Delete test data used 
+        Delete test data used
         for all tests in TestViews class
         '''
         # Delete test data
@@ -100,7 +110,7 @@ class TestViews(unittest.TestCase):
         User.objects.filter(username=username_staff).delete()
         Post.objects.filter(slug='ttitle').delete()
         print('\nTest_views complete')
-    
+
     # Function for checking if indicated template is used
     def assertTemplateUsed(self, response, template_name):
         self.assertIn(
@@ -203,15 +213,6 @@ class TestViews(unittest.TestCase):
             response,
             'poll/poll_home.html')
 
-    def test_polllist_not_equal_none(self):
-        """
-        Tests that Poll page loads list of polls.
-        Checks:
-        1. that the PollList is not empty.
-        """
-        result = PollList.get_queryset(self)
-        self.assertIsNotNone(result)
-
     def test_login_page(self):
         '''
         Test to check that Login page displays.
@@ -262,6 +263,7 @@ class TestViews(unittest.TestCase):
         response = client.get('/booking/booking')
         self.assertEqual(response.status_code, 302)
         logout()
+
 
 if __name__ == '__main__':
     unittest.main()

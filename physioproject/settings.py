@@ -22,7 +22,7 @@ from django.conf.locale.en import formats as en_formats
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if os.path.isfile("env.py"):
-    import env # noqa
+    import env  # noqa
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -42,7 +42,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = os.environ.get('DEBUG', '1') == '1'
 
-ALLOWED_HOSTS = ["physio-clinic-heroku.herokuapp.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "physio-clinic-heroku.herokuapp.com",
+    "localhost",
+    "127.0.0.1"]
 
 # Application definition
 
@@ -144,16 +147,21 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.\
+            UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
 
@@ -175,19 +183,6 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-
-
-    # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-
-    # EMAIL_USE_SSL = strtobool(os.getenv("EMAIL_USE_SSL", "false"))
-    # EMAIL_HOST = os.environ.get('EMAIL_HOST')
-    # EMAIL_USE_TLS = strtobool(os.getenv("EMAIL_USE_TLS", "false"))
-    # EMAIL_PORT = os.environ.get('EMAIL_PORT')
-    # EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-    # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-
-    # DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-    # ADMINS = [('Karol', 'karmiles.dev@gmail.com')]
 
 
 # Internationalization
@@ -213,9 +208,7 @@ en_formats.DATETIME_FORMAT = "%d/%m/%Y %H:%M"
 STATIC_URL = '/static/'
 
 # Code to tell Django to use Cloudinary to store media and static files
-# STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
