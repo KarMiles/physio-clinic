@@ -148,8 +148,7 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME':
-        'django.contrib.auth.password_validation.\
-            UserAttributeSimilarityValidator',
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
     },
     {
         'NAME':
@@ -234,7 +233,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ACCOUNT_FORMS = {
     'login': 'allauth.account.forms.LoginForm',
-    # 'signup': 'allauth.account.forms.SignupForm',
     'signup': 'accounts.forms.NewUserForm',
     'add_email': 'allauth.account.forms.AddEmailForm',
     'change_password': 'allauth.account.forms.ChangePasswordForm',

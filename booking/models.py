@@ -34,7 +34,10 @@ class Booking(models.Model):
         default=0)
     created_on = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
+    class Meta:  # pylint: disable=too-few-public-methods
+        """
+        Order posts by time of creation
+        """
         ordering = ['-created_on']
 
     def __str__(self):
@@ -45,4 +48,4 @@ class Booking(models.Model):
         Returns:
             The booking message string
         """
-        return self.message
+        return format(self.message)

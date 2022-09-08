@@ -1,3 +1,8 @@
+# setup for pylint errors
+
 [MASTER]
 ignore=migrations
-disable = no-member, broad-except, invalid-name
+disable = no-member, broad-except, invalid-name, unused-variable
+
+[DESIGN]
+max-parents=15

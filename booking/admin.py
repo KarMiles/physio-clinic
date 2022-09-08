@@ -33,5 +33,8 @@ class BookingAdmin(admin.ModelAdmin):
     list_display_links = ('message',)
     actions = ['booking_close']
 
-    def booking_close(self, request, queryset):
+    def booking_close(self, _request, queryset):
+        """
+        Change status of booking to closed (status 1)
+        """
         queryset.update(status=1)

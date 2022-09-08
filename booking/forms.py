@@ -14,7 +14,7 @@ class BookingForm(forms.ModelForm):
     """
     A class for the booking form
     """
-    class Meta:
+    class Meta:  # pylint: disable=too-few-public-methods
         """
         Set fields for the form
         """
