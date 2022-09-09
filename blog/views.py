@@ -78,9 +78,11 @@ class EditPost(StaffRequiredMixin, generic.UpdateView):
         Returns:
             The form
         """
-        self.object = form.instance
-        self.object.author = self.request.user
-        self.object.slug = slugify(self.object.title)
+        def __init__(self, form):
+            self.object = form.instance
+            self.object.author = self.request.user
+            self.object.slug = slugify(self.object.title)
+
         messages.add_message(
             self.request,
             messages.INFO,

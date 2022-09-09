@@ -16,8 +16,9 @@ class ModelContactForm(ContactForm):
     Class for Contact form
     Set data, files, request and recipient_list initially to None
     """
-    def __init__(self, data=None, files=None,
-        request=None, recipient_list=None, *args, **kwargs):
+    def __init__(
+        self, data=None, files=None,
+            request=None, recipient_list=None, *args, **kwargs):
         """
         For registered users
         pull email and full name or username from user

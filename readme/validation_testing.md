@@ -115,21 +115,21 @@ Performance testing was done in [Lighthouse](https://developers.google.com/web/t
 
 **Pycodestyle**
 
-Pycodestyle validation tool has been used to identify and remedy errors in Python code.
+Pycodestyle validation tool has been used to identify and remedy errors in Python code with special attention to unused variables and unused imports.
 
-One indication from this tool has been left unchanged. The error reference is ```E125 continuation line with same indent as next logical line```. While code works in both manual and automatic tests, and code seems to comply with documentation in [Python documentation](https://peps.python.org/pep-0008/#indentation) and all tries of different indentation were not leading to removing this response from pycodestyle, this has been left in the code.
+Setup for pycodestyle validation in contained in [setup.cfg](../setup.cfg) file.
 
 <details>
     <summary>Results</summary>
     <img src="../readme/docs/images/testing/validation/validation-pycodestyle-result.jpg">
 </details>
-<details>
-    <summary>Code</summary>
-    <img src="../readme/docs/images/testing/validation/validation-pycodestyle-error.jpg">
-</details>
 
 <br>
 
 **Pylint**
+
+Pylint validation tool has been used to identify and remedy errors in Python code with special attention to missing docstrings.
+
+Setup for pycodestyle validation in contained in [.pylintrc](../.pylintrc) file.
 
 

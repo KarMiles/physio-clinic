@@ -1,4 +1,4 @@
-# setup for pylint errors
+# setup for pylint validation
 
 [MASTER]
 ignore=migrations
