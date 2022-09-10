@@ -113,6 +113,10 @@ class TestViews(unittest.TestCase):
 
     # Function for checking if indicated template is used
     def assertTemplateUsed(self, response, template_name):
+        """
+        Asserts that the template with the given name
+        was used in rendering the response.
+        """
         self.assertIn(
             template_name,
             [t.name for t in response.templates if t.name is not None]

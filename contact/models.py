@@ -29,4 +29,4 @@ class Contact(models.Model):
         Returns:
             The message body string
         """
-        return self.body
+        return format(self.body)

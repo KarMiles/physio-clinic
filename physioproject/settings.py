@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-"""Imports"""
+# Imports
 # 3rd party:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from pathlib import Path
@@ -22,7 +22,7 @@ from django.conf.locale.en import formats as en_formats
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 if os.path.isfile("env.py"):
-    import env  # noqa
+    import env  # noqa  # pylint: disable=unused-import
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.

@@ -13,6 +13,9 @@ class CreatePollForm(ModelForm):
     Class for the poll form
     """
     class Meta:
+        """
+        Show indicated fields in the poll form
+        """
         model = Poll
         fields = [
             'question',

@@ -71,7 +71,6 @@ class EditPost(StaffRequiredMixin, generic.UpdateView):
         """
         Set post author and slug to self instances
         Send confirmation message
-        Returns form
         Args:
             self (object): self.
             form (object): form.

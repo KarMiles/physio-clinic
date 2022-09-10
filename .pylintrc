@@ -1,8 +1,9 @@
 # setup for pylint validation
 
 [MASTER]
-ignore=migrations
-disable = no-member, broad-except, invalid-name, unused-variable
+ignore = migrations
+disable = no-member, broad-except, invalid-name, unused-variable, too-few-public-methods
+
 
 [DESIGN]
 max-parents=15

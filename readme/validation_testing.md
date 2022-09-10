@@ -115,7 +115,7 @@ Performance testing was done in [Lighthouse](https://developers.google.com/web/t
 
 **Pycodestyle**
 
-Pycodestyle validation tool has been used to identify and remedy errors in Python code with special attention to unused variables and unused imports.
+Pycodestyle validation tool has been used to identify and remedy errors in Python code with special attention to *unused variables* and *unused imports*.
 
 Setup for pycodestyle validation in contained in [setup.cfg](../setup.cfg) file.
 
@@ -128,8 +128,16 @@ Setup for pycodestyle validation in contained in [setup.cfg](../setup.cfg) file.
 
 **Pylint**
 
-Pylint validation tool has been used to identify and remedy errors in Python code with special attention to missing docstrings.
+Pylint validation tool has been used to identify and remedy errors in Python code with special attention to *missing docstrings*.
 
 Setup for pycodestyle validation in contained in [.pylintrc](../.pylintrc) file.
 
+Ignored positives in this project:
 
+- Unused import env error - has been ingrored as the code works correctly and is necessary for importing from env.py file 
+<details>
+    <summary>Unused import env</summary>
+    <img src="../readme/docs/images/testing/validation/validation-pylint-env.jpg">
+</details>
+
+- Too few public methods - ignored for consistency of the code among its various apps. This way even though the Poll form in CreatePollForm class is simpler than other forms in the project, it still utilizes the same mechanisms as the more complex ones.

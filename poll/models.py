@@ -24,5 +24,12 @@ class Poll(models.Model):
     option_three_count = models.IntegerField(default=0)
 
     def total(self):
+        """
+        Calculate total number of votes for specific poll
+        Args:
+            self (object): self
+        Returns:
+            Total number of votes
+        """
         return self.option_one_count + \
             self.option_two_count + self.option_three_count

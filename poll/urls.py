@@ -5,7 +5,6 @@ from django.urls import path
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from . import views as poll_views
 from . import views
 
 # URL patterns for the app poll

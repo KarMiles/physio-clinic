@@ -46,9 +46,21 @@ class CreatePoll(generic.CreateView):
     success_url: reverse_lazy('poll_home')
 
     def form_valid(self, form):
+        """
+        Set poll author to self instances
+        Send confirmation message
+        Args:
+            self (object): self.
+            form (object): form.
+        Returns:
+            The form
+        """
+        # def __init__(self, form):
         self.object = form.instance
         self.object.author = self.request.user
+
         response = super().form_valid(form)
+
         messages.add_message(
             self.request,
             messages.INFO,
@@ -71,7 +83,15 @@ class PollVote(View):
     """
 
     def get(self, request, poll_id):
-
+        """
+        Get form for chosen poll
+        Args:
+            self: Self object
+            request (object): HTTP Request object
+            poll_id: poll_id
+        Render:
+            Page with poll questions
+        """
         queryset = self.get_queryset()
         poll = get_object_or_404(queryset, pk=poll_id)
         context = {
@@ -85,6 +105,16 @@ class PollVote(View):
         )
 
     def post(self, request, poll_id):
+        """
+        Posts new vote data for selected poll,
+        Redirects to page with poll results
+        Args:
+            self: Self object
+            request (object): HTTP Request object
+            poll_id: poll_id
+        Render:
+            Page with poll results
+        """
         queryset = self.get_queryset()
         poll = get_object_or_404(queryset, pk=poll_id)
 
@@ -118,6 +148,13 @@ class PollVote(View):
             context)
 
     def get_queryset(self):
+        """
+        Get all poll objects
+        Args:
+            self (object): Self object
+        Returns:
+            All poll objects
+        """
         return Poll.objects.all()
 
     # Possible next step - show inactive polls to staff
@@ -138,7 +175,15 @@ class PollResults(View):
     """
 
     def get(self, request, poll_id):
-
+        """
+        Gets data on selected poll
+        Args:
+            self: Self object
+            request (object): HTTP Request object
+            poll_id: poll_id
+        Render:
+            Page with poll results
+        """
         poll = Poll.objects.get(pk=poll_id)
         context = {
             'poll': poll
@@ -171,9 +216,11 @@ class DeletePoll(StaffRequiredMixin, generic.DeleteView):
         then redirect to the success URL
         and show confirmation message.
         """
-        self.object = self.get_object()
+        def __init__(self):
+            self.object = self.get_object()
+            self.object.delete()
+
         success_url = self.get_success_url()
-        self.object.delete()
 
         messages.add_message(
             self.request,

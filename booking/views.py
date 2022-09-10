@@ -60,12 +60,13 @@ class BookingList(LoginRequiredMixin, generic.ListView):
             },
         )
 
-    def post(self):
+    def post(self, request):
         """
         A view to save data gathered in booking form
         and show confirmation message.
         Args:
             self (object): Self object
+            *args
         Returns:
             Save data, show confirmation message,
             redirect to booking page after booking submit.
@@ -81,12 +82,11 @@ class BookingList(LoginRequiredMixin, generic.ListView):
                 'Booking request submitted!  We will respond shortly.')
             return redirect(reverse('booking'))
 
-        else:
-            return render(
-                self.request,
-                "booking.html",
-                {
-                    "bookings": self.get_queryset(),
-                    "booking_form": booking_form
-                }
-            )
+        return render(
+            self.request,
+            "booking.html",
+            {
+                "bookings": self.get_queryset(),
+                "booking_form": booking_form
+            }
+        )
