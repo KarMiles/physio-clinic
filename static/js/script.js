@@ -1,13 +1,13 @@
 // Message timeout
 
 setTimeout(function () {
-    let messages = document.getElementById('msg');
-    let alert = new bootstrap.Alert(messages);
+    var messages = document.getElementById('msg');
+    var alert = new bootstrap.Alert(messages);
     alert.close();
 }, 4000);
 
 
-// Change font colours to high contrast
+// Change colour scheme to high contrast
 
 var highContrastBlue = '#164aa6';
 var highContrastRed = '#ab2237';
@@ -42,13 +42,13 @@ function toggleContrast() {
         localStorage.setItem('current_blue', logoblue);
         localStorage.setItem('current_red', logored);
         localStorage.setItem('current_mute', mute);
-    };
+    }
 }
 
-function contrastFunction_maintain() {
-    let current_blue = localStorage.getItem('current_blue');
-    let current_red = localStorage.getItem('current_red');
-    let current_mute = localStorage.getItem('current_mute');
+function maintainContrast() {
+    var current_blue = localStorage.getItem('current_blue');
+    var current_red = localStorage.getItem('current_red');
+    var current_mute = localStorage.getItem('current_mute');
 
     r.style.setProperty('--logoblue', current_blue);
     r.style.setProperty('--logored', current_red);

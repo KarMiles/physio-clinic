@@ -60,7 +60,7 @@ class BookingList(LoginRequiredMixin, generic.ListView):
             },
         )
 
-    def post(self, request):
+    def post(self, *args):
         """
         A view to save data gathered in booking form
         and show confirmation message.

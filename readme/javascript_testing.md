@@ -2,13 +2,17 @@
 
 [Click here for Readme file](/README.md#user-story-testing)
 
-TODO check below:
+All JavaScript for this file is contained in file [script.js](../static/js/script.js).
 
-The following false errors were disabled:
+JavaScript testing has been done with [JS Hint](https://jshint.com/) tool.
 
-script.js
+JS Hint summary indicated the following potential issues:
 
-/*global bootstrap:false*/
-/*jshint esversion:6*/
+- One undefined variable: bootstrap - left as is because bootstrap is referred to outside the scrypt.js file. 
+- Two unused variables: toggleContrast, maintainContrast - left as is because these are function names necessary for the code.
 
-database url # nopep8
+
+<details>
+    <summary>JS Hint summary</summary>
+    <img src="../readme/docs/images/testing/validation/validation-js.jpg">
+</details>
