@@ -9,7 +9,7 @@ from django.shortcuts import render
 
 # Views for error pages
 
-def error_404_view(request, exception):
+def error_404_view(request, _exception):
     """
     View to render 404 error page when non-existent page is called.
     Args:
