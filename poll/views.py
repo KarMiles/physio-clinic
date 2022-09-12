@@ -55,9 +55,10 @@ class CreatePoll(generic.CreateView):
         Returns:
             The form
         """
-        # def __init__(self, form):
-        self.object = form.instance
-        self.object.author = self.request.user
+        def __init__(self, form):
+            self.object = form.instance
+
+        form.instance.author = self.request.user
 
         response = super().form_valid(form)
 

@@ -134,10 +134,16 @@ Setup for pycodestyle validation in contained in [.pylintrc](../.pylintrc) file.
 
 Ignored positives in this project:
 
-- Unused import env error - has been ingrored as the code works correctly and is necessary for importing from env.py file 
-<details>
-    <summary>Unused import env</summary>
-    <img src="../readme/docs/images/testing/validation/validation-pylint-env.jpg">
-</details>
+- Unused import env error - has been ingrored as the code works correctly and is necessary for importing from env.py. File: settings.py
 
-- Too few public methods - ignored for consistency of the code among its various apps. This way even though the Poll form in CreatePollForm class is simpler than other forms in the project, it still utilizes the same mechanisms as the more complex ones.
+    ![Unused import env](../readme/docs/images/testing/validation/validation-pylint-env.jpg)
+
+- Too few public methods - ignored for consistency of the code among its various apps. This way even though the Poll form in CreatePollForm class is simpler than other forms in the project, it still utilizes the same mechanisms as the more complex ones. File: poll/forms.py
+
+- Unused argument 'request' - ignored as most likely a false positive, in that the request needs to be passed to the function, as that's an argument that the function expects, even if it isn't directly accessed. File: booking/views.py 
+
+    ```def post(self, _request):```
+
+- No value for argument 'request' in method call (no-value-for-parameter) - apparently pylint doesn't recognize data in new user form, as code works correctly this message has been disabled. File: accounts/views.py
+
+    ![Unused import env](../readme/docs/images/testing/validation/validation-pylint-request.jpg)

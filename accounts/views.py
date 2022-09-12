@@ -22,7 +22,7 @@ def register_request(request):
     if request.method == "POST":
         form = NewUserForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            user = form.save()  # pylint: disable = no-value-for-parameter
             login(request, user)
             messages.success(request, "Registration successful.")
             return redirect("main:homepage")
