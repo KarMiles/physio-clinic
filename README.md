@@ -31,10 +31,13 @@ Users for testing:
     i. [User Story / feature testing](#user-story-testing)<br>
     ii.  [Automated testing](#automated-testing)<br>
     iii.  [Known issues during development and testing](#known-issues)<br>
-    iv. [Validation testing  ](#validation-testing)<br>
+    iv. [Validation testing](#validation-testing)<br>
     v. [Javascript testing](#js-testing)<br>
 4. [Deployment](#deployment)<br>
 5. [Technologies Used](#technology-used)<br>
+    i. [Agile Methodology](#agile-methodology)<br>
+    ii. [Languages](#languages)<br>
+    iii. [Frameworks and Libraries](#frameworks-and-libraries)<br>
 6. [Credits](#credits)<br>
 7. [Acknowledgements](#acknowledgements)<br>
 
@@ -1086,9 +1089,7 @@ ___
 ___
 # 5. Technologies used <a name="technology-used"></a>
 
-## 5.i. Agile Methodology
-
-#TODO Add Agile description
+## 5.i. Agile Methodology <a name="agile-methodology"></a>
 
 For development of this webpage elements of Agile software development methodology have been used, including:
 
@@ -1113,7 +1114,7 @@ For development of this webpage elements of Agile software development methodolo
     ![screenshot](./readme/agile-issues.jpg)
     </details>
 
-## 5.ii. Languages
+## 5.ii. Languages <a name="languages"></a>
 
 - HTML (https://www.w3schools.com/html/)
     - The main laguage this webpage's front-end is running on is HTML (HyperText Markup Language).
@@ -1121,9 +1122,9 @@ For development of this webpage elements of Agile software development methodolo
     - For custom-made styling CSS (Cascading Style Sheets) language was used. 
 - JavaScript (https://www.javascript.com/)
     - A limited use of custom-made JavaScript has been employed to enhance functionality of the website.
-- Python - within the Django framework Python 3 is the main language used to run its back-end logic. 
+- Python (https://www.python.org/) - within the Django framework Python 3 is the main language used to run its back-end logic. 
 
-## 5.iii Frameworks and libraries 
+## 5.iii Frameworks and Libraries <a name="frameworks-and-libraries"></a>
 
 ### Frameworks and modules
 - Django (https://www.djangoproject.com/)
