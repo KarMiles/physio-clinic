@@ -354,3 +354,17 @@ border-radius: 2px;
         visibility: hidden;
     }
 }
+
+/* For small screen sizes 500px wide and down */
+
+@media screen and (max-width: 500px) {
+    .card-img-top {
+        min-height: 50px;
+        max-height: 100px;
+    }
+
+    .details-image img {
+        min-height: 100px;
+        max-height: 150px;
+    }
+}

@@ -146,4 +146,8 @@ Ignored positives in this project:
 
 - No value for argument 'request' in method call (no-value-for-parameter) - apparently pylint doesn't recognize data in new user form, as code works correctly this message has been disabled. File: accounts/views.py
 
+    <details>
+    <summary>Click here to see screenshot</summary>
+
     ![Unused import env](../readme/docs/images/testing/validation/validation-pylint-request.jpg)
+    </details>

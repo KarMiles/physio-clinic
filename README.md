@@ -1038,11 +1038,11 @@ ___
 
 The website was tested on browsers:
 - Google Chrome
+- Safari
 - Microsoft Edge
-- Mozilla Firefox
 - Opera
 
-TODO: Test final version
+First three browsers to test were chosen based on their market share according to [StatCounter](https://gs.statcounter.com/browser-market-share) as in August 2022.
 
 ## 3.i. User story testing  <a name="user-story-testing"></a>
 
@@ -1086,7 +1086,23 @@ ___
 ___
 # 5. Technologies used <a name="technology-used"></a>
 
-## 5.i. Languages
+## 5.i. Agile Methodology
+
+#TODO Add Agile description
+
+For development of this webpage elements of Agile software development methodology have been used, including:
+
+- User stories (described in User Stories section)
+- Iterative and incremental development, utilizing cyclical flow of work in the areas mentioned below. An example of this might be adding a poll app after rough implementation and testing of blog functionality and after getting these operating adding accounts and booking app. This flexible approach allowed to built on experience of building previous modules. 
+    - requirements
+    - analysis and design
+    - implementation
+    - testing
+    - evaluation
+    - requirements
+
+
+## 5.ii. Languages
 
 - HTML (https://www.w3schools.com/html/)
     - The main laguage this webpage's front-end is running on is HTML (HyperText Markup Language).
@@ -1096,7 +1112,7 @@ ___
     - A limited use of custom-made JavaScript has been employed to enhance functionality of the website.
 - Python - within the Django framework Python 3 is the main language used to run its back-end logic. 
 
-## 5.ii Frameworks and libraries 
+## 5.iii Frameworks and libraries 
 
 ### Frameworks and modules
 - Django (https://www.djangoproject.com/)
@@ -1229,6 +1245,7 @@ ___
 ### Other tools
 - [Table to Markdown](https://tabletomarkdown.com/) - table conversion to Markdown.
 - [TableConvert](https://tableconvert.com/excel-to-markdown) - table conversion to Markdown.
+- [LambdaTest](https://www.lambdatest.com/) - simulated Safari browser testing.
 
 ## Acknowledgements
 I would like to thank everyone who contributed to development of this project, especially:
