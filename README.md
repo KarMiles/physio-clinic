@@ -1092,15 +1092,26 @@ ___
 
 For development of this webpage elements of Agile software development methodology have been used, including:
 
-- User stories (described in User Stories section)
-- Iterative and incremental development, utilizing cyclical flow of work in the areas mentioned below. An example of this might be adding a poll app after rough implementation and testing of blog functionality and after getting these operating adding accounts and booking app. This flexible approach allowed to built on experience of building previous modules. 
+- User stories (described in User Stories section).
+- Iterative and incremental development, utilizing cyclical flow of work in the areas mentioned below. An example of this might be adding a poll app after rough implementation and evaluating of blog functionality and after getting these operating adding accounts and booking apps. This flexible approach allowed to built on experience of building previous modules and avoid building unnecessary code.
     - requirements
     - analysis and design
     - implementation
     - testing
     - evaluation
     - requirements
+- Build, Measure, Learn approach.
+- Utilizing Issues on GitHub. This mechanism was used to manage PBIs (Product Backlog Items) related to User stories, Ideas/Epics, Suggestions and Defects occuring all through the project life cycle. For managing work flow every PBI was given a label using MoSCoW technique:
+    - Must-Have (for items which must be done within given iteration)
+    - Should-Have (items preferably done but with lesser priority)
+    - Could-Have (items only done as contingency or left for next iterations)
+    - Won't-Have (items consciously abandoned)
 
+    <details>
+    <summary>Example Issues table used in this project</summary>
+
+    ![screenshot](./readme/agile-issues.jpg)
+    </details>
 
 ## 5.ii. Languages
 
