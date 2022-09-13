@@ -31,6 +31,10 @@ class PollList(generic.ListView):
     def get_queryset(self):
         return Poll.objects.order_by("id")
 
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['messages'] = get_messages(self.request)
+
 
 class CreatePoll(generic.CreateView):
     """
@@ -222,6 +226,12 @@ class DeletePoll(StaffRequiredMixin, generic.DeleteView):
             self.object.delete()
 
         success_url = self.get_success_url()
+
+        # success_message = "Poll was deleted successfully."
+
+        # def delete(self, request, *args, **kwargs):
+        #     messages.success(self.request, success_message)
+        #     return super(DeletePoll, self).delete(request, *args, **kwargs)
 
         messages.add_message(
             self.request,

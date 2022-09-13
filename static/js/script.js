@@ -2,6 +2,7 @@
 
 setTimeout(function () {
     var messages = document.getElementById('msg');
+    console.log(`Message Elem: ${messages}`);
     var alert = new bootstrap.Alert(messages);
     alert.close();
 }, 4000);

@@ -1,10 +1,10 @@
-{% extends 'base.html' %} {% block content %}
-{% load crispy_forms_tags %}
+{% extends "poll/poll_base.html" %}
 
+{% block main %}
 
 <div class="row">
     <div class="col-sm-8 mt-3 offset-sm-2">
-        <form method="post">{% csrf_token %}
+        <form method="POST">
             <h1 class="my-3">
                 Delete?
             </h1>
@@ -12,6 +12,7 @@
                 Are you sure you want to delete the poll "{{ object.question }}" ?
             </p>
             {{ form }}
+            {% csrf_token %}
             <input type="submit" value="Confirm" class="btn btn-danger btn-attn btn-lg float-start">
         </form>
 
@@ -21,5 +22,4 @@
     </div>
 </div>
 
-
-{% endblock content %}
+{% endblock %}
