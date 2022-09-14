@@ -221,7 +221,8 @@ def poll_delete(request, poll_id):
         return redirect('poll_home')
 
     context = {
-        'polls': polls
+        'polls': polls,
+        'poll': poll
     }
 
     return render(request, 'poll/poll_confirm_delete.html', context)
