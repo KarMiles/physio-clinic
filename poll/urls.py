@@ -6,6 +6,7 @@ from django.urls import path
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from . import views
+from . import views as poll_views
 
 # URL patterns for the app poll
 
@@ -28,6 +29,6 @@ urlpatterns = [
         name='poll_results'),
     path(
         'delete/<poll_id>/',
-        views.DeletePoll.as_view(),
+        poll_views.poll_delete,
         name='poll_delete'),
 ]

@@ -1,6 +1,7 @@
 {% extends "poll/poll_base.html" %}
 
 {% block main %}
+{% if user.is_staff %}
 
 <div class="row">
     <div class="col-sm-8 mt-3 offset-sm-2">
@@ -9,7 +10,7 @@
                 Delete?
             </h1>
             <p>
-                Are you sure you want to delete the poll "{{ object.question }}" ?
+                Are you sure you want to delete the poll "{{ poll.question }}" ?
             </p>
             {{ form }}
             {% csrf_token %}
@@ -21,5 +22,15 @@
 
     </div>
 </div>
+
+{% else %}
+    <p>
+        Sorry! You have no access to this functionality.
+    </p>
+    <!-- Cancel and return to poll list -->
+    <div class="d-flex justify-content-center">
+        <a href="{% url 'poll_home' %}" class="btn btn-primary btn-lg mx-3"> Home </a>
+    </div>
+{% endif %}
 
 {% endblock %}

@@ -6,11 +6,9 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.views import generic, View
 from django.urls import reverse_lazy, reverse
-from django.http import HttpResponseRedirect
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from accounts.views import StaffRequiredMixin
 from .forms import CreatePollForm
 from .models import Poll
 
@@ -200,42 +198,30 @@ class PollResults(View):
             context)
 
 
-class DeletePoll(StaffRequiredMixin, generic.DeleteView):
-    """
-    A view to delete a post
+def poll_delete(request, poll_id):
+    '''
+    Delete selected poll,
+    Show confirmation message,
+    Redirect to poll page.
     Args:
-        StaffRequiredMixin
-        DeleteView: generic class based view
-    Returns:
-        Request confirmation of poll deletion
-        Redirect to poll list after delete
-    """
-    success_url = reverse_lazy('poll_home')
-    queryset = Poll.objects.all()
-    template_name = 'poll/poll_confirm_delete.html'
-    pk_url_kwarg = 'poll_id'
+        request (object): HTTP request object
+        poll_id: poll_id
+    Return:
+        Render poll page.
+    '''
+    polls = Poll.objects.all()
+    poll = Poll.objects.get(pk=poll_id)
 
-    def poll_delete(self):
-        """
-        Call the delete() method on the fetched object,
-        then redirect to the success URL
-        and show confirmation message.
-        """
-        def __init__(self):
-            self.object = self.get_object()
-            self.object.delete()
-
-        success_url = self.get_success_url()
-
-        # success_message = "Poll was deleted successfully."
-
-        # def delete(self, request, *args, **kwargs):
-        #     messages.success(self.request, success_message)
-        #     return super(DeletePoll, self).delete(request, *args, **kwargs)
-
+    if request.method == 'POST':
+        poll.delete()
         messages.add_message(
-            self.request,
+            request,
             messages.INFO,
             'Poll deleted successfully!')
+        return redirect('poll_home')
 
-        return HttpResponseRedirect(success_url)
+    context = {
+        'polls': polls
+    }
+
+    return render(request, 'poll/poll_confirm_delete.html', context)
