@@ -4,7 +4,7 @@
 {% if user.is_staff %}
 
 <div class="row">
-    <div class="col-sm-8 mt-3 offset-sm-2">
+    <div class="col mt-3">
         <form method="POST">
             <h1 class="my-3">
                 Delete?
@@ -18,18 +18,18 @@
         </form>
 
         <!-- Cancel and return to poll list -->
-        <a href="{% url 'poll_home' %}" class="btn btn-primary btn-lg mx-3"> Cancel </a>
+        <a href="{% url 'blog_home' %}" class="btn btn-primary btn-lg mx-3"> Home </a>
 
     </div>
 </div>
 
 {% else %}
-    <p>
+    <h3>
         Sorry! You have no access to this functionality.
-    </p>
+    </h3>
     <!-- Cancel and return to poll list -->
     <div class="d-flex justify-content-center">
-        <a href="{% url 'poll_home' %}" class="btn btn-primary btn-lg mx-3"> Home </a>
+        <a href="{% url 'poll_home' %}" class="btn btn-primary btn-lg mx-3"> Polls </a>
     </div>
 {% endif %}
 
