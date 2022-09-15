@@ -116,6 +116,7 @@ class DeletePost(StaffRequiredMixin, generic.DeleteView):
         """
         self.object = self.get_object()  \
             # pylint: disable=attribute-defined-outside-init
+
         success_url = self.get_success_url()
         self.object.delete()
 
