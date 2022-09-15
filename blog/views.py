@@ -10,9 +10,9 @@ from django.contrib import messages
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+from accounts.views import StaffRequiredMixin
 from .models import Post
 from .forms import CommentForm, PostForm
-from accounts.views import StaffRequiredMixin
 
 
 # Views for blog app
@@ -33,16 +33,18 @@ class CreatePost(generic.CreateView):
         """
         Set post author and slug to self instances
         Send confirmation message
-        Returns form
         Args:
             self (object): self.
             form (object): form.
         Returns:
             The form
         """
-        self.object = form.instance
-        self.object.author = self.request.user
-        self.object.slug = slugify(self.object.title)
+        def __init__(self, form):
+            self.object = form.instance
+
+        form.instance.author = self.request.user
+        form.instance.slug = slugify(form.instance.title)
+
         response = super().form_valid(form)
         messages.add_message(
             self.request,
@@ -112,7 +114,8 @@ class DeletePost(StaffRequiredMixin, generic.DeleteView):
         then redirect to the success URL
         and show confirmation message.
         """
-        self.object = self.get_object()
+        self.object = self.get_object()  \
+            # pylint: disable=attribute-defined-outside-init
         success_url = self.get_success_url()
         self.object.delete()
 
@@ -142,8 +145,8 @@ class PostList(generic.ListView):
     def get_queryset(self):
         if self.request.user.is_staff:
             return Post.objects.order_by("priority")
-        else:
-            return Post.objects.filter(status=1).order_by("priority")
+
+        return Post.objects.filter(status=1).order_by("priority")
 
 
 class PostDetail(View):
@@ -155,7 +158,15 @@ class PostDetail(View):
         Render post details
     """
     def get(self, request, slug):
-
+        """
+        Get post, filter approved comments, get like information
+        Args:
+            self (object): self.
+            request (object): HTTP request object.
+            slug: slug
+        Returns:
+            Render post details page with context.
+        """
         queryset = self.get_queryset()
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("created_on")
@@ -176,7 +187,16 @@ class PostDetail(View):
         )
 
     def post(self, request, slug):
-
+        """
+        Post detail information on specific post:
+        update like status, new comment.
+        Args:
+            self (object): self.
+            request (object): HTTP request object.
+            slug: slug
+        Returns:
+            Render post details page with context
+        """
         queryset = self.get_queryset()
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -209,10 +229,19 @@ class PostDetail(View):
         )
 
     def get_queryset(self):
+        """
+        Filters the post by the query
+        Args:
+            self (object): Self object
+        Returns:
+            List of posts Live or Draft for staff,
+            only Live for non-staff users,
+            order posts by priority.
+        """
         if self.request.user.is_staff:
             return Post.objects.order_by("priority")
-        else:
-            return Post.objects.filter(status=1).order_by("priority")
+
+        return Post.objects.filter(status=1).order_by("priority")
 
 
 class PostLike(View):
@@ -225,6 +254,7 @@ class PostLike(View):
     """
 
     def post(self, request, slug):
+        """Flip between adding and removing likes"""
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)

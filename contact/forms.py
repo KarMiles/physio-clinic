@@ -17,8 +17,8 @@ class ModelContactForm(ContactForm):
     Set data, files, request and recipient_list initially to None
     """
     def __init__(
-        self, data=None, files=None,
-            request=None, recipient_list=None, *args, **kwargs):
+        self, *args, data=None, files=None,
+            request=None, recipient_list=None, **kwargs):
         """
         For registered users
         pull email and full name or username from user
@@ -30,7 +30,7 @@ class ModelContactForm(ContactForm):
                 'email': request.user.email,
                 'name': request.user.get_full_name() or request.user.username
             }
-        super().__init__(data, files, request, recipient_list, *args, **kwargs)
+        super().__init__(*args, data, files, request, recipient_list, **kwargs)
 
     def save(self, fail_silently=False):
         """

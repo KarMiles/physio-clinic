@@ -151,3 +151,11 @@ Ignored positives in this project:
 
     ![Unused import env](../readme/docs/images/testing/validation/validation-pylint-request.jpg)
     </details>
+
+- Attribute defined outside init - definition of delete function is derived directly from Django package and expanded by flash message upon success.
+
+    <details>
+    <summary>Click here to see screenshot</summary>
+
+    ![Unused import env](../readme/docs/images/testing/validation/validation-pylint-delete.jpg)
+    </details>

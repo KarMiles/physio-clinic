@@ -12,13 +12,12 @@
             <p>
                 Are you sure you want to delete the poll "{{ poll.question }}" ?
             </p>
-            {{ form }}
             {% csrf_token %}
             <input type="submit" value="Confirm" class="btn btn-danger btn-attn btn-lg float-start">
         </form>
 
         <!-- Cancel and return to poll list -->
-        <a href="{% url 'blog_home' %}" class="btn btn-primary btn-lg mx-3"> Home </a>
+        <a href="{% url 'poll_home' %}" class="btn btn-primary btn-lg mx-3"> Cancel </a>
 
     </div>
 </div>
