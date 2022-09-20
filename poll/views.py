@@ -6,6 +6,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.views import generic, View
 from django.urls import reverse_lazy, reverse
+from django.core.exceptions import PermissionDenied
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -209,6 +210,9 @@ def poll_delete(request, poll_id):
     Return:
         Render poll page.
     '''
+    if not request.user.is_authenticated:
+        raise PermissionDenied
+
     polls = Poll.objects.all()
     poll = Poll.objects.get(pk=poll_id)
 

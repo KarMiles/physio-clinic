@@ -3,9 +3,9 @@
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 from django.shortcuts import render, redirect
 from django.views import generic
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse
 from django.contrib import messages
+from django.core.exceptions import PermissionDenied
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -15,11 +15,10 @@ from .forms import BookingForm
 
 # Views for booking app
 
-class BookingList(LoginRequiredMixin, generic.ListView):
+class BookingList(generic.ListView):
     """
     A view to show booking messages
     Args:
-        LoginRequiredMixin (show only to authorized users)
         ListView: class based view
     Returns:
         Render of booking messages
@@ -51,6 +50,9 @@ class BookingList(LoginRequiredMixin, generic.ListView):
         Returns:
             Render booking page
         """
+        if not self.request.user.is_authenticated:
+            raise PermissionDenied
+
         return render(
             self.request,
             "booking.html",
@@ -71,6 +73,10 @@ class BookingList(LoginRequiredMixin, generic.ListView):
             Save data, show confirmation message,
             redirect to booking page after booking submit.
         """
+        if not self.request.user.is_authenticated:
+            print('Permission Denied')
+            raise PermissionDenied
+
         booking_form = BookingForm(data=self.request.POST)
 
         if booking_form.is_valid():

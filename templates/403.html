@@ -3,18 +3,23 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Access Forbidden" %}{% endblock %}
 
 {% block content %}
 
-<div class="container">
+<div class="container mt-5">
     <div class="row">
-        <div class="col-md-6 mt-6 offset-md-3">
+        <div class="col-md-6 offset-md-3">
         <h1 class="text-center">Error 403 (Access Forbidden)</h1>
         <p class="text-center">
-            {% blocktrans %}
-            Sorry, you have no access to this page.
-            {% endblocktrans %}
+            
+            <p>
+                Sorry, you have no access to the requested page.
+            </p>
+            {% if not user.is_authenticated %}
+                <p>Do you need to <a href="{% url 'account_login' %}">sign in</a>?</p>
+            {% endif %}
+                
         </p>
         </div>
     </div>

@@ -10,17 +10,18 @@ from django.shortcuts import render_to_response
 
 # Views for error pages
 
-# def csrf_failure(request, reason=""):
-#     """
-#     View to render 403 error page is called for unauthorized user.
-#     Args:
-#         request (object): HTTP request object
-#         reason: reason
-#     Returns:
-#         Render 403 error page
-#     """
-#     context = {'message': 'Unauthorized access'}
-#     return render_to_response('403_csrf.html', context)
+def csrf_failure(request, reason=""):
+    """
+    View to render 403 error page is called
+    for CSRF unauthorized user.
+    Args:
+        request (object): HTTP request object
+        reason: reason
+    Returns:
+        Render 403 error page
+    """
+    context = {'message': 'Unauthorized access'}
+    return render_to_response('403_csrf.html', context)
 
 
 def error_403_view(request, _exception):

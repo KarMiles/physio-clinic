@@ -768,6 +768,22 @@ Logged in user can sign out. After signout user is redirected to the main page a
 </details>
 <br>
 
+**Error pages**
+
+In case a problem occurs when a user tries to access a page an error page is shown:
+
+<details>
+<summary> Error 403 (Access forbiden) </summary>
+
+![screenshot of image](readme/docs/images/testing/features/error403.jpg)
+</details>
+
+<details>
+<summary> Error 404 (Page does not exist) </summary>
+
+![screenshot of image](readme/docs/images/testing/features/error404.jpg)
+</details>
+
 ### Access to account management features
 | No. | Feature                 | Not logged in | Logged in client | Staff | Admin |
 | --- | ----------------------- | ------------- | ---------------- | ----- | ----- |
@@ -1203,7 +1219,6 @@ Third-party libraries were used for this project:
     - from django.contrib import messages - used for temporary on-screen messages.
     - from django.contrib.auth.tokens import PasswordResetTokenGenerator - used for secure communication.
     - from django.contrib.auth.models import User - for utilizing Django built-in User model functionality.
-    - from django.contrib.auth.mixins import LoginRequiredMixin and AccessMixin - for granting access to website's functionality based on user's login status.
     - from django.db import models - for utilizing model structure.
     - from django.shortcuts import render - for rendering a page as a result of running a function.
     - from django.http import HttpResponseRedirect - for redirecting to a page in the process of running a function or a class.
