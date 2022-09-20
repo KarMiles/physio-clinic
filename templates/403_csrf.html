@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign In" %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mt-6 offset-md-3">
+        <h1 class="text-center">Error 403 (Access Forbidden)</h1>
+        <p class="text-center">
+            {% blocktrans %}
+            Sorry, you have no access to this page.
+            {% endblocktrans %}
+        </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mt-3 offset-md-3 text-center">
+            <a href="{% url 'blog_home' %}" class="btn btn-primary btn-lg">Home</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

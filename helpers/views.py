@@ -9,6 +9,18 @@ from django.shortcuts import render
 
 # Views for error pages
 
+def error_403_view(request, _exception):
+    """
+    View to render 404 error page when non-existent page is called.
+    Args:
+        request (object): HTTP request object
+        exception: exception error
+    Returns:
+        Render 404 error page
+    """
+    return render(request, '403_csrf.html', status=403)
+
+
 def error_404_view(request, _exception):
     """
     View to render 404 error page when non-existent page is called.
