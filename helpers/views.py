@@ -32,7 +32,7 @@ def error_403_view(request, _exception):
     Returns:
         Render 403 error page
     """
-    return render(request, '403_csrf.html', status=403)
+    return render(request, '403.html', status=403)
 
 
 def error_404_view(request, _exception):
