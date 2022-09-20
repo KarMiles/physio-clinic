@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from django.views import generic, View
 from django.urls import reverse_lazy, reverse
 from django.core.exceptions import PermissionDenied
+from accounts.views import StaffRequiredMixin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -35,7 +36,7 @@ class PollList(generic.ListView):
     #     context['messages'] = get_messages(self.request)
 
 
-class CreatePoll(generic.CreateView):
+class CreatePoll(StaffRequiredMixin, generic.CreateView):
     """
     A view to show form to create a new poll
     Args:
@@ -58,6 +59,9 @@ class CreatePoll(generic.CreateView):
         Returns:
             The form
         """
+        if not self.request.user.is_staff:
+            raise PermissionDenied
+
         def __init__(self, form):
             self.object = form.instance
 
@@ -201,6 +205,7 @@ class PollResults(View):
 
 def poll_delete(request, poll_id):
     '''
+    Check if user authorized,
     Delete selected poll,
     Show confirmation message,
     Redirect to poll page.
