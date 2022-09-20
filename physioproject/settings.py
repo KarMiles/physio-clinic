@@ -83,6 +83,9 @@ SITE_ID = 1
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
+# Access forbidden
+# CSRF_FAILURE_VIEW = 'helpers.views.csrf_failure'
+
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',

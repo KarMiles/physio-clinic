@@ -48,5 +48,6 @@ if settings.DEBUG:
         settings.STATIC_URL,
         document_root=settings.STATIC_ROOT)
 
+HANDLER403 = 'helpers.views.error_403_view'
 HANDLER404 = 'helpers.views.error_404_view'
 HANDLER500 = 'helpers.views.error_500_view'
