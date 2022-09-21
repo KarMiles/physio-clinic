@@ -47,7 +47,7 @@ class CreatePoll(StaffRequiredMixin, generic.CreateView):
     """
     template_name = "poll/poll_create.html"
     form_class = CreatePollForm
-    success_url: reverse_lazy('poll_home')
+    success_url = reverse_lazy('poll_home')
 
     def form_valid(self, form):
         """
