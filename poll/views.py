@@ -51,8 +51,9 @@ class CreatePoll(StaffRequiredMixin, generic.CreateView):
 
     def form_valid(self, form):
         """
-        Set poll author to self instances
-        Send confirmation message
+        Check user's authorization level,
+        Set poll author to self instances,
+        Send confirmation message.
         Args:
             self (object): self.
             form (object): form.
@@ -215,7 +216,7 @@ def poll_delete(request, poll_id):
     Return:
         Render poll page.
     '''
-    if not request.user.is_authenticated:
+    if not request.user.is_staff:
         raise PermissionDenied
 
     polls = Poll.objects.all()

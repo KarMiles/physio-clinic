@@ -23,9 +23,12 @@
 </div>
 
 {% else %}
-    <h3>
+    <h1>
+        Access denied
+    </h1>
+    <p>
         Sorry! You have no access to this functionality.
-    </h3>
+    </p>
     <!-- Cancel and return to poll list -->
     <div class="d-flex justify-content-center">
         <a href="{% url 'poll_home' %}" class="btn btn-primary btn-lg mx-3"> Polls </a>
