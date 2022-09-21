@@ -159,3 +159,10 @@ Ignored positives in this project:
 
     ![Unused import env](../readme/docs/images/testing/validation/validation-pylint-delete.jpg)
     </details>
+
+<br>
+
+**PEP8 Online**
+
+For testing Python code PEP8 Online service was used. All tests resulted with "All right" status.
+
