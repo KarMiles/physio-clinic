@@ -56,4 +56,5 @@ def error_500_view(request):
     Returns:
         Render 500 error page
     """
-    return render(request, '500.html', status=500)
+    # return render(request, '500.html', status=500)
+    return render(request, '500.html')
