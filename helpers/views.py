@@ -62,11 +62,11 @@ def error_404_view(request, _exception):
 #     # return render(request, '500.html')
 
 
-# def error_500_view(request):
+# def test_500_view(request):
 #     # Return an "Internal Server Error" 500 response code.
 #     return HttpResponse(status=500)
 
 
-def error_500_view(request):
-    # Return an "Internal Server Error" 500 response code.
-    return HttpResponseServerError()
+# def test_500_view(request):
+#     # Return an "Internal Server Error" 500 response code.
+#     return HttpResponseServerError()

@@ -24,11 +24,12 @@ from django.conf.urls.static import static
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+from .views import test_500_view
 
 # URL patterns for the project physioproject
 
 urlpatterns = [
+    path('500/', test_500_view, name='error_500_view'),
     path('admin', admin.site.urls),
     path("", include("blog.urls"), name="blog-urls"),
     path('summernote/', include('django_summernote.urls')),
@@ -36,6 +37,7 @@ urlpatterns = [
     path('booking/', include('booking.urls')),
     path('contact/', include('contact.urls')),
     path('poll/', include('poll.urls')),
+    # path('500/', 'helpers/views/test_500_view', 'error_500_view')
 ]
 
 
@@ -52,3 +54,4 @@ if settings.DEBUG:
 HANDLER403 = 'helpers.views.error_403_view'
 HANDLER404 = 'helpers.views.error_404_view'
 HANDLER500 = 'helpers.views.error_500_view'
+# HANDLER500 = 'helpers.views.test_500_view'

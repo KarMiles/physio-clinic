@@ -8,7 +8,7 @@ from django.forms import ModelForm
 from .models import Poll
 
 
-class CreatePollFo rm(ModelForm):
+class CreatePollForm(ModelForm):
     """
     Class for the poll form
     """
