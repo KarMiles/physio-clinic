@@ -238,7 +238,7 @@ Common files:
 ### Folders
 - physioproject - main project for the website.
 - app folders: accounts, blog, booking, contact, poll.
-- helpers - features not being core of the website, nominally views for rendering 404 and 500 error pages.
+- helpers - features not being core of the website, contains views for rendering 403, 404 and 500 error pages.
 - readme - contains files necessary for Readme document to show all of its intended content.
 - static - contains all static files, e.g. style.css, in one place for easy access and management.
 - templates folder contains html files both supplied with apps and custom-made.

@@ -302,9 +302,13 @@ Content can also be manipulated in the Admin window:
 
 <details>
 <summary>Click here to see screenshot</summary>
-Content can also be manipulated in the Admin window:
+Priority functionality can be set by staff users:
 
-![screenshot](../readme/docs/images/testing/user_stories/admin_posts.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/offer_post_priority.jpg)
+
+Priority can also be manipulated in the Admin window:
+
+![screenshot](../readme/docs/images/testing/user_stories/offer_posts_priority.jpg)
 </details>
 
 | User story | Feature                                            | Action                                                                                                                                                                                                         | Expected result                                                                           | Actual result |
