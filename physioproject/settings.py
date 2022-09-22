@@ -41,6 +41,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = os.environ.get('DEBUG', '1') == '1'
+# DEBUG = 0
 
 ALLOWED_HOSTS = [
     "physio-clinic-heroku.herokuapp.com",

@@ -8,7 +8,7 @@ from django.forms import ModelForm
 from .models import Poll
 
 
-class Create PollForm(ModelForm): # TODO remove error after testing Error 500
+class CreatePollFo rm(ModelForm):
     """
     Class for the poll form
     """
