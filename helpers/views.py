@@ -4,6 +4,7 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
+from django.http import HttpResponseServerError
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,6 +62,11 @@ def error_404_view(request, _exception):
 #     # return render(request, '500.html')
 
 
+# def error_500_view(request):
+#     # Return an "Internal Server Error" 500 response code.
+#     return HttpResponse(status=500)
+
+
 def error_500_view(request):
     # Return an "Internal Server Error" 500 response code.
-    return HttpResponse(status=500)
+    return HttpResponseServerError()
