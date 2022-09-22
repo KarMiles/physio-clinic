@@ -207,8 +207,8 @@ ___
 
 <details>
 <summary>Click here to see screenshot</summary>
-
 Posts with status "draft" are only visible to staff.
+
 ![screenshot](../readme/docs/images/testing/user_stories/control_draft.jpg)
 </details>
 
@@ -322,19 +322,57 @@ Content can also be manipulated in the Admin window:
 ___
 ## 5. Epic: Site admin
 
-5.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to site services**. 
+5.1 As a **site admin** I can **create, update and delete user profiles in admin page** so that **all users have appropriate access to site services**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+Add and delete functionality:
+
+![screenshot](../readme/docs/images/testing/user_stories/admin_users_add_delete.jpg)
+
+Edit functionality:
+
+![screenshot](../readme/docs/images/testing/user_stories/admin_users_edit.jpg)
+</details>
 
 5.2 As a **site admin** I can **create, update and delete posts and comments in admin page** so I can assure that **only content in line with company's ethos and goals is made available**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+Add and delete functionality:
+
+![screenshot](../readme/docs/images/testing/user_stories/admin_posts_add_delete.jpg)
+
+Edit functionality:
+
+![screenshot](../readme/docs/images/testing/user_stories/admin_posts_edit.jpg)
+</details>
 
 5.3 As a **site admin** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
 
 <details>
 <summary>Click here to see screenshot</summary>
+Add and delete functionality:
 
-![screenshot](../readme/docs/images/testing/user_stories/admin_poll.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/admin_polls_add_delete.jpg)
+
+Edit functionality:
+
+![screenshot](../readme/docs/images/testing/user_stories/admin_polls_edit.jpg)
 </details>
 
-5.4 As a **site admin** I can **read, update and delete booking requests** so that **booking requests are dealt with**. 
+5.4 As a **site admin** I can **read, update and delete booking requests** so that **booking requests are dealt with**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+Add and delete functionality:
+
+![screenshot](../readme/docs/images/testing/user_stories/admin_bookings_add_delete.jpg)
+
+Edit functionality:
+
+![screenshot](../readme/docs/images/testing/user_stories/admin_bookings_edit.jpg)
+</details>
 
 | User story | Feature            | Action                                                   | Expected result                                                                               | Actual result |
 |------------|--------------------|----------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------|
