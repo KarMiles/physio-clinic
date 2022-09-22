@@ -139,7 +139,7 @@ class PostList(generic.ListView):
         Non-staff users see live posts only
         Staff users see live and draft posts
     """
-    mod el = Post  # TODO remove error
+    model = Post
     template_name = "index.html"
     paginate_by = 3
 
