@@ -14,7 +14,7 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/home_unregistered.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/home_unregistered.jpg)
 </details>
 
 1.2 As a **site user** I can **register** so that **I have access to personalized service**.
@@ -22,13 +22,13 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/register_link.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/register_link.jpg)
 </details>
 
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/register_page.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/register_page.jpg)
 </details>
 
 1.3 As a **site user** I can **log in using my username and password** so that I can **access site's enhanced functionality**.
@@ -36,7 +36,7 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/login.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/login.jpg)
 </details>
 
 1.4 As a **site user** I can **log out of my account** so that I know **my information stays confidential**.
@@ -44,7 +44,7 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/logout.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/logout.jpg)
 </details>
 
 1.5 As a **site user** I can **easily see my current login status** so that **I know I'm in control of access to my enhanced service on currently used device**.
@@ -52,7 +52,7 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/logout_status.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/logout_status.jpg)
 </details>
 
 1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
@@ -60,13 +60,13 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/login_conf.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/login_conf.jpg)
 </details>
 
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/logout_conf.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/logout_conf.jpg)
 </details>
 
 1.7 As a **staff site user** I can **access enhanced functionality** so that I can **add, edit and delete content on webpage**.
@@ -74,19 +74,19 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/crud_home.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/crud_home.jpg)
 </details>
 
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/crud_details.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/crud_details.jpg)
 </details>
 
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/crud_poll.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/crud_poll.jpg)
 </details>
 
 | User story | Feature                               | Action                                                                                                      | Expected result                                                    | Actual result |
@@ -109,7 +109,7 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/navigation.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/navigation.jpg)
 </details>
 
 2.2 As a **site user** I can easily **browse through available treatments** so I can **decide which ones are most appropriate to me**.
@@ -117,7 +117,7 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/navigation_browse.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/navigation_browse.jpg)
 </details>
 
 2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
@@ -125,7 +125,7 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/navigation_small.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/navigation_small.jpg)
 </details>
 
 | User story | Feature                               | Action                                                                       | Expected result                                                                      | Actual result |
@@ -144,7 +144,7 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/engagement_details.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/engagement_details.jpg)
 </details>
 
 3.2 As a **site user** I can **engage in activities that other users can also participate in** so I can **feel part of a wider community**.
@@ -152,25 +152,19 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/engagement_details.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/engagement_details.jpg)
 </details>
 
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/engagement_details.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/engagement_poll.jpg)
 </details>
 
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/engagement_poll.jpg)
-</details>
-
-<details>
-<summary>Click here to see screenshot</summary>
-
-![Unused import env](../readme/docs/images/testing/user_stories/engagement_poll_results.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/engagement_poll_results.jpg)
 </details>
 
 3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
@@ -178,14 +172,51 @@ ___
 <details>
 <summary>Click here to see screenshot</summary>
 
-![Unused import env](../readme/docs/images/testing/user_stories/engagement_social.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/engagement_social.jpg)
 </details>
 
 3.4 As a **site user** I can **use the website for communication with the company** so that I can **send general queries or request booking for a specific treatment**.
 
+<details>
+<summary>Click here to see screenshot</summary>
+
+![screenshot](../readme/docs/images/testing/user_stories/engagement_message.jpg)
+</details>
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![screenshot](../readme/docs/images/testing/user_stories/engagement_booking.jpg)
+</details>
+
 3.5 As a **registered site user** I can **use website for communication without having to reenter my details** so that **sending my message requires minimum efford from my side**.
 
+<details>
+<summary>Click here to see screenshot</summary>
+
+![screenshot](../readme/docs/images/testing/user_stories/convenience_message_prefilled.jpg)
+</details>
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![screenshot](../readme/docs/images/testing/user_stories/convenience_booking_prefilled.jpg)
+</details>
+
 3.6 As a **site owner** I can **control content showing on the website** so that **the whole website content is in line with company values and supports its mission**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+Posts with status "draft" are only visible to staff.
+![screenshot](../readme/docs/images/testing/user_stories/control_draft.jpg)
+</details>
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![screenshot](../readme/docs/images/testing/user_stories/control_details.jpg)
+</details>
 
 | User story         | Feature                                                 | Action                                                                                                                                                                                    | Expected result                                                                                                     | Actual result |
 |--------------------|---------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|---------------|
