@@ -11,17 +11,83 @@ ___
 
 1.1 As a **site user** I can **access site without logging in** so that I can **read information about available treatments**.
 
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/home_unregistered.jpg)
+</details>
+
 1.2 As a **site user** I can **register** so that **I have access to personalized service**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/register_link.jpg)
+</details>
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/register_page.jpg)
+</details>
 
 1.3 As a **site user** I can **log in using my username and password** so that I can **access site's enhanced functionality**.
 
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/login.jpg)
+</details>
+
 1.4 As a **site user** I can **log out of my account** so that I know **my information stays confidential**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/logout.jpg)
+</details>
 
 1.5 As a **site user** I can **easily see my current login status** so that **I know I'm in control of access to my enhanced service on currently used device**.
 
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/logout_status.jpg)
+</details>
+
 1.6 As a **site user** I receive **confirmation of logging in and logging out visible on webpage** so that I **instantly know if the operation was successful**.
 
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/login_conf.jpg)
+</details>
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/logout_conf.jpg)
+</details>
+
 1.7 As a **staff site user** I can **access enhanced functionality** so that I can **add, edit and delete content on webpage**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/crud_home.jpg)
+</details>
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/crud_details.jpg)
+</details>
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/crud_poll.jpg)
+</details>
 
 | User story | Feature                               | Action                                                                                                      | Expected result                                                    | Actual result |
 |------------|---------------------------------------|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|---------------|
@@ -40,9 +106,27 @@ ___
 
 2.1 As a **site user** I can **navigate the service intuitively** so that I can **utilize all of its content**.
 
-2.2 As a **site user** I can easily **browse through available treatments** so I can **decide which ones are most appropriate to me**. 
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/navigation.jpg)
+</details>
+
+2.2 As a **site user** I can easily **browse through available treatments** so I can **decide which ones are most appropriate to me**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/navigation_browse.jpg)
+</details>
 
 2.3 As a **site user** I can **navigate the site on all kinds of devices** so that **I am not limited to any kind of device**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/navigation_small.jpg)
+</details>
 
 | User story | Feature                               | Action                                                                       | Expected result                                                                      | Actual result |
 |------------|---------------------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|---------------|
@@ -57,9 +141,45 @@ ___
 
 3.1 As a **site user** I can **read and respond to available content** so **my experience on the site feels engaging and interactive**. 
 
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/engagement_details.jpg)
+</details>
+
 3.2 As a **site user** I can **engage in activities that other users can also participate in** so I can **feel part of a wider community**.
 
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/engagement_details.jpg)
+</details>
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/engagement_details.jpg)
+</details>
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/engagement_poll.jpg)
+</details>
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/engagement_poll_results.jpg)
+</details>
+
 3.3 As a **site user** I can **locate company's social media accounts** so I can **stay in contact through alternative means**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![Unused import env](../readme/docs/images/testing/user_stories/engagement_social.jpg)
+</details>
 
 3.4 As a **site user** I can **use the website for communication with the company** so that I can **send general queries or request booking for a specific treatment**.
 

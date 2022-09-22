@@ -333,4 +333,3 @@ For testing Python code PEP8 Online service was used. All tests resulted with "A
 
 ![screenshot](../readme/docs/images/testing/pep8/poll_views.jpg)
 </details>
-
