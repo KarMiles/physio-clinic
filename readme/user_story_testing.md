@@ -232,17 +232,80 @@ ___
 
 4.1 As a **site user** I can **quickly get a general idea about services on offer** so that I can **prioritize which content to read more thoroughly**.
 
+<details>
+<summary>Click here to see screenshot</summary>
+
+![screenshot](../readme/docs/images/testing/user_stories/offer_home.jpg)
+</details>
+
 4.2 As a **site user** I can **read thoroughly about chosen treatments** so that I can **acquire content most appropriate to my requirements**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+After clicking on treatment title detailed treatment description and comment functionality is available:
+
+![screenshot](../readme/docs/images/testing/user_stories/offer_details_main.jpg)
+
+![screenshot](../readme/docs/images/testing/user_stories/control_details_comments.jpg)
+</details>
 
 4.3 As a **site user** I can **respond to content via likes and comments** for **increased sense of community** (registered users only).
 
+<details>
+<summary>Click here to see screenshot</summary>
+
+![screenshot](../readme/docs/images/testing/user_stories/offer_details_comments_likes.jpg)
+</details>
+
 4.4 As a **site user** I can **take part in polls and see poll results** so I can **feel more engaged with the company and the health-oriented community**.
 
-4.5 As a **staff site user** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
+<details>
+<summary>Click here to see screenshot</summary>
 
-4.6 As a **site owner** I can **easily activate and deactivate content is visible to the public**.
+![screenshot](../readme/docs/images/testing/user_stories/offer_details_comments_likes.jpg)
+</details>
+
+4.5 As a **staff site user** I can **create and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![screenshot](../readme/docs/images/testing/user_stories/crud_poll.jpg)
+</details>
+
+4.6 As a **site owner** I can **activate and deactivate content visible to the public**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+Posts can be created, deleted and made visible or hidden by staff users:
+
+![screenshot](../readme/docs/images/testing/user_stories/offer_post_status.jpg)
+</details>
+
+<details>
+<summary>Click here to see screenshot</summary>
+Polls can be created and deleted by staff users:
+
+![screenshot](../readme/docs/images/testing/user_stories/crud_poll.jpg)
+</details>
+
+<details>
+<summary>Click here to see screenshot</summary>
+Content can also be manipulated in the Admin window:
+
+![screenshot](../readme/docs/images/testing/user_stories/admin_posts.jpg)
+
+![screenshot](../readme/docs/images/testing/user_stories/admin_comments.jpg)
+</details>
 
 4.7 As a **site owner** I can **prioritize which treatments are showing first on the site** so that I can **influence demand on offering of my choice**. 
+
+<details>
+<summary>Click here to see screenshot</summary>
+Content can also be manipulated in the Admin window:
+
+![screenshot](../readme/docs/images/testing/user_stories/admin_posts.jpg)
+</details>
 
 | User story | Feature                                            | Action                                                                                                                                                                                                         | Expected result                                                                           | Actual result |
 |------------|----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|---------------|
@@ -264,6 +327,12 @@ ___
 5.2 As a **site admin** I can **create, update and delete posts and comments in admin page** so I can assure that **only content in line with company's ethos and goals is made available**.
 
 5.3 As a **site admin** I can **create, update and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
+
+<details>
+<summary>Click here to see screenshot</summary>
+
+![screenshot](../readme/docs/images/testing/user_stories/admin_poll.jpg)
+</details>
 
 5.4 As a **site admin** I can **read, update and delete booking requests** so that **booking requests are dealt with**. 
 
