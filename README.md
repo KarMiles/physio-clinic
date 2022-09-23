@@ -784,6 +784,14 @@ In case a problem occurs when a user tries to access a page an error page is sho
 ![screenshot of image](readme/docs/images/testing/features/error404.jpg)
 </details>
 
+<details>
+<summary> Error 500 (Server error) </summary>
+
+![screenshot of image](readme/docs/images/testing/features/error500.jpg)
+</details>
+
+<br>
+
 ### Access to account management features
 | No. | Feature                 | Not logged in | Logged in client | Staff | Admin |
 | --- | ----------------------- | ------------- | ---------------- | ----- | ----- |

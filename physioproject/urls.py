@@ -24,7 +24,7 @@ from django.conf.urls.static import static
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-from .views import test_500_view
+from helpers.views import test_500_view
 
 # URL patterns for the project physioproject
 
@@ -37,7 +37,6 @@ urlpatterns = [
     path('booking/', include('booking.urls')),
     path('contact/', include('contact.urls')),
     path('poll/', include('poll.urls')),
-    # path('500/', 'helpers/views/test_500_view', 'error_500_view')
 ]
 
 
@@ -54,4 +53,3 @@ if settings.DEBUG:
 HANDLER403 = 'helpers.views.error_403_view'
 HANDLER404 = 'helpers.views.error_404_view'
 HANDLER500 = 'helpers.views.error_500_view'
-# HANDLER500 = 'helpers.views.test_500_view'
