@@ -23,7 +23,7 @@ Users for testing:
     v. [Surface](#surface)<br>
       
 2. [Features](#features)<br>
-    i. [Current Features](#features-existing)<br>
+    i. [Current Features](#features-current)<br>
     ii. [Potential features](#features-next)<br>
 
 3. [Testing](#testing)<br>
@@ -599,21 +599,13 @@ Contact Us - registered user:
 </details>
 <br>
 
-Users registered as members of staff have additional features available. In menu Poll an additional option 'Create a poll' is available:
-<details>
-<summary>Click here to view image </summary>
-
-![screenshot of navbar](readme/docs/images/testing/features/navbar_poll.jpg)
-</details>
-<br>
-
 Access to navbar features:
 
 | No. | Feature             | Not logged in | Logged in client | Staff | Admin |
 | --- | ------------------- | ------------- | ---------------- | ----- | ----- |
 | 1   | Navigation bar      | yes           | yes              | yes   | yes   |
 | 2   | Request appointment | no            | yes              | yes   | yes   |
-| 3   | Create poll         | no            | no               | yes   | yes   |
+
 
 <br>
 

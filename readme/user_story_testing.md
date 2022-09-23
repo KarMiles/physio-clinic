@@ -13,8 +13,12 @@ ___
 
 <details>
 <summary>Click here to see screenshot</summary>
+Overview:
 
 ![screenshot](../readme/docs/images/testing/user_stories/home_unregistered.jpg)
+Detailed view:
+
+![screenshot](../readme/docs/images/testing/user_stories/post_details.jpg)
 </details>
 
 1.2 As a **site user** I can **register** so that **I have access to personalized service**.
@@ -262,7 +266,11 @@ After clicking on treatment title detailed treatment description and comment fun
 <details>
 <summary>Click here to see screenshot</summary>
 
-![screenshot](../readme/docs/images/testing/user_stories/offer_details_comments_likes.jpg)
+![screenshot](../readme/docs/images/testing/user_stories/poll_guest.jpg)
+
+![screenshot](../readme/docs/images/testing/user_stories/poll_submit.jpg)
+
+![screenshot](../readme/docs/images/testing/user_stories/poll_result.jpg)
 </details>
 
 4.5 As a **staff site user** I can **create and delete polls** so that **polls as means of engaging users and gathering information are used according to their purpose**.
