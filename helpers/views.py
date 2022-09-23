@@ -57,4 +57,3 @@ def test_500_view(request):
     """
     # Return an "Internal Server Error" 500 response code.
     raise Exception('test')
-    # return HttpResponse(status=500)

@@ -265,7 +265,7 @@ class TestViews(unittest.TestCase):
         # Booking page does not load for unauthorized user
         logout()
         response = client.get('/booking/booking')
-        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response.status_code, 403)
         logout()
 
 
