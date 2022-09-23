@@ -7,8 +7,8 @@ from django.http import HttpResponse
 from django.views import generic, View
 from django.urls import reverse_lazy, reverse
 from django.core.exceptions import PermissionDenied
-from accounts.views import StaffRequiredMixin
 from django.utils.datastructures import MultiValueDictKeyError
+from accounts.views import StaffRequiredMixin
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,12 +124,11 @@ class PollVote(View):
         queryset = self.get_queryset()
         poll = get_object_or_404(queryset, pk=poll_id)
 
+        vote_checked = True
         try:
             vote_checked = request.POST['poll']
         except MultiValueDictKeyError:
             vote_checked = False
-        else:
-            vote_checked = True
 
         if vote_checked:
 
@@ -162,15 +161,14 @@ class PollVote(View):
                 'poll/poll_vote.html',
                 context)
 
-        else:
-            messages.error(request, "Please choose one option!")
-            context = {
-                'poll': poll
-            }
-            return render(
-                request,
-                'poll/poll_vote.html',
-                context)
+        messages.error(request, "Please choose one option!")
+        context = {
+            'poll': poll
+        }
+        return render(
+            request,
+            'poll/poll_vote.html',
+            context)
 
     def get_queryset(self):
         """
