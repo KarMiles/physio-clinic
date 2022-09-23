@@ -8,6 +8,7 @@ from django.views import generic, View
 from django.urls import reverse_lazy, reverse
 from django.core.exceptions import PermissionDenied
 from accounts.views import StaffRequiredMixin
+from django.utils.datastructures import MultiValueDictKeyError
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -30,10 +31,6 @@ class PollList(generic.ListView):
 
     def get_queryset(self):
         return Poll.objects.order_by("id")
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['messages'] = get_messages(self.request)
 
 
 class CreatePoll(StaffRequiredMixin, generic.CreateView):
@@ -127,34 +124,53 @@ class PollVote(View):
         queryset = self.get_queryset()
         poll = get_object_or_404(queryset, pk=poll_id)
 
-        if self.request.method == 'POST':
-            selected_option = request.POST['poll']
-            if selected_option == 'option1':
-                poll.option_one_count += 1
-            elif selected_option == 'option2':
-                poll.option_two_count += 1
-            elif selected_option == 'option3':
-                poll.option_three_count += 1
-            else:
-                return HttpResponse(400, 'Invalid form option')
+        try:
+            vote_checked = request.POST['poll']
+        except MultiValueDictKeyError:
+            vote_checked = False
+        else:
+            vote_checked = True
 
-            poll.save()
+        if vote_checked:
 
-            messages.add_message(
-                    request,
-                    messages.INFO,
-                    'Thank you for your vote!')
+            if self.request.method == 'POST':
+                selected_option = request.POST['poll']
+                if selected_option == 'option1':
+                    poll.option_one_count += 1
+                elif selected_option == 'option2':
+                    poll.option_two_count += 1
+                elif selected_option == 'option3':
+                    poll.option_three_count += 1
+                else:
+                    return HttpResponse(400, 'Invalid form option')
 
-            return redirect('poll_results', poll.id)
+                poll.save()
 
-        context = {
-            'poll': poll
-        }
+                messages.add_message(
+                        request,
+                        messages.INFO,
+                        'Thank you for your vote!')
 
-        return render(
-            request,
-            'poll/poll_vote.html',
-            context)
+                return redirect('poll_results', poll.id)
+
+            context = {
+                'poll': poll
+            }
+
+            return render(
+                request,
+                'poll/poll_vote.html',
+                context)
+
+        else:
+            messages.error(request, "Please choose one option!")
+            context = {
+                'poll': poll
+            }
+            return render(
+                request,
+                'poll/poll_vote.html',
+                context)
 
     def get_queryset(self):
         """
