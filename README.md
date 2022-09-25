@@ -1130,6 +1130,8 @@ For development of this webpage elements of Agile software development methodolo
     ![screenshot](./readme/agile-issues.jpg)
     </details>
 
+    Kanban for this project can also be found [here](https://github.com/users/KarMiles/projects/5/views/1).
+
 ## 5.ii. Languages <a name="languages"></a>
 
 - HTML (https://www.w3schools.com/html/)
