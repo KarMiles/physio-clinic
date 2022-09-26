@@ -720,7 +720,11 @@ User can reset password online:
 <details>
 <summary>Password reset </summary>
 
+User enters email address:
 ![screenshot of image](readme/docs/images/testing/features/acc_mgt_reset.jpg)
+
+Example email user receives to reset password:
+![screenshot of image](readme/docs/images/testing/features/password_reset_email.jpg)
 </details>
 <br>
 
