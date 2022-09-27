@@ -74,7 +74,6 @@ class BookingList(generic.ListView):
             redirect to booking page after booking submit.
         """
         if not self.request.user.is_authenticated:
-            print('Permission Denied')
             raise PermissionDenied
 
         booking_form = BookingForm(data=self.request.POST)
