@@ -84,7 +84,7 @@
 
                                         <!-- Comment count -->
                                         <div class="col-3 col-sm-4">
-                                            {% with post.comments.count as total_comments %}
+                                            {% with post.approved_comments.count as total_comments %}
                                             <i class="far fa-comments"></i>
                                             {{ total_comments }}
                                             {% endwith %}

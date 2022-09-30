@@ -87,6 +87,10 @@ class Post(models.Model):
         """
         return self.likes.count()
 
+    @property
+    def approved_comments(self):
+        return self.comments.filter(approved=True).order_by("created_on")
+
 
 class Comment(models.Model):
     """
@@ -117,3 +121,6 @@ class Comment(models.Model):
             String
         """
         return f"Comment by {self.author}"
+
+    def num_of_comments_approved(self):
+        return self.comments.filter(approved=True)

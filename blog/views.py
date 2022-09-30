@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
 from django.utils.text import slugify
 from django.contrib import messages
+from random import randint
 
 # Internal:
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -142,12 +143,13 @@ class PostList(generic.ListView):
     model = Post
     template_name = "index.html"
     paginate_by = 3
+    ordering = 'priority'
 
     def get_queryset(self):
+        queryset = super().get_queryset()
         if self.request.user.is_staff:
-            return Post.objects.order_by("priority")
-
-        return Post.objects.filter(status=1).order_by("priority")
+            return queryset
+        return queryset.filter(status=1)
 
 
 class PostDetail(View):
@@ -170,7 +172,7 @@ class PostDetail(View):
         """
         queryset = self.get_queryset()
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("created_on")
+        # comments = post.comments.filter(approved=True).order_by("created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -180,7 +182,7 @@ class PostDetail(View):
             "post_detail.html",
             {
                 "post": post,
-                "comments": comments,
+                "comments": post.approved_comments,
                 "commented": False,
                 "liked": liked,
                 "comment_form": CommentForm()
