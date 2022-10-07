@@ -89,6 +89,9 @@ class Post(models.Model):
 
     @property
     def approved_comments(self):
+        """
+        Show only approved comments.
+        """
         return self.comments.filter(approved=True).order_by("created_on")
 
 
@@ -123,4 +126,7 @@ class Comment(models.Model):
         return f"Comment by {self.author}"
 
     def num_of_comments_approved(self):
+        """
+        Count only approved comments.
+        """
         return self.comments.filter(approved=True)
