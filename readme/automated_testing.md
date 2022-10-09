@@ -154,7 +154,7 @@ Checks:
 
 **test_postform_fields_are_explicit_in_form_metaclass**
 
-Tests that only fields in Meta class desplay in form.
+Tests that only fields in Meta class display in form.
 Checks:
 1. Fields listed in Meta class.
 

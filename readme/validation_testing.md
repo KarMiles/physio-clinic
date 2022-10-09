@@ -134,7 +134,7 @@ Setup for pycodestyle validation in contained in [.pylintrc](../.pylintrc) file.
 
 Ignored positives in this project:
 
-- Unused import env error - has been ingrored as the code works correctly and is necessary for importing from env.py. File: settings.py
+- Unused import env error - has been ignored as the code works correctly and is necessary for importing from env.py. File: settings.py
 
     ![Unused import env](../readme/docs/images/testing/validation/validation-pylint-env.jpg)
 

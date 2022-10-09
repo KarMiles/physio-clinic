@@ -95,12 +95,12 @@ Detailed view:
 
 | User story | Feature                               | Action                                                                                                      | Expected result                                                    | Actual result |
 |------------|---------------------------------------|-------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|---------------|
-| 1.1        | Home page, Navbar, Account management | Enter site to see main page or navigate to a subpage by chosing option on navbar                            | Public information is accessible to all users                      | As expected.  |
+| 1.1        | Home page, Navbar, Account management | Enter site to see main page or navigate to a subpage by choosing option on navbar                            | Public information is accessible to all users                      | As expected.  |
 | 1.2, 1.3   | Account management                    | Click Login on navbar to register or login to see information and functionality appropriate to user profile | Customized information and functionality available to user         | As expected.  |
 | 1.4        | Account management, Navbar            | Click Login on navbar and chose logout option                                                               | User logged out, privacy protected after user leaving device       | As expected.  |
 | 1.5        | Account management, Navbar            | Login or logout                                                                                             | Current login status shown in top right corner for logged in users | As expected.  |
 | 1.6        | Account management                    | User loges in or loges out                                                                                  | Temporary message shows on top of the webpage                      | As expected.  |
-| 1.7        | Account management                    | Staff user logges in and choses one of the add/edit/delete options                                          | All changes done by authorized user recorded in database.          | As expected.  |
+| 1.7        | Account management                    | Staff user loges in and choses one of the add/edit/delete options                                          | All changes done by authorized user recorded in database.          | As expected.  |
 
 
 <br>
@@ -134,8 +134,8 @@ ___
 
 | User story | Feature                               | Action                                                                       | Expected result                                                                      | Actual result |
 |------------|---------------------------------------|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|---------------|
-| 2.1, 2.2   | Navbar, additional navigation buttons | User choses options in the navigation menu and buttons available on the site | User gets to expected content by chosing options                                     | As expected.  |
-| 2.3        | All visual features                   | User views site on various screens                                           | Responsive design makes content available and visually accessive on all screen sizes | As expected.  |
+| 2.1, 2.2   | Navbar, additional navigation buttons | User choses options in the navigation menu and buttons available on the site | User gets to expected content by choosing options                                     | As expected.  |
+| 2.3        | All visual features                   | User views site on various screens                                           | Responsive design makes content available and visually accessible on all screen sizes | As expected.  |
 
 
 <br>
@@ -193,7 +193,7 @@ ___
 ![screenshot](../readme/docs/images/testing/user_stories/engagement_booking.jpg)
 </details>
 
-3.5 As a **registered site user** I can **use website for communication without having to reenter my details** so that **sending my message requires minimum efford from my side**.
+3.5 As a **registered site user** I can **use website for communication without having to re-enter my details** so that **sending my message requires minimum afford from my side**.
 
 <details>
 <summary>Click here to see screenshot</summary>
@@ -323,7 +323,7 @@ Priority can also be manipulated in the Admin window:
 |------------|----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|---------------|
 | 4.1, 4.2   | Home page                                          | Navigate between pages with general information on treatments with buttons on the sides and at the bottom of the page. Click on posts of interest to read expanded information.                                | General information shown on home page, detailed information shown on chosen treatments.  | As expected.  |
 | 4.3        | Post detail pages                                  | Login, then click likes, add comments                                                                                                                                                                          | Likes added to posts. Comments added to posts after approval.                             | As expected.  |
-| 4.4        | Polls                                              | Click Polls on navbar, see polls, after chosing a poll add vote. View poll results.                                                                                                                            | User sees polls, choses a poll and offers their vote. User sees results.                  | As expected.  |
+| 4.4        | Polls                                              | Click Polls on navbar, see polls, after choosing a poll add vote. View poll results.                                                                                                                            | User sees polls, choses a poll and offers their vote. User sees results.                  | As expected.  |
 | 4.5        | Polls                                              | Add a poll. See poll results. Delete a poll.                                                                                                                                                                   | Site owner receives feedback from users on current topics touched in polls.               | As expected.  |
 | 4.6        | Home page, detail pages, Polls, Account management | After loging in authorized user can change status of a poll (live – public / draft – visible only to staff), control visibility of comments, add and delete polls. Admin also controls status of other users.  | Visibility of content of the webpage and status of registered users is fully controlled.  | As expected.  |
 | 4.7        | Home page                                          | Choose priority of a post when adding or editing.                                                                                                                                                              | Posts are shown in order of priority.                                                     | As expected.  |
@@ -389,6 +389,6 @@ Edit functionality:
 | User story | Feature            | Action                                                   | Expected result                                                                               | Actual result |
 |------------|--------------------|----------------------------------------------------------|-----------------------------------------------------------------------------------------------|---------------|
 | 5.1        | Account management | Create, update, delete user profiles via Admin site.     | All user profiles are up to date and with appropriate access to information and functionality | As expected.  |
-| 5.2        | Account management | Create, update, delete posts and coments via Admin site. | All content visible to users is in line with company’s ethos and goals.                       | As expected.  |
+| 5.2        | Account management | Create, update, delete posts and comments via Admin site. | All content visible to users is in line with company’s ethos and goals.                       | As expected.  |
 | 5.3        | Account management | Create, update, delete polls via Admin site.             | Polls are visible to users as needed.                                                         | As expected.  |
 | 5.4        | Account management | Read booking requests on Admin site.                     | Bookings read and responded to as needed.                                                     | As expected.  |

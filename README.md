@@ -32,7 +32,7 @@ Users for testing:
     ii.  [Automated testing](#automated-testing)<br>
     iii.  [Known issues during development and testing](#known-issues)<br>
     iv. [Validation testing](#validation-testing)<br>
-    v. [Javascript testing](#js-testing)<br>
+    v. [JavaScript testing](#js-testing)<br>
 4. [Deployment](#deployment)<br>
 5. [Technologies Used](#technology-used)<br>
     i. [Agile Methodology](#agile-methodology)<br>
@@ -67,20 +67,20 @@ The main goal of the project is to provide a platform for engaging prospective a
 - To maximise customers' retainment.
 - To promote knowledge on benefits of treatments on offer.
 - To receive requests for booking.
-- To enable custommer - company correspondence.
+- To enable customer - company correspondence.
 - To build customer database.
-- To differenciate between different kinds of users in terms of access and ability to edit and delete information.
+- To differentiate between different kinds of users in terms of access and ability to edit and delete information.
 - To assure access to the service on different kinds of devices.
 
 ### **User goals**
 - To be able to use service intuitively and with ease.
-- To be able to read content withouth sharing any details.
+- To be able to read content without sharing any details.
 - To find details on what kinds of treatments are offered and about their benefits.
 - To be able to contact the company to book a specific treatment or about other related topics.
 - To open and then access account for easier communication.
 - To log in and log out as needed.
 - To log in with a chosen user name to maintain privacy.
-- To have an esthetically pleasing and functionally easy experience while using the webpage.
+- To have an aesthetically pleasing and functionally easy experience while using the webpage.
 - To be able give feedback on treatments already received.
 - To be able to upload, update and delete information on treatments contained in the posts (for staff users only).
 
@@ -124,7 +124,7 @@ The main goal of the project is to provide a platform for engaging prospective a
 
 3.4 As a **site user** I can **use the website for communication with the company** so that I can **send general queries or request booking for a specific treatment**.
 
-3.5 As a **registered site user** I can **use website for communication without having to reenter my details** so that **sending my message requires minimum efford from my side**.
+3.5 As a **registered site user** I can **use website for communication without having to re-enter my details** so that **sending my message requires minimum afford from my side**.
 
 3.6 As a **site owner** I can **control content showing on the website** so that **the whole website content is in line with company values and supports its mission**.
 
@@ -356,7 +356,7 @@ Relationships
 ### Model: Poll
 
 - Part of poll app.
-- Represents questions with options for polls presented to custommers.
+- Represents questions with options for polls presented to customers.
 
 Relationships
 - Poll model has one-to-many relationship with User model: a user (who must be part of staff) can create many polls.
@@ -451,13 +451,13 @@ Layout of the interface, navigation and information design for different screen 
 </details>
 
 <details>
-<summary>Wireframe: Direct comunication - contact us</summary>
+<summary>Wireframe: Direct communication - contact us</summary>
 
 ![image](readme/docs/images/wireframes/contact.png)
 </details>
 
 <details>
-<summary>Wireframe: Direct comunication - booking</summary>
+<summary>Wireframe: Direct communication - booking</summary>
 
 ![image](readme/docs/images/wireframes/booking.png)
 </details>
@@ -478,7 +478,7 @@ Flow of information and decisions the website operates on are represented in the
 <br>
 
 ## 1.v. Surface <a name='surface'></a>
-The values behind building the webpage for physical therapy clinic are clean simplicity, impecable higiene and friendly, sublte environment. This is reflected in the webpage surface.
+The values behind building the webpage for physical therapy clinic are clean simplicity, impeccable hygiene and a friendly, sublte environment. This is reflected in the webpage surface.
 
 ### **Colour Palette**
 Colour palette reflects the clinic's dedication to hygiene and simplicity. For this purpose pastel colours are used, mainly blue and red with light shades of beige. Blue brings cleanliness and lightness to mind and red is commonly associated with health care while light beige binds them together in a subtle, friendly environment.
@@ -489,7 +489,7 @@ Screenshot of colour palette:
 
 ### **Typography**
 
-A font chosen for the site had to be light, simple and easy to read to be coherent with the rest of the graphic design. For this purpose I chose font Raleway with fallback font Lato. Both are available from Google Fonts service.
+A font chosen for the site had to be light, simple and easy to read to be coherent with the rest of the graphic design. For this purpose I chose font Raleway with fall-back font Lato. Both are available from Google Fonts service.
 
 ![screenshot of google fonts](readme/docs/images/surface/font_raleway.jpg)
 
@@ -769,7 +769,7 @@ Logged in user can sign out. After signout user is redirected to the main page a
 In case a problem occurs when a user tries to access a page an error page is shown:
 
 <details>
-<summary> Error 403 (Access forbiden) </summary>
+<summary> Error 403 (Access forbidden) </summary>
 
 ![screenshot of image](readme/docs/images/testing/features/error403.jpg)
 </details>
@@ -820,7 +820,7 @@ In case a problem occurs when a user tries to access a page an error page is sho
 ---
 ### **Feature 5. Posts**
 
-In the blog app standard mechanisms of a blog are employed. Each post represents a treatment offered by the company. Posts can be created, edited and deleted by users with staff status. This can be done on the webpage after chosing appropriate button under a post (only visible to staff users) or on admin page by the administrator of the webpage. Users who are not logged in or are logged in as non-staff can see posts with status "live". Staff users can see both "live" and "draft" posts.
+In the blog app standard mechanisms of a blog are employed. Each post represents a treatment offered by the company. Posts can be created, edited and deleted by users with staff status. This can be done on the webpage after choosing appropriate button under a post (only visible to staff users) or on admin page by the administrator of the webpage. Users who are not logged in or are logged in as non-staff can see posts with status "live". Staff users can see both "live" and "draft" posts.
 
 **Post list**
 
@@ -1023,7 +1023,7 @@ This feature is available to all users. When a logged in user wishes to contact 
 
 #### **Booking**
 
-The purpose of the Booking section is to give logged in clients an opportunity to request specific treatments. The form for this mode of communication offers a list of available treatments to choose from and date/time-picker to indicate prefered time of treatment. The fact that no user information is necessary to be filled by the user in this form adds to convenience. 
+The purpose of the Booking section is to give logged in clients an opportunity to request specific treatments. The form for this mode of communication offers a list of available treatments to choose from and date/time-picker to indicate preferred time of treatment. The fact that no user information is necessary to be filled by the user in this form adds to convenience. 
 
 <details>
 <summary>Booking an appointment</summary>
@@ -1087,7 +1087,7 @@ There are no observed unfixed issues and bugs.
 
 *Database table issue*
 
-In app blog model Post, price has default value. This value was not showing when no price was entered. The reason for this bug was that the price column was added to the model post at later stage of development and the already existing posts didn't have that column. I've delt with this problem with ```if``` statement in templates refering to this value. The ulternative would be editing and saving all existing entries again which would add the price column in the database.
+In app blog model Post, price has default value. This value was not showing when no price was entered. The reason for this bug was that the price column was added to the model post at later stage of development and the already existing posts didn't have that column. I've dealt with this problem with ```if``` statement in templates referring to this value. The alternative would be editing and saving all existing entries again which would add the price column in the database.
 
 *Contrast error on Wave test*
 
@@ -1122,7 +1122,7 @@ For development of this webpage elements of Agile software development methodolo
     - evaluation
     - requirements
 - Build, Measure, Learn approach.
-- Utilizing Issues on GitHub. This mechanism was used to manage PBIs (Product Backlog Items) related to User stories, Ideas/Epics, Suggestions and Defects occuring all through the project life cycle. For managing work flow every PBI was given a label using MoSCoW technique:
+- Utilizing Issues on GitHub. This mechanism was used to manage PBIs (Product Backlog Items) related to User stories, Ideas/Epics, Suggestions and Defects occurring all through the project life cycle. For managing work flow every PBI was given a label using MoSCoW technique:
     - Must-Have (for items which must be done within given iteration)
     - Should-Have (items preferably done but with lesser priority)
     - Could-Have (items only done as contingency or left for next iterations)
@@ -1139,7 +1139,7 @@ For development of this webpage elements of Agile software development methodolo
 ## 5.ii. Languages <a name="languages"></a>
 
 - HTML (https://www.w3schools.com/html/)
-    - The main laguage this webpage's front-end is running on is HTML (HyperText Markup Language).
+    - The main language this webpage's front-end is running on is HTML (HyperText Markup Language).
 - CSS (https://www.w3.org/Style/CSS/)
     - For custom-made styling CSS (Cascading Style Sheets) language was used. 
 - JavaScript (https://www.javascript.com/)
@@ -1243,7 +1243,7 @@ Class-based views (CBV) provide a way to implement views as Python objects rathe
 CBV are predominantly used in this project for the following reasons:
 - Code reusability - a view class can be inherited by another view class and modified in a different use case.
 - DRY, which stands for 'don't repeat yourself' - CBV helps to reduce code duplication
-- Code extendability - CBV can be extended to include more functionalities using Mixins
+- Code extendibility - CBV can be extended to include more functionalities using Mixins
 - Code structuring - class based view helps to respond to different http request with different class instance methods instead of conditional branching statements inside a single function based view.
 - Usage of built-in generic class-based views.
 
@@ -1272,7 +1272,7 @@ ___
 - [Unsplash](https://unsplash.com) - imagery.
 - [Nicepng](https://www.nicepng.com) - favicon.
 - [Favicon.co](https://favicon.io/favicon-converter) - favicon conversion.
-- [Coolors](https://coolors.co) - colour pallette creation.
+- [Coolors](https://coolors.co) - colour palette creation.
 - [Font Awesome](https://fontawesome.com/) - sourcing icons.
 
 ### Other tools
