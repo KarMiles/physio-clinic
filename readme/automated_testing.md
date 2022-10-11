@@ -163,4 +163,5 @@ Checks:
 ___
 
 Automated tests results screenshot:
+
 ![Automated testing results](/readme/docs/images/testing/auto_tests_results.jpg)
